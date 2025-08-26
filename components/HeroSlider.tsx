@@ -51,7 +51,7 @@ const HeroSlider = () => {
   }, [currentSlide]);
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden mt-16">
       {/* Single Background Image Container */}
       <div 
         className="absolute inset-0 z-0 transition-all duration-1000 ease-in-out"

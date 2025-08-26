@@ -83,7 +83,7 @@ const HomePage = () => {
         <HeroSlider />
         
         {/* Hero Content Overlay */}
-        <div className="absolute inset-0 z-10 flex items-center justify-center pt-20">
+        <div className="absolute inset-0 z-10 flex items-center justify-center pt-32">
           <div className="container-custom text-center text-white">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
