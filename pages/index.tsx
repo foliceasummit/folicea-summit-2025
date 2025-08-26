@@ -99,13 +99,7 @@ const HomePage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Image
-              src="https://ik.imagekit.io/folicea/Logo.png.jpg?updatedAt=1755871491816"
-              alt="FOLICEA Logo"
-              width={120}
-              height={120}
-              className="mx-auto mb-8 rounded-2xl"
-            />
+
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               FOLICEA Summit 2025

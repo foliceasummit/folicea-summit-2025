@@ -9,16 +9,20 @@ const HeroSlider = () => {
 
         const slides = [
         {
-          image: "https://ik.imagekit.io/folicea/images%20(3).jpeg?updatedAt=1755892413724",
-          alt: "FOLICEA Images 3"
+          image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/IMG-20250826-WA0038.jpg?updatedAt=1756227156116",
+          alt: "FOLICEA Summit Image 1"
         },
         {
-          image: "https://ik.imagekit.io/folicea/images%20(2).jpeg?updatedAt=1755892413681",
-          alt: "FOLICEA Images 2"
+          image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/IMG-20250826-WA0044.jpg?updatedAt=1756227161744",
+          alt: "FOLICEA Summit Image 2"
         },
         {
-          image: "https://ik.imagekit.io/folicea/most.jpg?updatedAt=1755892413827",
-          alt: "FOLICEA Most"
+          image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/uganda.avif?updatedAt=1756227168644",
+          alt: "Uganda"
+        },
+        {
+          image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/slide.webp?updatedAt=1756227164525",
+          alt: "FOLICEA Summit Slide"
         }
       ];
 
