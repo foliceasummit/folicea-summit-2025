@@ -6,6 +6,7 @@ import Countdown from '../components/Countdown';
 import HeroSlider from '../components/HeroSlider';
 
 const HomePage = () => {
+  // Trigger redeploy with environment variables
   const features = [
     {
       icon: <Users className="w-8 h-8" />,
