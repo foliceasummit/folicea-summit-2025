@@ -384,8 +384,12 @@ const HomePage = () => {
                     alt={partner.name}
                     className="max-h-full max-w-full object-contain"
                     onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextSibling.style.display = 'block';
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const nextSibling = target.nextSibling as HTMLElement;
+                      if (nextSibling) {
+                        nextSibling.style.display = 'block';
+                      }
                     }}
                   />
                   <div className="hidden text-liberian-red font-semibold text-lg">
@@ -432,8 +436,12 @@ const HomePage = () => {
                       alt={sponsor.name}
                       className="max-h-full max-w-full object-contain"
                       onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.nextSibling.style.display = 'block';
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const nextSibling = target.nextSibling as HTMLElement;
+                        if (nextSibling) {
+                          nextSibling.style.display = 'block';
+                        }
                       }}
                     />
                     <div className="hidden text-liberian-red font-semibold text-lg">
