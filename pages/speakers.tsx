@@ -6,7 +6,7 @@ const SpeakersPage = () => {
     {
       name: "H.E. Dr. Jeremiah Kpan Koung",
       title: "Vice President of Liberia",
-      image: "https://ik.imagekit.io/folicea/Jeremiah%20Kpan%20Koung.webp?updatedAt=1755893149221",
+              image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/VP%20Koon.jpg?updatedAt=1756252471149",
       bio: "His Excellency Dr. Jeremiah Kpan Koung serves as the Vice President of Liberia, bringing extensive experience in governance and public service to the FOLICEA Summit.",
       topics: ["Liberian Diaspora Engagement", "Government Relations", "Development Strategies"],
       social: {
