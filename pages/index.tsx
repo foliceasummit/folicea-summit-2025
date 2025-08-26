@@ -78,67 +78,57 @@ const HomePage = () => {
 
   return (
     <div>
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-liberian-blue to-liberian-red">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: 'url("https://ik.imagekit.io/folicea/images%20(3).jpeg?updatedAt=1755892413724")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-liberian-blue/80 to-liberian-red/80"></div>
-        </div>
+      {/* Hero Section with Slider */}
+      <section className="relative min-h-screen">
+        <HeroSlider />
         
-        <div className="relative z-10 container-custom text-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+        {/* Hero Content Overlay */}
+        <div className="absolute inset-0 z-10 flex items-center justify-center pt-20">
+          <div className="container-custom text-center text-white">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-5xl md:text-7xl font-bold mb-6">
+                FOLICEA Summit 2025
+              </h1>
+              
+              <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                Federation of Liberian Communities in East Africa
+              </p>
 
-            
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              FOLICEA Summit 2025
-            </h1>
-            
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              Federation of Liberian Communities in East Africa
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
-              <div className="flex items-center justify-center space-x-3">
-                <Calendar className="w-6 h-6" />
-                <span className="text-lg">November 28 - December 1, 2025</span>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
+                <div className="flex items-center justify-center space-x-3">
+                  <Calendar className="w-6 h-6" />
+                  <span className="text-lg">November 28 - December 1, 2025</span>
+                </div>
+                <div className="flex items-center justify-center space-x-3">
+                  <MapPin className="w-6 h-6" />
+                  <span className="text-lg">Kampala Serena Hotel, Uganda</span>
+                </div>
+                <div className="flex items-center justify-center space-x-3">
+                  <Users className="w-6 h-6" />
+                  <span className="text-lg">Liberians across East Africa & Friends</span>
+                </div>
               </div>
-              <div className="flex items-center justify-center space-x-3">
-                <MapPin className="w-6 h-6" />
-                <span className="text-lg">Kampala Serena Hotel, Uganda</span>
+
+              <Countdown />
+
+              <p className="text-lg mt-8 mb-12 max-w-2xl mx-auto">
+                Don't miss this historic gathering of the Liberian diaspora in East Africa
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/registration" className="btn-primary text-lg px-8 py-4">
+                  Register Now
+                </Link>
+                <Link href="/about" className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-liberian-red">
+                  Learn More
+                </Link>
               </div>
-              <div className="flex items-center justify-center space-x-3">
-                <Users className="w-6 h-6" />
-                <span className="text-lg">Liberians across East Africa & Friends</span>
-              </div>
-            </div>
-
-            <Countdown />
-
-            <p className="text-lg mt-8 mb-12 max-w-2xl mx-auto">
-              Don't miss this historic gathering of the Liberian diaspora in East Africa
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/registration" className="btn-primary text-lg px-8 py-4">
-                Register Now
-              </Link>
-              <Link href="/about" className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-liberian-red">
-                Learn More
-              </Link>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
