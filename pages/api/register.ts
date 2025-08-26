@@ -45,7 +45,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     // Prepare registration data
-    const registrationData = {
+    const registrationData: any = {
       firstName: fields.firstName[0],
       lastName: fields.lastName[0],
       email: fields.email[0],
