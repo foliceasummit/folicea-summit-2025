@@ -23,7 +23,8 @@ const ContactPage = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('/api/contact', {
+      // Formspree submission (much simpler and more reliable)
+      const response = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

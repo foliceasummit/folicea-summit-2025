@@ -73,20 +73,19 @@ const RegistrationPage = () => {
     setIsSubmitting(true);
     
     try {
-      const formData = new FormData();
-      
-      // Append all form data
-      Object.keys(data).forEach(key => {
-        if (key === 'profilePhoto' && profilePhoto) {
-          formData.append('profilePhoto', profilePhoto);
-        } else if (key !== 'profilePhoto') {
-          formData.append(key, data[key as keyof RegistrationForm] as string);
-        }
-      });
+      // Prepare data for Formspree (excluding profile photo for now)
+      const formData = {
+        ...data,
+        profilePhoto: profilePhoto ? profilePhoto.name : 'No photo uploaded',
+        submittedAt: new Date().toISOString()
+      };
 
-      const response = await fetch('/api/register', {
+      const response = await fetch('https://formspree.io/f/YOUR_REGISTRATION_FORMSPREE_ID', {
         method: 'POST',
-        body: formData,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
