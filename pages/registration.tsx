@@ -77,10 +77,13 @@ const RegistrationPage = () => {
       const formData = new FormData();
       formData.append('access_key', 'e74266af-617b-4d91-8b63-b34274a06806');
       
-      // Add all form data
-      Object.entries(data).forEach(([key, value]) => {
-        formData.append(key, value);
-      });
+      // Add essential form data first (without file to test)
+      formData.append('firstName', data.firstName);
+      formData.append('lastName', data.lastName);
+      formData.append('email', data.email);
+      formData.append('phone', data.phone);
+      formData.append('subject', 'FOLICEA Summit 2025 Registration');
+      formData.append('message', `New registration from ${data.firstName} ${data.lastName}`);
       
       // Add profile photo if uploaded
       if (profilePhoto) {
@@ -89,13 +92,22 @@ const RegistrationPage = () => {
       
       formData.append('submittedAt', new Date().toISOString());
 
+      console.log('Submitting registration form...');
+
       // Use Web3Forms - supports file uploads and works with Vercel
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         body: formData,
       });
 
+      console.log('Response status:', response.status);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const result = await response.json();
+      console.log('Web3Forms response:', result);
       
       if (result.success) {
         setSubmitSuccess(true);
@@ -103,11 +115,11 @@ const RegistrationPage = () => {
         setProfilePhoto(null);
         setProfilePhotoPreview('');
       } else {
-        throw new Error('Registration failed');
+        throw new Error(`Registration failed: ${result.message || 'Unknown error'}`);
       }
     } catch (error) {
       console.error('Registration error:', error);
-      alert('Registration failed. Please try again.');
+      alert(`Registration failed: ${error instanceof Error ? error.message : 'Please try again.'}`);
     } finally {
       setIsSubmitting(false);
     }
