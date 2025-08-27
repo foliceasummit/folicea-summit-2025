@@ -62,7 +62,7 @@ const HeroSlider = () => {
           backgroundRepeat: 'no-repeat'
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-liberian-blue/80 to-liberian-red/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-liberian-blue/30 to-liberian-red/30"></div>
       </div>
 
       {/* Navigation Arrows */}
