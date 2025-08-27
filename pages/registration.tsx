@@ -3,12 +3,10 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
-import { Upload, Calendar, MapPin, User, Building, Briefcase, Car, Bed, Utensils, Shirt } from 'lucide-react';
-import { useDropzone } from 'react-dropzone';
+import { Calendar, MapPin, User, Building, Briefcase, Car, Bed, Utensils, Shirt } from 'lucide-react';
 
 interface RegistrationForm {
   // Personal Information
-  profilePhoto: File | null;
   firstName: string;
   lastName: string;
   email: string;
@@ -43,31 +41,9 @@ interface RegistrationForm {
 const RegistrationPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [profilePhoto, setProfilePhoto] = useState<File | null>(null);
-  const [profilePhotoPreview, setProfilePhotoPreview] = useState<string>('');
+  const [registeredData, setRegisteredData] = useState<{name: string, email: string} | null>(null);
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm<RegistrationForm>();
-
-  const onDrop = (acceptedFiles: File[]) => {
-    const file = acceptedFiles[0];
-    if (file) {
-      setProfilePhoto(file);
-      const reader = new FileReader();
-      reader.onload = () => {
-        setProfilePhotoPreview(reader.result as string);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    onDrop,
-    accept: {
-      'image/*': ['.jpeg', '.jpg', '.png']
-    },
-    maxFiles: 1,
-    maxSize: 5242880 // 5MB
-  });
 
   const onSubmit = async (data: RegistrationForm) => {
     setIsSubmitting(true);
@@ -109,29 +85,18 @@ Expectations: ${data.expectations}
 
 Contributions: ${data.contributions}
 
-Profile Photo: ${profilePhoto ? `Uploaded - ${profilePhoto.name} (${(profilePhoto.size / 1024 / 1024).toFixed(2)} MB)` : 'Not uploaded'}
+Profile Photo: Will be uploaded separately via photo upload link
 
 Registration submitted at: ${new Date().toISOString()}
       `;
 
-      // Create FormData for file upload support
+      // Create FormData for Web3Forms submission
       const formData = new FormData();
       formData.append('access_key', 'e74266af-617b-4d91-8b63-b34274a06806');
       formData.append('name', `${data.firstName} ${data.lastName}`);
       formData.append('email', data.email);
       formData.append('subject', 'FOLICEA Summit 2025 Registration');
       formData.append('message', registrationMessage);
-      
-      // Add profile photo if uploaded
-      if (profilePhoto) {
-        // Try multiple field names that Web3Forms might accept
-        formData.append('file', profilePhoto);
-        formData.append('attachment', profilePhoto);
-        formData.append('photo', profilePhoto);
-        console.log('Photo added to form with multiple field names:', profilePhoto.name, profilePhoto.size);
-      } else {
-        console.log('No photo uploaded');
-      }
 
       console.log('Submitting registration form with FormData...');
 
@@ -161,9 +126,11 @@ Registration submitted at: ${new Date().toISOString()}
       
       if (result.success) {
         setSubmitSuccess(true);
+        setRegisteredData({
+          name: `${data.firstName} ${data.lastName}`,
+          email: data.email
+        });
         reset();
-        setProfilePhoto(null);
-        setProfilePhotoPreview('');
       } else {
         throw new Error(`Registration failed: ${result.message || 'Unknown error'}`);
       }
@@ -184,13 +151,29 @@ Registration submitted at: ${new Date().toISOString()}
           <p className="text-gray-600 mb-6">
           Thank you for registering for the FOLICEA Summit 2025! You will receive a confirmation email shortly after your payment is completed.
           </p>
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+            <h3 className="font-semibold text-blue-800 mb-2">📸 Upload Your Photo</h3>
+            <p className="text-sm text-blue-700 mb-3">
+              After payment confirmation, you'll receive a link to upload your profile photo for your summit badge.
+            </p>
+            <a 
+              href={`/photo-upload.html?name=${encodeURIComponent(registeredData?.name || '')}&email=${encodeURIComponent(registeredData?.email || '')}`}
+              target="_blank"
+              className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors"
+            >
+              Upload Photo Now
+            </a>
+          </div>
           <p className="text-sm text-gray-500 mb-6">
           To complete your registration, please send your payment via MoMo to: 0792109775, or use MoMo Code: XYZ123. 
           After payment, kindly send a screenshot to our WhatsApp: +231 776 038 583. 
           For any inquiries, please call: +250 792 100 775.
           </p>
           <button
-            onClick={() => setSubmitSuccess(false)}
+            onClick={() => {
+              setSubmitSuccess(false);
+              setRegisteredData(null);
+            }}
             className="btn-primary w-full"
           >
             Register Another Person
@@ -276,36 +259,20 @@ Registration submitted at: ${new Date().toISOString()}
                 Personal Information
               </h2>
               
-              {/* Profile Photo Upload */}
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Profile Photo * (White background preferred)
-                </label>
-                <div
-                  {...getRootProps()}
-                  className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-colors ${
-                    isDragActive ? 'border-liberian-red bg-red-50' : 'border-gray-300 hover:border-liberian-red'
-                  }`}
-                >
-                  <input {...getInputProps()} />
-                  {profilePhotoPreview ? (
-                    <div className="space-y-4">
-                      <img
-                        src={profilePhotoPreview}
-                        alt="Profile preview"
-                        className="w-32 h-32 mx-auto rounded-full object-cover border-4 border-liberian-red"
-                      />
-                      <p className="text-sm text-gray-600">Click to change photo</p>
+              {/* Photo Upload Notice */}
+              <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0">
+                    <svg className="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div className="ml-3">
+                    <h3 className="text-sm font-medium text-blue-800">Photo Upload</h3>
+                    <div className="mt-2 text-sm text-blue-700">
+                      <p>After registration, you'll receive a link to upload your profile photo. This will be used for your summit badge and participant directory.</p>
                     </div>
-                  ) : (
-                    <div className="space-y-4">
-                      <Upload className="w-12 h-12 mx-auto text-gray-400" />
-                      <p className="text-gray-600">
-                        {isDragActive ? 'Drop the photo here' : 'Click to upload or drag and drop'}
-                      </p>
-                      <p className="text-sm text-gray-500">PNG, JPG, JPEG up to 10MB</p>
-                    </div>
-                  )}
+                  </div>
                 </div>
               </div>
 
