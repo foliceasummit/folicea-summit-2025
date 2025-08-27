@@ -80,7 +80,7 @@ const RegistrationPage = () => {
         submittedAt: new Date().toISOString()
       };
 
-      const response = await fetch('https://formspree.io/f/YOUR_REGISTRATION_FORMSPREE_ID', {
+      const response = await fetch('https://formspree.io/f/xqadkryp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
