@@ -83,47 +83,59 @@ const HomePage = () => {
         <HeroSlider />
         
         {/* Hero Content Overlay */}
-        <div className="absolute inset-0 z-10 flex items-center justify-center pt-32">
-          <div className="container-custom text-center text-white">
+        <div className="absolute inset-0 z-10 flex flex-col justify-center pt-20 pb-8">
+          <div className="container-custom text-center text-white flex-1 flex flex-col justify-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              className="max-w-6xl mx-auto px-4"
             >
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 px-4">
-                FOLICEA Summit 2025
-              </h1>
-              
-              <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-3xl mx-auto px-4">
-                Federation of Liberian Communities in East Africa
-              </p>
+              {/* Main Title */}
+              <div className="mb-8">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6">
+                  FOLICEA Summit 2025
+                </h1>
+                
+                <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
+                  Federation of Liberian Communities in East Africa
+                </p>
+              </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12 max-w-4xl mx-auto px-4">
-                <div className="flex items-center justify-center space-x-2 sm:space-x-3">
+              {/* Event Details */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10 max-w-5xl mx-auto">
+                <div className="flex items-center justify-center space-x-2 sm:space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
                   <Calendar className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
-                  <span className="text-sm sm:text-lg text-center">November 28 - December 1, 2025</span>
+                  <span className="text-sm sm:text-lg text-center font-medium">November 28 - December 1, 2025</span>
                 </div>
-                <div className="flex items-center justify-center space-x-2 sm:space-x-3">
+                <div className="flex items-center justify-center space-x-2 sm:space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
                   <MapPin className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
-                  <span className="text-sm sm:text-lg text-center">Kampala Serena Hotel, Uganda</span>
+                  <span className="text-sm sm:text-lg text-center font-medium">Kampala Serena Hotel, Uganda</span>
                 </div>
-                <div className="flex items-center justify-center space-x-2 sm:space-x-3">
+                <div className="flex items-center justify-center space-x-2 sm:space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
                   <Users className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
-                  <span className="text-sm sm:text-lg text-center">Liberians across East Africa & Friends</span>
+                  <span className="text-sm sm:text-lg text-center font-medium">Liberians across East Africa & Friends</span>
                 </div>
               </div>
 
-              <Countdown />
+              {/* Countdown */}
+              <div className="mb-8 sm:mb-10">
+                <Countdown />
+              </div>
 
-              <p className="text-base sm:text-lg mt-6 sm:mt-8 mb-8 sm:mb-12 max-w-2xl mx-auto px-4">
-                Don't miss this historic gathering of the Liberian diaspora in East Africa
-              </p>
+              {/* Call to Action */}
+              <div className="mb-8 sm:mb-10">
+                <p className="text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+                  Don't miss this historic gathering of the Liberian diaspora in East Africa
+                </p>
+              </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
-                <Link href="/registration" className="btn-primary text-lg px-8 py-4">
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                <Link href="/registration" className="btn-primary text-lg px-8 py-4 shadow-lg">
                   Register Now
                 </Link>
-                <Link href="/about" className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-liberian-red">
+                <Link href="/about" className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-liberian-red shadow-lg">
                   Learn More
                 </Link>
               </div>
@@ -133,7 +145,7 @@ const HomePage = () => {
       </section>
 
       {/* About FOLICEA Section */}
-      <section className="section-padding bg-white pt-20">
+      <section className="section-padding bg-white pt-24 sm:pt-32">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
