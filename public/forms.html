@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FOLICEA Forms</title>
+</head>
+<body>
+  <!-- Contact Form -->
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contact" />
+    <p class="hidden">
+      <label>
+        Don't fill this out if you're human: <input name="bot-field" />
+      </label>
+    </p>
+    <p>
+      <label>Name: <input type="text" name="name" /></label>
+    </p>
+    <p>
+      <label>Email: <input type="email" name="email" /></label>
+    </p>
+    <p>
+      <label>Subject: <input type="text" name="subject" /></label>
+    </p>
+    <p>
+      <label>Message: <textarea name="message"></textarea></label>
+    </p>
+    <p>
+      <button type="submit">Send</button>
+    </p>
+  </form>
+
+  <!-- Registration Form -->
+  <form name="registration" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+    <input type="hidden" name="form-name" value="registration" />
+    <p class="hidden">
+      <label>
+        Don't fill this out if you're human: <input name="bot-field" />
+      </label>
+    </p>
+    <p>
+      <label>Profile Photo: <input type="file" name="profilePhoto" /></label>
+    </p>
+    <p>
+      <label>First Name: <input type="text" name="firstName" /></label>
+    </p>
+    <p>
+      <label>Last Name: <input type="text" name="lastName" /></label>
+    </p>
+    <p>
+      <label>Email: <input type="email" name="email" /></label>
+    </p>
+    <p>
+      <label>Phone: <input type="tel" name="phone" /></label>
+    </p>
+    <p>
+      <label>Date of Birth: <input type="date" name="dateOfBirth" /></label>
+    </p>
+    <p>
+      <label>Nationality: <input type="text" name="nationality" /></label>
+    </p>
+    <p>
+      <label>Current Country: <select name="currentCountry">
+        <option value="Rwanda">Rwanda</option>
+        <option value="Kenya">Kenya</option>
+        <option value="Tanzania">Tanzania</option>
+        <option value="Uganda">Uganda</option>
+        <option value="Liberia">Liberia</option>
+        <option value="Other">Other</option>
+      </select></label>
+    </p>
+    <p>
+      <label>City: <input type="text" name="city" /></label>
+    </p>
+    <p>
+      <label>Occupation: <input type="text" name="occupation" /></label>
+    </p>
+    <p>
+      <label>Organization: <input type="text" name="organization" /></label>
+    </p>
+    <p>
+      <label>Years of Experience: <select name="yearsOfExperience">
+        <option value="0-2">0-2 years</option>
+        <option value="3-5">3-5 years</option>
+        <option value="6-10">6-10 years</option>
+        <option value="11-15">11-15 years</option>
+        <option value="16+">16+ years</option>
+      </select></label>
+    </p>
+    <p>
+      <label>Expectations: <textarea name="expectations"></textarea></label>
+    </p>
+    <p>
+      <label>Contributions: <textarea name="contributions"></textarea></label>
+    </p>
+    <p>
+      <label>Arrival Date: <input type="date" name="arrivalDate" /></label>
+    </p>
+    <p>
+      <label>Arrival Time: <input type="time" name="arrivalTime" /></label>
+    </p>
+    <p>
+      <label>Mode of Travel: <select name="modeOfTravel">
+        <option value="Flight">Flight</option>
+        <option value="Bus">Bus</option>
+        <option value="Car">Car</option>
+        <option value="Other">Other</option>
+      </select></label>
+    </p>
+    <p>
+      <label>Flight/Bus Number: <input type="text" name="flightBusNumber" /></label>
+    </p>
+    <p>
+      <label>Room Preference: <select name="roomPreference">
+        <option value="Single">Single Room</option>
+        <option value="Double">Double Room</option>
+        <option value="Shared">Shared Room</option>
+        <option value="No Accommodation">No Accommodation Needed</option>
+      </select></label>
+    </p>
+    <p>
+      <label>Mobility Access: <input type="checkbox" name="mobilityAccess" /></label>
+    </p>
+    <p>
+      <label>Food Preference: <select name="foodPreference">
+        <option value="Regular">Regular</option>
+        <option value="Vegetarian">Vegetarian</option>
+        <option value="Vegan">Vegan</option>
+        <option value="Halal">Halal</option>
+        <option value="Kosher">Kosher</option>
+        <option value="Other">Other</option>
+      </select></label>
+    </p>
+    <p>
+      <label>Food Allergies: <input type="text" name="foodAllergies" /></label>
+    </p>
+    <p>
+      <label>T-Shirt Size: <select name="tshirtSize">
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="XXL">XXL</option>
+        <option value="XXXL">XXXL</option>
+      </select></label>
+    </p>
+    <p>
+      <label>T-Shirt Color: <select name="tshirtColor">
+        <option value="White">White</option>
+        <option value="Black">Black</option>
+        <option value="Navy">Navy</option>
+        <option value="Red">Red</option>
+        <option value="Blue">Blue</option>
+        <option value="Gray">Gray</option>
+      </select></label>
+    </p>
+    <p>
+      <button type="submit">Submit Registration</button>
+    </p>
+  </form>
+</body>
+</html>

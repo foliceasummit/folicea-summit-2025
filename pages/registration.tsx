@@ -73,19 +73,26 @@ const RegistrationPage = () => {
     setIsSubmitting(true);
     
     try {
-      // Prepare data for Formspree (excluding profile photo for now)
-      const formData = {
-        ...data,
-        profilePhoto: profilePhoto ? profilePhoto.name : 'No photo uploaded',
-        submittedAt: new Date().toISOString()
-      };
+      // Create FormData for file upload support
+      const formData = new FormData();
+      formData.append('form-name', 'registration');
+      
+      // Add all form data
+      Object.entries(data).forEach(([key, value]) => {
+        formData.append(key, value);
+      });
+      
+      // Add profile photo if uploaded
+      if (profilePhoto) {
+        formData.append('profilePhoto', profilePhoto);
+      }
+      
+      formData.append('submittedAt', new Date().toISOString());
 
-      const response = await fetch('https://formspree.io/f/xqadkryp', {
+      // Use Netlify Forms - supports file uploads
+      const response = await fetch('/', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        body: formData,
       });
 
       if (response.ok) {
@@ -195,7 +202,21 @@ const RegistrationPage = () => {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-2xl shadow-xl p-8">
+                     <form 
+             name="registration" 
+             method="POST" 
+             data-netlify="true" 
+             netlify-honeypot="bot-field"
+             encType="multipart/form-data"
+             onSubmit={handleSubmit(onSubmit)} 
+             className="bg-white rounded-2xl shadow-xl p-8"
+           >
+             <input type="hidden" name="form-name" value="registration" />
+             <p className="hidden">
+               <label>
+                 Don't fill this out if you're human: <input name="bot-field" />
+               </label>
+             </p>
             {/* Personal Information Section */}
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
