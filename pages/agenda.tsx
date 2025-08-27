@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, Clock, Users, MapPin, BookOpen, Briefcase, Award, Coffee, Utensils } from 'lucide-react';
+import { Calendar, Clock, Users, MapPin, BookOpen, Briefcase, Award, Coffee, Utensils, Globe } from 'lucide-react';
 
 const AgendaPage = () => {
   const agenda = [
@@ -391,6 +391,189 @@ const AgendaPage = () => {
               </div>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* Venue Information */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Everything You Need to Know About the Summit Location
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Venue details and important information for all participants
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Venue Details */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-gradient-to-r from-liberian-blue to-liberian-red text-white rounded-2xl p-8">
+                <h3 className="text-2xl font-bold mb-6">Venue Information</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <MapPin className="w-6 h-6 text-yellow-300 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-lg">Kampala Serena Hotel</h4>
+                      <p className="text-white/90">Kintu Road, Kampala, Uganda</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <Calendar className="w-6 h-6 text-yellow-300 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-lg">Date & Time</h4>
+                      <p className="text-white/90">November 28 - 30, 2025</p>
+                      <p className="text-white/90">8:00 AM - 6:00 PM Daily</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <Users className="w-6 h-6 text-yellow-300 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold text-lg">Capacity</h4>
+                      <p className="text-white/90">500+ Participants</p>
+                      <p className="text-white/90">Multiple Conference Rooms</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Expected Outcomes */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Expected Outcomes</h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+                  <Award className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
+                  <p className="text-gray-700">Formal launch and operationalization of FOLICEA.</p>
+                </div>
+                <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+                  <Award className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
+                  <p className="text-gray-700">Election and inauguration of a representative leadership body.</p>
+                </div>
+                <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+                  <Award className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
+                  <p className="text-gray-700">Enhanced economic empowerment through business and tech engagement.</p>
+                </div>
+                <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+                  <Award className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
+                  <p className="text-gray-700">Strengthened inter-community and regional collaboration.</p>
+                </div>
+                <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg">
+                  <Award className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
+                  <p className="text-gray-700">Adoption of a strategic development plan for FOLICEA.</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Participants Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Participants
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              A diverse gathering of stakeholders committed to diaspora development
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
+              <div className="text-liberian-red mb-4">
+                <Users className="w-12 h-12" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Liberians in East Africa</h3>
+              <p className="text-gray-600">Liberians residing across East Africa, representing diverse communities and backgrounds.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
+              <div className="text-liberian-red mb-4">
+                <Award className="w-12 h-12" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Government Representatives</h3>
+              <p className="text-gray-600">Representatives of the Liberian Government, National Leaders, and the Diaspora Affairs Office.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
+              <div className="text-liberian-red mb-4">
+                <Briefcase className="w-12 h-12" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Diaspora Organizations</h3>
+              <p className="text-gray-600">Including IMO and Civil Society Groups working for diaspora development.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
+              <div className="text-liberian-red mb-4">
+                <Globe className="w-12 h-12" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">East African Representatives</h3>
+              <p className="text-gray-600">East African Government Representatives and regional stakeholders.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
+              <div className="text-liberian-red mb-4">
+                <BookOpen className="w-12 h-12" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Business Leaders</h3>
+              <p className="text-gray-600">Business Leaders, Investors, and Development Partners from across the region.</p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
