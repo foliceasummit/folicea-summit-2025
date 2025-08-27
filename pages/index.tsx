@@ -7,8 +7,7 @@ import HeroSlider from '../components/HeroSlider';
 
 const HomePage = () => {
   // Trigger redeploy with environment variables
-  // Ready for SendGrid integration
-  // Fresh deploy with SendGrid API key
+  // FOLICEA Summit 2025 - Homepage
   const features = [
     {
       icon: <Users className="w-8 h-8" />,

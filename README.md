@@ -5,30 +5,29 @@ The official website for the Federation of Liberian Communities in East Africa (
 ## 🌟 Features
 
 - **Modern, Responsive Design** - Beautiful UI with Liberian colors (red, white, blue)
-- **Registration System** - Comprehensive registration form with file upload
-- **Email Notifications** - Automatic confirmation emails to registrants and organizers
+- **Registration System** - Comprehensive registration form with Web3Forms
+- **Email Notifications** - Automatic confirmation emails via Web3Forms
 - **Contact Form** - Easy communication with the organizing committee
 - **Countdown Timer** - Real-time countdown to the summit
 - **Mobile-Friendly** - Optimized for all devices
-- **Admin Panel** - Protected admin area for organizers (coming soon)
+- **File Upload Support** - Profile photo uploads in registration
 
 ## 🚀 Tech Stack
 
 - **Frontend**: Next.js 14, React 18, TypeScript
 - **Styling**: Tailwind CSS
-- **Database**: MongoDB Atlas
-- **Email**: Nodemailer with Gmail SMTP
+- **Forms**: Web3Forms (free tier with 250 submissions/month)
 - **File Upload**: React Dropzone
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
 - **Forms**: React Hook Form
+- **Hosting**: Vercel
 
 ## 📋 Prerequisites
 
 - Node.js 18+ 
 - npm or yarn
-- MongoDB Atlas account
-- Gmail account (for email sending)
+- Web3Forms account (free)
 
 ## 🛠️ Installation
 
@@ -45,20 +44,10 @@ The official website for the Federation of Liberian Communities in East Africa (
    yarn install
    ```
 
-3. **Set up environment variables**
-   ```bash
-   cp env.example .env.local
-   ```
-   
-   Edit `.env.local` with your configuration:
-   ```env
-   MONGODB_URI=your-mongodb-connection-string
-   EMAIL_USER=your-gmail@gmail.com
-   EMAIL_PASS=your-gmail-app-password
-   NEXTAUTH_SECRET=your-secret-key
-   ADMIN_USERNAME=admin
-   ADMIN_PASSWORD=your-secure-password
-   ```
+3. **Set up Web3Forms**
+   - Go to [web3forms.com](https://web3forms.com)
+   - Get your free API key
+   - Update the access key in the form components
 
 4. **Run the development server**
    ```bash
@@ -70,23 +59,14 @@ The official website for the Federation of Liberian Communities in East Africa (
 5. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 📧 Email Setup
+## 📧 Form Setup
 
-To enable email functionality:
+The website uses Web3Forms for form handling:
 
-1. **Enable 2-Factor Authentication** on your Gmail account
-2. **Generate an App Password**:
-   - Go to Google Account settings
-   - Security → 2-Step Verification → App passwords
-   - Generate a password for "Mail"
-3. **Use the app password** in your `.env.local` file
-
-## 🗄️ Database Setup
-
-1. **Create a MongoDB Atlas account** at [mongodb.com](https://mongodb.com)
-2. **Create a new cluster**
-3. **Get your connection string** and add it to `.env.local`
-4. **The database and collections will be created automatically**
+1. **Contact Form** - Sends messages to your email
+2. **Registration Form** - Collects registration data with file uploads
+3. **Free Tier** - 250 submissions/month included
+4. **Email Notifications** - Automatic emails for each submission
 
 ## 📱 Pages & Features
 
@@ -99,97 +79,39 @@ To enable email functionality:
 
 ### Registration (`/registration`)
 - Comprehensive registration form
-- File upload for profile photos
-- Form validation
-- Success confirmation
-
-### About (`/about`)
-- FOLICEA mission and vision
-- Core values
-- Summit objectives
-- Why Uganda section
-
-### Speakers (`/speakers`)
-- Featured speakers with photos
-- Speaker categories
-- Speaker bios and topics
-
-### Agenda (`/agenda`)
-- 4-day detailed schedule
-- Event types and descriptions
-- Venue information
+- Profile photo upload
+- Travel and accommodation details
+- Dietary preferences
+- T-shirt sizing
 
 ### Contact (`/contact`)
-- Contact form
-- Venue details
-- Contact information
+- Contact form for inquiries
+- Venue information
+- Google Maps integration
+- Contact details
 
-## 🔧 API Routes
+### Other Pages
+- **Speakers** (`/speakers`) - Meet the summit speakers
+- **Agenda** (`/agenda`) - Event schedule
+- **News** (`/news`) - Latest updates
+- **FAQs** (`/faqs`) - Frequently asked questions
+- **About** (`/about`) - About FOLICEA
 
-- `/api/register` - Handles registration form submissions
-- `/api/contact` - Handles contact form submissions
-- `/api/admin/*` - Admin panel routes (coming soon)
+## 🚀 Deployment
 
-## 🎨 Customization
+The website is deployed on Vercel:
 
-### Colors
-The website uses Liberian flag colors:
-- Red: `#BF0A30`
-- Blue: `#002868`
-- White: `#FFFFFF`
+1. **Connect your GitHub repository** to Vercel
+2. **Automatic deployments** on every push
+3. **Live at**: https://folicea.vercel.app
 
-### Styling
-- Tailwind CSS classes
-- Custom components in `components/` directory
-- Global styles in `styles/globals.css`
+## 📞 Contact
 
-## 📦 Deployment
-
-### Vercel (Recommended)
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Add environment variables in Vercel dashboard
-4. Deploy automatically on every push
-
-### Other Platforms
-The app can be deployed to any platform that supports Next.js:
-- Netlify
-- Railway
-- DigitalOcean App Platform
-- AWS Amplify
-
-## 🔒 Security
-
-- Form validation on both client and server
-- Environment variables for sensitive data
-- Protected admin routes (coming soon)
-- File upload restrictions
-
-## 📞 Support
-
-For technical support or questions:
+For support or questions:
 - Email: foliceasummit@gmail.com
-- Phone: +231 0776038583 / +231 0888533208
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+- Phone: +250 792 109 775
+- WhatsApp: +231 776 038 583
 
 ## 📄 License
 
-This project is created for the FOLICEA Summit 2025. All rights reserved.
-
-## 🙏 Acknowledgments
-
-- FOLICEA organizing committee
-- Liberian diaspora community
-- Kampala Serena Hotel
-- All speakers and participants
-
----
-
-**FOLICEA Summit 2025** - Building bridges, strengthening bonds, creating lasting impact.
+This project is for the FOLICEA Summit 2025 organizing committee.
