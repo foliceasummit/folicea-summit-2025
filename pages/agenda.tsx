@@ -1,9 +1,11 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, Users, MapPin, BookOpen, Briefcase, Award, Coffee, Utensils, Globe } from 'lucide-react';
 
 const AgendaPage = () => {
+  const [activeDay, setActiveDay] = useState(0);
   const agenda = [
     {
       day: "Day 1",
@@ -317,96 +319,112 @@ const AgendaPage = () => {
         </div>
       </section>
 
-      {/* Agenda Content */}
-      <section className="section-padding">
-        <div className="container-custom">
-          {agenda.map((day, dayIndex) => (
-            <motion.div
-              key={dayIndex}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: dayIndex * 0.2 }}
-              viewport={{ once: true }}
-              className="mb-16"
-            >
-              {/* Day Header */}
-              <div className="text-center mb-12">
-                <div className="inline-flex items-center bg-liberian-red text-white px-6 py-3 rounded-full mb-4">
-                  <Calendar className="w-5 h-5 mr-2" />
-                  {day.day}
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                  {day.title}
-                </h2>
-                <p className="text-xl text-liberian-red font-semibold mb-2">
-                  {day.date}
-                </p>
-                <p className="text-lg text-gray-600">
-                  Theme: {day.theme}
-                </p>
-              </div>
+             {/* Agenda Content */}
+       <section className="section-padding">
+         <div className="container-custom">
+           {/* Day Tabs */}
+           <div className="flex justify-center mb-12">
+             <div className="bg-gray-100 rounded-lg p-2 flex space-x-2">
+               {agenda.map((day, dayIndex) => (
+                 <button
+                   key={dayIndex}
+                   onClick={() => setActiveDay(dayIndex)}
+                   className={`px-6 py-3 rounded-md font-semibold transition-all duration-300 ${
+                     activeDay === dayIndex
+                       ? 'bg-liberian-red text-white shadow-lg'
+                       : 'bg-white text-gray-600 hover:bg-gray-50'
+                   }`}
+                 >
+                   {day.day}
+                 </button>
+               ))}
+             </div>
+           </div>
 
-              {/* Events Timeline */}
-              <div className="relative">
-                {/* Timeline Line */}
-                <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-liberian-red"></div>
-                
-                {/* Events */}
-                <div className="space-y-8">
-                  {day.events.map((event, eventIndex) => (
-                    <motion.div
-                      key={eventIndex}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6, delay: eventIndex * 0.1 }}
-                      viewport={{ once: true }}
-                      className="relative flex items-start"
-                    >
-                      {/* Timeline Dot */}
-                      <div className="absolute left-6 w-4 h-4 bg-liberian-red rounded-full border-4 border-white shadow-lg"></div>
-                      
-                      {/* Event Content */}
-                      <div className="ml-16 bg-white rounded-xl shadow-lg p-6 flex-1 hover:shadow-xl transition-shadow duration-300">
-                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
-                          {/* Time */}
-                          <div className="flex items-center text-liberian-red font-semibold">
-                            <Clock className="w-4 h-4 mr-2" />
-                            {event.time}
-                          </div>
-                          
-                          {/* Event Type Badge */}
-                          <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium border ${getEventColor(event.type)}`}>
-                            {getEventIcon(event.type)}
-                            <span className="ml-1">{event.type}</span>
-                          </span>
-                        </div>
+           {/* Active Day Content */}
+           <motion.div
+             key={activeDay}
+             initial={{ opacity: 0, y: 20 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.5 }}
+             className="mb-16"
+           >
+             {/* Day Header */}
+             <div className="text-center mb-12">
+               <div className="inline-flex items-center bg-liberian-red text-white px-6 py-3 rounded-full mb-4">
+                 <Calendar className="w-5 h-5 mr-2" />
+                 {agenda[activeDay].day}
+               </div>
+               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                 {agenda[activeDay].title}
+               </h2>
+               <p className="text-xl text-liberian-red font-semibold mb-2">
+                 {agenda[activeDay].date}
+               </p>
+               <p className="text-lg text-gray-600">
+                 Theme: {agenda[activeDay].theme}
+               </p>
+             </div>
 
-                        {/* Title */}
-                        <h3 className="text-xl font-bold text-gray-900 mb-3">
-                          {event.title}
-                        </h3>
+             {/* Events Timeline */}
+             <div className="relative">
+               {/* Timeline Line */}
+               <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-liberian-red"></div>
+               
+               {/* Events */}
+               <div className="space-y-8">
+                 {agenda[activeDay].events.map((event, eventIndex) => (
+                   <motion.div
+                     key={eventIndex}
+                     initial={{ opacity: 0, x: -20 }}
+                     animate={{ opacity: 1, x: 0 }}
+                     transition={{ duration: 0.6, delay: eventIndex * 0.1 }}
+                     className="relative flex items-start"
+                   >
+                     {/* Timeline Dot */}
+                     <div className="absolute left-6 w-4 h-4 bg-liberian-red rounded-full border-4 border-white shadow-lg"></div>
+                     
+                     {/* Event Content */}
+                     <div className="ml-16 bg-white rounded-xl shadow-lg p-6 flex-1 hover:shadow-xl transition-shadow duration-300">
+                       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
+                         {/* Time */}
+                         <div className="flex items-center text-liberian-red font-semibold">
+                           <Clock className="w-4 h-4 mr-2" />
+                           {event.time}
+                         </div>
+                         
+                         {/* Event Type Badge */}
+                         <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium border ${getEventColor(event.type)}`}>
+                           {getEventIcon(event.type)}
+                           <span className="ml-1">{event.type}</span>
+                         </span>
+                       </div>
 
-                        {/* Description */}
-                        <p className="text-gray-600 mb-4">
-                          {event.description}
-                        </p>
+                       {/* Title */}
+                       <h3 className="text-xl font-bold text-gray-900 mb-3">
+                         {event.title}
+                       </h3>
 
-                        {/* Speakers */}
-                        {event.speakers && event.speakers.length > 0 && (
-                          <div className="flex items-center gap-2 text-sm text-gray-500">
-                            <Users className="w-4 h-4" />
-                            <span>Speakers: {event.speakers.join(', ')}</span>
-                          </div>
-                        )}
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+                       {/* Description */}
+                       <p className="text-gray-600 mb-4">
+                         {event.description}
+                       </p>
+
+                       {/* Speakers */}
+                       {event.speakers && event.speakers.length > 0 && (
+                         <div className="flex items-center gap-2 text-sm text-gray-500">
+                           <Users className="w-4 h-4" />
+                           <span>Speakers: {event.speakers.join(', ')}</span>
+                         </div>
+                       )}
+                     </div>
+                   </motion.div>
+                 ))}
+               </div>
+             </div>
+           </motion.div>
+         </div>
+       </section>
 
              {/* What's Included */}
        <section className="section-padding bg-gray-50">

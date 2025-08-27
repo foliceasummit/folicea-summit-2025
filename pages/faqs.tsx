@@ -24,19 +24,19 @@ const FAQsPage = () => {
     },
     {
       question: "What is the registration fee?",
-      answer: "Registration fees vary depending on your category (student, professional, sponsor, etc.). Please check the registration page for detailed pricing information."
+      answer: "The registration fee depends on your location. For residents of Uganda, the fee is $75. For participants outside Uganda, the fee is $100. Please visit the registration page for more details based on your category)."
     },
     {
       question: "How can I pay for my registration?",
-      answer: "Payment can be made via MoMo to 0792109775 or using MoMo Code XYZ123. You can also pay through visa card or contact our WhatsApp numbers: 231 0776038583 / 0888533208."
+      answer: "Payment can be made via MoMo to 0792109775 or using MoMo Code XYZ123 or contact our WhatsApp numbers: 231 0776 038 583."
     },
     {
       question: "What accommodation options are available?",
-      answer: "The summit will be held at the Kampala Serena Hotel, which offers various accommodation options. Special rates have been negotiated for summit attendees. You can also choose to stay at nearby hotels."
+      answer: "The summit offers various accommodation options. A shared room is included in your registration fee. If you prefer a private or double room, you will need to cover the additional cost. The summit committee can assist you in arranging accommodations close to the venue. Alternatively, you are welcome to book a room at a nearby hotel of your choice."
     },
     {
       question: "Will meals be provided during the summit?",
-      answer: "Yes, meals will be provided during the summit. The registration form includes dietary preference options to accommodate various dietary requirements."
+      answer: "Yes, meals will be provided during the summit. Breakfast and lunch will be served each day over the three days of the event."
     },
     {
       question: "What should I bring to the summit?",
@@ -48,7 +48,7 @@ const FAQsPage = () => {
     },
     {
       question: "Can I get a refund if I can't attend?",
-      answer: "Refund policies vary depending on the timing of cancellation. Please contact our team at foliceasummit@gmail.com for specific refund information."
+      answer: "Unfortunately, we do not offer refunds for cancellations. Please contact our team at foliceasummit@gmail.com if you have any questions or need further assistance."
     },
     {
       question: "How can I become a sponsor or partner?",
