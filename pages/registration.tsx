@@ -114,23 +114,30 @@ Profile Photo: ${profilePhoto ? `Uploaded - ${profilePhoto.name} (${(profilePhot
 Registration submitted at: ${new Date().toISOString()}
       `;
 
-      // Try JSON approach first (like the working contact form)
-      const jsonData = {
-        access_key: 'e74266af-617b-4d91-8b63-b34274a06806',
-        name: `${data.firstName} ${data.lastName}`,
-        email: data.email,
-        subject: 'FOLICEA Summit 2025 Registration',
-        message: registrationMessage
-      };
+      // Create FormData for file upload support
+      const formData = new FormData();
+      formData.append('access_key', 'e74266af-617b-4d91-8b63-b34274a06806');
+      formData.append('name', `${data.firstName} ${data.lastName}`);
+      formData.append('email', data.email);
+      formData.append('subject', 'FOLICEA Summit 2025 Registration');
+      formData.append('message', registrationMessage);
+      
+      // Add profile photo if uploaded
+      if (profilePhoto) {
+        // Try multiple field names that Web3Forms might accept
+        formData.append('file', profilePhoto);
+        formData.append('attachment', profilePhoto);
+        formData.append('photo', profilePhoto);
+        console.log('Photo added to form with multiple field names:', profilePhoto.name, profilePhoto.size);
+      } else {
+        console.log('No photo uploaded');
+      }
 
-      console.log('Submitting registration form as JSON...');
+      console.log('Submitting registration form with FormData...');
 
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(jsonData),
+        body: formData, // Don't set Content-Type header for FormData
       });
 
       console.log('Response status:', response.status);
@@ -141,6 +148,16 @@ Registration submitted at: ${new Date().toISOString()}
 
       const result = await response.json();
       console.log('Web3Forms response:', result);
+      
+      // Log FormData contents for debugging
+      console.log('FormData contents:');
+      formData.forEach((value, key) => {
+        if (value instanceof File) {
+          console.log(key, 'File:', value.name, value.size, value.type);
+        } else {
+          console.log(key, value);
+        }
+      });
       
       if (result.success) {
         setSubmitSuccess(true);

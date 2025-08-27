@@ -73,10 +73,9 @@ const AboutPage = () => {
                 Our Mission
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                To unite and empower the Liberian diaspora community across East Africa, 
-                fostering strong connections, promoting cultural heritage, and creating 
-                opportunities for mutual growth and development.
-              </p>
+              To unite and empower Liberian communities across East Africa through collaboration, advocacy, cultural preservation, 
+              fand sustainable development initiatives that enhance the welfare, identity, and solidarity of all Liberians residing in the region. 
+             </p>
               <p className="text-lg text-gray-600">
                 We strive to be a bridge between Liberia and East Africa, facilitating 
                 meaningful exchanges that benefit both our community and the broader 
@@ -189,7 +188,7 @@ const AboutPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-liberian-red text-white p-6 rounded-xl">
                   <h3 className="text-xl font-semibold mb-2">When</h3>
-                  <p>November 28 - December 1, 2025</p>
+                  <p>November 28 - 30 2025</p>
                 </div>
                 <div className="bg-liberian-blue text-white p-6 rounded-xl">
                   <h3 className="text-xl font-semibold mb-2">Where</h3>
