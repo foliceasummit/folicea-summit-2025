@@ -40,19 +40,19 @@ const Countdown = () => {
   ];
 
   return (
-    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-      <h3 className="text-2xl font-bold text-white text-center mb-8">
+    <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+      <h3 className="text-2xl font-bold text-white text-center mb-8 hover:text-yellow-300 transition-colors duration-300">
         Summit Countdown
       </h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {timeUnits.map((unit, index) => (
-          <div key={index} className="text-center">
-            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4 mb-2">
-              <div className="text-3xl md:text-4xl font-bold text-white">
+          <div key={index} className="text-center group">
+            <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4 mb-2 hover:bg-white/30 hover:scale-110 hover:shadow-lg transition-all duration-300 cursor-pointer">
+              <div className="text-3xl md:text-4xl font-bold text-white group-hover:text-yellow-300 transition-colors duration-300">
                 {unit.value.toString().padStart(2, '0')}
               </div>
             </div>
-            <div className="text-sm font-medium text-white/80 uppercase tracking-wider">
+            <div className="text-sm font-medium text-white/80 uppercase tracking-wider group-hover:text-white transition-colors duration-300">
               {unit.label}
             </div>
           </div>

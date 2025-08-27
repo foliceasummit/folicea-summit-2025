@@ -113,6 +113,8 @@ Expectations: ${data.expectations}
 
 Contributions: ${data.contributions}
 
+Profile Photo: ${profilePhoto ? `Uploaded - ${profilePhoto.name} (${(profilePhoto.size / 1024 / 1024).toFixed(2)} MB)` : 'Not uploaded'}
+
 Registration submitted at: ${new Date().toISOString()}
       `;
 
@@ -122,9 +124,11 @@ Registration submitted at: ${new Date().toISOString()}
       formData.append('subject', 'FOLICEA Summit 2025 Registration');
       formData.append('message', registrationMessage);
       
-      // Add profile photo if uploaded
+      // Temporarily disable file upload to test form submission
       if (profilePhoto) {
-        formData.append('profilePhoto', profilePhoto);
+        console.log('Photo selected but not uploaded due to Web3Forms limitations:', profilePhoto.name, profilePhoto.size);
+      } else {
+        console.log('No photo uploaded');
       }
 
       console.log('Submitting registration form with photo...');
@@ -143,6 +147,10 @@ Registration submitted at: ${new Date().toISOString()}
 
       const result = await response.json();
       console.log('Web3Forms response:', result);
+      console.log('FormData contents:');
+      formData.forEach((value, key) => {
+        console.log(key, value);
+      });
       
       if (result.success) {
         setSubmitSuccess(true);
@@ -455,10 +463,10 @@ Registration submitted at: ${new Date().toISOString()}
                   )}
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Organization/Company
-                  </label>
+                                 <div>
+                   <label className="block text-sm font-medium text-gray-700 mb-2">
+                     Organization/Institution
+                   </label>
                   <input
                     type="text"
                     {...register('organization')}
