@@ -90,36 +90,36 @@ const HomePage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-5xl md:text-7xl font-bold mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 px-4">
                 FOLICEA Summit 2025
               </h1>
               
-              <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+              <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-3xl mx-auto px-4">
                 Federation of Liberian Communities in East Africa
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
-                <div className="flex items-center justify-center space-x-3">
-                  <Calendar className="w-6 h-6" />
-                  <span className="text-lg">November 28 - December 1, 2025</span>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12 max-w-4xl mx-auto px-4">
+                <div className="flex items-center justify-center space-x-2 sm:space-x-3">
+                  <Calendar className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
+                  <span className="text-sm sm:text-lg text-center">November 28 - December 1, 2025</span>
                 </div>
-                <div className="flex items-center justify-center space-x-3">
-                  <MapPin className="w-6 h-6" />
-                  <span className="text-lg">Kampala Serena Hotel, Uganda</span>
+                <div className="flex items-center justify-center space-x-2 sm:space-x-3">
+                  <MapPin className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
+                  <span className="text-sm sm:text-lg text-center">Kampala Serena Hotel, Uganda</span>
                 </div>
-                <div className="flex items-center justify-center space-x-3">
-                  <Users className="w-6 h-6" />
-                  <span className="text-lg">Liberians across East Africa & Friends</span>
+                <div className="flex items-center justify-center space-x-2 sm:space-x-3">
+                  <Users className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
+                  <span className="text-sm sm:text-lg text-center">Liberians across East Africa & Friends</span>
                 </div>
               </div>
 
               <Countdown />
 
-              <p className="text-lg mt-8 mb-12 max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg mt-6 sm:mt-8 mb-8 sm:mb-12 max-w-2xl mx-auto px-4">
                 Don't miss this historic gathering of the Liberian diaspora in East Africa
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
                 <Link href="/registration" className="btn-primary text-lg px-8 py-4">
                   Register Now
                 </Link>
