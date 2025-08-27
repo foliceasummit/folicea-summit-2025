@@ -5,11 +5,10 @@ export default function Document() {
     <Html lang="en">
       <Head>
         {/* Favicon */}
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="icon" type="image/jpeg" href="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403" />
+        <link rel="icon" type="image/jpeg" sizes="32x32" href="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403" />
+        <link rel="icon" type="image/jpeg" sizes="16x16" href="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403" />
+        <link rel="apple-touch-icon" href="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403" />
         
         {/* Meta tags */}
         <meta name="theme-color" content="#BF0A30" />
@@ -22,13 +21,13 @@ export default function Document() {
         <meta property="og:description" content="Federation of Liberian Communities in East Africa Summit" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://folicea.vercel.app" />
-        <meta property="og:image" content="https://ik.imagekit.io/folicea/Logo.png.jpg?updatedAt=1755871491816" />
+        <meta property="og:image" content="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="FOLICEA Summit 2025" />
         <meta name="twitter:description" content="Federation of Liberian Communities in East Africa Summit" />
-        <meta name="twitter:image" content="https://ik.imagekit.io/folicea/Logo.png.jpg?updatedAt=1755871491816" />
+        <meta name="twitter:image" content="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403" />
       </Head>
       <body>
         <Main />

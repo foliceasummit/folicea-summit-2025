@@ -144,7 +144,7 @@ const HomePage = () => {
             >
               <Calendar className="w-6 h-6 mx-auto mb-2 text-white/90" />
               <h3 className="text-base sm:text-lg font-semibold mb-1">Date & Time</h3>
-              <p className="text-xs sm:text-sm text-white/90">November 28 - December 1, 2025</p>
+              <p className="text-xs sm:text-sm text-white/90">November 28 - 30, 2025</p>
             </motion.div>
 
             <motion.div
@@ -185,7 +185,7 @@ const HomePage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Welcome to the Annual FOLICEA Summit
+              Welcome to the FOLICEA Summit
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               The FOLICEA Summit is the premier gathering for the Liberian diaspora in East Africa. Our mission is to foster unity, promote professional networking, and drive community-led development initiatives.
