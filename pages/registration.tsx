@@ -63,7 +63,7 @@ const RegistrationPage = () => {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     accept: {
-      'image/*': ['.jpeg', '.jpg', '.png', '.webp']
+      'image/*': ['.jpeg', '.jpg', '.png']
     },
     maxFiles: 1,
     maxSize: 5242880 // 5MB
@@ -167,11 +167,12 @@ Registration submitted at: ${new Date().toISOString()}
           <div className="text-green-500 text-6xl mb-4">✓</div>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Registration Successful!</h2>
           <p className="text-gray-600 mb-6">
-            Thank you for registering for FOLICEA Summit 2025! You will receive a confirmation email shortly.
+          Thank you for registering for the FOLICEA Summit 2025! You will receive a confirmation email shortly after your payment is completed.
           </p>
           <p className="text-sm text-gray-500 mb-6">
-            To complete your registration, please send payment via MoMo to 0792109775 or use MoMo Code XYZ123. 
-            You can also pay through visa card or contact us at +231 0776038583 / +231 0888533208.
+          To complete your registration, please send your payment via MoMo to: 0792109775, or use MoMo Code: XYZ123. 
+          After payment, kindly send a screenshot to our WhatsApp: +231 776 038 583. 
+          For any inquiries, please call: +250 792 100 775.
           </p>
           <button
             onClick={() => setSubmitSuccess(false)}
@@ -218,11 +219,11 @@ Registration submitted at: ${new Date().toISOString()}
                     </li>
                     <li className="flex items-center">
                       <span className="text-green-300 mr-2">✓</span>
-                      T-shirt & cap
+                      T-shirt & Cap
                     </li>
                     <li className="flex items-center">
                       <span className="text-green-300 mr-2">✓</span>
-                      Tote bag
+                      Summit bag
                     </li>
                   </ul>
                 </div>
@@ -235,7 +236,8 @@ Registration submitted at: ${new Date().toISOString()}
                     </li>
                     <li className="flex items-center">
                       <span className="text-green-300 mr-2">✓</span>
-                      Tour of Uganda tourism sites
+                      Sightseeing Tour
+                      Enjoy a guided tour of Uganda’s top tourist attractions on the final day of the summit.
                     </li>
                     <li className="flex items-center">
                       <span className="text-green-300 mr-2">✓</span>
@@ -286,7 +288,7 @@ Registration submitted at: ${new Date().toISOString()}
                       <p className="text-gray-600">
                         {isDragActive ? 'Drop the photo here' : 'Click to upload or drag and drop'}
                       </p>
-                      <p className="text-sm text-gray-500">PNG, JPG, WEBP up to 5MB</p>
+                      <p className="text-sm text-gray-500">PNG, JPG, JPEG up to 10MB</p>
                     </div>
                   )}
                 </div>
@@ -396,6 +398,17 @@ Registration submitted at: ${new Date().toISOString()}
                     <option value="Kenya">Kenya</option>
                     <option value="Tanzania">Tanzania</option>
                     <option value="Uganda">Uganda</option>
+                    <option value="Ethiopia">Ethiopia</option>
+                    <option value="Burundi">Burundi</option>
+                    <option value="Comoros">Comoros</option>
+                    <option value="South Sudan">South Sudan</option>
+                    <option value="Zambia">Zambia</option>
+                    <option value="Somalia">Somalia</option>
+                    <option value="Mozambique">Mozambique</option>
+                    <option value="Madagascar">Madagascar</option>
+                    <option value="Mauritius">Mauritius</option>
+                    <option value="Seychelles">Seychelles</option>
+                    <option value="Malawi">Malawi</option>
                     <option value="Liberia">Liberia</option>
                     <option value="Other">Other</option>
                   </select>
@@ -462,8 +475,9 @@ Registration submitted at: ${new Date().toISOString()}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-liberian-red focus:border-transparent"
                   >
                     <option value="">Select Experience Level</option>
-                    <option value="0-2">0-2 years</option>
-                    <option value="3-5">3-5 years</option>
+                    <option value="0-2">0-1 years</option>
+                    <option value="0-2">2-3 years</option>
+                    <option value="3-5">4-5 years</option>
                     <option value="6-10">6-10 years</option>
                     <option value="11-15">11-15 years</option>
                     <option value="16+">16+ years</option>
@@ -531,7 +545,7 @@ Registration submitted at: ${new Date().toISOString()}
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Arrival Time * (--:-- --)
+                    Arrival Time (--:-- --)
                   </label>
                   <input
                     type="time"
@@ -554,7 +568,6 @@ Registration submitted at: ${new Date().toISOString()}
                     <option value="">Select Travel Mode</option>
                     <option value="Flight">Flight</option>
                     <option value="Bus">Bus</option>
-                    <option value="Car">Car</option>
                     <option value="Other">Other</option>
                   </select>
                   {errors.modeOfTravel && (
@@ -627,9 +640,9 @@ Registration submitted at: ${new Date().toISOString()}
                     <option value="">Select Food Preference</option>
                     <option value="Regular">Regular</option>
                     <option value="Vegetarian">Vegetarian</option>
-                    <option value="Vegan">Vegan</option>
-                    <option value="Halal">Halal</option>
-                    <option value="Kosher">Kosher</option>
+                    <option value="Local Ugandan Dishes">Local Ugandan Dishes</option>
+                    <option value="Continental/Western Cuisine">Continental/Western Cuisine</option>
+                    <option value="Local Liberian Dishes">Local Liberian Dishes</option>
                     <option value="Other">Other</option>
                   </select>
                   {errors.foodPreference && (
