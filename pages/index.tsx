@@ -83,7 +83,7 @@ const HomePage = () => {
         <HeroSlider />
         
         {/* Hero Content Overlay */}
-        <div className="absolute inset-0 z-10 flex flex-col justify-center pt-20 pb-8">
+        <div className="absolute inset-0 z-10 flex flex-col justify-center pt-32 pb-8">
           <div className="container-custom text-center text-white flex-1 flex flex-col justify-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -128,16 +128,6 @@ const HomePage = () => {
                 <p className="text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
                   Don't miss this historic gathering of the Liberian diaspora in East Africa
                 </p>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                <Link href="/registration" className="btn-primary text-lg px-8 py-4 shadow-lg">
-                  Register Now
-                </Link>
-                <Link href="/about" className="btn-outline text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-liberian-red shadow-lg">
-                  Learn More
-                </Link>
               </div>
             </motion.div>
           </div>
