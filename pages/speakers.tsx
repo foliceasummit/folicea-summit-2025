@@ -140,25 +140,25 @@ const SpeakersPage = () => {
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <h3 className="text-2xl font-bold mb-1">{speaker.name}</h3>
-                    <p className="text-lg opacity-90">{speaker.title}</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-2 left-3 right-3 text-white">
+                    <h3 className="text-lg font-bold mb-1 leading-tight">{speaker.name}</h3>
+                    <p className="text-sm opacity-90 leading-tight">{speaker.title}</p>
                   </div>
                 </div>
                 
-                <div className="p-6">
-                  <p className="text-gray-600 mb-4">
+                <div className="p-4">
+                  <p className="text-gray-600 mb-3 text-sm leading-relaxed">
                     {speaker.bio}
                   </p>
                   
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-gray-900 mb-2">Speaking Topics:</h4>
-                    <div className="flex flex-wrap gap-2">
+                  <div className="mb-3">
+                    <h4 className="font-semibold text-gray-900 mb-2 text-sm">Speaking Topics:</h4>
+                    <div className="flex flex-wrap gap-1">
                       {speaker.topics.map((topic, topicIndex) => (
                         <span
                           key={topicIndex}
-                          className="px-3 py-1 bg-liberian-red/10 text-liberian-red rounded-full text-sm font-medium"
+                          className="px-2 py-1 bg-liberian-red/10 text-liberian-red rounded-full text-xs font-medium"
                         >
                           {topic}
                         </span>
@@ -169,13 +169,13 @@ const SpeakersPage = () => {
                   <div className="flex space-x-4">
                     <a
                       href={speaker.social.linkedin}
-                      className="text-liberian-blue hover:text-blue-700 transition-colors"
+                      className="text-liberian-blue hover:text-blue-700 transition-colors text-sm"
                     >
                       LinkedIn
                     </a>
                     <a
                       href={speaker.social.twitter}
-                      className="text-liberian-blue hover:text-blue-700 transition-colors"
+                      className="text-liberian-blue hover:text-blue-700 transition-colors text-sm"
                     >
                       Twitter
                     </a>
