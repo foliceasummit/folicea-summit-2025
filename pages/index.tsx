@@ -102,21 +102,7 @@ const HomePage = () => {
                 </p>
               </div>
 
-              {/* Event Details */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10 max-w-5xl mx-auto">
-                <div className="flex items-center justify-center space-x-2 sm:space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                  <Calendar className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
-                  <span className="text-sm sm:text-lg text-center font-medium">November 28 - December 1, 2025</span>
-                </div>
-                <div className="flex items-center justify-center space-x-2 sm:space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                  <MapPin className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
-                  <span className="text-sm sm:text-lg text-center font-medium">Kampala Serena Hotel, Uganda</span>
-                </div>
-                <div className="flex items-center justify-center space-x-2 sm:space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                  <Users className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
-                  <span className="text-sm sm:text-lg text-center font-medium">Liberians across East Africa & Friends</span>
-                </div>
-              </div>
+
 
               {/* Countdown */}
               <div className="mb-8 sm:mb-10">
@@ -134,8 +120,63 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Event Details Section */}
+      <section className="py-12 sm:py-16 bg-gradient-to-r from-liberian-blue to-liberian-red text-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
+              Event Details
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center"
+            >
+              <Calendar className="w-8 h-8 mx-auto mb-3 text-white/90" />
+              <h3 className="text-lg sm:text-xl font-semibold mb-2">Date & Time</h3>
+              <p className="text-sm sm:text-base text-white/90">November 28 - December 1, 2025</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center"
+            >
+              <MapPin className="w-8 h-8 mx-auto mb-3 text-white/90" />
+              <h3 className="text-lg sm:text-xl font-semibold mb-2">Venue</h3>
+              <p className="text-sm sm:text-base text-white/90">Kampala Serena Hotel, Uganda</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center"
+            >
+              <Users className="w-8 h-8 mx-auto mb-3 text-white/90" />
+              <h3 className="text-lg sm:text-xl font-semibold mb-2">Attendees</h3>
+              <p className="text-sm sm:text-base text-white/90">Liberians across East Africa & Friends</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* About FOLICEA Section */}
-      <section className="section-padding bg-white pt-24 sm:pt-32">
+      <section className="section-padding bg-white pt-16 sm:pt-20">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
