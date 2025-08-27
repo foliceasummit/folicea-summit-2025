@@ -16,6 +16,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
+  console.log('Registration API - Environment check:');
+  console.log('SENDGRID_API_KEY present:', !!process.env.SENDGRID_API_KEY);
+  console.log('NOTIFICATION_EMAIL:', process.env.NOTIFICATION_EMAIL);
+  console.log('MONGODB_URI present:', !!process.env.MONGODB_URI);
+
   try {
     const formData = await new Promise((resolve, reject) => {
       const formidable = require('formidable');
@@ -84,8 +89,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     // Save to MongoDB
-    const registrationsCollection = await getCollection('registrations');
-    const result = await registrationsCollection.insertOne(registrationData);
+    console.log('Saving to MongoDB...');
+    try {
+      const registrationsCollection = await getCollection('registrations');
+      const result = await registrationsCollection.insertOne(registrationData);
+      console.log('MongoDB save successful:', result.insertedId);
+    } catch (mongodbError) {
+      console.error('MongoDB save failed:', mongodbError);
+      return res.status(500).json({
+        success: false,
+        message: 'Database connection failed. Please try again later.',
+        error: mongodbError instanceof Error ? mongodbError.message : 'Unknown database error'
+      });
+    }
 
     // Send confirmation email to registrant
     const emailContent = `
