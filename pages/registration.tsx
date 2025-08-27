@@ -73,6 +73,10 @@ const RegistrationPage = () => {
     setIsSubmitting(true);
     
     try {
+      // Create FormData for file upload support
+      const formData = new FormData();
+      formData.append('access_key', 'e74266af-617b-4d91-8b63-b34274a06806');
+      
       // Create a comprehensive registration message
       const registrationMessage = `
 FOLICEA Summit 2025 Registration
@@ -112,19 +116,23 @@ Contributions: ${data.contributions}
 Registration submitted at: ${new Date().toISOString()}
       `;
 
-      // Use the same Web3Forms key but send as a contact form
+      // Add form data
+      formData.append('name', `${data.firstName} ${data.lastName}`);
+      formData.append('email', data.email);
+      formData.append('subject', 'FOLICEA Summit 2025 Registration');
+      formData.append('message', registrationMessage);
+      
+      // Add profile photo if uploaded
+      if (profilePhoto) {
+        formData.append('profilePhoto', profilePhoto);
+      }
+
+      console.log('Submitting registration form with photo...');
+
+      // Use Web3Forms with FormData for file upload support
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: 'e74266af-617b-4d91-8b63-b34274a06806',
-          name: `${data.firstName} ${data.lastName}`,
-          email: data.email,
-          subject: 'FOLICEA Summit 2025 Registration',
-          message: registrationMessage,
-        }),
+        body: formData,
       });
 
       console.log('Response status:', response.status);

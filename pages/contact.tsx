@@ -9,6 +9,7 @@ import GoogleMap from '../components/GoogleMap';
 interface ContactForm {
   name: string;
   email: string;
+  phone: string;
   subject: string;
   message: string;
 }
@@ -33,6 +34,7 @@ const ContactPage = () => {
           access_key: 'e74266af-617b-4d91-8b63-b34274a06806',
           name: data.name,
           email: data.email,
+          phone: data.phone,
           subject: data.subject,
           message: data.message,
         }),
@@ -61,7 +63,7 @@ const ContactPage = () => {
           <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Message Sent!</h2>
           <p className="text-gray-600 mb-6">
-            Thank you for your message. We'll get back to you as soon as possible.
+            Thank you for your message. We'll get back to you as soon as possible. FOLICEA
           </p>
           <button
             onClick={() => setSubmitSuccess(false)}
@@ -132,6 +134,18 @@ const ContactPage = () => {
                       <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
                     )}
                   </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    {...register('phone')}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-liberian-red focus:border-transparent"
+                    placeholder="+1234567890"
+                  />
                 </div>
 
                 <div>
