@@ -23,19 +23,24 @@ const ContactPage = () => {
     setIsSubmitting(true);
     
     try {
-      // Use Netlify Forms - much more reliable than Formspree
-      const response = await fetch('/', {
+      // Use Web3Forms - free, reliable, works with Vercel
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Type': 'application/json',
         },
-        body: new URLSearchParams({
-          'form-name': 'contact',
-          ...data,
-        }).toString(),
+        body: JSON.stringify({
+          access_key: 'YOUR_WEB3FORMS_KEY', // You'll get this from web3forms.com
+          name: data.name,
+          email: data.email,
+          subject: data.subject,
+          message: data.message,
+        }),
       });
 
-      if (response.ok) {
+      const result = await response.json();
+      
+      if (result.success) {
         setSubmitSuccess(true);
         reset();
       } else {
@@ -92,20 +97,7 @@ const ContactPage = () => {
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
               
-              <form 
-                name="contact" 
-                method="POST" 
-                data-netlify="true" 
-                netlify-honeypot="bot-field"
-                onSubmit={handleSubmit(onSubmit)} 
-                className="space-y-6"
-              >
-                <input type="hidden" name="form-name" value="contact" />
-                <p className="hidden">
-                  <label>
-                    Don't fill this out if you're human: <input name="bot-field" />
-                  </label>
-                </p>
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">

@@ -75,7 +75,7 @@ const RegistrationPage = () => {
     try {
       // Create FormData for file upload support
       const formData = new FormData();
-      formData.append('form-name', 'registration');
+      formData.append('access_key', 'YOUR_WEB3FORMS_KEY'); // You'll get this from web3forms.com
       
       // Add all form data
       Object.entries(data).forEach(([key, value]) => {
@@ -89,13 +89,15 @@ const RegistrationPage = () => {
       
       formData.append('submittedAt', new Date().toISOString());
 
-      // Use Netlify Forms - supports file uploads
-      const response = await fetch('/', {
+      // Use Web3Forms - supports file uploads and works with Vercel
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         body: formData,
       });
 
-      if (response.ok) {
+      const result = await response.json();
+      
+      if (result.success) {
         setSubmitSuccess(true);
         reset();
         setProfilePhoto(null);
@@ -202,21 +204,7 @@ const RegistrationPage = () => {
             </div>
           </div>
 
-                     <form 
-             name="registration" 
-             method="POST" 
-             data-netlify="true" 
-             netlify-honeypot="bot-field"
-             encType="multipart/form-data"
-             onSubmit={handleSubmit(onSubmit)} 
-             className="bg-white rounded-2xl shadow-xl p-8"
-           >
-             <input type="hidden" name="form-name" value="registration" />
-             <p className="hidden">
-               <label>
-                 Don't fill this out if you're human: <input name="bot-field" />
-               </label>
-             </p>
+                     <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-2xl shadow-xl p-8">
             {/* Personal Information Section */}
             <div className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
