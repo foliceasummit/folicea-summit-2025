@@ -133,7 +133,7 @@ const HomePage = () => {
       </section>
 
       {/* About FOLICEA Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white pt-20">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -244,12 +244,13 @@ const HomePage = () => {
                 viewport={{ once: true }}
                 className="bg-white rounded-xl overflow-hidden shadow-lg card-hover"
               >
-                <div className="relative h-64">
+                <div className="relative h-80 bg-gray-100">
                   <Image
                     src={speaker.image}
                     alt={speaker.name}
                     fill
-                    className="object-cover"
+                    className="object-contain"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <div className="p-6">
@@ -446,7 +447,7 @@ const HomePage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding gradient-bg">
+      <section className="py-12 sm:py-16 gradient-bg">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -454,13 +455,13 @@ const HomePage = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
               Ready to Join Us?
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-white/90 mb-6 max-w-2xl mx-auto">
               Secure your spot at the most anticipated Liberian diaspora gathering in East Africa
             </p>
-            <Link href="/registration" className="bg-white text-liberian-red hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105">
+            <Link href="/registration" className="bg-white text-liberian-red hover:bg-gray-100 font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-lg text-base sm:text-lg transition-all duration-300 transform hover:scale-105">
               Register Now
             </Link>
           </motion.div>

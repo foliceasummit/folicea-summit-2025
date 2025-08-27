@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+      isScrolled ? 'bg-white shadow-lg' : 'bg-black/20 backdrop-blur-sm'
     }`}>
       <div className="container-custom">
         <div className="flex items-center justify-between py-4">
@@ -44,8 +44,12 @@ const Header = () => {
               className="rounded-lg"
             />
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-liberian-blue">FOLICEA</h1>
-              <p className="text-sm text-gray-600">Summit 2025</p>
+              <h1 className={`text-xl font-bold transition-colors duration-200 ${
+                isScrolled ? 'text-liberian-blue' : 'text-white drop-shadow-lg'
+              }`}>FOLICEA</h1>
+              <p className={`text-sm transition-colors duration-200 ${
+                isScrolled ? 'text-gray-600' : 'text-white/90 drop-shadow-lg'
+              }`}>Summit 2025</p>
             </div>
           </Link>
 
@@ -58,7 +62,7 @@ const Header = () => {
                 className={`font-medium transition-colors duration-200 ${
                   isScrolled 
                     ? 'text-gray-800 hover:text-liberian-red' 
-                    : 'text-white hover:text-liberian-red'
+                    : 'text-white hover:text-liberian-red drop-shadow-lg'
                 }`}
               >
                 {item.name}
@@ -66,7 +70,7 @@ const Header = () => {
             ))}
             <Link
               href="/registration"
-              className="btn-primary"
+              className="btn-primary drop-shadow-lg"
             >
               Register Now
             </Link>
@@ -78,9 +82,9 @@ const Header = () => {
             className="md:hidden p-2 rounded-lg"
           >
             {isMenuOpen ? (
-              <X className={`w-6 h-6 ${isScrolled ? 'text-gray-800' : 'text-white'}`} />
+              <X className={`w-6 h-6 ${isScrolled ? 'text-gray-800' : 'text-white drop-shadow-lg'}`} />
             ) : (
-              <Menu className={`w-6 h-6 ${isScrolled ? 'text-gray-800' : 'text-white'}`} />
+              <Menu className={`w-6 h-6 ${isScrolled ? 'text-gray-800' : 'text-white drop-shadow-lg'}`} />
             )}
           </button>
         </div>
