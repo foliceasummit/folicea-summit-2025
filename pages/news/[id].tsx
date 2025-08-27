@@ -8,7 +8,7 @@ import { useParams } from 'next/navigation';
 
 const NewsStoryPage = () => {
   const params = useParams();
-  const id = params?.id;
+  const id = Array.isArray(params?.id) ? params.id[0] : params?.id;
 
   // News data with full content
   const newsData = {
@@ -374,7 +374,7 @@ const NewsStoryPage = () => {
     }
   };
 
-  const story = newsData[id as keyof typeof newsData];
+  const story = id ? (newsData as any)[id] : null;
 
   if (!story) {
     return (
