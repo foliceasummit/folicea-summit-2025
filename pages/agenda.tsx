@@ -347,7 +347,7 @@ const AgendaPage = () => {
              initial={{ opacity: 0, y: 20 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ duration: 0.5 }}
-             className="mb-16"
+             className="mb-8"
            >
              {/* Day Header */}
              <div className="text-center mb-12">
@@ -427,7 +427,7 @@ const AgendaPage = () => {
        </section>
 
              {/* What's Included */}
-       <section className="section-padding bg-gray-50">
+       <section className="pt-16 pb-20 bg-gray-50">
          <div className="container-custom">
            <motion.div
              initial={{ opacity: 0, y: 20 }}
