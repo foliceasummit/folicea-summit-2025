@@ -136,18 +136,18 @@ const AgendaPage = () => {
           description: "Access to Startup Capital, Leveraging Digital Platforms, Youth Innovation & Fintech",
           type: "Seminar"
         },
-        {
-          time: "15:00 - 16:00",
-          title: "Workshop: Building Scalable Diaspora Ventures",
-          description: "Interactive workshop on building sustainable business ventures",
-          type: "Workshop"
-        },
-        {
-          time: "16:00 - 17:00",
-          title: "Exhibition & Product Demo",
-          description: "Open session showcasing diaspora products and innovations",
-          type: "Exhibition"
-        }
+                 {
+           time: "16:00 - 17:00",
+           title: "Exhibition & Product Demo",
+           description: "Open session showcasing diaspora products and innovations",
+           type: "Exhibition"
+         },
+         {
+           time: "17:00 - 19:00",
+           title: "Sightseeing Tour: Uganda's Top Tourist Attractions",
+           description: "Enjoy a guided tour of Uganda's top tourist attractions",
+           type: "Tour"
+         }
       ]
     },
     {
@@ -210,12 +210,18 @@ const AgendaPage = () => {
           description: "Summit closing ceremony and acknowledgments",
           type: "Closing"
         },
-        {
-          time: "16:30 - 17:00",
-          title: "Group Photos & Departure",
-          description: "Group photographs and farewell",
-          type: "Closing"
-        }
+                 {
+           time: "16:30 - 17:00",
+           title: "Group Photos & Departure",
+           description: "Group photographs and farewell",
+           type: "Closing"
+         },
+         {
+           time: "21:00 - Late",
+           title: "Inaugural Ball",
+           description: "Venue to be announced later",
+           type: "Social"
+         }
       ]
     }
   ];
@@ -241,13 +247,17 @@ const AgendaPage = () => {
         return <Coffee className="w-5 h-5" />;
       case 'lunch':
         return <Utensils className="w-5 h-5" />;
-      case 'performance':
-      case 'exhibition':
-        return <Users className="w-5 h-5" />;
-      case 'election':
-        return <Award className="w-5 h-5" />;
-      default:
-        return <Calendar className="w-5 h-5" />;
+             case 'performance':
+       case 'exhibition':
+         return <Users className="w-5 h-5" />;
+       case 'election':
+         return <Award className="w-5 h-5" />;
+       case 'tour':
+         return <MapPin className="w-5 h-5" />;
+       case 'social':
+         return <Users className="w-5 h-5" />;
+       default:
+         return <Calendar className="w-5 h-5" />;
     }
   };
 
@@ -272,13 +282,17 @@ const AgendaPage = () => {
         return 'bg-yellow-100 text-yellow-800 border-yellow-200';
       case 'lunch':
         return 'bg-orange-100 text-orange-800 border-orange-200';
-      case 'performance':
-      case 'exhibition':
-        return 'bg-pink-100 text-pink-800 border-pink-200';
-      case 'election':
-        return 'bg-indigo-100 text-indigo-800 border-indigo-200';
-      default:
-        return 'bg-gray-100 text-gray-800 border-gray-200';
+             case 'performance':
+       case 'exhibition':
+         return 'bg-pink-100 text-pink-800 border-pink-200';
+       case 'election':
+         return 'bg-indigo-100 text-indigo-800 border-indigo-200';
+       case 'tour':
+         return 'bg-teal-100 text-teal-800 border-teal-200';
+       case 'social':
+         return 'bg-purple-100 text-purple-800 border-purple-200';
+       default:
+         return 'bg-gray-100 text-gray-800 border-gray-200';
     }
   };
 
@@ -394,8 +408,102 @@ const AgendaPage = () => {
         </div>
       </section>
 
-      {/* Venue Information */}
-      <section className="section-padding bg-white">
+             {/* What's Included */}
+       <section className="section-padding bg-gray-50">
+         <div className="container-custom">
+           <motion.div
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.8 }}
+             viewport={{ once: true }}
+             className="text-center mb-16"
+           >
+             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+               What's Included
+             </h2>
+             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+               Your comprehensive summit package includes everything you need for a successful experience
+             </p>
+           </motion.div>
+
+           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+             {/* What's Included */}
+             <motion.div
+               initial={{ opacity: 0, x: -20 }}
+               whileInView={{ opacity: 1, x: 0 }}
+               transition={{ duration: 0.8 }}
+               viewport={{ once: true }}
+             >
+               <h3 className="text-2xl font-bold text-gray-900 mb-6">Summit Package</h3>
+               <div className="space-y-4">
+                 <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                   <Utensils className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
+                   <p className="text-gray-700">All meals (breakfast and lunch for 3 days)</p>
+                 </div>
+                 <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                   <Users className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
+                   <p className="text-gray-700">3 nights accommodation (shared room)</p>
+                 </div>
+                 <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                   <BookOpen className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
+                   <p className="text-gray-700">Summit materials (notebook, pen, tote bag)</p>
+                 </div>
+                 <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                   <Award className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
+                   <p className="text-gray-700">Official summit T-shirt and cap</p>
+                 </div>
+                 <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                   <Briefcase className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
+                   <p className="text-gray-700">Access to all sessions and workshops</p>
+                 </div>
+                 <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                   <Users className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
+                   <p className="text-gray-700">Networking opportunities and social events</p>
+                 </div>
+               </div>
+             </motion.div>
+
+             {/* Important Notes */}
+             <motion.div
+               initial={{ opacity: 0, x: 20 }}
+               whileInView={{ opacity: 1, x: 0 }}
+               transition={{ duration: 0.8 }}
+               viewport={{ once: true }}
+             >
+               <h3 className="text-2xl font-bold text-gray-900 mb-6">Important Notes</h3>
+               <div className="space-y-4">
+                 <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                   <Clock className="w-6 h-6 text-liberian-blue mt-1 flex-shrink-0" />
+                   <p className="text-gray-700">Please arrive 30 minutes before each session</p>
+                 </div>
+                 <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                   <Award className="w-6 h-6 text-liberian-blue mt-1 flex-shrink-0" />
+                   <p className="text-gray-700">Business casual attire recommended for all sessions</p>
+                 </div>
+                 <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                   <Briefcase className="w-6 h-6 text-liberian-blue mt-1 flex-shrink-0" />
+                   <p className="text-gray-700">Bring business cards for networking opportunities</p>
+                 </div>
+                 <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                   <BookOpen className="w-6 h-6 text-liberian-blue mt-1 flex-shrink-0" />
+                   <p className="text-gray-700">All sessions will be conducted in English</p>
+                 </div>
+                 <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                   <Calendar className="w-6 h-6 text-liberian-blue mt-1 flex-shrink-0" />
+                   <p className="text-gray-700">Photography and recording permitted for personal use</p>
+                 </div>
+                 <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                   <Globe className="w-6 h-6 text-liberian-blue mt-1 flex-shrink-0" />
+                   <p className="text-gray-700">WiFi available throughout the venue</p>
+                 </div>
+               </div>
+             </motion.div>
+           </div>
+         </div>
+       </section>
+
+       {/* Venue Information */}
+       <section className="section-padding bg-white">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

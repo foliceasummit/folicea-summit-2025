@@ -8,11 +8,11 @@ const FAQsPage = () => {
   const faqs = [
     {
       question: "What is the FOLICEA Summit 2025?",
-      answer: "The FOLICEA Summit 2025 is the premier gathering for the Liberian diaspora in East Africa. It's a four-day event focused on fostering unity, promoting professional networking, and driving community-led development initiatives."
+      answer: "The FOLICEA Summit 2025 is the premier gathering for the Liberian diaspora in East Africa. It's a three-day event focused on fostering unity, promoting professional networking, and driving community-led development initiatives."
     },
     {
       question: "When and where is the summit taking place?",
-      answer: "The summit will be held from November 28 to December 1, 2025, at the Kampala Serena Hotel in Uganda."
+      answer: "The summit will be held from November 28 - 30, 2025, at the Kampala Serena Hotel in Uganda."
     },
     {
       question: "Who can attend the FOLICEA Summit?",
