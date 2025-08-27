@@ -30,7 +30,7 @@ const ContactPage = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: 'YOUR_WEB3FORMS_KEY', // You'll get this from web3forms.com
+          access_key: 'e74266af-617b-4d91-8b63-b34274a06806',
           name: data.name,
           email: data.email,
           subject: data.subject,

@@ -75,7 +75,7 @@ const RegistrationPage = () => {
     try {
       // Create FormData for file upload support
       const formData = new FormData();
-      formData.append('access_key', 'YOUR_WEB3FORMS_KEY'); // You'll get this from web3forms.com
+      formData.append('access_key', 'e74266af-617b-4d91-8b63-b34274a06806');
       
       // Add all form data
       Object.entries(data).forEach(([key, value]) => {
