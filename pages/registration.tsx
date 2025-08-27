@@ -73,10 +73,6 @@ const RegistrationPage = () => {
     setIsSubmitting(true);
     
     try {
-      // Create FormData for file upload support
-      const formData = new FormData();
-      formData.append('access_key', 'e74266af-617b-4d91-8b63-b34274a06806');
-      
       // Create a comprehensive registration message
       const registrationMessage = `
 FOLICEA Summit 2025 Registration
@@ -118,25 +114,23 @@ Profile Photo: ${profilePhoto ? `Uploaded - ${profilePhoto.name} (${(profilePhot
 Registration submitted at: ${new Date().toISOString()}
       `;
 
-      // Add form data
-      formData.append('name', `${data.firstName} ${data.lastName}`);
-      formData.append('email', data.email);
-      formData.append('subject', 'FOLICEA Summit 2025 Registration');
-      formData.append('message', registrationMessage);
-      
-      // Temporarily disable file upload to test form submission
-      if (profilePhoto) {
-        console.log('Photo selected but not uploaded due to Web3Forms limitations:', profilePhoto.name, profilePhoto.size);
-      } else {
-        console.log('No photo uploaded');
-      }
+      // Try JSON approach first (like the working contact form)
+      const jsonData = {
+        access_key: 'e74266af-617b-4d91-8b63-b34274a06806',
+        name: `${data.firstName} ${data.lastName}`,
+        email: data.email,
+        subject: 'FOLICEA Summit 2025 Registration',
+        message: registrationMessage
+      };
 
-      console.log('Submitting registration form with photo...');
+      console.log('Submitting registration form as JSON...');
 
-      // Use Web3Forms with FormData for file upload support
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: formData,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(jsonData),
       });
 
       console.log('Response status:', response.status);
@@ -147,10 +141,6 @@ Registration submitted at: ${new Date().toISOString()}
 
       const result = await response.json();
       console.log('Web3Forms response:', result);
-      console.log('FormData contents:');
-      formData.forEach((value, key) => {
-        console.log(key, value);
-      });
       
       if (result.success) {
         setSubmitSuccess(true);
