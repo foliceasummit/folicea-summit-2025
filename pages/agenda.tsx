@@ -332,52 +332,62 @@ const AgendaPage = () => {
                 </p>
               </div>
 
-              {/* Events Grid */}
-              <div className="grid gap-6">
-                {day.events.map((event, eventIndex) => (
-                  <motion.div
-                    key={eventIndex}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: eventIndex * 0.1 }}
-                    viewport={{ once: true }}
-                    className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
-                  >
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                      {/* Time and Type */}
-                      <div className="flex items-center gap-4">
-                        <div className="flex items-center text-liberian-red font-semibold">
-                          <Clock className="w-4 h-4 mr-2" />
-                          {event.time}
+              {/* Events Timeline */}
+              <div className="relative">
+                {/* Timeline Line */}
+                <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-liberian-red"></div>
+                
+                {/* Events */}
+                <div className="space-y-8">
+                  {day.events.map((event, eventIndex) => (
+                    <motion.div
+                      key={eventIndex}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: eventIndex * 0.1 }}
+                      viewport={{ once: true }}
+                      className="relative flex items-start"
+                    >
+                      {/* Timeline Dot */}
+                      <div className="absolute left-6 w-4 h-4 bg-liberian-red rounded-full border-4 border-white shadow-lg"></div>
+                      
+                      {/* Event Content */}
+                      <div className="ml-16 bg-white rounded-xl shadow-lg p-6 flex-1 hover:shadow-xl transition-shadow duration-300">
+                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
+                          {/* Time */}
+                          <div className="flex items-center text-liberian-red font-semibold">
+                            <Clock className="w-4 h-4 mr-2" />
+                            {event.time}
+                          </div>
+                          
+                          {/* Event Type Badge */}
+                          <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium border ${getEventColor(event.type)}`}>
+                            {getEventIcon(event.type)}
+                            <span className="ml-1">{event.type}</span>
+                          </span>
                         </div>
-                        <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium border ${getEventColor(event.type)}`}>
-                          {getEventIcon(event.type)}
-                          <span className="ml-1">{event.type}</span>
-                        </span>
+
+                        {/* Title */}
+                        <h3 className="text-xl font-bold text-gray-900 mb-3">
+                          {event.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-gray-600 mb-4">
+                          {event.description}
+                        </p>
+
+                        {/* Speakers */}
+                        {event.speakers && event.speakers.length > 0 && (
+                          <div className="flex items-center gap-2 text-sm text-gray-500">
+                            <Users className="w-4 h-4" />
+                            <span>Speakers: {event.speakers.join(', ')}</span>
+                          </div>
+                        )}
                       </div>
-
-                      {/* Title */}
-                      <h3 className="text-xl font-bold text-gray-900 md:text-right">
-                        {event.title}
-                      </h3>
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-gray-600 mt-4">
-                      {event.description}
-                    </p>
-
-                    {/* Speakers */}
-                    {event.speakers && event.speakers.length > 0 && (
-                      <div className="mt-4 flex items-center gap-2">
-                        <Users className="w-4 h-4 text-gray-400" />
-                        <span className="text-sm text-gray-500">
-                          Speakers: {event.speakers.join(', ')}
-                        </span>
-                      </div>
-                    )}
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
