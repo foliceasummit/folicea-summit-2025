@@ -121,31 +121,31 @@ const HomePage = () => {
       </section>
 
       {/* Event Details Section */}
-      <section className="py-12 sm:py-16 bg-gradient-to-r from-liberian-blue to-liberian-red text-white">
+      <section className="py-8 sm:py-12 bg-gradient-to-r from-liberian-blue to-liberian-red text-white">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-8"
+            className="text-center mb-6"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">
               Event Details
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center"
+              className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center"
             >
-              <Calendar className="w-8 h-8 mx-auto mb-3 text-white/90" />
-              <h3 className="text-lg sm:text-xl font-semibold mb-2">Date & Time</h3>
-              <p className="text-sm sm:text-base text-white/90">November 28 - December 1, 2025</p>
+              <Calendar className="w-6 h-6 mx-auto mb-2 text-white/90" />
+              <h3 className="text-base sm:text-lg font-semibold mb-1">Date & Time</h3>
+              <p className="text-xs sm:text-sm text-white/90">November 28 - December 1, 2025</p>
             </motion.div>
 
             <motion.div
@@ -153,11 +153,11 @@ const HomePage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center"
+              className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center"
             >
-              <MapPin className="w-8 h-8 mx-auto mb-3 text-white/90" />
-              <h3 className="text-lg sm:text-xl font-semibold mb-2">Venue</h3>
-              <p className="text-sm sm:text-base text-white/90">Kampala Serena Hotel, Uganda</p>
+              <MapPin className="w-6 h-6 mx-auto mb-2 text-white/90" />
+              <h3 className="text-base sm:text-lg font-semibold mb-1">Venue</h3>
+              <p className="text-xs sm:text-sm text-white/90">Kampala Serena Hotel, Uganda</p>
             </motion.div>
 
             <motion.div
@@ -165,11 +165,11 @@ const HomePage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center"
+              className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center"
             >
-              <Users className="w-8 h-8 mx-auto mb-3 text-white/90" />
-              <h3 className="text-lg sm:text-xl font-semibold mb-2">Attendees</h3>
-              <p className="text-sm sm:text-base text-white/90">Liberians across East Africa & Friends</p>
+              <Users className="w-6 h-6 mx-auto mb-2 text-white/90" />
+              <h3 className="text-base sm:text-lg font-semibold mb-1">Attendees</h3>
+              <p className="text-xs sm:text-sm text-white/90">Liberians across East Africa & Friends</p>
             </motion.div>
           </div>
         </div>
