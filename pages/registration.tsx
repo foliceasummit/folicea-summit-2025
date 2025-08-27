@@ -73,31 +73,58 @@ const RegistrationPage = () => {
     setIsSubmitting(true);
     
     try {
-      // Create FormData for file upload support
-      const formData = new FormData();
-      formData.append('access_key', 'e74266af-617b-4d91-8b63-b34274a06806');
-      
-      // Add essential form data first (without file to test)
-      formData.append('firstName', data.firstName);
-      formData.append('lastName', data.lastName);
-      formData.append('email', data.email);
-      formData.append('phone', data.phone);
-      formData.append('subject', 'FOLICEA Summit 2025 Registration');
-      formData.append('message', `New registration from ${data.firstName} ${data.lastName}`);
-      
-      // Add profile photo if uploaded
-      if (profilePhoto) {
-        formData.append('profilePhoto', profilePhoto);
-      }
-      
-      formData.append('submittedAt', new Date().toISOString());
+      // Create a comprehensive registration message
+      const registrationMessage = `
+FOLICEA Summit 2025 Registration
 
-      console.log('Submitting registration form...');
+Personal Information:
+- Name: ${data.firstName} ${data.lastName}
+- Email: ${data.email}
+- Phone: ${data.phone}
+- Date of Birth: ${data.dateOfBirth}
+- Nationality: ${data.nationality}
+- Current Country: ${data.currentCountry}
+- City: ${data.city}
 
-      // Use Web3Forms - supports file uploads and works with Vercel
+Professional Background:
+- Occupation: ${data.occupation}
+- Organization: ${data.organization || 'Not specified'}
+- Years of Experience: ${data.yearsOfExperience}
+
+Travel & Accommodation:
+- Arrival Date: ${data.arrivalDate}
+- Arrival Time: ${data.arrivalTime}
+- Mode of Travel: ${data.modeOfTravel}
+- Flight/Bus Number: ${data.flightBusNumber || 'Not specified'}
+- Room Preference: ${data.roomPreference}
+- Mobility Access: ${data.mobilityAccess ? 'Yes' : 'No'}
+
+Preferences:
+- Food Preference: ${data.foodPreference}
+- Food Allergies: ${data.foodAllergies || 'None'}
+- T-Shirt Size: ${data.tshirtSize}
+- T-Shirt Color: ${data.tshirtColor}
+
+Expectations: ${data.expectations}
+
+Contributions: ${data.contributions}
+
+Registration submitted at: ${new Date().toISOString()}
+      `;
+
+      // Use the same Web3Forms key but send as a contact form
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: formData,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: 'e74266af-617b-4d91-8b63-b34274a06806',
+          name: `${data.firstName} ${data.lastName}`,
+          email: data.email,
+          subject: 'FOLICEA Summit 2025 Registration',
+          message: registrationMessage,
+        }),
       });
 
       console.log('Response status:', response.status);
