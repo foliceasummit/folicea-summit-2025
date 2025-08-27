@@ -27,13 +27,11 @@ const AboutPage = () => {
   ];
 
   const objectives = [
-    "Strengthen diaspora engagement and community bonds",
-    "Facilitate networking among professionals and entrepreneurs",
-    "Discuss innovative development strategies",
-    "Share knowledge and best practices",
+    "Officially launch the Federation of Liberians in East Africa (FOLICEA)",
+    "Provide a platform for business networking, investment opportunities, and entrepreneurship development",
+    "Explore technology and innovation as tools for diaspora economic growth",
+    "Conduct General Assembly elections to inaugurate FOLICEA’s first democratically elected leadership",
     "Promote cultural exchange and understanding",
-    "Build lasting partnerships and collaborations",
-    "Create economic opportunities for community members",
     "Advocate for Liberian interests in East Africa"
   ];
 
@@ -74,7 +72,7 @@ const AboutPage = () => {
               </h2>
               <p className="text-lg text-gray-600 mb-6">
               To unite and empower Liberian communities across East Africa through collaboration, advocacy, cultural preservation, 
-              fand sustainable development initiatives that enhance the welfare, identity, and solidarity of all Liberians residing in the region. 
+              and sustainable development initiatives that enhance the welfare, identity, and solidarity of all Liberians residing in the region. 
              </p>
               <p className="text-lg text-gray-600">
                 We strive to be a bridge between Liberia and East Africa, facilitating 
@@ -176,11 +174,11 @@ const AboutPage = () => {
               </h2>
               <p className="text-lg text-gray-600 mb-6">
                 The inaugural FOLICEA Summit 2025 represents a historic milestone in 
-                our community's journey. This four-day gathering in Kampala, Uganda, 
+                our community's journey. This three-day gathering in Kampala, Uganda, 
                 will bring together Liberians from across East Africa and beyond.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                Through keynote speeches, panel discussions, networking sessions, and 
+                Through keynote speeches, panel discussions, Workshop, networking sessions, and 
                 cultural celebrations, we will strengthen our bonds, share knowledge, 
                 and chart a course for our community's future.
               </p>

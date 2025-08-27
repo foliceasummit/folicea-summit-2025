@@ -1,26 +1,116 @@
+'use client';
+
 import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, Users, Star, Award } from 'lucide-react';
+import { Calendar, Clock, Users, MapPin, BookOpen, Briefcase, Award, Coffee, Utensils } from 'lucide-react';
 
 const AgendaPage = () => {
   const agenda = [
     {
       day: "Day 1",
       date: "November 28, 2025",
-      title: "Opening Ceremony & Welcome",
-      theme: "Building Bridges",
+      title: "Official Launch of the Federation",
+      theme: "Unity, Identity, and a Shared Vision",
       events: [
         {
           time: "08:00 - 09:00",
-          title: "Registration & Welcome Coffee",
+          title: "Registration & Networking",
           description: "Check-in and networking with fellow delegates",
           type: "Registration"
         },
         {
-          time: "09:00 - 10:30",
-          title: "Opening Ceremony",
-          description: "Official opening with national anthems, prayers, and welcome addresses",
-          type: "Ceremony",
-          speakers: ["H.E. Dr. Jeremiah Kpan Koung", "Hon. Richard Nagbe Koon"]
+          time: "09:00 - 09:30",
+          title: "Opening Prayer and National Anthems",
+          description: "Liberia & Host Country national anthems and prayers",
+          type: "Ceremony"
+        },
+        {
+          time: "09:30 - 10:15",
+          title: "Welcome Address and Recognition of Guests",
+          description: "By Committee Chair John Meyer",
+          type: "Welcome",
+          speakers: ["Committee Chair John Meyer"]
+        },
+        {
+          time: "10:15 - 10:45",
+          title: "Special Statement from the Acting Chairman",
+          description: "Mr. Emmanuel Patrick",
+          type: "Statement",
+          speakers: ["Mr. Emmanuel Patrick"]
+        },
+        {
+          time: "10:45 - 11:15",
+          title: "Keynote Address: The Power of Diaspora Unity",
+          description: "Mr. James Sawa",
+          type: "Keynote",
+          speakers: ["Mr. James Sawa"]
+        },
+        {
+          time: "11:15 - 12:00",
+          title: "Official Launch of FOLICEA",
+          description: "Official launch ceremony of the Federation",
+          type: "Launch"
+        },
+        {
+          time: "12:00 - 12:15",
+          title: "Cultural Performance",
+          description: "Traditional cultural entertainment",
+          type: "Performance"
+        },
+        {
+          time: "12:15 - 13:15",
+          title: "Panel Discussion: Strengthening Community Ties Across Borders",
+          description: "Interactive discussion on community building",
+          type: "Panel"
+        },
+        {
+          time: "13:15 - 14:00",
+          title: "Lunch & Cultural Showcase",
+          description: "Traditional Liberian cuisine and cultural entertainment",
+          type: "Lunch"
+        },
+        {
+          time: "14:00 - 15:30",
+          title: "Presentation of FOLICEA Constitution & Structure",
+          description: "Detailed presentation of federation constitution and organizational structure",
+          type: "Presentation"
+        },
+        {
+          time: "15:30 - 16:30",
+          title: "Breakout Discussions by Country Clusters",
+          description: "Group discussions organized by country representation",
+          type: "Workshop"
+        },
+        {
+          time: "16:30 - 17:00",
+          title: "Closing Remarks",
+          description: "Day 1 closing and preview of Day 2",
+          type: "Closing"
+        }
+      ]
+    },
+    {
+      day: "Day 2",
+      date: "November 29, 2025",
+      title: "Business, Investment & Tech Innovation Seminars",
+      theme: "Empowering the Diaspora Economy",
+      events: [
+        {
+          time: "08:30 - 09:00",
+          title: "Arrival and Registration",
+          description: "Check-in for Day 2 participants",
+          type: "Registration"
+        },
+        {
+          time: "09:00 - 09:15",
+          title: "Opening Remarks",
+          description: "Day 2 opening and agenda overview",
+          type: "Opening"
+        },
+        {
+          time: "09:15 - 10:30",
+          title: "Business & Investment Forum",
+          description: "Diaspora Investment Opportunities, Navigating Regional Trade Platforms, Partnership with Local Enterprises",
+          type: "Forum"
         },
         {
           time: "10:30 - 11:00",
@@ -30,255 +120,165 @@ const AgendaPage = () => {
         },
         {
           time: "11:00 - 12:30",
-          title: "Keynote Address: The Liberian Diaspora in East Africa",
-          description: "Exploring our community's journey and future opportunities",
-          type: "Keynote",
-          speakers: ["H.E. Dr. Jeremiah Kpan Koung"]
+          title: "Panel Discussion: Diaspora Investment & Regional Trade",
+          description: "Diaspora investment, regional trade, SMEs support, Liberia–East Africa business relations",
+          type: "Panel"
         },
         {
-          time: "12:30 - 14:00",
-          title: "Lunch & Cultural Performance",
-          description: "Traditional Liberian cuisine and cultural entertainment",
+          time: "12:30 - 13:30",
+          title: "Lunch",
+          description: "Networking lunch session",
           type: "Lunch"
         },
         {
-          time: "14:00 - 15:30",
-          title: "Panel Discussion: Strengthening Diaspora Bonds",
-          description: "Strategies for building stronger community connections",
-          type: "Panel",
-          speakers: ["Community Leaders", "Diaspora Experts"]
+          time: "13:30 - 15:00",
+          title: "Entrepreneurship & Innovation Seminar",
+          description: "Access to Startup Capital, Leveraging Digital Platforms, Youth Innovation & Fintech",
+          type: "Seminar"
         },
         {
-          time: "15:30 - 16:00",
-          title: "Afternoon Break",
-          description: "Refreshments and networking",
-          type: "Break"
-        },
-        {
-          time: "16:00 - 17:30",
-          title: "Workshop: Community Leadership Development",
-          description: "Interactive session on effective community leadership",
+          time: "15:00 - 16:00",
+          title: "Workshop: Building Scalable Diaspora Ventures",
+          description: "Interactive workshop on building sustainable business ventures",
           type: "Workshop"
         },
         {
-          time: "18:00 - 20:00",
-          title: "Welcome Dinner & Cultural Night",
-          description: "Evening of celebration with traditional music and dance",
-          type: "Dinner"
-        }
-      ]
-    },
-    {
-      day: "Day 2",
-      date: "November 29, 2025",
-      title: "Professional Development & Networking",
-      theme: "Empowering Growth",
-      events: [
-        {
-          time: "08:00 - 09:00",
-          title: "Morning Coffee & Networking",
-          description: "Start the day with networking opportunities",
-          type: "Networking"
-        },
-        {
-          time: "09:00 - 10:30",
-          title: "Keynote: Economic Empowerment in the Diaspora",
-          description: "Strategies for financial success and business development",
-          type: "Keynote",
-          speakers: ["Business Leaders", "Economic Experts"]
-        },
-        {
-          time: "10:30 - 11:00",
-          title: "Coffee Break",
-          description: "Refreshments and networking",
-          type: "Break"
-        },
-        {
-          time: "11:00 - 12:30",
-          title: "Panel: Entrepreneurship & Business Opportunities",
-          description: "Exploring business opportunities across East Africa",
-          type: "Panel",
-          speakers: ["Entrepreneurs", "Business Consultants"]
-        },
-        {
-          time: "12:30 - 14:00",
-          title: "Lunch & Speed Networking",
-          description: "Structured networking sessions during lunch",
-          type: "Lunch"
-        },
-        {
-          time: "14:00 - 15:30",
-          title: "Workshop: Digital Skills for the Modern Economy",
-          description: "Hands-on training in digital tools and platforms",
-          type: "Workshop"
-        },
-        {
-          time: "15:30 - 16:00",
-          title: "Afternoon Break",
-          description: "Refreshments and networking",
-          type: "Break"
-        },
-        {
-          time: "16:00 - 17:30",
-          title: "Roundtable: Youth Development & Education",
-          description: "Addressing educational needs and youth empowerment",
-          type: "Roundtable"
-        },
-        {
-          time: "18:00 - 20:00",
-          title: "Business Networking Dinner",
-          description: "Formal networking dinner with business leaders",
-          type: "Dinner"
+          time: "16:00 - 17:00",
+          title: "Exhibition & Product Demo",
+          description: "Open session showcasing diaspora products and innovations",
+          type: "Exhibition"
         }
       ]
     },
     {
       day: "Day 3",
       date: "November 30, 2025",
-      title: "Cultural Exchange & Heritage",
-      theme: "Preserving Our Heritage",
+      title: "General Assembly Elections and Inauguration",
+      theme: "Democratic Leadership for Diaspora Development",
       events: [
         {
           time: "08:00 - 09:00",
-          title: "Morning Coffee & Cultural Display",
-          description: "Traditional Liberian artifacts and cultural presentations",
-          type: "Cultural"
+          title: "Assembly Accreditation & Voter Validation",
+          description: "Registration and validation of voting delegates",
+          type: "Registration"
         },
         {
-          time: "09:00 - 10:30",
-          title: "Keynote: Preserving Liberian Cultural Heritage",
-          description: "The importance of cultural preservation in the diaspora",
-          type: "Keynote",
-          speakers: ["Cultural Ambassadors", "Heritage Experts"]
+          time: "09:00 - 09:30",
+          title: "Opening Remarks & Electoral Guidelines",
+          description: "Election procedures and guidelines presentation",
+          type: "Opening"
         },
         {
-          time: "10:30 - 11:00",
-          title: "Coffee Break",
-          description: "Refreshments and cultural discussions",
-          type: "Break"
+          time: "09:30 - 11:00",
+          title: "Candidate Presentations and Debates",
+          description: "Candidates present their vision and engage in debates",
+          type: "Election"
         },
         {
-          time: "11:00 - 12:30",
-          title: "Panel: Cultural Exchange & Integration",
-          description: "Balancing cultural preservation with local integration",
-          type: "Panel",
-          speakers: ["Cultural Leaders", "Integration Experts"]
+          time: "11:00 - 13:00",
+          title: "Voting & Tallying of Results",
+          description: "Democratic voting process and result compilation",
+          type: "Election"
         },
         {
-          time: "12:30 - 14:00",
-          title: "Traditional Lunch & Cultural Performances",
-          description: "Liberian traditional dishes and live performances",
+          time: "13:00 - 14:00",
+          title: "Lunch Break",
+          description: "Lunch while results are being tallied",
           type: "Lunch"
         },
         {
-          time: "14:00 - 15:30",
-          title: "Workshop: Traditional Arts & Crafts",
-          description: "Hands-on session with traditional Liberian arts",
-          type: "Workshop"
+          time: "14:00 - 14:30",
+          title: "Announcement of Election Results",
+          description: "Official announcement of elected leadership",
+          type: "Election"
+        },
+        {
+          time: "14:30 - 15:30",
+          title: "Inauguration Ceremony of Elected Leaders",
+          description: "Official swearing-in of new FOLICEA leadership",
+          type: "Inauguration"
         },
         {
           time: "15:30 - 16:00",
-          title: "Afternoon Break",
-          description: "Refreshments and cultural networking",
-          type: "Break"
+          title: "Presentation of Strategic Plan (2025–2027)",
+          description: "Presentation of FOLICEA's strategic roadmap",
+          type: "Presentation"
         },
         {
-          time: "16:00 - 17:30",
-          title: "Cultural Showcase & Talent Show",
-          description: "Community members showcase their talents",
-          type: "Showcase"
+          time: "16:00 - 16:30",
+          title: "Official Closing & Vote of Thanks",
+          description: "Summit closing ceremony and acknowledgments",
+          type: "Closing"
         },
         {
-          time: "18:00 - 20:00",
-          title: "Cultural Gala Dinner",
-          description: "Elegant dinner with traditional and modern entertainment",
-          type: "Dinner"
-        }
-      ]
-    },
-    {
-      day: "Day 4",
-      date: "December 1, 2025",
-      title: "Future Planning & Closing",
-      theme: "Building Our Future",
-      events: [
-        {
-          time: "08:00 - 09:00",
-          title: "Morning Coffee & Reflection",
-          description: "Time to reflect on the summit experience",
-          type: "Reflection"
-        },
-        {
-          time: "09:00 - 10:30",
-          title: "Keynote: The Future of FOLICEA",
-          description: "Vision and roadmap for the organization's future",
-          type: "Keynote",
-          speakers: ["FOLICEA Leadership", "Strategic Planners"]
-        },
-        {
-          time: "10:30 - 11:00",
-          title: "Coffee Break",
-          description: "Final networking opportunities",
-          type: "Break"
-        },
-        {
-          time: "11:00 - 12:30",
-          title: "Strategic Planning Session",
-          description: "Working groups to develop action plans",
-          type: "Planning"
-        },
-        {
-          time: "12:30 - 14:00",
-          title: "Farewell Lunch",
-          description: "Final meal together with summit highlights",
-          type: "Lunch"
-        },
-        {
-          time: "14:00 - 15:30",
-          title: "Commitment Ceremony & Pledges",
-          description: "Delegates make commitments to community development",
-          type: "Ceremony"
-        },
-        {
-          time: "15:30 - 16:00",
-          title: "Afternoon Break",
-          description: "Final refreshments and networking",
-          type: "Break"
-        },
-        {
-          time: "16:00 - 17:30",
-          title: "Closing Ceremony & Awards",
-          description: "Recognition of contributions and official closing",
-          type: "Ceremony"
-        },
-        {
-          time: "18:00 - 20:00",
-          title: "Farewell Reception",
-          description: "Celebration of successful summit completion",
-          type: "Reception"
+          time: "16:30 - 17:00",
+          title: "Group Photos & Departure",
+          description: "Group photographs and farewell",
+          type: "Closing"
         }
       ]
     }
   ];
 
-  const getEventTypeColor = (type: string) => {
-    switch (type) {
-      case 'Keynote':
-        return 'bg-liberian-red text-white';
-      case 'Panel':
-        return 'bg-liberian-blue text-white';
-      case 'Workshop':
-        return 'bg-green-600 text-white';
-      case 'Ceremony':
-        return 'bg-purple-600 text-white';
-      case 'Lunch':
-        return 'bg-orange-600 text-white';
-      case 'Dinner':
-        return 'bg-pink-600 text-white';
-      case 'Break':
-        return 'bg-gray-500 text-white';
+  const getEventIcon = (type: string) => {
+    switch (type.toLowerCase()) {
+      case 'registration':
+        return <Users className="w-5 h-5" />;
+      case 'ceremony':
+      case 'launch':
+      case 'inauguration':
+        return <Award className="w-5 h-5" />;
+      case 'keynote':
+      case 'statement':
+        return <BookOpen className="w-5 h-5" />;
+      case 'panel':
+      case 'forum':
+      case 'seminar':
+        return <Briefcase className="w-5 h-5" />;
+      case 'workshop':
+        return <BookOpen className="w-5 h-5" />;
+      case 'break':
+        return <Coffee className="w-5 h-5" />;
+      case 'lunch':
+        return <Utensils className="w-5 h-5" />;
+      case 'performance':
+      case 'exhibition':
+        return <Users className="w-5 h-5" />;
+      case 'election':
+        return <Award className="w-5 h-5" />;
       default:
-        return 'bg-gray-600 text-white';
+        return <Calendar className="w-5 h-5" />;
+    }
+  };
+
+  const getEventColor = (type: string) => {
+    switch (type.toLowerCase()) {
+      case 'registration':
+        return 'bg-blue-100 text-blue-800 border-blue-200';
+      case 'ceremony':
+      case 'launch':
+      case 'inauguration':
+        return 'bg-purple-100 text-purple-800 border-purple-200';
+      case 'keynote':
+      case 'statement':
+        return 'bg-liberian-red text-white border-liberian-red';
+      case 'panel':
+      case 'forum':
+      case 'seminar':
+        return 'bg-liberian-blue text-white border-liberian-blue';
+      case 'workshop':
+        return 'bg-green-100 text-green-800 border-green-200';
+      case 'break':
+        return 'bg-yellow-100 text-yellow-800 border-yellow-200';
+      case 'lunch':
+        return 'bg-orange-100 text-orange-800 border-orange-200';
+      case 'performance':
+      case 'exhibition':
+        return 'bg-pink-100 text-pink-800 border-pink-200';
+      case 'election':
+        return 'bg-indigo-100 text-indigo-800 border-indigo-200';
+      default:
+        return 'bg-gray-100 text-gray-800 border-gray-200';
     }
   };
 
@@ -297,242 +297,116 @@ const AgendaPage = () => {
               Summit Agenda
             </h1>
             <p className="text-xl md:text-2xl max-w-4xl mx-auto">
-              Four days of inspiring sessions, networking, and cultural exchange 
-              that will strengthen our community bonds and create lasting impact.
+              Three days of meaningful dialogue, networking, and collaboration
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Agenda Overview */}
+      {/* Agenda Content */}
       <section className="section-padding">
         <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Event Schedule
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A comprehensive program designed to engage, inspire, and empower our community
-            </p>
-          </motion.div>
+          {agenda.map((day, dayIndex) => (
+            <motion.div
+              key={dayIndex}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: dayIndex * 0.2 }}
+              viewport={{ once: true }}
+              className="mb-16"
+            >
+              {/* Day Header */}
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center bg-liberian-red text-white px-6 py-3 rounded-full mb-4">
+                  <Calendar className="w-5 h-5 mr-2" />
+                  {day.day}
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                  {day.title}
+                </h2>
+                <p className="text-xl text-liberian-red font-semibold mb-2">
+                  {day.date}
+                </p>
+                <p className="text-lg text-gray-600">
+                  Theme: {day.theme}
+                </p>
+              </div>
 
-          <div className="space-y-12">
-            {agenda.map((day, dayIndex) => (
-              <motion.div
-                key={dayIndex}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: dayIndex * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl shadow-xl overflow-hidden"
-              >
-                {/* Day Header */}
-                <div className="bg-gradient-to-r from-liberian-blue to-liberian-red text-white p-8">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                    <div>
-                      <h3 className="text-2xl md:text-3xl font-bold mb-2">
-                        {day.day}
+              {/* Events Grid */}
+              <div className="grid gap-6">
+                {day.events.map((event, eventIndex) => (
+                  <motion.div
+                    key={eventIndex}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: eventIndex * 0.1 }}
+                    viewport={{ once: true }}
+                    className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+                  >
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                      {/* Time and Type */}
+                      <div className="flex items-center gap-4">
+                        <div className="flex items-center text-liberian-red font-semibold">
+                          <Clock className="w-4 h-4 mr-2" />
+                          {event.time}
+                        </div>
+                        <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium border ${getEventColor(event.type)}`}>
+                          {getEventIcon(event.type)}
+                          <span className="ml-1">{event.type}</span>
+                        </span>
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-xl font-bold text-gray-900 md:text-right">
+                        {event.title}
                       </h3>
-                      <p className="text-lg opacity-90 mb-2">{day.date}</p>
-                      <p className="text-xl font-semibold">{day.title}</p>
                     </div>
-                    <div className="mt-4 md:mt-0">
-                      <span className="inline-block bg-white/20 px-4 py-2 rounded-full text-sm font-medium">
-                        Theme: {day.theme}
-                      </span>
-                    </div>
-                  </div>
-                </div>
 
-                {/* Events */}
-                <div className="p-8">
-                  <div className="space-y-6">
-                    {day.events.map((event, eventIndex) => (
-                      <motion.div
-                        key={eventIndex}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, delay: eventIndex * 0.05 }}
-                        viewport={{ once: true }}
-                        className="flex flex-col lg:flex-row lg:items-start space-y-4 lg:space-y-0 lg:space-x-6 p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors"
-                      >
-                        <div className="lg:w-32 flex-shrink-0">
-                          <div className="flex items-center space-x-2 text-liberian-red font-semibold">
-                            <Clock className="w-4 h-4" />
-                            <span>{event.time}</span>
-                          </div>
-                        </div>
+                    {/* Description */}
+                    <p className="text-gray-600 mt-4">
+                      {event.description}
+                    </p>
 
-                        <div className="flex-1">
-                          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-2">
-                            <h4 className="text-lg font-semibold text-gray-900 mb-2 sm:mb-0">
-                              {event.title}
-                            </h4>
-                            <span className={`px-3 py-1 rounded-full text-xs font-medium ${getEventTypeColor(event.type)}`}>
-                              {event.type}
-                            </span>
-                          </div>
-                          
-                          <p className="text-gray-600 mb-3">
-                            {event.description}
-                          </p>
-
-                          {event.speakers && (
-                            <div className="flex items-center space-x-2">
-                              <Users className="w-4 h-4 text-liberian-blue" />
-                              <span className="text-sm text-liberian-blue font-medium">
-                                Speakers: {event.speakers.join(', ')}
-                              </span>
-                            </div>
-                          )}
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                    {/* Speakers */}
+                    {event.speakers && event.speakers.length > 0 && (
+                      <div className="mt-4 flex items-center gap-2">
+                        <Users className="w-4 h-4 text-gray-400" />
+                        <span className="text-sm text-gray-500">
+                          Speakers: {event.speakers.join(', ')}
+                        </span>
+                      </div>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 
-      {/* Event Types Legend */}
-      <section className="section-padding bg-white">
+      {/* Call to Action */}
+      <section className="section-padding bg-gradient-to-r from-liberian-blue to-liberian-red">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center text-white"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Event Types
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Ready to Join Us?
             </h2>
-            <p className="text-gray-600">
-              Understanding the different types of sessions and activities
+            <p className="text-xl mb-8 max-w-3xl mx-auto">
+              Don't miss this historic opportunity to be part of the FOLICEA Summit 2025. 
+              Register now and secure your place in this transformative event.
             </p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
-            {[
-              { type: 'Keynote', color: 'bg-liberian-red' },
-              { type: 'Panel', color: 'bg-liberian-blue' },
-              { type: 'Workshop', color: 'bg-green-600' },
-              { type: 'Ceremony', color: 'bg-purple-600' },
-              { type: 'Lunch', color: 'bg-orange-600' },
-              { type: 'Dinner', color: 'bg-pink-600' },
-              { type: 'Break', color: 'bg-gray-500' },
-              { type: 'Other', color: 'bg-gray-600' }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className={`${item.color} text-white w-8 h-8 rounded-full mx-auto mb-2 flex items-center justify-center text-xs font-bold`}>
-                  {item.type.charAt(0)}
-                </div>
-                <p className="text-sm text-gray-600">{item.type}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Venue Information */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Venue Information
-            </h2>
-            <p className="text-gray-600">
-              Everything you need to know about the summit location
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-xl p-8 shadow-lg"
+            <a
+              href="/registration"
+              className="inline-flex items-center bg-white text-liberian-red px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
             >
-              <div className="flex items-center space-x-4 mb-6">
-                <MapPin className="w-8 h-8 text-liberian-red" />
-                <h3 className="text-2xl font-bold text-gray-900">Kampala Serena Hotel</h3>
-              </div>
-              <div className="space-y-4 text-gray-600">
-                <p>📍 Kintu Road, Kampala, Uganda</p>
-                <p>🏨 5-star luxury hotel in the heart of Kampala</p>
-                <p>📞 +256 414 309000</p>
-                <p>🌐 www.serenahotels.com</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-xl p-8 shadow-lg"
-            >
-              <div className="flex items-center space-x-4 mb-6">
-                <Calendar className="w-8 h-8 text-liberian-blue" />
-                <h3 className="text-2xl font-bold text-gray-900">Event Details</h3>
-              </div>
-              <div className="space-y-4 text-gray-600">
-                <p>📅 November 28 - December 1, 2025</p>
-                <p>⏰ Daily: 8:00 AM - 8:00 PM</p>
-                <p>🎫 Registration required</p>
-                <p>🍽️ Meals included in registration</p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="section-padding gradient-bg">
-        <div className="container-custom text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Join This Historic Event?
-            </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-              Don't miss out on this opportunity to connect, learn, and grow with 
-              the Liberian diaspora community in East Africa
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/registration" className="bg-white text-liberian-red hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105">
-                Register Now
-              </a>
-              <a href="/contact" className="border-2 border-white text-white hover:bg-white hover:text-liberian-red font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300">
-                Contact Us
-              </a>
-            </div>
+              Register Now
+            </a>
           </motion.div>
         </div>
       </section>
