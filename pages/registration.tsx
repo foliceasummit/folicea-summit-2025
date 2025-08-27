@@ -671,14 +671,12 @@ Registration submitted at: ${new Date().toISOString()}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-liberian-red focus:border-transparent"
                   >
                     <option value="">Select T-Shirt Size</option>
-                    <option value="XS">XS</option>
                     <option value="S">S</option>
                     <option value="M">M</option>
                     <option value="L">L</option>
                     <option value="XL">XL</option>
                     <option value="XXL">XXL</option>
-                    <option value="XXXL">XXXL</option>
-                  </select>
+                    </select>
                   {errors.tshirtSize && (
                     <p className="text-red-500 text-sm mt-1">{errors.tshirtSize.message}</p>
                   )}
@@ -695,11 +693,9 @@ Registration submitted at: ${new Date().toISOString()}
                     <option value="">Select Color</option>
                     <option value="White">White</option>
                     <option value="Black">Black</option>
-                    <option value="Navy">Navy</option>
                     <option value="Red">Red</option>
                     <option value="Blue">Blue</option>
-                    <option value="Gray">Gray</option>
-                  </select>
+                    </select>
                   {errors.tshirtColor && (
                     <p className="text-red-500 text-sm mt-1">{errors.tshirtColor.message}</p>
                   )}
