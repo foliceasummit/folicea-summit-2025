@@ -144,7 +144,7 @@ const HomePage = () => {
             >
               <Calendar className="w-6 h-6 mx-auto mb-2 text-white/90" />
               <h3 className="text-base sm:text-lg font-semibold mb-1">Date & Time</h3>
-              <p className="text-xs sm:text-sm text-white/90">November 28 - 30, 2025</p>
+                              <p className="text-xs sm:text-sm text-white/90">December 5 - 7, 2025</p>
             </motion.div>
 
             <motion.div

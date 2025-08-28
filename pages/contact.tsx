@@ -262,7 +262,7 @@ const ContactPage = () => {
                     <Clock className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold text-gray-900">Event Schedule</h3>
-                      <p className="text-gray-600">November 28 - December 1, 2025</p>
+                      <p className="text-gray-600">December 5 - 7, 2025</p>
                       <p className="text-sm text-gray-500 mt-1">
                         Registration opens at 8:00 AM each day
                       </p>

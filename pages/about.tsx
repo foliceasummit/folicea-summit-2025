@@ -186,7 +186,7 @@ const AboutPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-liberian-red text-white p-6 rounded-xl">
                   <h3 className="text-xl font-semibold mb-2">When</h3>
-                  <p>November 28 - 30 2025</p>
+                  <p>December 5 - 7, 2025</p>
                 </div>
                 <div className="bg-liberian-blue text-white p-6 rounded-xl">
                   <h3 className="text-xl font-semibold mb-2">Where</h3>

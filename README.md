@@ -1,6 +1,6 @@
 # FOLICEA Summit 2025 - Official Website
 
-The official website for the Federation of Liberian Communities in East Africa (FOLICEA) Summit 2025, taking place in Kampala, Uganda from November 28 to December 1, 2025.
+The official website for the Federation of Liberian Communities in East Africa (FOLICEA) Summit 2025, taking place in Kampala, Uganda from December 5 to 7, 2025.
 
 ## 🌟 Features
 

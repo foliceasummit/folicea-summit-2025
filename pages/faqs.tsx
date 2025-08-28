@@ -12,7 +12,7 @@ const FAQsPage = () => {
     },
     {
       question: "When and where is the summit taking place?",
-      answer: "The summit will be held from November 28 - 30, 2025, at the Kampala Serena Hotel in Uganda."
+              answer: "The summit will be held from December 5 - 7, 2025, at the Kampala Serena Hotel in Uganda."
     },
     {
       question: "Who can attend the FOLICEA Summit?",

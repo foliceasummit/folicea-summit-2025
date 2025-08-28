@@ -9,7 +9,7 @@ const AgendaPage = () => {
   const agenda = [
     {
       day: "Day 1",
-      date: "November 28, 2025",
+      date: "December 5, 2025",
       title: "Official Launch of the Federation",
       theme: "Unity, Identity, and a Shared Vision",
       events: [
@@ -92,7 +92,7 @@ const AgendaPage = () => {
     },
     {
       day: "Day 2",
-      date: "November 29, 2025",
+      date: "December 6, 2025",
       title: "Business, Investment & Tech Innovation Seminars",
       theme: "Empowering the Diaspora Economy",
       events: [
@@ -154,7 +154,7 @@ const AgendaPage = () => {
     },
     {
       day: "Day 3",
-      date: "November 30, 2025",
+      date: "December 7, 2025",
       title: "General Assembly Elections and Inauguration",
       theme: "Democratic Leadership for Diaspora Development",
       events: [
@@ -560,7 +560,7 @@ const AgendaPage = () => {
                     <Calendar className="w-6 h-6 text-yellow-300 mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold text-lg">Date & Time</h4>
-                      <p className="text-white/90">November 28 - 30, 2025</p>
+                      <p className="text-white/90">December 5 - 7, 2025</p>
                       <p className="text-white/90">8:00 AM - 6:00 PM Daily</p>
                     </div>
                   </div>

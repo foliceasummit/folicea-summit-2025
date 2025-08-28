@@ -92,7 +92,7 @@ const Footer = () => {
                   📅
                 </div>
                 <div>
-                  <p className="font-medium">November 28 - 30, 2025</p>
+                  <p className="font-medium">December 5 - 7, 2025</p>
                   <p className="text-gray-300 text-sm">3 Days of Impact</p>
                 </div>
               </div>
