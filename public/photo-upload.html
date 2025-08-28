@@ -110,6 +110,40 @@
             margin-bottom: 5px;
             color: #666;
         }
+        .upload-instructions {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: left;
+            border-left: 4px solid #002868;
+        }
+        .upload-instructions h3 {
+            color: #002868;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .upload-instructions ol {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        .upload-instructions li {
+            margin-bottom: 8px;
+            color: #333;
+            line-height: 1.5;
+        }
+        .important-note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 12px;
+            margin-top: 15px;
+        }
+        .important-note p {
+            margin: 0;
+            color: #856404;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -131,24 +165,24 @@
             </ul>
         </div>
 
-        <form class="upload-form" action="https://script.google.com/macros/s/AKfycbxgDdzWlkVQXjV9bHqfM5LsWXrUGaXVKzIBjLS0Fd4Q9Yjeg1X-0LdADzZ9cWcMSOJRkg/exec" method="POST" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" required placeholder="Enter your full name as registered">
-            </div>
+        <div class="upload-instructions">
+            <h3>📸 How to Upload Your Photo:</h3>
+            <ol>
+                <li>Click the "Upload to Google Drive" button below</li>
+                <li>You'll be redirected to Google Drive</li>
+                <li>Drag and drop your photo or click "Upload files"</li>
+                <li>Name your file: <strong>Your Full Name_Photo</strong> (e.g., "John Doe_Photo.jpg")</li>
+                <li>Click "Upload" to complete</li>
+            </ol>
             
-            <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+            <div class="important-note">
+                <p><strong>Important:</strong> Please name your file with your full name so we can identify it easily.</p>
             </div>
-            
-            <div class="form-group">
-                <label for="photo">Profile Photo *</label>
-                <input type="file" id="photo" name="photo" accept="image/*" required>
-            </div>
-            
-            <button type="submit" class="submit-btn">Upload Photo</button>
-        </form>
+        </div>
+        
+        <a href="https://drive.google.com/drive/folders/1NPjZU32Gw7weHWfIO22VnraLeCYjAeu6?usp=drive_link" target="_blank" class="submit-btn" style="text-decoration: none; display: inline-block; margin-top: 20px;">
+            📁 Upload to Google Drive
+        </a>
         
         <p style="margin-top: 20px; color: #666; font-size: 14px;">
             After uploading, you'll receive a confirmation email. 
@@ -157,20 +191,18 @@
     </div>
 
     <script>
-        // Auto-fill form from URL parameters
+        // Display user info if available from URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         const name = urlParams.get('name');
         const email = urlParams.get('email');
         
-        if (name) document.getElementById('name').value = name;
-        if (email) document.getElementById('email').value = email;
-        
-        // Form submission handling
-        document.querySelector('.upload-form').addEventListener('submit', function(e) {
-            const submitBtn = document.querySelector('.submit-btn');
-            submitBtn.textContent = 'Uploading...';
-            submitBtn.disabled = true;
-        });
+        if (name) {
+            // Add user info to the page
+            const userInfo = document.createElement('div');
+            userInfo.className = 'important-note';
+            userInfo.innerHTML = `<p><strong>Welcome ${name}!</strong> Please upload your photo to complete your registration.</p>`;
+            document.querySelector('.container').insertBefore(userInfo, document.querySelector('.instructions'));
+        }
     </script>
 </body>
 </html>
