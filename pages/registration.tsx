@@ -156,13 +156,13 @@ Registration submitted at: ${new Date().toISOString()}
             <p className="text-sm text-blue-700 mb-3">
               After payment confirmation, you'll receive a link to upload your profile photo for your summit badge.
             </p>
-            <a 
-              href={`/photo-upload.html?name=${encodeURIComponent(registeredData?.name || '')}&email=${encodeURIComponent(registeredData?.email || '')}`}
-              target="_blank"
-              className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors"
-            >
-              Upload Photo Now
-            </a>
+                          <a 
+                href={`/photo-upload-imgbb.html?name=${encodeURIComponent(registeredData?.name || '')}&email=${encodeURIComponent(registeredData?.email || '')}`}
+                target="_blank"
+                className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors"
+              >
+                Upload Photo Now
+              </a>
           </div>
           <p className="text-sm text-gray-500 mb-6">
           To complete your registration, please send your payment via MoMo to: 0792109775, or use MoMo Code: XYZ123. 
