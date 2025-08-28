@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOLICEA Summit 2025 - Photo Upload</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #002868 0%, #BF0A30 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        h1 {
+            color: #002868;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        .instructions {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .instructions h3 {
+            color: #002868;
+            margin-top: 0;
+        }
+        .instructions ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .instructions li {
+            margin-bottom: 5px;
+            color: #666;
+        }
+        .upload-form {
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+        .form-group input[type="text"], 
+        .form-group input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .form-group input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px dashed #002868;
+            border-radius: 8px;
+            background: #f8f9fa;
+            cursor: pointer;
+        }
+        .file-info {
+            background: #f0f8ff;
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 8px;
+            border-left: 3px solid #002868;
+        }
+        .file-info p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        .submit-btn {
+            background: linear-gradient(135deg, #002868, #BF0A30);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .upload-status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .status-message {
+            text-align: center;
+            font-weight: 600;
+        }
+        .status-success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .status-error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        .status-loading {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403" alt="FOLICEA Logo">
+        </div>
+        <h1>Photo Upload</h1>
+        <p class="subtitle">FOLICEA Summit 2025 Registration</p>
+        
+        <div class="instructions">
+            <h3>📸 Photo Requirements:</h3>
+            <ul>
+                <li>Professional headshot or passport-style photo</li>
+                <li>Clear, well-lit image</li>
+                <li>File size: Maximum 5MB</li>
+                <li>Formats: JPG, PNG, or JPEG</li>
+                <li>Photo will be used for your summit badge</li>
+            </ul>
+        </div>
+
+        <form class="upload-form" id="photoUploadForm">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name as registered">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+            </div>
+            
+            <div class="form-group">
+                <label for="photo">Profile Photo *</label>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+                <div class="file-info" id="fileInfo" style="display: none;">
+                    <p>Selected: <span id="fileName"></span></p>
+                    <p>Size: <span id="fileSize"></span></p>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn" id="uploadBtn">
+                📸 Upload Photo
+            </button>
+        </form>
+        
+        <div class="upload-status" id="uploadStatus" style="display: none;">
+            <div class="status-message" id="statusMessage"></div>
+        </div>
+        
+        <p style="margin-top: 20px; color: #666; font-size: 14px;">
+            After uploading, you'll receive a confirmation email. 
+            Your photo will be used for your summit badge and participant directory.
+        </p>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-storage-compat.js"></script>
+
+    <script>
+        // Firebase configuration - You'll need to replace these with your Firebase project details
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "YOUR_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const storage = firebase.storage();
+
+        // Display user info if available from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const email = urlParams.get('email');
+        
+        if (name) {
+            document.getElementById('name').value = name;
+        }
+        if (email) {
+            document.getElementById('email').value = email;
+        }
+        
+        // File input handling
+        document.getElementById('photo').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                document.getElementById('fileName').textContent = file.name;
+                document.getElementById('fileSize').textContent = (file.size / 1024 / 1024).toFixed(2) + ' MB';
+                document.getElementById('fileInfo').style.display = 'block';
+            }
+        });
+        
+        // Form submission
+        document.getElementById('photoUploadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const photo = document.getElementById('photo').files[0];
+            
+            if (!photo) {
+                showStatus('Please select a photo to upload.', 'error');
+                return;
+            }
+            
+            // Show loading state
+            showStatus('Uploading your photo...', 'loading');
+            document.getElementById('uploadBtn').disabled = true;
+            
+            try {
+                // Create a unique filename
+                const timestamp = Date.now();
+                const fileName = `${name.replace(/\s+/g, '_')}_${timestamp}.${photo.name.split('.').pop()}`;
+                const storageRef = storage.ref(`folicea-photos/${fileName}`);
+                
+                // Upload to Firebase Storage
+                const snapshot = await storageRef.put(photo);
+                const downloadURL = await snapshot.ref.getDownloadURL();
+                
+                // Send to your email via Web3Forms
+                await sendPhotoInfo(name, email, downloadURL, fileName);
+                showStatus('Photo uploaded successfully! You will receive a confirmation email shortly.', 'success');
+                document.getElementById('photoUploadForm').reset();
+                document.getElementById('fileInfo').style.display = 'none';
+            } catch (error) {
+                console.error('Upload error:', error);
+                showStatus('Upload failed. Please try again or contact us for assistance.', 'error');
+            } finally {
+                document.getElementById('uploadBtn').disabled = false;
+            }
+        });
+        
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('uploadStatus');
+            const messageDiv = document.getElementById('statusMessage');
+            
+            statusDiv.className = `upload-status status-${type}`;
+            messageDiv.textContent = message;
+            statusDiv.style.display = 'block';
+            
+            if (type === 'success') {
+                setTimeout(() => {
+                    statusDiv.style.display = 'none';
+                }, 5000);
+            }
+        }
+        
+        async function sendPhotoInfo(name, email, photoUrl, fileName) {
+            // Send photo info to your email via Web3Forms
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    access_key: 'e74266af-617b-4d91-8b63-b34274a06806',
+                    subject: 'FOLICEA Summit 2025 - Photo Upload',
+                    name: name,
+                    email: email,
+                    message: `Photo uploaded successfully!\n\nName: ${name}\nEmail: ${email}\nPhoto URL: ${photoUrl}\nFile Name: ${fileName}\n\nThis photo will be used for the summit badge and participant directory.`
+                })
+            });
+            
+            return response.json();
+        }
+    </script>
+</body>
+</html>
