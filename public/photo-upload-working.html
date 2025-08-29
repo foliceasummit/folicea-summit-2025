@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOLICEA Summit 2025 - Photo Upload</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #002868 0%, #BF0A30 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            color: #002868;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        .instructions {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .instructions h3 {
+            color: #002868;
+            margin-top: 0;
+        }
+        .instructions ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .instructions li {
+            margin-bottom: 5px;
+            color: #666;
+        }
+        .upload-form {
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+        .form-group input[type="text"], 
+        .form-group input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .form-group input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px dashed #002868;
+            border-radius: 8px;
+            background: #f8f9fa;
+            cursor: pointer;
+        }
+        .file-info {
+            background: #f0f8ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            border-left: 4px solid #002868;
+        }
+        .photo-preview {
+            margin-top: 15px;
+            text-align: center;
+        }
+        .photo-preview img {
+            max-width: 200px;
+            max-height: 200px;
+            border-radius: 50%;
+            border: 3px solid #002868;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .submit-btn {
+            background: linear-gradient(135deg, #002868 0%, #BF0A30 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .upload-status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        .status-loading {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📸 Profile Photo Upload</h1>
+        <p class="subtitle">FOLICEA Summit 2025 - Kampala, Uganda</p>
+        
+        <div class="instructions">
+            <h3>📋 Upload Instructions:</h3>
+            <ul>
+                <li>Select a clear passport-size photo</li>
+                <li>Maximum file size: 2MB</li>
+                <li>Supported formats: JPG, PNG, GIF</li>
+                <li>Photo will be used for your summit badge</li>
+            </ul>
+        </div>
+        
+        <form class="upload-form" id="photoUploadForm">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="photo">Profile Photo *</label>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+                <div class="file-info" id="fileInfo" style="display: none;">
+                    <p>Selected: <span id="fileName"></span></p>
+                    <p>Size: <span id="fileSize"></span></p>
+                </div>
+                <div class="photo-preview" id="photoPreview" style="display: none;">
+                    <img id="previewImage" alt="Photo Preview">
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn" id="uploadBtn">
+                📸 Upload Photo
+            </button>
+        </form>
+        
+        <div class="upload-status" id="uploadStatus" style="display: none;">
+            <div class="status-message" id="statusMessage"></div>
+        </div>
+        
+        <p style="margin-top: 20px; color: #666; font-size: 14px;">
+            After uploading, you'll receive a confirmation email. 
+            Your photo will be used for your summit badge and participant directory.
+        </p>
+    </div>
+
+    <script>
+        // Display user info if available from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const email = urlParams.get('email');
+        
+        if (name) {
+            document.getElementById('name').value = name;
+        }
+        if (email) {
+            document.getElementById('email').value = email;
+        }
+        
+        // File input handling
+        document.getElementById('photo').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                // Check file size (2MB limit)
+                if (file.size > 2 * 1024 * 1024) {
+                    showStatus('File size must be less than 2MB. Please select a smaller image.', 'error');
+                    this.value = '';
+                    return;
+                }
+                
+                // Show file info
+                document.getElementById('fileName').textContent = file.name;
+                document.getElementById('fileSize').textContent = (file.size / 1024 / 1024).toFixed(2) + ' MB';
+                document.getElementById('fileInfo').style.display = 'block';
+                
+                // Show photo preview
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('previewImage').src = e.target.result;
+                    document.getElementById('photoPreview').style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        // Form submission
+        document.getElementById('photoUploadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const photo = document.getElementById('photo').files[0];
+            
+            if (!photo) {
+                showStatus('Please select a photo to upload.', 'error');
+                return;
+            }
+            
+            // Show loading state
+            showStatus('Converting and uploading your photo...', 'loading');
+            document.getElementById('uploadBtn').disabled = true;
+            
+            try {
+                // Convert photo to base64
+                const base64Photo = await convertToBase64(photo);
+                
+                // Create email message with photo data
+                const emailMessage = `
+FOLICEA Summit 2025 - Photo Upload
+
+Name: ${name}
+Email: ${email}
+File Name: ${photo.name}
+File Size: ${(photo.size / 1024 / 1024).toFixed(2)} MB
+Upload Date: ${new Date().toLocaleString()}
+
+PHOTO DATA (Base64):
+${base64Photo}
+
+Instructions for organizers:
+1. Copy the base64 data above
+2. Save it as a file with .jpg or .png extension
+3. Use this photo for the participant's summit badge
+
+This photo will be used for the summit badge and participant directory.
+                `;
+                
+                // Send email via Web3Forms
+                const formData = new FormData();
+                formData.append('access_key', 'e74266af-617b-4d91-8b63-b34274a06806');
+                formData.append('name', name);
+                formData.append('email', email);
+                formData.append('subject', 'FOLICEA Summit 2025 - Photo Upload');
+                formData.append('message', emailMessage);
+                
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    showStatus('✅ Photo uploaded successfully! You will receive a confirmation email shortly.', 'success');
+                    document.getElementById('photoUploadForm').reset();
+                    document.getElementById('fileInfo').style.display = 'none';
+                    document.getElementById('photoPreview').style.display = 'none';
+                } else {
+                    throw new Error('Email submission failed');
+                }
+            } catch (error) {
+                console.error('Upload error:', error);
+                showStatus('❌ Upload failed. Please try again or contact us for assistance.', 'error');
+            } finally {
+                document.getElementById('uploadBtn').disabled = false;
+            }
+        });
+        
+        function convertToBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+        
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('uploadStatus');
+            const messageDiv = document.getElementById('statusMessage');
+            
+            statusDiv.className = `upload-status status-${type}`;
+            messageDiv.textContent = message;
+            statusDiv.style.display = 'block';
+            
+            if (type === 'success') {
+                setTimeout(() => {
+                    statusDiv.style.display = 'none';
+                }, 8000);
+            }
+        }
+    </script>
+</body>
+</html>
