@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, User, Building, Briefcase, Car, Bed, Utensils, Shirt } from 'lucide-react';
+import { User, Briefcase, Car, Utensils, Camera } from 'lucide-react';
 
 interface RegistrationForm {
   // Personal Information
@@ -36,14 +36,32 @@ interface RegistrationForm {
   foodAllergies: string;
   tshirtSize: string;
   tshirtColor: string;
+  
+  // Photo Upload
+  profilePhoto: FileList;
 }
 
 const RegistrationPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [registeredData, setRegisteredData] = useState<{name: string, email: string} | null>(null);
+  const [photoPreview, setPhotoPreview] = useState<string | null>(null);
 
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<RegistrationForm>();
+  const { register, handleSubmit, formState: { errors }, reset, watch } = useForm<RegistrationForm>();
+  const photoFile = watch('profilePhoto');
+
+  // Handle photo preview
+  useEffect(() => {
+    if (photoFile && photoFile[0]) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setPhotoPreview(e.target?.result as string);
+      };
+      reader.readAsDataURL(photoFile[0]);
+    } else {
+      setPhotoPreview(null);
+    }
+  }, [photoFile]);
 
   const onSubmit = async (data: RegistrationForm) => {
     setIsSubmitting(true);
@@ -85,7 +103,7 @@ Expectations: ${data.expectations}
 
 Contributions: ${data.contributions}
 
-Profile Photo: Will be uploaded separately via photo upload link
+Profile Photo: ${data.profilePhoto && data.profilePhoto[0] ? `Attached (${data.profilePhoto[0].name})` : 'Not provided'}
 
 Registration submitted at: ${new Date().toISOString()}
       `;
@@ -97,6 +115,11 @@ Registration submitted at: ${new Date().toISOString()}
       formData.append('email', data.email);
       formData.append('subject', 'FOLICEA Summit 2025 Registration');
       formData.append('message', registrationMessage);
+      
+      // Add photo if provided
+      if (data.profilePhoto && data.profilePhoto[0]) {
+        formData.append('attachment', data.profilePhoto[0]);
+      }
 
       console.log('Submitting registration form with FormData...');
 
@@ -114,16 +137,6 @@ Registration submitted at: ${new Date().toISOString()}
       const result = await response.json();
       console.log('Web3Forms response:', result);
       
-      // Log FormData contents for debugging
-      console.log('FormData contents:');
-      formData.forEach((value, key) => {
-        if (value instanceof File) {
-          console.log(key, 'File:', value.name, value.size, value.type);
-        } else {
-          console.log(key, value);
-        }
-      });
-      
       if (result.success) {
         setSubmitSuccess(true);
         setRegisteredData({
@@ -131,6 +144,7 @@ Registration submitted at: ${new Date().toISOString()}
           email: data.email
         });
         reset();
+        setPhotoPreview(null);
       } else {
         throw new Error(`Registration failed: ${result.message || 'Unknown error'}`);
       }
@@ -149,15 +163,15 @@ Registration submitted at: ${new Date().toISOString()}
           <div className="text-green-500 text-6xl mb-4">✓</div>
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Registration Successful!</h2>
           <p className="text-gray-600 mb-6">
-          Thank you for registering for the FOLICEA Summit 2025! You will receive a confirmation email shortly after your payment is completed.
+          Thank you for registering for the FOLICEA Summit 2025!
           </p>
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
             <h3 className="font-semibold text-blue-800 mb-2">📸 Upload Your Photo</h3>
             <p className="text-sm text-blue-700 mb-3">
-              After payment confirmation, you'll receive a link to upload your profile photo for your summit badge.
+              Kindly upload your passport size photo for your summit Tag.
             </p>
                           <a 
-                href={`/photo-upload-imgbb.html?name=${encodeURIComponent(registeredData?.name || '')}&email=${encodeURIComponent(registeredData?.email || '')}`}
+                href={`/photo-upload-simple.html?name=${encodeURIComponent(registeredData?.name || '')}&email=${encodeURIComponent(registeredData?.email || '')}`}
                 target="_blank"
                 className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700 transition-colors"
               >
@@ -680,6 +694,39 @@ Registration submitted at: ${new Date().toISOString()}
                     </select>
                   {errors.tshirtColor && (
                     <p className="text-red-500 text-sm mt-1">{errors.tshirtColor.message}</p>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Photo Upload Section */}
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                <Camera className="w-6 h-6 mr-3 text-liberian-red" />
+                Profile Photo
+              </h2>
+              <div className="flex flex-col items-center justify-center p-6 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-liberian-red focus:outline-none">
+                <input
+                  type="file"
+                  {...register('profilePhoto')}
+                  accept="image/*"
+                  className="hidden"
+                  onChange={(e) => {
+                    if (e.target.files) {
+                      setPhotoPreview(URL.createObjectURL(e.target.files[0]));
+                    }
+                  }}
+                />
+                <div className="text-center">
+                  {photoPreview ? (
+                    <img src={photoPreview} alt="Profile Preview" className="max-w-sm h-auto rounded-lg" />
+                  ) : (
+                    <>
+                      <svg className="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                      <p className="mt-2 text-sm text-gray-600">
+                        Click to upload your profile photo (PNG, JPG, JPEG, GIF up to 5MB)
+                      </p>
+                    </>
                   )}
                 </div>
               </div>
