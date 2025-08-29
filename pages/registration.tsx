@@ -91,9 +91,9 @@ const RegistrationPage = () => {
       formData.append('arrivalTime', data.arrivalTime);
       formData.append('modeOfTravel', data.modeOfTravel);
       formData.append('flightBusNumber', data.flightBusNumber || 'Not specified');
-             formData.append('roomPreference', data.roomPreference || 'Not specified');
+             formData.append('roomPreference', data.roomPreference);
       formData.append('mobilityAccess', data.mobilityAccess ? 'Yes' : 'No');
-      formData.append('foodPreference', data.foodPreference);
+             formData.append('foodPreference', data.foodPreference || 'Not specified');
       formData.append('foodAllergies', data.foodAllergies || 'None');
       formData.append('tshirtSize', data.tshirtSize);
       formData.append('tshirtColor', data.tshirtColor);
@@ -528,17 +528,20 @@ const RegistrationPage = () => {
 
                                  <div>
                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                     Room Preference
+                     Room Preference *
                    </label>
                    <select
-                     {...register('roomPreference')}
+                     {...register('roomPreference', { required: 'Room preference is required' })}
                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-liberian-red focus:border-transparent"
                    >
-                     <option value="">Select room preference (optional)</option>
+                     <option value="">Select room preference</option>
                      <option value="Single">Single Room</option>
                      <option value="Double">Double Room (Shared)</option>
                      <option value="No Accommodation">No Accommodation Needed</option>
                    </select>
+                   {errors.roomPreference && (
+                     <p className="text-red-500 text-sm mt-1">{errors.roomPreference.message}</p>
+                   )}
                  </div>
 
                 <div className="flex items-center">
@@ -561,25 +564,22 @@ const RegistrationPage = () => {
                 Dietary Preferences and T-Shirt
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Food Preference *
-                  </label>
-                  <select
-                    {...register('foodPreference', { required: 'Food preference is required' })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-liberian-red focus:border-transparent"
-                  >
-                    <option value="">Select food preference</option>
-                    <option value="Non-Vegetarian">Non-Vegetarian</option>
-                    <option value="Vegetarian">Vegetarian</option>
-                    <option value="Vegan">Vegan</option>
-                    <option value="Halal">Halal</option>
-                    <option value="Other">Other</option>
-                  </select>
-                  {errors.foodPreference && (
-                    <p className="text-red-500 text-sm mt-1">{errors.foodPreference.message}</p>
-                  )}
-                </div>
+                                 <div>
+                   <label className="block text-sm font-medium text-gray-700 mb-2">
+                     Food Preference
+                   </label>
+                   <select
+                     {...register('foodPreference')}
+                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-liberian-red focus:border-transparent"
+                   >
+                     <option value="">Select food preference (optional)</option>
+                     <option value="Non-Vegetarian">Non-Vegetarian</option>
+                     <option value="Vegetarian">Vegetarian</option>
+                     <option value="Vegan">Vegan</option>
+                     <option value="Halal">Halal</option>
+                     <option value="Other">Other</option>
+                   </select>
+                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
