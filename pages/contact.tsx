@@ -90,7 +90,7 @@ const ContactPage = () => {
               Contact Us
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Get in touch with the FOLICEA Summit organizing committee. We're here to help!
+              Get in touch with the FOLICEA Central Summit Committee. We're here to help!
             </p>
           </div>
 
@@ -150,7 +150,7 @@ const ContactPage = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject *
+                    Subject
                   </label>
                   <input
                     type="text"
@@ -217,7 +217,7 @@ const ContactPage = () => {
                            href="tel:+250792109775" 
                            className="text-liberian-red hover:text-red-700 transition-colors block"
                          >
-                           +250 792 109 775
+                           +250 792 109 775 | +250 971 349 853
                          </a>
                                                   <a 
                             href="https://wa.me/231776038583" 
@@ -262,7 +262,7 @@ const ContactPage = () => {
                     <Clock className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-semibold text-gray-900">Event Schedule</h3>
-                      <p className="text-gray-600">December 5 - 7, 2025</p>
+                      <p className="text-gray-600">November 28 - 30, 2025</p>
                       <p className="text-sm text-gray-500 mt-1">
                         Registration opens at 8:00 AM each day
                       </p>
