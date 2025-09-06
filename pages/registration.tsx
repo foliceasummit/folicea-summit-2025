@@ -150,15 +150,15 @@ const RegistrationPage = () => {
             Thank you for registering for the FOLICEA Summit 2025!
           </p>
                      <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-             <h3 className="font-semibold text-green-800 mb-2">✅ Registration Complete</h3>
+             <h3 className="font-semibold text-green-800 mb-2">✅ Registration is pending until payment is received</h3>
              <p className="text-sm text-green-700">
-               Your registration and photo have been successfully submitted via Basin. You will receive a confirmation email shortly.
+               Your registration and photo have been successfully submitted. You will receive a confirmation email shortly.
              </p>
            </div>
           <p className="text-sm text-gray-500 mb-6">
-            To complete your registration, please send your payment via MoMo to: 0792109775, or use MoMo Code: XYZ123. 
-            After payment, kindly send a screenshot to our WhatsApp: +231 776 038 583. 
-            For any inquiries, please call: +250 792 100 775.
+            Complete registration by sending your payment via MoMo to 0792109775 (Code: XYZ123). 
+            After payment, Share your payment screenshot on WhatsApp: +231 776 038 583 
+            For any inquiries, call: +250 792 100 775 | +250 791 349 853.
           </p>
           <button
             onClick={() => {
@@ -198,11 +198,12 @@ const RegistrationPage = () => {
                 <div>
                   <h3 className="text-lg font-semibold mb-2">What's Included:</h3>
                   <ul className="space-y-1 text-base">
-                    <li>• Conference materials and badge</li>
-                    <li>• Welcome dinner and networking events</li>
-                    <li>• Coffee breaks and refreshments</li>
-                    <li>• FOLICEA Summit 2025 T-shirt</li>
-                    <li>• Certificate of participation</li>
+                    <li>• 4 days of Accommodation</li>
+                    <li>• Transportation</li>
+                    <li>• 4 days of Breakfast & Lunch</li>
+                    <li>• Summit T-shirt & Cap</li>
+                    <li>• Conference materials & badge</li>
+                     <li>• Networking opportunities</li>
                   </ul>
                 </div>
                 <div>
@@ -349,7 +350,7 @@ const RegistrationPage = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    City *
+                    City
                   </label>
                   <input
                     type="text"
@@ -388,7 +389,7 @@ const RegistrationPage = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Organization/Company
+                    Organization/Institution
                   </label>
                   <input
                     type="text"
@@ -419,7 +420,7 @@ const RegistrationPage = () => {
 
               <div className="mt-6">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  What are your expectations from this summit? *
+                  What are your expectations from this summit?
                 </label>
                 <textarea
                   {...register('expectations', { required: 'Expectations are required' })}
@@ -434,7 +435,7 @@ const RegistrationPage = () => {
 
               <div className="mt-6">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  How do you plan to contribute to the Liberian diaspora community? *
+                  How do you plan to contribute to the Liberian diaspora community?
                 </label>
                 <textarea
                   {...register('contributions', { required: 'Contributions are required' })}
@@ -457,7 +458,7 @@ const RegistrationPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                  <div>
                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                     Arrival Date *
+                     Arrival Date
                    </label>
                    <input
                      type="date"
@@ -483,7 +484,7 @@ const RegistrationPage = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Arrival Time *
+                    Arrival Time
                   </label>
                   <input
                     type="time"
@@ -497,14 +498,14 @@ const RegistrationPage = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Mode of Travel *
+                    Mode of Travel
                   </label>
                   <select
                     {...register('modeOfTravel', { required: 'Mode of travel is required' })}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-liberian-red focus:border-transparent"
                   >
                     <option value="">Select mode of travel</option>
-                    <option value="Air">Air</option>
+                    <option value="Air">Flight</option>
                     <option value="Bus">Bus</option>
                     <option value="Car">Car</option>
                     <option value="Other">Other</option>
