@@ -92,7 +92,7 @@ const Footer = () => {
                   📅
                 </div>
                 <div>
-                  <p className="font-medium">December 5 - 7, 2025</p>
+                  <p className="font-medium">November 28 - 30, 2025</p>
                   <p className="text-gray-300 text-sm">3 Days of Impact</p>
                 </div>
               </div>
@@ -112,7 +112,7 @@ const Footer = () => {
                              <div className="flex items-center space-x-3">
                  <Phone className="w-5 h-5 text-liberian-red flex-shrink-0" />
                                    <div>
-                    <p className="text-gray-300">+250 792 109 775</p>
+                    <p className="text-gray-300">+250 792 109 775 | +250 791 349 853</p>
                     <div className="flex items-center">
                       <MessageCircle className="w-4 h-4 text-liberian-red mr-2" />
                       <a 
