@@ -14,19 +14,20 @@ const NewsStoryPage = () => {
   const newsData = {
     1: {
       title: "FOLICEA Summit 2025 Registration Now Open",
-      date: "December 15, 2024",
+      date: "September 7, 2025",
       category: "Announcement",
       image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       content: `
-        <p>We are excited to announce that registration for the FOLICEA Summit 2025 is now officially open! This historic gathering will bring together Liberian communities from across East Africa for four days of meaningful dialogue, networking, and collaboration.</p>
+        <p>We are excited to announce that registration for the FOLICEA Summit 2025 is now officially open! This historic gathering will bring together Liberian communities from across East Africa for three days of meaningful dialogue, networking, and collaboration.</p>
         
         <h2>Early Bird Registration</h2>
-        <p>Early bird registration is available until October 31, 2025, at a special rate of $100 USD. This includes:</p>
+        <p>Early bird registration is available until October 15, 2025, at a special rate of $100 USD. This includes:</p>
         <ul>
-          <li>2 nights accommodation at Kampala Serena Hotel</li>
-          <li>Breakfast and lunch for all four days</li>
+          <li>4 nights accommodation</li>
+          <li>Breakfast and lunch for 4 days</li>
           <li>Official FOLICEA Summit T-shirt and cap</li>
-          <li>Summit materials and tote bag</li>
+          <li>Transportation</li>
+          <li>Summit materials and badge</li>
           <li>Tour of Uganda tourism sites</li>
           <li>Networking opportunities</li>
         </ul>
@@ -43,10 +44,10 @@ const NewsStoryPage = () => {
         
         <h2>Important Dates</h2>
         <ul>
-          <li><strong>Early Bird Registration:</strong> Until October 31, 2025</li>
-                      <li><strong>Regular Registration:</strong> November 1 - November 28, 2025</li>
-            <li><strong>Late Registration:</strong> November 29 - December 4, 2025 (subject to availability)</li>
-                          <li><strong>Summit Dates:</strong> December 5 - 7, 2025</li>
+          <li><strong>Early Bird Registration:</strong> Until October 15, 2025</li>
+                      <li><strong>Regular Registration:</strong> November 1 - November 15, 2025</li>
+            <li><strong>Late Registration:</strong> November 20 - November 25, 2025 (subject to availability)</li>
+                          <li><strong>Summit Dates:</strong> November 28 - 30, 2025</li>
         </ul>
         
         <p>Don't miss this opportunity to be part of history! Register today and join us in Kampala for the most significant gathering of Liberian communities in East Africa.</p>
@@ -54,7 +55,7 @@ const NewsStoryPage = () => {
     },
     2: {
       title: "Meet Our Distinguished Speakers",
-      date: "December 10, 2024",
+      date: "September 10, 2025",
       category: "Speakers",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       content: `
@@ -136,13 +137,13 @@ const NewsStoryPage = () => {
     },
     4: {
       title: "Summit Agenda Released",
-      date: "November 30, 2024",
+      date: "September 15, 2025",
       category: "Agenda",
       image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       content: `
-        <p>The complete agenda for the FOLICEA Summit 2025 has been released! The four-day event will feature keynote speeches, workshops, networking sessions, and cultural celebrations that will create lasting impact for our community.</p>
+        <p>The complete agenda for the FOLICEA Summit 2025 has been released! The three-day event will feature keynote speeches, workshops, networking sessions, and cultural celebrations that will create lasting impact for our community.</p>
         
-                    <h2>Day 1 - December 5, 2025: Opening Ceremony & Welcome</h2>
+                    <h2>Day 1 - November 28, 2025: Opening Ceremony & Welcome</h2>
         <h3>Morning Session (8:00 AM - 12:00 PM)</h3>
         <ul>
           <li>8:00 AM - Registration and Welcome Coffee</li>
@@ -158,7 +159,7 @@ const NewsStoryPage = () => {
           <li>5:00 PM - Networking Reception</li>
         </ul>
         
-                    <h2>Day 2 - December 6, 2025: Business & Entrepreneurship</h2>
+                    <h2>Day 2 - November 29, 2025: Business & Entrepreneurship</h2>
         <h3>Morning Session (8:00 AM - 12:00 PM)</h3>
         <ul>
           <li>8:00 AM - Breakfast and Networking</li>
@@ -174,7 +175,7 @@ const NewsStoryPage = () => {
           <li>5:00 PM - Business Matchmaking Session</li>
         </ul>
         
-                    <h2>Day 3 - December 7, 2025: Education & Youth Development</h2>
+                    <h2>Day 3 - November 30, 2025: Education & Youth Development</h2>
         <h3>Morning Session (8:00 AM - 12:00 PM)</h3>
         <ul>
           <li>8:00 AM - Youth Leadership Breakfast</li>
@@ -190,7 +191,7 @@ const NewsStoryPage = () => {
           <li>5:00 PM - Talent Show and Cultural Performances</li>
         </ul>
         
-                    <h2>Day 3 - December 7, 2025: Closing & Future Planning</h2>
+                    <h2>Day 3 - November 30, 2025: Closing & Future Planning</h2>
         <h3>Morning Session (8:00 AM - 12:00 PM)</h3>
         <ul>
           <li>8:00 AM - FOLICEA Elections</li>
