@@ -60,19 +60,19 @@ const HomePage = () => {
   ];
 
   const partners = [
-    { name: 'African Union', logo: 'https://logo.clearbit.com/au.int', url: 'https://au.int/' },
-    { name: 'East African Community', logo: 'https://logo.clearbit.com/eac.int', url: 'https://www.eac.int/' },
-    { name: 'UNDP East Africa', logo: 'https://logo.clearbit.com/undp.org', url: 'https://www.undp.org/' },
-    { name: 'World Bank Group', logo: 'https://logo.clearbit.com/worldbank.org', url: 'https://www.worldbank.org/en/home' },
+    { name: 'LIBCOR', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/libcor%20logo.jpg?updatedAt=1757333453787', url: '#' },
+    { name: 'Uganda', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/uganda%20logo.jpg?updatedAt=1757333453230', url: '#' },
+    { name: 'Kenya', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/kenya%20logo.jpg?updatedAt=1757333451766', url: '#' },
+    { name: 'Tanzania', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/tan%20logo.jpg?updatedAt=1757333452646', url: '#' },
   ];
 
   const sponsors = [
-    { name: 'Sponsor 1', logo: 'https://logo.clearbit.com/google.com' },
-    { name: 'Sponsor 2', logo: 'https://logo.clearbit.com/microsoft.com' },
-    { name: 'Sponsor 3', logo: 'https://logo.clearbit.com/cocacola.com' },
-    { name: 'Sponsor 4', logo: 'https://logo.clearbit.com/visa.com' },
-    { name: 'Sponsor 5', logo: 'https://logo.clearbit.com/safaricom.co.ke' },
-    { name: 'Sponsor 6', logo: 'https://logo.clearbit.com/mtn.com' },
+    { name: 'Sponsor 1', logo: 'https://logo.clearbit.com/google.com', url: 'https://www.google.com' },
+    { name: 'Sponsor 2', logo: 'https://logo.clearbit.com/microsoft.com', url: 'https://www.microsoft.com' },
+    { name: 'Sponsor 3', logo: 'https://logo.clearbit.com/cocacola.com', url: 'https://www.coca-cola.com' },
+    { name: 'Sponsor 4', logo: 'https://logo.clearbit.com/visa.com', url: 'https://www.visa.com' },
+    { name: 'Sponsor 5', logo: 'https://logo.clearbit.com/safaricom.co.ke', url: 'https://www.safaricom.co.ke' },
+    { name: 'Sponsor 6', logo: 'https://logo.clearbit.com/mtn.com', url: 'https://www.mtn.com' },
   ];
 
   return (
@@ -429,9 +429,6 @@ const HomePage = () => {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {partner.name}
                 </h3>
-                <Link href={partner.url} target="_blank" rel="noopener noreferrer" className="text-liberian-red hover:text-liberian-blue font-medium text-sm">
-                  Visit Website
-                </Link>
               </motion.div>
             ))}
           </div>
@@ -481,6 +478,9 @@ const HomePage = () => {
                   <h3 className="text-lg font-semibold text-gray-900">
                     {sponsor.name}
                   </h3>
+                  <Link href={sponsor.url} target="_blank" rel="noopener noreferrer" className="text-liberian-red hover:text-liberian-blue font-medium text-sm mt-1 inline-block">
+                    Visit Website
+                  </Link>
                 </motion.div>
               ))}
             </div>
