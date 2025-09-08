@@ -54,43 +54,79 @@ const NewsStoryPage = () => {
       `
     },
     2: {
-      title: "Meet Our Distinguished Speakers",
-      date: "September 10, 2025",
-      category: "Speakers",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      title: "Mr. W. Praise Bloyuefloh to Lead Central Summit Committee",
+      date: "September 6, 2025",
+      category: "Press Release",
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Praise.jpg?updatedAt=1757333456399",
       content: `
-        <p>We are proud to announce our lineup of distinguished speakers who will share their expertise and insights at the FOLICEA Summit 2025. These thought leaders represent the best of our community and will inspire meaningful discussions throughout the event.</p>
-        
-        <h2>Keynote Speakers</h2>
-        
-        <h3>Emmanuel Patrick - FOLICEA Chairman</h3>
-        <p>Emmanuel Patrick, former chairperson of Liberians in Rwanda (LIBCOR) and current acting chairperson of FOLICEA, will deliver the opening keynote address. At the summit, Chairman Patrick will lead the federation to elections, marking a significant milestone in our organization's history.</p>
-        
-        <h3>Honorable Jeremiah Kpan Koung - Vice President of Liberia</h3>
-        <p>We are honored to welcome His Excellency, the Vice President of Liberia, who will address the summit on the importance of diaspora engagement and the role of Liberian communities in East Africa.</p>
-        
-        <h2>Featured Speakers</h2>
-        
-        <h3>Community Leaders Panel</h3>
-        <p>A distinguished panel of community leaders from Rwanda, Kenya, Tanzania, and Uganda will share their experiences and insights on building strong Liberian communities in East Africa.</p>
-        
-        <h3>Business and Entrepreneurship</h3>
-        <p>Successful Liberian entrepreneurs and business leaders will share their journeys and provide guidance on business development and economic empowerment.</p>
-        
-        <h3>Education and Youth Development</h3>
-        <p>Education experts and youth advocates will discuss the importance of education in community development and strategies for supporting young Liberians.</p>
-        
-        <h2>Workshop Leaders</h2>
-        <p>In addition to keynote speeches, our speakers will lead interactive workshops on:</p>
+        <p><strong>FOR IMMEDIATE RELEASE</strong><br/>
+        <strong>By FOLICEA Media & Publicity Team</strong><br/>
+        <strong>Kampala, Uganda – September 6, 2025</strong></p>
+
+        <h2>Mr. W. PRAISE BLOYUEFLOH TO LEAD CENTRAL SUMMIT COMMITTEE FOR FOLICEA 2025 INAUGURAL SUMMIT IN KAMPALA</h2>
+
+        <p>The Federation of Liberian Communities in East Africa (FOLICEA) has announced the appointment of Mr. W. Praise Bloyuefloh as Chairperson of the Central Summit Committee for the historic FOLICEA Summit 2025, scheduled to be held from November 28–30, 2025, in Kampala, Uganda.</p>
+
+        <p>The appointment was made by the Acting Chairperson Mr. Emmanuel Patrick of FOLICEA, signaling a significant step in mobilizing Liberians across East Africa for what promises to be a landmark gathering of unity, culture, leadership, and development.</p>
+
+        <h3>Central Role in Driving the Summit</h3>
+        <p>As Chairperson, Mr. Bloyuefloh will provide strategic leadership and oversight of the entire organizing structure. Working alongside the Vice Chairperson, Secretary General, and other executives, his mandate is to ensure that the inaugural summit becomes a catalyst for solidarity, networking, and sustainable development among Liberians in East Africa.</p>
+
+        <p><strong>The Central Summit Committee includes:</strong><br/>
+        Mr. W. Praise Bloyuefloh – Chairperson<br/>
+        Mr. Alexander N. Gandah – Vice Chairperson<br/>
+        Mr. Sir-Lichfield J. Remmie – Secretary General<br/>
+        Mr. Daynuah M. Teah, Jr. – Deputy Secretary<br/>
+        Mr. Samuel Erskine – Finance Director<br/>
+        Miss Curlyn Dabieh – Treasurer</p>
+
+        <h3>Subcommittees Appointed</h3>
+        <p>Supporting the Central Committee, five subcommittees will handle critical operational areas of the summit:</p>
         <ul>
-          <li>Community Building and Leadership</li>
-          <li>Business Development and Networking</li>
-          <li>Cultural Preservation and Identity</li>
-          <li>Youth Empowerment and Education</li>
-          <li>Health and Wellness</li>
+          <li><strong>Program & Protocol:</strong> Mr. Gerald G. Nikerson – Chair</li>
+          <li><strong>Finance & Fundraising:</strong> Mr. Lennox Kollie – Chair</li>
+          <li><strong>Logistics & Accommodation:</strong> Mr. Newton Trokon Gbessagee – Chair</li>
+          <li><strong>Publicity & Media:</strong> Mr. J. Marvelous Gilayeneh – Chair</li>
+          <li><strong>Cultural & Entertainment:</strong> Ms. Gertrude M. Duo & Mr. Thomas Yorwatei – Co-Chairs</li>
         </ul>
-        
-        <p>Stay tuned for more speaker announcements as we continue to build an exceptional program for the FOLICEA Summit 2025!</p>
+        <p>These teams are tasked with ensuring an impactful and seamless experience for all delegates.</p>
+
+        <h3>Advisory Support</h3>
+        <p>To provide further guidance, several community leaders have been named as ex-officio advisors:</p>
+        <ul>
+          <li><strong>Chairman Marcus Weah</strong> – Acting 1st Vice Chairperson for Administration</li>
+          <li><strong>Chairman Cream Milton Ellis</strong> – Acting 2nd Vice Chairperson for International Affairs</li>
+          <li><strong>Chairman Emmanuel Brown</strong> – Chairperson, Association of Liberians in Uganda</li>
+          <li><strong>Chairman James Edgar Denia</strong> – Chairperson, Liberian Community in Rwanda (LIBCOR)</li>
+        </ul>
+
+        <h3>A Movement of Unity and Empowerment</h3>
+        <p>Speaking on the appointments, Isaac M. Supu, Acting Secretary of FOLICEA, praised the leadership of Mr. Bloyuefloh and the committee:</p>
+        <blockquote>
+          “The success of this summit rests on the shoulders of committed individuals who believe in our shared vision. With Mr. Bloyuefloh at the helm, we are confident of delivering a world-class event that amplifies our voices, unites our people, and lays a foundation for lasting change.”
+        </blockquote>
+
+        <p><strong>The summit will:</strong></p>
+        <ul>
+          <li>Strengthen solidarity among Liberians in East Africa</li>
+          <li>Foster professional and business networking</li>
+          <li>Promote community-led development initiatives</li>
+          <li>Celebrate Liberian identity and resilience</li>
+          <li>Conduct democratic elections to choose leaders who will steer FOLICEA for the next two years</li>
+        </ul>
+
+        <h3>Join the Movement</h3>
+        <p>All Liberians in East Africa—professionals, entrepreneurs, students, artists, elders, youth, and community leaders—are invited to participate in this historic event.</p>
+
+        <p>📍 <strong>Kampala, Uganda</strong><br/>
+        📅 <strong>November 28–30, 2025</strong></p>
+
+        <p><strong>Stay updated via:</strong><br/>
+        #FOLICEASummit2025 | #UniteLiberians | #LiberianDiaspora | #EastAfrica | #LiberianPride | #CommunityPower | #WeAreOne | #Kampala2025</p>
+
+        <p><strong>FOLICEA – United in Purpose, Stronger in Solidarity</strong><br/>
+        Federation of Liberian Communities in East Africa<br/>
+        📞 +250 7921 349 853 | ✉️ foliceasummit@gmail.com</p>
       `
     },
     3: {
