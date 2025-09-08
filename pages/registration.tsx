@@ -19,21 +19,15 @@ interface RegistrationForm {
   // Professional Background
   occupation: string;
   organization: string;
-  yearsOfExperience: string;
   expectations: string;
   contributions: string;
   
   // Travel and Accommodation
-  arrivalDate: string;
-  arrivalTime: string;
   modeOfTravel: string;
   flightBusNumber: string;
   roomPreference: string;
-  mobilityAccess: boolean;
   
-  // Dietary Preferences and T-Shirt
-  foodPreference: string;
-  foodAllergies: string;
+  // T-Shirt
   tshirtSize: string;
   tshirtColor: string;
   
@@ -84,17 +78,11 @@ const RegistrationPage = () => {
       formData.append('city', data.city);
       formData.append('occupation', data.occupation);
       formData.append('organization', data.organization || 'Not specified');
-             formData.append('yearsOfExperience', data.yearsOfExperience || 'Not specified');
-      formData.append('expectations', data.expectations);
-      formData.append('contributions', data.contributions);
-      formData.append('arrivalDate', data.arrivalDate);
-      formData.append('arrivalTime', data.arrivalTime);
+      formData.append('expectations', data.expectations || 'Not specified');
+      formData.append('contributions', data.contributions || 'Not specified');
       formData.append('modeOfTravel', data.modeOfTravel);
       formData.append('flightBusNumber', data.flightBusNumber || 'Not specified');
-             formData.append('roomPreference', data.roomPreference);
-      formData.append('mobilityAccess', data.mobilityAccess ? 'Yes' : 'No');
-             formData.append('foodPreference', data.foodPreference || 'Not specified');
-      formData.append('foodAllergies', data.foodAllergies || 'None');
+      formData.append('roomPreference', data.roomPreference);
       formData.append('tshirtSize', data.tshirtSize);
       formData.append('tshirtColor', data.tshirtColor);
       
@@ -202,8 +190,9 @@ const RegistrationPage = () => {
                     <li>• Transportation</li>
                     <li>• 4 days of Breakfast & Lunch</li>
                     <li>• Summit T-shirt & Cap</li>
-                    <li>• Conference materials & badge</li>
-                     <li>• Networking opportunities</li>
+                    <li>• Tour</li>
+                    <li>• Summit package (Branded Notepad, Pen & Badge)</li>
+                    <li>• Networking opportunities</li>
                   </ul>
                 </div>
                 <div>
@@ -335,13 +324,13 @@ const RegistrationPage = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Current Country *
+                    Country of Residence *
                   </label>
                   <input
                     type="text"
-                    {...register('currentCountry', { required: 'Current country is required' })}
+                    {...register('currentCountry', { required: 'Country of residence is required' })}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-liberian-red focus:border-transparent"
-                    placeholder="Enter your current country"
+                    placeholder="Enter your country of residence"
                   />
                   {errors.currentCountry && (
                     <p className="text-red-500 text-sm mt-1">{errors.currentCountry.message}</p>
@@ -354,13 +343,10 @@ const RegistrationPage = () => {
                   </label>
                   <input
                     type="text"
-                    {...register('city', { required: 'City is required' })}
+                    {...register('city')}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-liberian-red focus:border-transparent"
-                    placeholder="Enter your city"
+                    placeholder="Enter your city (optional)"
                   />
-                  {errors.city && (
-                    <p className="text-red-500 text-sm mt-1">{errors.city.message}</p>
-                  )}
                 </div>
               </div>
             </div>
@@ -398,24 +384,6 @@ const RegistrationPage = () => {
                     placeholder="Enter your organization or company name"
                   />
                 </div>
-
-                                 <div>
-                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                     Years of Experience
-                   </label>
-                   <select
-                     {...register('yearsOfExperience')}
-                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-liberian-red focus:border-transparent"
-                   >
-                     <option value="">Select years of experience (optional)</option>
-                     <option value="0-2">0-2 years</option>
-                     <option value="3-5">3-5 years</option>
-                     <option value="6-10">6-10 years</option>
-                     <option value="11-15">11-15 years</option>
-                     <option value="16-20">16-20 years</option>
-                     <option value="20+">20+ years</option>
-                   </select>
-                 </div>
               </div>
 
               <div className="mt-6">
@@ -423,14 +391,11 @@ const RegistrationPage = () => {
                   What are your expectations from this summit?
                 </label>
                 <textarea
-                  {...register('expectations', { required: 'Expectations are required' })}
+                  {...register('expectations')}
                   rows={4}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-liberian-red focus:border-transparent"
-                  placeholder="Please share what you hope to gain from attending the FOLICEA Summit"
+                  placeholder="Please share what you hope to gain (optional)"
                 />
-                {errors.expectations && (
-                  <p className="text-red-500 text-sm mt-1">{errors.expectations.message}</p>
-                )}
               </div>
 
               <div className="mt-6">
@@ -438,14 +403,11 @@ const RegistrationPage = () => {
                   How do you plan to contribute to the Liberian diaspora community?
                 </label>
                 <textarea
-                  {...register('contributions', { required: 'Contributions are required' })}
+                  {...register('contributions')}
                   rows={4}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-liberian-red focus:border-transparent"
-                  placeholder="Please describe how you plan to contribute to the community"
+                  placeholder="Please describe how you plan to contribute (optional)"
                 />
-                {errors.contributions && (
-                  <p className="text-red-500 text-sm mt-1">{errors.contributions.message}</p>
-                )}
               </div>
             </div>
 
@@ -456,45 +418,8 @@ const RegistrationPage = () => {
                 Travel and Accommodation
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                 <div>
-                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                     Arrival Date
-                   </label>
-                   <input
-                     type="date"
-                     min="2025-01-01"
-                     max="2025-12-31"
-                     {...register('arrivalDate', { 
-                       required: 'Arrival date is required',
-                       validate: (value) => {
-                         const date = new Date(value);
-                         const year = date.getFullYear();
-                         if (year !== 2025) {
-                           return 'Arrival date must be in 2025';
-                         }
-                         return true;
-                       }
-                     })}
-                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-liberian-red focus:border-transparent"
-                   />
-                   {errors.arrivalDate && (
-                     <p className="text-red-500 text-sm mt-1">{errors.arrivalDate.message}</p>
-                   )}
-                 </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Arrival Time
-                  </label>
-                  <input
-                    type="time"
-                    {...register('arrivalTime', { required: 'Arrival time is required' })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-liberian-red focus:border-transparent"
-                  />
-                  {errors.arrivalTime && (
-                    <p className="text-red-500 text-sm mt-1">{errors.arrivalTime.message}</p>
-                  )}
-                </div>
+                {/* Removed Arrival Date */}
+                {/* Removed Arrival Time */}
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -527,34 +452,25 @@ const RegistrationPage = () => {
                   />
                 </div>
 
-                                 <div>
-                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                     Room Preference *
-                   </label>
-                   <select
-                     {...register('roomPreference', { required: 'Room preference is required' })}
-                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-liberian-red focus:border-transparent"
-                   >
-                     <option value="">Select room preference</option>
-                     <option value="Single">Single Room</option>
-                     <option value="Double">Double Room (Shared)</option>
-                     <option value="No Accommodation">No Accommodation Needed</option>
-                   </select>
-                   {errors.roomPreference && (
-                     <p className="text-red-500 text-sm mt-1">{errors.roomPreference.message}</p>
-                   )}
-                 </div>
-
-                <div className="flex items-center">
-                  <input
-                    type="checkbox"
-                    {...register('mobilityAccess')}
-                    className="w-4 h-4 text-liberian-red border-gray-300 rounded focus:ring-liberian-red"
-                  />
-                  <label className="ml-2 text-sm text-gray-700">
-                    I require mobility assistance or accessibility accommodations
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Room Preference *
                   </label>
+                  <select
+                    {...register('roomPreference', { required: 'Room preference is required' })}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-liberian-red focus:border-transparent"
+                  >
+                    <option value="">Select room preference</option>
+                    <option value="Single">Single Room</option>
+                    <option value="Double">Double Room (Shared)</option>
+                    <option value="No Accommodation">No Accommodation Needed</option>
+                  </select>
+                  {errors.roomPreference && (
+                    <p className="text-red-500 text-sm mt-1">{errors.roomPreference.message}</p>
+                  )}
                 </div>
+
+                {/* Removed Mobility Assistance Checkbox */}
               </div>
             </div>
 
@@ -565,34 +481,8 @@ const RegistrationPage = () => {
                 Dietary Preferences and T-Shirt
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                 <div>
-                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                     Food Preference
-                   </label>
-                   <select
-                     {...register('foodPreference')}
-                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-liberian-red focus:border-transparent"
-                   >
-                     <option value="">Select food preference (optional)</option>
-                     <option value="Non-Vegetarian">Non-Vegetarian</option>
-                     <option value="Vegetarian">Vegetarian</option>
-                     <option value="Vegan">Vegan</option>
-                     <option value="Halal">Halal</option>
-                     <option value="Other">Other</option>
-                   </select>
-                 </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Any food allergies?
-                  </label>
-                  <input
-                    type="text"
-                    {...register('foodAllergies')}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-liberian-red focus:border-transparent"
-                    placeholder="e.g., nuts, shellfish, etc."
-                  />
-                </div>
+                {/* Removed Food Preference */}
+                {/* Removed Food Allergies */}
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
