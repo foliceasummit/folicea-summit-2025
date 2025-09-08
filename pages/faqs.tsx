@@ -1,6 +1,66 @@
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { Lightbulb, Target, Users, Award, Star, Trophy, Briefcase, Globe } from 'lucide-react';
 
 const PitchingCompetitionPage = () => {
+  const focusAreas = [
+    {
+      icon: <Briefcase className="w-8 h-8" />,
+      title: "Recycling & Upcycling",
+      description: "Converting waste into usable products or raw materials."
+    },
+    {
+      icon: <Lightbulb className="w-8 h-8" />,
+      title: "Waste-to-Energy",
+      description: "Technologies that transform waste into power or biogas."
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Community Engagement",
+      description: "Grassroots initiatives for waste collection, education, and behavioral change."
+    },
+    {
+      icon: <Globe className="w-8 h-8" />,
+      title: "Digital Solutions",
+      description: "Platforms or apps for waste tracking, collection coordination, or incentive-based systems."
+    },
+    {
+      icon: <Target className="w-8 h-8" />,
+      title: "Policy & Business Innovation",
+      description: "Scalable business models or advocacy frameworks that can influence better waste governance."
+    }
+  ];
+
+  const judgingCriteria = [
+    "Innovation & Creativity – How unique is the solution?",
+    "Feasibility & Sustainability – Can it work long-term in Monrovia?",
+    "Scalability & Impact – Potential to grow and benefit communities.",
+    "Presentation & Clarity – Effectiveness in pitching the idea."
+  ];
+
+  const prizes = [
+    {
+      icon: <Trophy className="w-8 h-8" />,
+      title: "Startup Capital Support",
+      description: "Financial backing for the winning idea to get started."
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Expert Mentorship",
+      description: "Guidance from waste management and entrepreneurship experts."
+    },
+    {
+      icon: <Globe className="w-8 h-8" />,
+      title: "Partnership Opportunities",
+      description: "Connect with partners in Liberia and East Africa for pilot programs."
+    },
+    {
+      icon: <Award className="w-8 h-8" />,
+      title: "Recognition",
+      description: "Be recognized as Waste Innovation Champion at the Summit."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -15,7 +75,7 @@ const PitchingCompetitionPage = () => {
               Pitching Competition
             </h1>
             <p className="text-xl max-w-4xl mx-auto">
-              Theme: “Clean Monrovia, Green Future: Resolving the Waste Management Crisis”
+              Theme: "Clean Monrovia, Green Future: Resolving the Waste Management Crisis"
             </p>
           </motion.div>
         </div>
@@ -32,66 +92,290 @@ const PitchingCompetitionPage = () => {
         </div>
       </section>
 
-      <section className="section-padding">
-        <div className="container-custom max-w-5xl mx-auto">
-          <div className="prose prose-lg max-w-none">
-            <h2>Competition Info</h2>
-            <p>
+      {/* Competition Overview */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Competition Overview
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               The Liberian in East Africa Summit will host a Pitching Competition designed to spark innovation and practical
-              solutions to one of Liberia’s most pressing challenges — the waste management crisis in Monrovia.
+              solutions to one of Liberia's most pressing challenges — the waste management crisis in Monrovia.
             </p>
+          </motion.div>
 
-            <h3>Objective</h3>
-            <p>
-              To identify and support groundbreaking ideas, technologies, and community-driven models that can transform
-              Monrovia’s waste management system into a sustainable, efficient, and environmentally friendly framework.
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Objective</h3>
+              <p className="text-lg text-gray-600 mb-6">
+                To identify and support groundbreaking ideas, technologies, and community-driven models that can transform
+                Monrovia's waste management system into a sustainable, efficient, and environmentally friendly framework.
+              </p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Who Can Pitch?</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start space-x-3">
+                  <Star className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">Liberian entrepreneurs, innovators, and students in East Africa.</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <Star className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">Diaspora professionals with innovative solutions.</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <Star className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">Startups, NGOs, and social enterprises with scalable waste management projects.</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <Image
+                src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/premium_photo-1663088881507-209dbbb1fbc7.avif?updatedAt=1757359359986"
+                alt="Innovation"
+                width={600}
+                height={400}
+                className="rounded-2xl shadow-xl"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Focus Areas */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Focus Areas for Pitches
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Participants are encouraged to present solutions in these key areas
             </p>
+          </motion.div>
 
-            <h3>Who Can Pitch?</h3>
-            <ul>
-              <li>Liberian entrepreneurs, innovators, and students in East Africa.</li>
-              <li>Diaspora professionals with innovative solutions.</li>
-              <li>Startups, NGOs, and social enterprises with scalable waste management projects.</li>
-            </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {focusAreas.map((area, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center p-6 rounded-xl bg-gray-50 hover:bg-liberian-red hover:text-white transition-all duration-300 card-hover"
+              >
+                <div className="text-liberian-red mb-4 group-hover:text-white">
+                  {area.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-3">
+                  {area.title}
+                </h3>
+                <p className="text-gray-600 group-hover:text-white/90">
+                  {area.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <h3>Focus Areas for Pitches</h3>
-            <ul>
-              <li>Recycling & Upcycling – Converting waste into usable products or raw materials.</li>
-              <li>Waste-to-Energy – Technologies that transform waste into power or biogas.</li>
-              <li>Community Engagement Models – Grassroots initiatives for waste collection, education, and behavioral change.</li>
-              <li>Digital Solutions – Platforms or apps for waste tracking, collection coordination, or incentive-based systems.</li>
-              <li>Policy & Business Innovation – Scalable business models or advocacy frameworks that can influence better waste governance.</li>
-            </ul>
+      {/* Competition Format */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Competition Format
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              How the competition will be structured
+            </p>
+          </motion.div>
 
-            <h3>Competition Format</h3>
-            <ul>
-              <li>Round 1: Concept submission (short proposal) from October 5-30, 2025.</li>
-              <li>Round 2: Live 15–20 minutes pitch before a panel of judges at the Summit.</li>
-              <li>Q&A Session: Judges and audience engage participants for clarification.</li>
-            </ul>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-center p-8 bg-liberian-red text-white rounded-xl"
+            >
+              <div className="bg-white text-liberian-red w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold">1</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Round 1: Concept Submission</h3>
+              <p className="text-white/90">
+                Short proposal submission from October 5-30, 2025
+              </p>
+            </motion.div>
 
-            <h3>Judging Criteria</h3>
-            <ul>
-              <li>Innovation & Creativity – How unique is the solution?</li>
-              <li>Feasibility & Sustainability – Can it work long-term in Monrovia?</li>
-              <li>Scalability & Impact – Potential to grow and benefit communities.</li>
-              <li>Presentation & Clarity – Effectiveness in pitching the idea.</li>
-            </ul>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-center p-8 bg-liberian-blue text-white rounded-xl"
+            >
+              <div className="bg-white text-liberian-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold">2</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Round 2: Live Pitch</h3>
+              <p className="text-white/90">
+                15–20 minutes pitch before a panel of judges at the Summit
+              </p>
+            </motion.div>
 
-            <h3>Prizes & Opportunities</h3>
-            <ul>
-              <li>Startup Capital support for the winning idea.</li>
-              <li>Mentorship from experts in waste management and entrepreneurship.</li>
-              <li>Opportunity to pilot or connect with partners in Liberia and East Africa.</li>
-              <li>Recognition as Waste Innovation Champion at the Summit.</li>
-            </ul>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="text-center p-8 bg-liberian-red text-white rounded-xl"
+            >
+              <div className="bg-white text-liberian-red w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold">3</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Q&A Session</h3>
+              <p className="text-white/90">
+                Judges and audience engage participants for clarification
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
-            <h3>Call to Action</h3>
-            <p>
+      {/* Judging Criteria */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Judging Criteria
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              How submissions will be evaluated
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {judgingCriteria.map((criterion, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl"
+              >
+                <Star className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
+                <p className="text-gray-700">{criterion}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Prizes & Opportunities */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Prizes & Opportunities
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              What winners can expect to receive
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {prizes.map((prize, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center p-6 rounded-xl bg-gray-50 hover:bg-liberian-red hover:text-white transition-all duration-300 card-hover"
+              >
+                <div className="text-liberian-red mb-4 group-hover:text-white">
+                  {prize.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-3">
+                  {prize.title}
+                </h3>
+                <p className="text-gray-600 group-hover:text-white/90">
+                  {prize.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="section-padding gradient-bg">
+        <div className="container-custom text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to Make a Difference?
+            </h2>
+            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
               If you are passionate about building a cleaner, greener Monrovia, this is your chance to make a difference.
               Step forward, pitch your idea, and be part of shaping a sustainable future.
             </p>
-          </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/registration" className="bg-white text-liberian-red hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105">
+                Register for Competition
+              </a>
+              <a href="/contact" className="border-2 border-white text-white hover:bg-white hover:text-liberian-red font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300">
+                Contact Us
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
 

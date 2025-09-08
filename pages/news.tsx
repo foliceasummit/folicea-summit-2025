@@ -28,7 +28,7 @@ const NewsPage = () => {
       id: 3,
       title: "Partnership of Four Liberian Communities for FOLICEA Summit 2025",
       excerpt: "A united partnership of Liberian communities in Rwanda, Kenya, Uganda, and Tanzania to advance the FOLICEA Summit 2025.",
-      date: "September 1, 2025",
+      date: "May 24, 2025",
       category: "Partnerships",
       image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/IMG-20250826-WA0040.jpg?updatedAt=1756227157808"
     },
@@ -44,9 +44,9 @@ const NewsPage = () => {
       id: 5,
       title: "Sponsorship Opportunities Available",
       excerpt: "We are offering various sponsorship packages for organizations interested in supporting the FOLICEA Summit 2025 and connecting with our community.",
-      date: "November 25, 2024",
+      date: "September 2, 2025",
       category: "Sponsorship",
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/sponsorship-concept.jpg?updatedAt=1757364693139"
     },
     {
       id: 6,

@@ -187,10 +187,36 @@ const ContactPage = () => {
                 </button>
               </form>
 
-              <div className="mt-6 p-4 rounded-lg border border-gray-200 bg-gray-50">
-                <h3 className="font-semibold text-gray-900 mb-1">Frequently Asked Questions</h3>
-                <p className="text-sm text-gray-600 mb-2">Find answers to common questions about the FOLICEA Summit 2025.</p>
-                <a href="/faqs" className="text-liberian-red hover:text-liberian-blue font-medium text-sm">Browse FAQs →</a>
+              <div className="mt-6">
+                <h3 className="font-semibold text-gray-900 mb-4">Frequently Asked Questions</h3>
+                <p className="text-sm text-gray-600 mb-4">Find answers to common questions about the FOLICEA Summit 2025.</p>
+                
+                <div className="space-y-3">
+                  <div className="p-3 rounded-lg border border-gray-200 bg-white">
+                    <h4 className="font-medium text-gray-900 text-sm mb-1">When is the FOLICEA Summit 2025?</h4>
+                    <p className="text-xs text-gray-600">The summit will be held from November 28-30, 2025 in Kampala, Uganda.</p>
+                  </div>
+                  
+                  <div className="p-3 rounded-lg border border-gray-200 bg-white">
+                    <h4 className="font-medium text-gray-900 text-sm mb-1">What is included in the registration fee?</h4>
+                    <p className="text-xs text-gray-600">Registration includes accommodation, meals, summit materials, transportation, and tour.</p>
+                  </div>
+                  
+                  <div className="p-3 rounded-lg border border-gray-200 bg-white">
+                    <h4 className="font-medium text-gray-900 text-sm mb-1">How can I register for the summit?</h4>
+                    <p className="text-xs text-gray-600">Visit our registration page and complete the online form with payment.</p>
+                  </div>
+                  
+                  <div className="p-3 rounded-lg border border-gray-200 bg-white">
+                    <h4 className="font-medium text-gray-900 text-sm mb-1">What payment methods are accepted?</h4>
+                    <p className="text-xs text-gray-600">We accept Mobile Money, bank transfers, and other digital payment methods.</p>
+                  </div>
+                  
+                  <div className="p-3 rounded-lg border border-gray-200 bg-white">
+                    <h4 className="font-medium text-gray-900 text-sm mb-1">Is accommodation provided?</h4>
+                    <p className="text-xs text-gray-600">Yes, shared accommodation is included. Private rooms are available at additional cost.</p>
+                  </div>
+                </div>
               </div>
             </div>
 
