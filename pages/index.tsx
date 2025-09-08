@@ -11,33 +11,33 @@ const HomePage = () => {
   const features = [
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Strengthen Diaspora Engagement",
-      description: "Build stronger connections within the Liberian diaspora community across East Africa."
+      title: "Connect & Engage",
+      description: "Strengthen ties within the Liberian diaspora across East Africa."
     },
     {
       icon: <Star className="w-8 h-8" />,
-      title: "Facilitate Networking",
-      description: "Connect with professionals, entrepreneurs, and community leaders for mutual growth."
+      title: "Learn & Share",
+      description: "Exchange knowledge, best practices, and success stories."
     },
     {
       icon: <Calendar className="w-8 h-8" />,
-      title: "Discuss Development Strategies",
-      description: "Explore innovative approaches to community development and economic empowerment."
+      title: "Shape Leadership",
+      description: "Participate in democratic elections for FOLICEA leaders."
     },
     {
       icon: <MapPin className="w-8 h-8" />,
-      title: "Share Knowledge & Best Practices",
-      description: "Learn from successful initiatives and share your own experiences with the community."
+      title: "Network & Collaborate",
+      description: "Build partnerships for community growth and economic empowerment."
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Promote Cultural Exchange",
-      description: "Celebrate our rich Liberian heritage while embracing the diversity of East Africa."
+      title: "Celebrate Culture",
+      description: "Experience Liberia’s rich heritage and East Africa’s diversity."
     },
     {
       icon: <Star className="w-8 h-8" />,
-      title: "Build Lasting Partnerships",
-      description: "Form strategic alliances that will benefit both individuals and the broader community."
+      title: "Explore Innovation",
+      description: "Discover entrepreneurial and tech-driven solutions for diaspora development."
     }
   ];
 
