@@ -57,7 +57,7 @@ const NewsStoryPage = () => {
       title: "Mr. W. Praise Bloyuefloh to Lead Central Summit Committee",
       date: "September 6, 2025",
       category: "Press Release",
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Praise.jpg?updatedAt=1757333456399",
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Praise.jpg?updatedAt=1757336183209",
       content: `
         <p><strong>FOR IMMEDIATE RELEASE</strong><br/>
         <strong>By FOLICEA Media & Publicity Team</strong><br/>

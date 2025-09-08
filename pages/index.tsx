@@ -144,7 +144,7 @@ const HomePage = () => {
             >
               <Calendar className="w-6 h-6 mx-auto mb-2 text-white/90" />
               <h3 className="text-base sm:text-lg font-semibold mb-1">Date & Time</h3>
-                              <p className="text-xs sm:text-sm text-white/90">December 5 - 7, 2025</p>
+                              <p className="text-xs sm:text-sm text-white/90">November 28 - 30, 2025</p>
             </motion.div>
 
             <motion.div
@@ -200,11 +200,18 @@ const HomePage = () => {
             className="bg-gradient-to-r from-liberian-blue/10 to-liberian-red/10 rounded-2xl p-8 md:p-12 mb-16"
           >
             <h3 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-              "Unity in Diversity: Charting a Course for a Stronger Future"
+              Summit Themes
             </h3>
             <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto">
-              This year's theme will explore critical topics through engaging keynotes, interactive workshops, and cultural showcases.
+              The FOLICEA Summit 2025 will focus on critical areas that shape the future of Liberians in East Africa and beyond. These themes will guide keynote addresses, panel discussions, workshops, cultural showcases and include democratic elections to select FOLICEA leadership for the next two years.
             </p>
+            <ul className="mt-6 max-w-3xl mx-auto text-left list-disc list-inside text-gray-700 text-lg">
+              <li>Unity and Representation of the Liberian Diaspora</li>
+              <li>Diaspora Investment and Economic Empowerment</li>
+              <li>Entrepreneurship and Tech-Driven Innovation</li>
+              <li>Democratic Governance and Strategic Planning</li>
+              <li>Leadership Elections and Institutional Strengthening</li>
+            </ul>
           </motion.div>
 
           <div className="text-center">
@@ -231,6 +238,14 @@ const HomePage = () => {
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
               Join us for an unforgettable experience that will strengthen our community bonds and create lasting impact.
             </p>
+            <ul className="mt-6 max-w-3xl mx-auto text-left list-disc list-inside text-gray-600 text-lg">
+              <li><strong>Connect & Engage</strong> – Strengthen ties within the Liberian diaspora across East Africa.</li>
+              <li><strong>Learn & Share</strong> – Exchange knowledge, best practices, and success stories.</li>
+              <li><strong>Shape Leadership</strong> – Participate in democratic elections for FOLICEA leaders.</li>
+              <li><strong>Network & Collaborate</strong> – Build partnerships for community growth and economic empowerment.</li>
+              <li><strong>Celebrate Culture</strong> – Experience Liberia’s rich heritage and East Africa’s diversity.</li>
+              <li><strong>Explore Innovation</strong> – Discover entrepreneurial and tech-driven solutions for diaspora development.</li>
+            </ul>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -394,7 +409,7 @@ const HomePage = () => {
               Our Partners
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Collaborating with leading organizations to maximize impact.
+            Collaborating with leading Liberian communities to maximize impact.
             </p>
           </motion.div>
 
