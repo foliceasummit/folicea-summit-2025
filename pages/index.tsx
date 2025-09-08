@@ -60,10 +60,10 @@ const HomePage = () => {
   ];
 
   const partners = [
-    { name: 'LIBCOR', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/libcor%20logo.jpg?updatedAt=1757333453787', url: '#' },
-    { name: 'Uganda', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/uganda%20logo.jpg?updatedAt=1757333453230', url: '#' },
-    { name: 'Kenya', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/kenya%20logo.jpg?updatedAt=1757333451766', url: '#' },
-    { name: 'Tanzania', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/tan%20logo.jpg?updatedAt=1757333452646', url: '#' },
+    { name: 'Liberian Community in Rwanda (LIBCOR)', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/libcor%20logo.jpg?updatedAt=1757333453787', url: '#' },
+    { name: 'Association of Liberians in Uganda', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/uganda%20logo.jpg?updatedAt=1757333453230', url: '#' },
+    { name: 'Liberian Community in Kenya', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/kenya%20logo.jpg?updatedAt=1757333451766', url: '#' },
+    { name: 'Liberian Community in Tanzania', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/tan%20logo.jpg?updatedAt=1757333452646', url: '#' },
   ];
 
   const sponsors = [
@@ -197,21 +197,51 @@ const HomePage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-liberian-blue/10 to-liberian-red/10 rounded-2xl p-8 md:p-12 mb-16"
+            className="bg-gradient-to-r from-liberian-blue/10 to-liberian-red/10 rounded-2xl p-6 md:p-8 mb-10"
           >
-            <h3 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4 text-center">
               Summit Themes
             </h3>
-            <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-gray-700 text-center max-w-4xl mx-auto mb-6">
               The FOLICEA Summit 2025 will focus on critical areas that shape the future of Liberians in East Africa and beyond. These themes will guide keynote addresses, panel discussions, workshops, cultural showcases and include democratic elections to select FOLICEA leadership for the next two years.
             </p>
-            <ul className="mt-6 max-w-3xl mx-auto text-left list-disc list-inside text-gray-700 text-lg">
-              <li>Unity and Representation of the Liberian Diaspora</li>
-              <li>Diaspora Investment and Economic Empowerment</li>
-              <li>Entrepreneurship and Tech-Driven Innovation</li>
-              <li>Democratic Governance and Strategic Planning</li>
-              <li>Leadership Elections and Institutional Strengthening</li>
-            </ul>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex items-start gap-3">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-liberian-red/10 text-liberian-red font-semibold">1</span>
+                <div>
+                  <h4 className="font-semibold text-gray-900">Unity and Representation</h4>
+                  <p className="text-sm text-gray-600">Of the Liberian diaspora</p>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex items-start gap-3">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-liberian-red/10 text-liberian-red font-semibold">2</span>
+                <div>
+                  <h4 className="font-semibold text-gray-900">Diaspora Investment</h4>
+                  <p className="text-sm text-gray-600">And economic empowerment</p>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex items-start gap-3">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-liberian-red/10 text-liberian-red font-semibold">3</span>
+                <div>
+                  <h4 className="font-semibold text-gray-900">Entrepreneurship & Innovation</h4>
+                  <p className="text-sm text-gray-600">Tech-driven solutions</p>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex items-start gap-3">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-liberian-red/10 text-liberian-red font-semibold">4</span>
+                <div>
+                  <h4 className="font-semibold text-gray-900">Democratic Governance</h4>
+                  <p className="text-sm text-gray-600">And strategic planning</p>
+                </div>
+              </div>
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex items-start gap-3 sm:col-span-2 lg:col-span-1">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-liberian-red/10 text-liberian-red font-semibold">5</span>
+                <div>
+                  <h4 className="font-semibold text-gray-900">Leadership Elections</h4>
+                  <p className="text-sm text-gray-600">Institutional strengthening</p>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           <div className="text-center">
@@ -415,7 +445,7 @@ const HomePage = () => {
                 viewport={{ once: true }}
                 className="bg-white rounded-xl p-6 shadow-lg text-center card-hover"
               >
-                <div className="h-16 mb-4 flex items-center justify-center">
+                <div className="h-20 mb-4 flex items-center justify-center">
                   <img
                     src={partner.logo}
                     alt={partner.name}

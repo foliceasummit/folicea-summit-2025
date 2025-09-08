@@ -474,16 +474,13 @@ const RegistrationPage = () => {
               </div>
             </div>
 
-            {/* Dietary Preferences and T-Shirt Section */}
+            {/* T-Shirt Preferences Section */}
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                 <Utensils className="w-6 h-6 mr-3 text-liberian-red" />
-                Dietary Preferences and T-Shirt
+                T-Shirt Preferences
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Removed Food Preference */}
-                {/* Removed Food Allergies */}
-
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     T-Shirt Size * (Select T-Shirt Size)

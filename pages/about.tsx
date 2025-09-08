@@ -57,6 +57,64 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* Acting Leadership */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Acting Leadership</h2>
+            <p className="text-xl text-gray-600">Current acting team guiding FOLICEA ahead of the Summit</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+            <div className="bg-gray-50 p-6 rounded-xl text-center shadow-sm">
+              <Image src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/emmanuel%20P.jpg?updatedAt=1756227156834" alt="Emmanuel Patrick" width={220} height={200} className="rounded-lg mx-auto object-cover" />
+              <h3 className="text-lg font-semibold mt-4">Emmanuel Patrick</h3>
+              <p className="text-gray-600">Acting Chairperson</p>
+              <p className="text-gray-600 mt-2">foliceasummit@gmail.com</p>
+              <p className="text-gray-600">+250 792 100 775</p>
+            </div>
+
+            <div className="bg-gray-50 p-6 rounded-xl text-center shadow-sm">
+              <Image src="https://ik.imagekit.io/folicea/Richard%20Nagbe%20Koon.webp?updatedAt=1755893148873" alt="W. Praise Bloyuefloh" width={220} height={200} className="rounded-lg mx-auto object-cover" />
+              <h3 className="text-lg font-semibold mt-4">W. Praise Bloyuefloh</h3>
+              <p className="text-gray-600">Chair, Summit Organizing Committee</p>
+              <p className="text-gray-600 mt-2">foliceasummit@gmail.com</p>
+              <p className="text-gray-600">+250 791 349 853</p>
+            </div>
+
+            <div className="bg-gray-50 p-6 rounded-xl text-center shadow-sm">
+              <Image src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/VP%20Koon.jpg?updatedAt=1756252471149" alt="Isaac M. Supu" width={220} height={200} className="rounded-lg mx-auto object-cover" />
+              <h3 className="text-lg font-semibold mt-4">Isaac M. Supu</h3>
+              <p className="text-gray-600">Acting Secretary</p>
+              <p className="text-gray-600 mt-2">foliceasummit@gmail.com</p>
+              <p className="text-gray-600">+250 792 100 775</p>
+            </div>
+
+            <div className="bg-gray-50 p-6 rounded-xl text-center shadow-sm">
+              <Image src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Praise.jpg?updatedAt=1757336183209" alt="Alexander N. Gandah" width={220} height={200} className="rounded-lg mx-auto object-cover" />
+              <h3 className="text-lg font-semibold mt-4">Alexander N. Gandah</h3>
+              <p className="text-gray-600">Acting Vice Chairperson</p>
+              <p className="text-gray-600 mt-2">foliceasummit@gmail.com</p>
+              <p className="text-gray-600">+250 792 100 775</p>
+            </div>
+
+            <div className="bg-gray-50 p-6 rounded-xl text-center shadow-sm">
+              <Image src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/emmanuel%20P.jpg?updatedAt=1756227156834" alt="Sir-Lichfield J. Remmie" width={220} height={200} className="rounded-lg mx-auto object-cover" />
+              <h3 className="text-lg font-semibold mt-4">Sir-Lichfield J. Remmie</h3>
+              <p className="text-gray-600">Acting Secretary General</p>
+              <p className="text-gray-600 mt-2">foliceasummit@gmail.com</p>
+              <p className="text-gray-600">+250 792 100 775</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Mission & Vision */}
       <section className="section-padding">
         <div className="container-custom">
@@ -332,48 +390,6 @@ const AboutPage = () => {
               </a>
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Acting Leadership */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Acting Leadership</h2>
-            <p className="text-xl text-gray-600">Current acting team guiding FOLICEA ahead of the Summit</p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-6 rounded-xl text-center shadow-sm">
-              <Image src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/emmanuel%20P.jpg?updatedAt=1756227156834" alt="Emmanuel Patrick" width={280} height={220} className="rounded-lg mx-auto object-cover" />
-              <h3 className="text-xl font-semibold mt-4">Emmanuel Patrick</h3>
-              <p className="text-gray-600">Acting Chairperson, FOLICEA</p>
-              <p className="text-gray-600 mt-2">Email: foliceasummit@gmail.com</p>
-              <p className="text-gray-600">Phone: +250 792 100 775</p>
-            </div>
-
-            <div className="bg-gray-50 p-6 rounded-xl text-center shadow-sm">
-              <Image src="https://ik.imagekit.io/folicea/Richard%20Nagbe%20Koon.webp?updatedAt=1755893148873" alt="W. Praise Bloyuefloh" width={280} height={220} className="rounded-lg mx-auto object-cover" />
-              <h3 className="text-xl font-semibold mt-4">W. Praise Bloyuefloh</h3>
-              <p className="text-gray-600">Chairperson, Central Summit Committee</p>
-              <p className="text-gray-600 mt-2">Email: foliceasummit@gmail.com</p>
-              <p className="text-gray-600">Phone: +250 791 349 853</p>
-            </div>
-
-            <div className="bg-gray-50 p-6 rounded-xl text-center shadow-sm">
-              <Image src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/VP%20Koon.jpg?updatedAt=1756252471149" alt="Isaac M. Supu" width={280} height={220} className="rounded-lg mx-auto object-cover" />
-              <h3 className="text-xl font-semibold mt-4">Isaac M. Supu</h3>
-              <p className="text-gray-600">Acting Secretary, FOLICEA</p>
-              <p className="text-gray-600 mt-2">Email: foliceasummit@gmail.com</p>
-              <p className="text-gray-600">Phone: +250 792 100 775</p>
-            </div>
-          </div>
         </div>
       </section>
     </div>
