@@ -13,15 +13,16 @@ const NewsPage = () => {
       date: "December 15, 2024",
       category: "Announcement",
       image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      featured: true
+      featured: false
     },
     {
       id: 2,
-      title: "Meet Our Distinguished Speakers",
-      excerpt: "We are proud to announce our lineup of distinguished speakers who will share their expertise and insights at the FOLICEA Summit 2025.",
-      date: "December 10, 2024",
-      category: "Speakers",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      title: "Mr. W. Praise Bloyuefloh to Lead Central Summit Committee",
+      excerpt: "FOLICEA appoints Mr. W. Praise Bloyuefloh as Chairperson of the Central Summit Committee for the inaugural FOLICEA Summit 2025 in Kampala.",
+      date: "September 6, 2025",
+      category: "Press Release",
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Praise.jpg?updatedAt=1757333456399",
+      featured: true
     },
     {
       id: 3,
