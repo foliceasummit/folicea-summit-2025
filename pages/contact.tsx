@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, MessageCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import GoogleMap from '../components/GoogleMap';
 
 interface ContactForm {
@@ -17,8 +17,32 @@ interface ContactForm {
 const ContactPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactForm>();
+
+  const faqs = [
+    {
+      question: "When is the FOLICEA Summit 2025?",
+      answer: "The summit will be held from November 28-30, 2025 in Kampala, Uganda."
+    },
+    {
+      question: "What is included in the registration fee?",
+      answer: "Registration includes accommodation, meals, summit materials, transportation, and tour."
+    },
+    {
+      question: "How can I register for the summit?",
+      answer: "Visit our registration page and complete the online form with payment."
+    },
+    {
+      question: "What payment methods are accepted?",
+      answer: "We accept Mobile Money, bank transfers, and other digital payment methods."
+    },
+    {
+      question: "Is accommodation provided?",
+      answer: "Yes, shared accommodation is included. Private rooms are available at additional cost."
+    }
+  ];
 
   const onSubmit = async (data: ContactForm) => {
     setIsSubmitting(true);
@@ -192,30 +216,26 @@ const ContactPage = () => {
                 <p className="text-sm text-gray-600 mb-4">Find answers to common questions about the FOLICEA Summit 2025.</p>
                 
                 <div className="space-y-3">
-                  <div className="p-3 rounded-lg border border-gray-200 bg-white">
-                    <h4 className="font-medium text-gray-900 text-sm mb-1">When is the FOLICEA Summit 2025?</h4>
-                    <p className="text-xs text-gray-600">The summit will be held from November 28-30, 2025 in Kampala, Uganda.</p>
-                  </div>
-                  
-                  <div className="p-3 rounded-lg border border-gray-200 bg-white">
-                    <h4 className="font-medium text-gray-900 text-sm mb-1">What is included in the registration fee?</h4>
-                    <p className="text-xs text-gray-600">Registration includes accommodation, meals, summit materials, transportation, and tour.</p>
-                  </div>
-                  
-                  <div className="p-3 rounded-lg border border-gray-200 bg-white">
-                    <h4 className="font-medium text-gray-900 text-sm mb-1">How can I register for the summit?</h4>
-                    <p className="text-xs text-gray-600">Visit our registration page and complete the online form with payment.</p>
-                  </div>
-                  
-                  <div className="p-3 rounded-lg border border-gray-200 bg-white">
-                    <h4 className="font-medium text-gray-900 text-sm mb-1">What payment methods are accepted?</h4>
-                    <p className="text-xs text-gray-600">We accept Mobile Money, bank transfers, and other digital payment methods.</p>
-                  </div>
-                  
-                  <div className="p-3 rounded-lg border border-gray-200 bg-white">
-                    <h4 className="font-medium text-gray-900 text-sm mb-1">Is accommodation provided?</h4>
-                    <p className="text-xs text-gray-600">Yes, shared accommodation is included. Private rooms are available at additional cost.</p>
-                  </div>
+                  {faqs.map((faq, index) => (
+                    <div key={index} className="rounded-lg border border-gray-200 bg-white overflow-hidden">
+                      <button
+                        onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
+                        className="w-full p-3 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                      >
+                        <h4 className="font-medium text-gray-900 text-sm">{faq.question}</h4>
+                        {openFAQ === index ? (
+                          <ChevronUp className="w-4 h-4 text-gray-500" />
+                        ) : (
+                          <ChevronDown className="w-4 h-4 text-gray-500" />
+                        )}
+                      </button>
+                      {openFAQ === index && (
+                        <div className="px-3 pb-3">
+                          <p className="text-xs text-gray-600">{faq.answer}</p>
+                        </div>
+                      )}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

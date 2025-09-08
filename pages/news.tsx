@@ -36,9 +36,9 @@ const NewsPage = () => {
       id: 4,
       title: "Summit Agenda Released",
       excerpt: "The complete agenda for the FOLICEA Summit 2025 has been released. The four-day event will feature keynote speeches, workshops, and networking sessions.",
-      date: "November 30, 2024",
+      date: "September 10, 2025",
       category: "Agenda",
-      image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Partners_dFW5jFZd2?updatedAt=1757367038266"
     },
     {
       id: 5,
@@ -52,7 +52,7 @@ const NewsPage = () => {
       id: 6,
       title: "Venue Confirmed: Kampala Serena Hotel",
       excerpt: "We are pleased to confirm that the FOLICEA Summit 2025 will be held at the prestigious Kampala Serena Hotel in Uganda's capital city.",
-      date: "November 20, 2024",
+      date: "September 8, 2025",
       category: "Venue",
       image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
     }

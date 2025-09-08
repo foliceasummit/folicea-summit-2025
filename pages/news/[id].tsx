@@ -244,46 +244,64 @@ const NewsStoryPage = () => {
       category: "Sponsorship",
       image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/sponsorship-concept.jpg?updatedAt=1757364693139",
       content: `
+        <h2>Sponsorship Opportunities</h2>
         <p>We are offering various sponsorship packages for organizations interested in supporting the FOLICEA Summit 2025 and connecting with our vibrant community of Liberian professionals, entrepreneurs, and community leaders.</p>
+        <p>We will also promote our sponsors by advertising them across all our media platforms, social channels, and by featuring their logos prominently on the Summit website.</p>
         
-        <h2>Platinum Sponsor - $10,000</h2>
+        <h2>Platinum Sponsor</h2>
         <ul>
           <li>Prominent logo placement on all summit materials</li>
-          <li>Exclusive speaking opportunity during opening ceremony</li>
+          <li>Exclusive speaking opportunity during the opening ceremony</li>
           <li>Dedicated exhibition booth</li>
-          <li>10 complimentary summit registrations</li>
           <li>Recognition in all press releases and media coverage</li>
           <li>VIP access to all events and networking sessions</li>
           <li>Customized marketing materials featuring your brand</li>
         </ul>
         
-        <h2>Gold Sponsor - $5,000</h2>
+        <h2>Gold Sponsor</h2>
         <ul>
           <li>Logo placement on summit materials</li>
           <li>Speaking opportunity during business sessions</li>
           <li>Exhibition booth</li>
-          <li>5 complimentary summit registrations</li>
           <li>Recognition in summit program</li>
           <li>Access to networking events</li>
         </ul>
         
-        <h2>Silver Sponsor - $2,500</h2>
+        <h2>Silver Sponsor</h2>
         <ul>
           <li>Logo placement on select materials</li>
           <li>Exhibition booth</li>
-          <li>3 complimentary summit registrations</li>
           <li>Recognition in summit program</li>
         </ul>
         
-        <h2>Bronze Sponsor - $1,000</h2>
+        <h2>Bronze Sponsor</h2>
         <ul>
           <li>Logo placement on website and materials</li>
-          <li>2 complimentary summit registrations</li>
           <li>Recognition in summit program</li>
+        </ul>
+        
+        <h2>Innovation Sponsor – Pitching Competition</h2>
+        <p>Be the proud Official Sponsor of the FOLICEA Summit 2025 Pitching Competition, under the theme:</p>
+        <p><strong>"Clean Monrovia, Green Future: Resolving the Waste Management Crisis."</strong></p>
+        <p>Your sponsorship will empower young entrepreneurs with innovative solutions to address Liberia's waste management crisis.</p>
+        
+        <h3>Your Contribution Provides:</h3>
+        <ul>
+          <li>Startup capital for the winning team to launch and scale their idea</li>
+          <li>Mentorship and follow-up support for participants</li>
+        </ul>
+        
+        <h3>Benefits:</h3>
+        <ul>
+          <li>Recognition as the Innovation Sponsor in all Pitching Competition materials and media coverage</li>
+          <li>Prominent branding during the competition session and award ceremony</li>
+          <li>Opportunity to present the award to the winning team on stage</li>
+          <li>Complimentary summit registrations for your representatives</li>
+          <li>Feature on the summit website and social media platforms</li>
         </ul>
         
         <h2>In-Kind Sponsorship</h2>
-        <p>We also welcome in-kind sponsorships including:</p>
+        <p>We also welcome in-kind contributions such as:</p>
         <ul>
           <li>Printing and promotional materials</li>
           <li>Audio-visual equipment and services</li>
@@ -299,11 +317,11 @@ const NewsStoryPage = () => {
           <li><strong>Networking:</strong> Connect with Liberian professionals and entrepreneurs</li>
           <li><strong>Corporate Social Responsibility:</strong> Support community development</li>
           <li><strong>Market Access:</strong> Tap into the growing Liberian diaspora market</li>
-          <li><strong>Media Coverage:</strong> Benefit from extensive media coverage</li>
+          <li><strong>Media Coverage:</strong> Benefit from extensive local and international media outreach</li>
         </ul>
         
-        <h2>Target Audience</h2>
-        <p>Our summit attendees include:</p>
+        <h2>Our Audience</h2>
+        <p>The FOLICEA Summit brings together:</p>
         <ul>
           <li>Liberian professionals and executives</li>
           <li>Entrepreneurs and business owners</li>
@@ -313,12 +331,12 @@ const NewsStoryPage = () => {
           <li>NGO representatives and development partners</li>
         </ul>
         
-        <p>For sponsorship inquiries, please contact us at <a href="mailto:foliceasummit@gmail.com" className="text-liberian-red hover:underline">foliceasummit@gmail.com</a> or call +250 792 109 775.</p>
+        <p>📩 For sponsorship inquiries, please contact us at <a href="mailto:foliceasummit@gmail.com" className="text-liberian-red hover:underline">foliceasummit@gmail.com</a> or call +250 792 109 775.</p>
       `
     },
     6: {
       title: "Venue Confirmed: Kampala Serena Hotel",
-      date: "November 20, 2024",
+      date: "September 8, 2025",
       category: "Venue",
       image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       content: `

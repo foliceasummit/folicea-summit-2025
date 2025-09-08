@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Lightbulb, Target, Users, Award, Star, Trophy, Briefcase, Globe } from 'lucide-react';
+import { Lightbulb, Target, Users, Award, Star, Trophy, Briefcase, Globe, FileText, Presentation, MessageSquare } from 'lucide-react';
 
 const PitchingCompetitionPage = () => {
   const focusAreas = [
@@ -111,7 +111,7 @@ const PitchingCompetitionPage = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="mb-8">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -139,22 +139,6 @@ const PitchingCompetitionPage = () => {
                 </li>
               </ul>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <Image
-                src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/premium_photo-1663088881507-209dbbb1fbc7.avif?updatedAt=1757359359986"
-                alt="Innovation"
-                width={600}
-                height={400}
-                className="rounded-2xl shadow-xl"
-              />
-            </motion.div>
           </div>
         </div>
       </section>
@@ -167,7 +151,7 @@ const PitchingCompetitionPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Focus Areas for Pitches
@@ -176,6 +160,10 @@ const PitchingCompetitionPage = () => {
               Participants are encouraged to present solutions in these key areas
             </p>
           </motion.div>
+
+          <div className="mb-8">
+            <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/istockphoto-879264356-1024x1024.jpg?updatedAt=1757359185784" alt="Woman presenting" className="w-full h-64 object-cover rounded-xl shadow-lg mx-auto" />
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {focusAreas.map((area, index) => (
@@ -210,7 +198,7 @@ const PitchingCompetitionPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Competition Format
@@ -229,7 +217,7 @@ const PitchingCompetitionPage = () => {
               className="text-center p-8 bg-liberian-red text-white rounded-xl"
             >
               <div className="bg-white text-liberian-red w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold">1</span>
+                <FileText className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Round 1: Concept Submission</h3>
               <p className="text-white/90">
@@ -245,7 +233,7 @@ const PitchingCompetitionPage = () => {
               className="text-center p-8 bg-liberian-blue text-white rounded-xl"
             >
               <div className="bg-white text-liberian-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold">2</span>
+                <Presentation className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Round 2: Live Pitch</h3>
               <p className="text-white/90">
@@ -261,7 +249,7 @@ const PitchingCompetitionPage = () => {
               className="text-center p-8 bg-liberian-red text-white rounded-xl"
             >
               <div className="bg-white text-liberian-red w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold">3</span>
+                <MessageSquare className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Q&A Session</h3>
               <p className="text-white/90">
@@ -280,7 +268,7 @@ const PitchingCompetitionPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Judging Criteria
@@ -316,7 +304,7 @@ const PitchingCompetitionPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-8"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Prizes & Opportunities
@@ -351,8 +339,29 @@ const PitchingCompetitionPage = () => {
         </div>
       </section>
 
+      {/* Judges */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Judges</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="bg-gray-50 rounded-xl p-6 shadow-lg text-center">
+              <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Hon.%20John%20Siaffa%20City%20Mayor%20of%20Monrovia%20City.jpg?updatedAt=1757359737423" alt="Hon. John Siaffa" className="w-full h-80 object-cover object-top rounded-lg" />
+              <h3 className="text-xl font-semibold mt-4">Hon. John Siaffa</h3>
+              <p className="text-gray-600">City Mayor of Monrovia City</p>
+              <p className="text-gray-600 text-sm mt-2">Public sector leader focused on urban development, public services, and sustainable city management in Monrovia.</p>
+            </div>
+            <div className="bg-gray-50 rounded-xl p-6 shadow-lg text-center">
+              <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Hon.%20Cassell%20Kou%20%20CEO%20NEEV.jpg?updatedAt=1757359737901" alt="Hon. Cassell Kou" className="w-full h-80 object-cover object-top rounded-lg" />
+              <h3 className="text-xl font-semibold mt-4">Hon. Cassell Kou</h3>
+              <p className="text-gray-600">CEO, NEEV</p>
+              <p className="text-gray-600 text-sm mt-2">Entrepreneur and innovation advocate with experience building sustainable ventures and ecosystem partnerships.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
-      <section className="section-padding gradient-bg">
+      <section className="py-12 gradient-bg">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -360,43 +369,22 @@ const PitchingCompetitionPage = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Make a Difference?
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+            <p className="text-lg text-white/90 mb-6 max-w-3xl mx-auto">
               If you are passionate about building a cleaner, greener Monrovia, this is your chance to make a difference.
               Step forward, pitch your idea, and be part of shaping a sustainable future.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/registration" className="bg-white text-liberian-red hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105">
+              <a href="/registration" className="bg-white text-liberian-red hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
                 Register for Competition
               </a>
-              <a href="/contact" className="border-2 border-white text-white hover:bg-white hover:text-liberian-red font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300">
+              <a href="/contact" className="border-2 border-white text-white hover:bg-white hover:text-liberian-red font-semibold py-3 px-6 rounded-lg transition-all duration-300">
                 Contact Us
               </a>
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Judges */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Judges</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-gray-50 rounded-xl p-6 shadow-lg text-center">
-              <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Hon.%20John%20Siaffa%20City%20Mayor%20of%20Monrovia%20City.jpg?updatedAt=1757359737423" alt="Hon. John Siaffa" className="w-full h-64 object-cover rounded-lg" />
-              <h3 className="text-xl font-semibold mt-4">Hon. John Siaffa</h3>
-              <p className="text-gray-600">City Mayor of Monrovia City</p>
-              <p className="text-gray-600 text-sm mt-2">Public sector leader focused on urban development, public services, and sustainable city management in Monrovia.</p>
-            </div>
-            <div className="bg-gray-50 rounded-xl p-6 shadow-lg text-center">
-              <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Hon.%20Cassell%20Kou%20%20CEO%20NEEV.jpg?updatedAt=1757359737901" alt="Hon. Cassell Kou" className="w-full h-64 object-cover rounded-lg" />
-              <h3 className="text-xl font-semibold mt-4">Hon. Cassell Kou</h3>
-              <p className="text-gray-600">CEO, NEEV</p>
-              <p className="text-gray-600 text-sm mt-2">Entrepreneur and innovation advocate with experience building sustainable ventures and ecosystem partnerships.</p>
-            </div>
-          </div>
         </div>
       </section>
     </div>
