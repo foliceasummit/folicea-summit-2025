@@ -238,14 +238,6 @@ const HomePage = () => {
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
               Join us for an unforgettable experience that will strengthen our community bonds and create lasting impact.
             </p>
-            <ul className="mt-6 max-w-3xl mx-auto text-left list-disc list-inside text-gray-600 text-lg">
-              <li><strong>Connect & Engage</strong> – Strengthen ties within the Liberian diaspora across East Africa.</li>
-              <li><strong>Learn & Share</strong> – Exchange knowledge, best practices, and success stories.</li>
-              <li><strong>Shape Leadership</strong> – Participate in democratic elections for FOLICEA leaders.</li>
-              <li><strong>Network & Collaborate</strong> – Build partnerships for community growth and economic empowerment.</li>
-              <li><strong>Celebrate Culture</strong> – Experience Liberia’s rich heritage and East Africa’s diversity.</li>
-              <li><strong>Explore Innovation</strong> – Discover entrepreneurial and tech-driven solutions for diaspora development.</li>
-            </ul>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
