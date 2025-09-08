@@ -186,6 +186,12 @@ const ContactPage = () => {
                   <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                 </button>
               </form>
+
+              <div className="mt-6 p-4 rounded-lg border border-gray-200 bg-gray-50">
+                <h3 className="font-semibold text-gray-900 mb-1">Frequently Asked Questions</h3>
+                <p className="text-sm text-gray-600 mb-2">Find answers to common questions about the FOLICEA Summit 2025.</p>
+                <a href="/faqs" className="text-liberian-red hover:text-liberian-blue font-medium text-sm">Browse FAQs →</a>
+              </div>
             </div>
 
             {/* Contact Information */}

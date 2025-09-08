@@ -10,7 +10,7 @@ const NewsPage = () => {
       id: 1,
       title: "FOLICEA Summit 2025 Registration Now Open",
       excerpt: "We are excited to announce that registration for the FOLICEA Summit 2025 is now officially open. Early bird registration is available until October 31, 2025.",
-      date: "December 15, 2024",
+      date: "September 8, 2025",
       category: "Announcement",
       image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       featured: false
@@ -26,11 +26,11 @@ const NewsPage = () => {
     },
     {
       id: 3,
-      title: "Partnership Announcement: African Union",
-      excerpt: "We are thrilled to announce our partnership with the African Union for the FOLICEA Summit 2025. This collaboration will strengthen our mission.",
-      date: "December 5, 2024",
+      title: "Partnership of Four Liberian Communities for FOLICEA Summit 2025",
+      excerpt: "A united partnership of Liberian communities in Rwanda, Kenya, Uganda, and Tanzania to advance the FOLICEA Summit 2025.",
+      date: "September 1, 2025",
       category: "Partnerships",
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/IMG-20250826-WA0040.jpg?updatedAt=1756227157808"
     },
     {
       id: 4,

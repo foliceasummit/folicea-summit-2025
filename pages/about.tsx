@@ -76,48 +76,36 @@ const AboutPage = () => {
               <Image src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Chairman%20Emmanuel%20Patrick.jpg?updatedAt=1757347430203" alt="Chairman Emmanuel Patrick" width={260} height={220} className="rounded-lg mx-auto object-cover" />
               <h3 className="text-lg font-semibold mt-4">Chairman Emmanuel Patrick</h3>
               <p className="text-gray-600">Chairperson</p>
-              <p className="text-gray-600 mt-2">WhatsApp: +250 792 100 775</p>
-              <p className="text-gray-600">Email: foliceasummit@gmail.com</p>
             </div>
 
             <div className="bg-gray-50 p-6 rounded-xl text-center shadow-sm">
               <Image src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Chairman%20Marcus%20Julay%20Weah.jpg?updatedAt=1757347428765" alt="Chairman Marcus Julay Weah" width={260} height={220} className="rounded-lg mx-auto object-cover" />
               <h3 className="text-lg font-semibold mt-4">Chairman Marcus Julay Weah</h3>
               <p className="text-gray-600">1st Vice Chairperson for Administration</p>
-              <p className="text-gray-600 mt-2">WhatsApp: +250 792 100 775</p>
-              <p className="text-gray-600">Email: foliceasummit@gmail.com</p>
             </div>
 
             <div className="bg-gray-50 p-6 rounded-xl text-center shadow-sm">
               <Image src="https://via.placeholder.com/260x220?text=Cream+Milton+Ellis" alt="Chairman Cream Milton Ellis" width={260} height={220} className="rounded-lg mx-auto object-cover" />
               <h3 className="text-lg font-semibold mt-4">Chairman Cream Milton Ellis</h3>
               <p className="text-gray-600">2nd Vice Chairperson for International Affairs</p>
-              <p className="text-gray-600 mt-2">WhatsApp: +250 792 100 775</p>
-              <p className="text-gray-600">Email: foliceasummit@gmail.com</p>
             </div>
 
             <div className="bg-gray-50 p-6 rounded-xl text-center shadow-sm">
               <Image src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Mr.%20Isaac%20M.%20Supu.jpg?updatedAt=1757347429245" alt="Mr. Isaac M. Supu" width={260} height={220} className="rounded-lg mx-auto object-cover" />
               <h3 className="text-lg font-semibold mt-4">Mr. Isaac M. Supu</h3>
               <p className="text-gray-600">Secretary General</p>
-              <p className="text-gray-600 mt-2">WhatsApp: +250 792 100 775</p>
-              <p className="text-gray-600">Email: foliceasummit@gmail.com</p>
             </div>
 
             <div className="bg-gray-50 p-6 rounded-xl text-center shadow-sm">
               <Image src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Ms.%20Curlyn%20Darbieh.jpg?updatedAt=1757347430212" alt="Ms. Curlyn Darbieh" width={260} height={220} className="rounded-lg mx-auto object-cover" />
               <h3 className="text-lg font-semibold mt-4">Ms. Curlyn Darbieh</h3>
               <p className="text-gray-600">Chief Financial Officer</p>
-              <p className="text-gray-600 mt-2">WhatsApp: +250 792 100 775</p>
-              <p className="text-gray-600">Email: foliceasummit@gmail.com</p>
             </div>
 
             <div className="bg-gray-50 p-6 rounded-xl text-center shadow-sm">
               <Image src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/W.%20Praise%20Bloyuefloh.jpg?updatedAt=1757346347925" alt="W. Praise Bloyuefloh" width={260} height={220} className="rounded-lg mx-auto object-cover" />
               <h3 className="text-lg font-semibold mt-4">W. Praise Bloyuefloh</h3>
               <p className="text-gray-600">Chairperson, Central Summit Committee</p>
-              <p className="text-gray-600 mt-2">WhatsApp: +250 792 100 775</p>
-              <p className="text-gray-600">Email: foliceasummit@gmail.com</p>
             </div>
           </div>
         </div>

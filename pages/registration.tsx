@@ -191,15 +191,14 @@ const RegistrationPage = () => {
                     <li>• 4 days of Breakfast & Lunch</li>
                     <li>• Summit T-shirt & Cap</li>
                     <li>• Tour</li>
-                    <li>• Summit package (Branded Notepad, Pen & Badge)</li>
+                    <li>• Summit materials</li>
                     <li>• Networking opportunities</li>
                   </ul>
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-2">Payment Methods:</h3>
                   <ul className="space-y-1 text-base">
-                    <li>• Mobile Money: 0792109775</li>
-                    <li>• MoMo Code: XYZ123</li>
+                    <li>• Mobile Money: +256 784 940 391 | Eunice Logose</li>
                     <li>• Bank Transfer (details available)</li>
                   </ul>
                 </div>
@@ -468,6 +467,7 @@ const RegistrationPage = () => {
                   {errors.roomPreference && (
                     <p className="text-red-500 text-sm mt-1">{errors.roomPreference.message}</p>
                   )}
+                  <p className="text-xs text-gray-500 mt-2">Note: Private room will be at your own expense.</p>
                 </div>
 
                 {/* Removed Mobility Assistance Checkbox */}
@@ -477,7 +477,8 @@ const RegistrationPage = () => {
             {/* T-Shirt Preferences Section */}
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <Utensils className="w-6 h-6 mr-3 text-liberian-red" />
+                {/* Replaced utensils with shirt icon */}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 mr-3 text-liberian-red"><path d="M16.7 3.3 14 5H10L7.3 3.3a1 1 0 0 0-1.16.16L3 6l2 3v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9l2-3-3.14-2.54a1 1 0 0 0-1.16-.16Z"/></svg>
                 T-Shirt Preferences
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -611,3 +612,4 @@ const RegistrationPage = () => {
 };
 
 export default RegistrationPage;
+ 

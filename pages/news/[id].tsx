@@ -14,7 +14,7 @@ const NewsStoryPage = () => {
   const newsData = {
     1: {
       title: "FOLICEA Summit 2025 Registration Now Open",
-      date: "September 7, 2025",
+      date: "September 8, 2025",
       category: "Announcement",
       image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       content: `
@@ -45,9 +45,9 @@ const NewsStoryPage = () => {
         <h2>Important Dates</h2>
         <ul>
           <li><strong>Early Bird Registration:</strong> Until October 15, 2025</li>
-                      <li><strong>Regular Registration:</strong> November 1 - November 15, 2025</li>
-            <li><strong>Late Registration:</strong> November 20 - November 25, 2025 (subject to availability)</li>
-                          <li><strong>Summit Dates:</strong> November 28 - 30, 2025</li>
+          <li><strong>Regular Registration:</strong> November 1 - November 15, 2025</li>
+          <li><strong>Late Registration:</strong> November 20 - November 25, 2025 (subject to availability)</li>
+          <li><strong>Summit Dates:</strong> November 28 - 30, 2025</li>
         </ul>
         
         <p>Don't miss this opportunity to be part of history! Register today and join us in Kampala for the most significant gathering of Liberian communities in East Africa.</p>
@@ -130,45 +130,30 @@ const NewsStoryPage = () => {
       `
     },
     3: {
-      title: "Partnership Announcement: African Union",
-      date: "December 5, 2024",
+      title: "Partnership of Four Liberian Communities for FOLICEA Summit 2025",
+      date: "September 1, 2025",
       category: "Partnerships",
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/IMG-20250826-WA0040.jpg?updatedAt=1756227157808",
       content: `
-        <p>We are thrilled to announce our partnership with the African Union for the FOLICEA Summit 2025. This collaboration represents a significant milestone in our mission to strengthen Liberian communities across East Africa and foster continental unity.</p>
-        
-        <h2>Partnership Details</h2>
-        <p>The African Union has officially endorsed the FOLICEA Summit 2025 and will provide support in several key areas:</p>
-        
+        <p>The journey to the FOLICEA Summit 2025 has taken an important step forward with the united partnership of four Liberian communities in East Africa: The Liberian Community in Rwanda, Liberian Community in Kenya, Association of Liberians in Uganda, and the Liberian Community in Tanzania.</p>
+
+        <p>This collaboration marks a historic moment as the communities come together with one voice to prepare for the Summit, which seeks to strengthen diaspora bonds, foster unity, and promote sustainable development.</p>
+
+        <h2>Focus Areas of the Partnership</h2>
         <ul>
-          <li><strong>Policy Framework:</strong> The AU will share insights on diaspora engagement policies and best practices</li>
-          <li><strong>Networking Opportunities:</strong> Access to AU's extensive network of African leaders and organizations</li>
-          <li><strong>Resource Sharing:</strong> Technical support and resources for community development initiatives</li>
-          <li><strong>Recognition:</strong> Official recognition of FOLICEA's contribution to African unity and development</li>
+          <li><strong>Unity & Solidarity</strong> – Strengthening ties among Liberians across East Africa.</li>
+          <li><strong>Networking & Growth</strong> – Creating opportunities for professional, social, and economic collaboration.</li>
+          <li><strong>Youth & Education</strong> – Developing initiatives to empower the next generation.</li>
+          <li><strong>Culture & Development</strong> – Preserving Liberian heritage while building pathways for community advancement.</li>
         </ul>
-        
-        <h2>Shared Vision</h2>
-        <p>This partnership aligns with the African Union's Agenda 2063, which emphasizes the importance of diaspora engagement in Africa's development. FOLICEA's mission to unite Liberian communities in East Africa directly supports the AU's vision of a united, prosperous, and peaceful Africa.</p>
-        
-        <h2>Expected Outcomes</h2>
-        <p>Through this partnership, we expect to:</p>
-        <ul>
-          <li>Strengthen ties between Liberian communities and their host countries</li>
-          <li>Create opportunities for economic collaboration and trade</li>
-          <li>Develop programs for youth empowerment and education</li>
-          <li>Establish frameworks for cultural exchange and preservation</li>
-          <li>Build sustainable community development initiatives</li>
-        </ul>
-        
-        <h2>AU Representatives at the Summit</h2>
-        <p>We are honored to announce that senior representatives from the African Union will attend the FOLICEA Summit 2025, including:</p>
-        <ul>
-          <li>Commissioner for Political Affairs, Peace and Security</li>
-          <li>Director of Diaspora Division</li>
-          <li>Representatives from the AU's Regional Economic Communities</li>
-        </ul>
-        
-        <p>This partnership marks the beginning of a new era for FOLICEA and demonstrates the growing recognition of our role in fostering unity and development across Africa.</p>
+
+        <p>Speaking on behalf of the partnership, leaders of the communities emphasized that this joint effort reflects a shared commitment to building a stronger and more united Liberian presence in East Africa.</p>
+
+        <p>The upcoming FOLICEA Summit 2025 will serve as a platform to showcase this unity and to lay the groundwork for long-term collaboration, cultural exchange, and community-driven development.</p>
+
+        <p>This partnership is more than preparation for the Summit—it is a new era of cooperation among Liberians across Rwanda, Kenya, Uganda, and Tanzania.</p>
+
+        <p><strong>👉 Stay tuned for updates and registration details as we count down to the FOLICEA Summit 2025.</strong></p>
       `
     },
     4: {
