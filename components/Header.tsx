@@ -24,7 +24,7 @@ const Header = () => {
     { name: 'Agenda', href: '/agenda' },
     { name: 'Speakers', href: '/speakers' },
     { name: 'News', href: '/news' },
-    { name: 'FAQs', href: '/faqs' },
+    { name: 'Pitching Competition', href: '/faqs' },
     { name: 'Contact', href: '/contact' },
   ];
 

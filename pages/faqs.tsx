@@ -21,6 +21,17 @@ const PitchingCompetitionPage = () => {
         </div>
       </section>
 
+      {/* Gallery */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/premium_photo-1663088881507-209dbbb1fbc7.avif?updatedAt=1757359359986" alt="Innovation" className="rounded-xl shadow-lg object-cover w-full h-60" />
+            <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/istockphoto-879264356-1024x1024.jpg?updatedAt=1757359185784" alt="Pitch" className="rounded-xl shadow-lg object-cover w-full h-60" />
+            <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/WhatsApp%20Image%202025-09-08%20at%2016.58.55_46001bbd.jpg?updatedAt=1757359184811" alt="Audience" className="rounded-xl shadow-lg object-cover w-full h-60" />
+          </div>
+        </div>
+      </section>
+
       <section className="section-padding">
         <div className="container-custom max-w-5xl mx-auto">
           <div className="prose prose-lg max-w-none">
@@ -80,12 +91,27 @@ const PitchingCompetitionPage = () => {
               If you are passionate about building a cleaner, greener Monrovia, this is your chance to make a difference.
               Step forward, pitch your idea, and be part of shaping a sustainable future.
             </p>
+          </div>
+        </div>
+      </section>
 
-            <h3>Judges</h3>
-            <ul>
-              <li>Hon. John Siaffa — City Mayor of Monrovia City</li>
-              <li>Hon. Cassell Kou — CEO NEEV</li>
-            </ul>
+      {/* Judges */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Judges</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="bg-gray-50 rounded-xl p-6 shadow-lg text-center">
+              <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Hon.%20John%20Siaffa%20City%20Mayor%20of%20Monrovia%20City.jpg?updatedAt=1757359737423" alt="Hon. John Siaffa" className="w-full h-64 object-cover rounded-lg" />
+              <h3 className="text-xl font-semibold mt-4">Hon. John Siaffa</h3>
+              <p className="text-gray-600">City Mayor of Monrovia City</p>
+              <p className="text-gray-600 text-sm mt-2">Public sector leader focused on urban development, public services, and sustainable city management in Monrovia.</p>
+            </div>
+            <div className="bg-gray-50 rounded-xl p-6 shadow-lg text-center">
+              <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Hon.%20Cassell%20Kou%20%20CEO%20NEEV.jpg?updatedAt=1757359737901" alt="Hon. Cassell Kou" className="w-full h-64 object-cover rounded-lg" />
+              <h3 className="text-xl font-semibold mt-4">Hon. Cassell Kou</h3>
+              <p className="text-gray-600">CEO, NEEV</p>
+              <p className="text-gray-600 text-sm mt-2">Entrepreneur and innovation advocate with experience building sustainable ventures and ecosystem partnerships.</p>
+            </div>
           </div>
         </div>
       </section>
