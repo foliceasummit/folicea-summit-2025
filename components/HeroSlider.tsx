@@ -25,7 +25,7 @@ const HeroSlider = () => {
           alt: "FOLICEA Summit Slide"
         },
         {
-          image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/slide4.jpeg?updatedAt=1756227166716",
+          image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/WhatsApp%20Image%202025-09-08%20at%2017.23.03_c0cd9a72.jpg?updatedAt=1757346349261",
           alt: "FOLICEA Summit Slide"
         }
       ];

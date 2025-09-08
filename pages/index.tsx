@@ -188,7 +188,7 @@ const HomePage = () => {
               Welcome to the FOLICEA Summit
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              The FOLICEA Summit is the premier gathering for the Liberian diaspora in East Africa. Our mission is to foster unity, promote professional networking, and drive community-led development initiatives.
+              The leading gathering for Liberians in East Africa, fostering unity, networking, and community development.
             </p>
           </motion.div>
 
@@ -203,7 +203,7 @@ const HomePage = () => {
               Summit Themes
             </h3>
             <p className="text-base md:text-lg text-gray-700 text-center max-w-4xl mx-auto mb-6">
-              The FOLICEA Summit 2025 will focus on critical areas that shape the future of Liberians in East Africa and beyond. These themes will guide keynote addresses, panel discussions, workshops, cultural showcases and include democratic elections to select FOLICEA leadership for the next two years.
+              FOLICEA Summit 2025 will explore key issues shaping the future of Liberians in East Africa and beyond, featuring keynote speeches, panels, workshops, cultural events, and leadership elections.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex items-start gap-3">
