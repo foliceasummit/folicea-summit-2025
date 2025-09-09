@@ -519,6 +519,7 @@ const RegistrationPage = () => {
                   {errors.tshirtColor && (
                     <p className="text-red-500 text-sm mt-1">{errors.tshirtColor.message}</p>
                   )}
+                  <p className="text-xs text-gray-500 mt-2">Note: Black color only for the Central Summit Committee members.</p>
                 </div>
               </div>
             </div>
@@ -539,7 +540,7 @@ const RegistrationPage = () => {
                   <div className="ml-3 flex-1">
                     <h3 className="text-lg font-medium text-blue-800">Upload Your Passport Size Photo</h3>
                     <div className="mt-2 text-blue-700">
-                      <p className="mb-4">Please upload a passport size photo (JPG, PNG) for your summit badge.</p>
+                      <p className="mb-4">Please upload a passport size photo with white background(JPG, PNG) for your summit badge.</p>
                       
                       {/* Photo Upload Input */}
                       <div className="mt-4">

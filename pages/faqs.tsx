@@ -250,14 +250,14 @@ const PitchingCompetitionPage = () => {
             >
               <div className="bg-white text-liberian-red w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <MessageSquare className="w-8 h-8" />
-              </div>
+                  </div>
               <h3 className="text-xl font-semibold mb-3">Q&A Session</h3>
               <p className="text-white/90">
                 Judges and audience engage participants for clarification
               </p>
             </motion.div>
-          </div>
-        </div>
+                    </div>
+                </div>
       </section>
 
       {/* Judging Criteria */}
@@ -329,7 +329,7 @@ const PitchingCompetitionPage = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-3">
                   {prize.title}
-                </h3>
+              </h3>
                 <p className="text-gray-600 group-hover:text-white/90">
                   {prize.description}
                 </p>
@@ -375,8 +375,8 @@ const PitchingCompetitionPage = () => {
             <p className="text-lg text-white/90 mb-6 max-w-3xl mx-auto">
               If you are passionate about building a cleaner, greener Monrovia, this is your chance to make a difference.
               Step forward, pitch your idea, and be part of shaping a sustainable future.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/registration" className="bg-white text-liberian-red hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
                 Register for Competition
               </a>
