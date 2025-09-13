@@ -22,6 +22,12 @@ const nextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'logo.clearbit.com',
         port: '',
         pathname: '/**',
