@@ -81,16 +81,7 @@ const PitchingCompetitionPage = () => {
         </div>
       </section>
 
-      {/* Gallery */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/premium_photo-1663088881507-209dbbb1fbc7.avif?updatedAt=1757359359986" alt="Innovation" className="rounded-xl shadow-lg object-cover w-full h-60" />
-            <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/istockphoto-879264356-1024x1024.jpg?updatedAt=1757359185784" alt="Pitch" className="rounded-xl shadow-lg object-cover w-full h-60" />
-            <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/WhatsApp%20Image%202025-09-08%20at%2016.58.55_46001bbd.jpg?updatedAt=1757359184811" alt="Audience" className="rounded-xl shadow-lg object-cover w-full h-60" />
-          </div>
-        </div>
-      </section>
+
 
       {/* Competition Overview */}
       <section className="section-padding bg-white">
@@ -119,10 +110,17 @@ const PitchingCompetitionPage = () => {
               viewport={{ once: true }}
             >
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Objective</h3>
-              <p className="text-lg text-gray-600 mb-6">
-                To identify and support groundbreaking ideas, technologies, and community-driven models that can transform
-                Monrovia's waste management system into a sustainable, efficient, and environmentally friendly framework.
-              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start mb-6">
+                <p className="text-lg text-gray-600">
+                  To identify and support groundbreaking ideas, technologies, and community-driven models that can transform
+                  Monrovia's waste management system into a sustainable, efficient, and environmentally friendly framework.
+                </p>
+                <img
+                  src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/premium_photo-1663088881507-209dbbb1fbc7.avif?updatedAt=1757359359986"
+                  alt="Pitching Objective"
+                  className="w-full h-64 object-cover rounded-xl shadow-lg"
+                />
+              </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Who Can Pitch?</h3>
               <ul className="space-y-3">
                 <li className="flex items-start space-x-3">
@@ -161,9 +159,7 @@ const PitchingCompetitionPage = () => {
             </p>
           </motion.div>
 
-          <div className="mb-8">
-            <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/istockphoto-879264356-1024x1024.jpg?updatedAt=1757359185784" alt="Woman presenting" className="w-full h-64 object-cover rounded-xl shadow-lg mx-auto" />
-          </div>
+
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {focusAreas.map((area, index) => (

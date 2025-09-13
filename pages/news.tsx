@@ -30,7 +30,7 @@ const NewsPage = () => {
       excerpt: "A united partnership of Liberian communities in Rwanda, Kenya, Uganda, and Tanzania to advance the FOLICEA Summit 2025.",
       date: "May 24, 2025",
       category: "Partnerships",
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/IMG-20250826-WA0040.jpg?updatedAt=1756227157808"
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Partners_dFW5jFZd2?updatedAt=1757367038266"
     },
     {
       id: 4,
@@ -38,7 +38,7 @@ const NewsPage = () => {
       excerpt: "The complete agenda for the FOLICEA Summit 2025 has been released. The four-day event will feature keynote speeches, workshops, and networking sessions.",
       date: "September 10, 2025",
       category: "Agenda",
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Partners_dFW5jFZd2?updatedAt=1757367038266"
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/hand-writing-word-agenda-white-600nw-1282734538.webp?updatedAt=1757370476786"
     },
     {
       id: 5,
@@ -54,7 +54,7 @@ const NewsPage = () => {
       excerpt: "We are pleased to confirm that the FOLICEA Summit 2025 will be held at the prestigious Kampala Serena Hotel in Uganda's capital city.",
       date: "September 8, 2025",
       category: "Venue",
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/images.jpg?updatedAt=1757370642158"
     }
   ];
 
