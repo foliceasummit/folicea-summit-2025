@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Lightbulb, Target, Users, Award, Star, Trophy, Briefcase, Globe, FileText, Presentation, MessageSquare } from 'lucide-react';
 
+// Route path will be /pitchingcompetition (via pages filename)
 const PitchingCompetitionPage = () => {
   const focusAreas = [
     {
@@ -373,13 +374,13 @@ const PitchingCompetitionPage = () => {
               Step forward, pitch your idea, and be part of shaping a sustainable future.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/registration" className="bg-white text-liberian-red hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105">
-                Register for Competition
-              </a>
-              <a href="/contact" className="border-2 border-white text-white hover:bg-white hover:text-liberian-red font-semibold py-3 px-6 rounded-lg transition-all duration-300">
-                Contact Us
-              </a>
-            </div>
+                <a href="#TODO_GOOGLE_FORM_LINK" className="bg-white text-liberian-red hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105" target="_blank" rel="noopener noreferrer">
+                  Apply to Pitch
+                </a>
+                <a href="/contact" className="border-2 border-white text-white hover:bg-white hover:text-liberian-red font-semibold py-3 px-6 rounded-lg transition-all duration-300">
+                  Contact Us
+                </a>
+              </div>
           </motion.div>
         </div>
       </section>

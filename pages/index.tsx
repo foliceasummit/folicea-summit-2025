@@ -245,9 +245,9 @@ const HomePage = () => {
           </motion.div>
 
           <div className="text-center">
-            <Link href="/about" className="btn-primary text-lg px-8 py-4">
-              Learn More About FOLICEA
-            </Link>
+            <a href="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Sponsorship%20Proposal.pdf?updatedAt=1757776444961" className="btn-primary text-lg px-8 py-4" target="_blank" rel="noopener noreferrer">
+              Download Logistics Note (PDF)
+            </a>
           </div>
         </div>
       </section>
