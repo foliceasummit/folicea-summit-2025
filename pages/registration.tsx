@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
-import { User, Briefcase, Car, Utensils, Camera, Upload, X } from 'lucide-react';
+import { User, Briefcase, Car, Utensils, Camera, Upload, X, Smartphone, CreditCard, Banknote, Building2, CheckCircle2 } from 'lucide-react';
 
 interface RegistrationForm {
   // Personal Information
@@ -180,27 +180,87 @@ const RegistrationPage = () => {
             </p>
             
             {/* Registration Fee Information */}
-            <div className="bg-gradient-to-r from-liberian-blue to-liberian-red text-white rounded-2xl p-6 mb-6">
-              <h2 className="text-2xl font-bold mb-3">Registration Fee: $100 USD</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">What's Included:</h3>
-                  <ul className="space-y-1 text-base">
-                    <li>• 4 days of Accommodation</li>
-                    <li>• Transportation</li>
-                    <li>• 4 days of Breakfast & Lunch</li>
-                    <li>• Summit T-shirt & Cap</li>
-                    <li>• Tour</li>
-                    <li>• Summit materials</li>
-                    <li>• Networking opportunities</li>
-                  </ul>
+            <div className="rounded-2xl overflow-hidden mb-8 shadow-lg">
+              {/* Header */}
+              <div className="bg-gradient-to-r from-liberian-blue via-liberian-blue/90 to-liberian-red text-white p-6 md:p-8">
+                <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">Summit Registration Fees</h2>
+                <p className="text-white/90 mt-1">Delegates are kindly asked to pay the following participation fees based on their country of residence:</p>
+              </div>
+              {/* Fees Grid */}
+              <div className="bg-white p-6 md:p-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div className="rounded-xl border border-gray-200 p-4 text-center bg-gray-50">
+                    <p className="text-sm text-gray-500">Uganda (Host Country)</p>
+                    <p className="text-2xl font-bold text-gray-900">$65</p>
+                  </div>
+                  <div className="rounded-xl border border-gray-200 p-4 text-center bg-gray-50">
+                    <p className="text-sm text-gray-500">Kenya</p>
+                    <p className="text-2xl font-bold text-gray-900">$100</p>
+                  </div>
+                  <div className="rounded-xl border border-gray-200 p-4 text-center bg-gray-50">
+                    <p className="text-sm text-gray-500">Tanzania</p>
+                    <p className="text-2xl font-bold text-gray-900">$150</p>
+                  </div>
+                  <div className="rounded-xl border border-gray-200 p-4 text-center bg-gray-50">
+                    <p className="text-sm text-gray-500">Rwanda</p>
+                    <p className="text-2xl font-bold text-gray-900">$100</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">Payment Methods:</h3>
-                  <ul className="space-y-1 text-base">
-                    <li>• Mobile Money: +256 784 940 391 | Eunice Logose</li>
-                    <li>• Bank Transfer (details available)</li>
-                  </ul>
+
+                {/* Payment Methods */}
+                <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="rounded-xl border border-gray-200 p-6">
+                    <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
+                      <Smartphone className="w-5 h-5 text-liberian-red" /> Payment Methods
+                    </h3>
+                    <div className="mt-4 space-y-3">
+                      <div className="flex items-start gap-3">
+                        <Smartphone className="w-4 h-4 mt-1 text-gray-500" />
+                        <div>
+                          <p className="font-medium text-gray-900">Mobile Money</p>
+                          <p className="text-gray-600 text-sm">+256 784 940 391 | Eunice Logose</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <Banknote className="w-4 h-4 mt-1 text-gray-500" />
+                        <div>
+                          <p className="font-medium text-gray-900">In Cash (Accepted)</p>
+                          <p className="text-gray-600 text-sm">For Uganda-based delegates only</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CreditCard className="w-4 h-4 mt-1 text-gray-500" />
+                        <div>
+                          <p className="font-medium text-gray-900">Visa / Debit Card</p>
+                          <p className="text-gray-600 text-sm">Secure online payment option (details shared upon request)</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <Building2 className="w-4 h-4 mt-1 text-gray-500" />
+                        <div>
+                          <p className="font-medium text-gray-900">Bank Transfer</p>
+                          <p className="text-gray-600 text-sm">Bank details available upon request. Contact the Finance Team.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* What's Included */}
+                  <div className="rounded-xl border border-gray-200 p-6 bg-gray-50">
+                    <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
+                      <CheckCircle2 className="w-5 h-5 text-liberian-blue" /> What's Included
+                    </h3>
+                    <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-gray-700 text-sm">
+                      <li>• 4 days of Accommodation</li>
+                      <li>• Transportation</li>
+                      <li>• 4 days of Breakfast & Lunch</li>
+                      <li>• Summit T-shirt & Cap</li>
+                      <li>• Summit materials</li>
+                      <li>• Networking opportunities</li>
+                      <li>• Tour of Kampala historical sites</li>
+                      <li>• Official Invitation</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
