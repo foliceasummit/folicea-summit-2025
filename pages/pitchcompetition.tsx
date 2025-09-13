@@ -143,42 +143,42 @@ const PitchingCompetitionPage = () => {
       </section>
 
       {/* Focus Areas */}
-      <section className="section-padding">
+      <section className="py-8 sm:py-10">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-8"
+            className="text-center mb-6"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
               Focus Areas for Pitches
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base text-gray-600 max-w-3xl mx-auto">
               Participants are encouraged to present solutions in these key areas
             </p>
           </motion.div>
 
 
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {focusAreas.map((area, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
                 viewport={{ once: true }}
-                className="text-center p-6 rounded-xl bg-gray-50 hover:bg-liberian-red hover:text-white transition-all duration-300 card-hover"
+                className="text-center p-5 rounded-xl bg-gray-50 hover:bg-liberian-red hover:text-white transition-all duration-300 card-hover"
               >
-                <div className="text-liberian-red mb-4 group-hover:text-white">
+                <div className="text-liberian-red mb-3 group-hover:text-white">
                   {area.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-3">
+                <h3 className="text-lg font-semibold mb-2">
                   {area.title}
                 </h3>
-                <p className="text-gray-600 group-hover:text-white/90">
+                <p className="text-gray-600 group-hover:text-white/90 text-sm">
                   {area.description}
                 </p>
               </motion.div>
@@ -258,35 +258,35 @@ const PitchingCompetitionPage = () => {
       </section>
 
       {/* Judging Criteria */}
-      <section className="section-padding">
+      <section className="py-8 sm:py-10">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-8"
+            className="text-center mb-6"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
               Judging Criteria
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base text-gray-600 max-w-3xl mx-auto">
               How submissions will be evaluated
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {judgingCriteria.map((criterion, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -15 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
                 viewport={{ once: true }}
-                className="flex items-start space-x-4 p-6 bg-gray-50 rounded-xl"
+                className="flex items-start space-x-3 p-4 bg-gray-50 rounded-xl"
               >
-                <Star className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
-                <p className="text-gray-700">{criterion}</p>
+                <Star className="w-5 h-5 text-liberian-red mt-1 flex-shrink-0" />
+                <p className="text-gray-700 text-sm md:text-base">{criterion}</p>
               </motion.div>
             ))}
           </div>
@@ -374,7 +374,7 @@ const PitchingCompetitionPage = () => {
               Step forward, pitch your idea, and be part of shaping a sustainable future.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://bit.ly/foliceapitching" className="bg-white text-liberian-red hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105" target="_blank" rel="noopener noreferrer">
+                <a href="https://forms.gle/DzmUuLeFyLo4zeau7" className="bg-white text-liberian-red hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105" target="_blank" rel="noopener noreferrer">
                   Apply to Pitch
                 </a>
                 <a href="/contact" className="border-2 border-white text-white hover:bg-white hover:text-liberian-red font-semibold py-3 px-6 rounded-lg transition-all duration-300">
