@@ -182,26 +182,26 @@ const RegistrationPage = () => {
             {/* Registration Fee Information */}
             <div className="rounded-2xl overflow-hidden mb-8 shadow-lg">
               {/* Header */}
-              <div className="bg-gradient-to-r from-liberian-blue via-liberian-blue/90 to-liberian-red text-white p-6 md:p-8">
-                <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">Summit Registration Fees</h2>
-                <p className="text-white/90 mt-1">Delegates are kindly asked to pay the following participation fees based on their country of residence:</p>
+              <div className="bg-gradient-to-r from-liberian-blue via-liberian-blue/90 to-liberian-red text-white p-4 md:p-6">
+                <h2 className="text-xl md:text-2xl font-extrabold tracking-tight">Summit Registration Fees</h2>
+                <p className="text-white/90 mt-0.5">Delegates are kindly asked to pay the following participation fees based on their country of residence:</p>
               </div>
               {/* Fees Grid */}
-              <div className="bg-white p-6 md:p-8">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <div className="rounded-xl border border-gray-200 p-4 text-center bg-gray-50">
+              <div className="bg-white p-4 md:p-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                  <div className="rounded-xl border border-gray-200 p-3 text-center bg-gray-50">
                     <p className="text-sm text-gray-500">Uganda (Host Country)</p>
                     <p className="text-2xl font-bold text-gray-900">$65</p>
                   </div>
-                  <div className="rounded-xl border border-gray-200 p-4 text-center bg-gray-50">
+                  <div className="rounded-xl border border-gray-200 p-3 text-center bg-gray-50">
                     <p className="text-sm text-gray-500">Kenya</p>
                     <p className="text-2xl font-bold text-gray-900">$100</p>
                   </div>
-                  <div className="rounded-xl border border-gray-200 p-4 text-center bg-gray-50">
+                  <div className="rounded-xl border border-gray-200 p-3 text-center bg-gray-50">
                     <p className="text-sm text-gray-500">Tanzania</p>
                     <p className="text-2xl font-bold text-gray-900">$150</p>
                   </div>
-                  <div className="rounded-xl border border-gray-200 p-4 text-center bg-gray-50">
+                  <div className="rounded-xl border border-gray-200 p-3 text-center bg-gray-50">
                     <p className="text-sm text-gray-500">Rwanda</p>
                     <p className="text-2xl font-bold text-gray-900">$100</p>
                   </div>
@@ -239,27 +239,9 @@ const RegistrationPage = () => {
                         </div>
                       </div>
 
-                      {/* Visa / Debit Card */}
-                      <div className="flex items-start gap-4 rounded-xl border border-gray-200 p-4 bg-white">
-                        <div className="h-10 w-10 rounded-full bg-liberian-blue/10 text-liberian-blue flex items-center justify-center">
-                          <CreditCard className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <p className="font-semibold text-gray-900">Visa / Debit Card</p>
-                          <p className="text-sm text-gray-600">Secure online payment option (details shared upon request)</p>
-                        </div>
-                      </div>
+                      {/* Visa / Debit Card - removed per request */}
 
-                      {/* Bank Transfer */}
-                      <div className="flex items-start gap-4 rounded-xl border border-gray-200 p-4 bg-white">
-                        <div className="h-10 w-10 rounded-full bg-gray-100 text-gray-700 flex items-center justify-center">
-                          <Building2 className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <p className="font-semibold text-gray-900">Bank Transfer</p>
-                          <p className="text-sm text-gray-600">Bank details available upon request. Contact the Finance Team.</p>
-                        </div>
-                      </div>
+                      {/* Bank Transfer - removed per request */}
                     </div>
                   </div>
 
@@ -278,6 +260,7 @@ const RegistrationPage = () => {
                         'Networking opportunities',
                         'Tour of Kampala historical sites',
                         'Official Invitation',
+                        'Access to the pitch competition',
                       ].map((item, idx) => (
                         <li key={idx} className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700">
                           <CheckCircle2 className="w-4 h-4 text-liberian-blue" /> {item}
