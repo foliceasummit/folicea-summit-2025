@@ -207,58 +207,82 @@ const RegistrationPage = () => {
                   </div>
                 </div>
 
-                {/* Payment Methods */}
-                <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="rounded-xl border border-gray-200 p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
+                {/* Payment Methods + What's Included (Modern layout) */}
+                <div className="mt-8 space-y-8">
+                  {/* Payment Methods */}
+                  <div className="rounded-2xl border border-gray-200 p-6">
+                    <h3 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
                       <Smartphone className="w-5 h-5 text-liberian-red" /> Payment Methods
                     </h3>
-                    <div className="mt-4 space-y-3">
-                      <div className="flex items-start gap-3">
-                        <Smartphone className="w-4 h-4 mt-1 text-gray-500" />
+                    <p className="text-sm text-gray-600 mt-1">To confirm your participation, please use any of the following options:</p>
+
+                    <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {/* Mobile Money */}
+                      <div className="flex items-start gap-4 rounded-xl border border-gray-200 p-4 bg-white">
+                        <div className="h-10 w-10 rounded-full bg-liberian-red/10 text-liberian-red flex items-center justify-center">
+                          <Smartphone className="w-5 h-5" />
+                        </div>
                         <div>
-                          <p className="font-medium text-gray-900">Mobile Money</p>
-                          <p className="text-gray-600 text-sm">+256 784 940 391 | Eunice Logose</p>
+                          <p className="font-semibold text-gray-900">Mobile Money</p>
+                          <p className="text-sm text-gray-600">+256 784 940 391 | Eunice Logose</p>
                         </div>
                       </div>
-                      <div className="flex items-start gap-3">
-                        <Banknote className="w-4 h-4 mt-1 text-gray-500" />
+
+                      {/* In Cash */}
+                      <div className="flex items-start gap-4 rounded-xl border border-gray-200 p-4 bg-white">
+                        <div className="h-10 w-10 rounded-full bg-gray-100 text-gray-700 flex items-center justify-center">
+                          <Banknote className="w-5 h-5" />
+                        </div>
                         <div>
-                          <p className="font-medium text-gray-900">In Cash (Accepted)</p>
-                          <p className="text-gray-600 text-sm">For Uganda-based delegates only</p>
+                          <p className="font-semibold text-gray-900">In Cash (Accepted)</p>
+                          <p className="text-sm text-gray-600">For Uganda-based delegates only</p>
                         </div>
                       </div>
-                      <div className="flex items-start gap-3">
-                        <CreditCard className="w-4 h-4 mt-1 text-gray-500" />
+
+                      {/* Visa / Debit Card */}
+                      <div className="flex items-start gap-4 rounded-xl border border-gray-200 p-4 bg-white">
+                        <div className="h-10 w-10 rounded-full bg-liberian-blue/10 text-liberian-blue flex items-center justify-center">
+                          <CreditCard className="w-5 h-5" />
+                        </div>
                         <div>
-                          <p className="font-medium text-gray-900">Visa / Debit Card</p>
-                          <p className="text-gray-600 text-sm">Secure online payment option (details shared upon request)</p>
+                          <p className="font-semibold text-gray-900">Visa / Debit Card</p>
+                          <p className="text-sm text-gray-600">Secure online payment option (details shared upon request)</p>
                         </div>
                       </div>
-                      <div className="flex items-start gap-3">
-                        <Building2 className="w-4 h-4 mt-1 text-gray-500" />
+
+                      {/* Bank Transfer */}
+                      <div className="flex items-start gap-4 rounded-xl border border-gray-200 p-4 bg-white">
+                        <div className="h-10 w-10 rounded-full bg-gray-100 text-gray-700 flex items-center justify-center">
+                          <Building2 className="w-5 h-5" />
+                        </div>
                         <div>
-                          <p className="font-medium text-gray-900">Bank Transfer</p>
-                          <p className="text-gray-600 text-sm">Bank details available upon request. Contact the Finance Team.</p>
+                          <p className="font-semibold text-gray-900">Bank Transfer</p>
+                          <p className="text-sm text-gray-600">Bank details available upon request. Contact the Finance Team.</p>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   {/* What's Included */}
-                  <div className="rounded-xl border border-gray-200 p-6 bg-gray-50">
-                    <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
+                  <div className="rounded-2xl border border-gray-200 p-6 bg-white">
+                    <h3 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
                       <CheckCircle2 className="w-5 h-5 text-liberian-blue" /> What's Included
                     </h3>
-                    <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-gray-700 text-sm">
-                      <li>• 4 days of Accommodation</li>
-                      <li>• Transportation</li>
-                      <li>• 4 days of Breakfast & Lunch</li>
-                      <li>• Summit T-shirt & Cap</li>
-                      <li>• Summit materials</li>
-                      <li>• Networking opportunities</li>
-                      <li>• Tour of Kampala historical sites</li>
-                      <li>• Official Invitation</li>
+                    <ul className="mt-4 flex flex-wrap gap-2">
+                      {[
+                        '4 days of Accommodation',
+                        'Transportation',
+                        '4 days of Breakfast & Lunch',
+                        'Summit T-shirt & Cap',
+                        'Summit materials',
+                        'Networking opportunities',
+                        'Tour of Kampala historical sites',
+                        'Official Invitation',
+                      ].map((item, idx) => (
+                        <li key={idx} className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700">
+                          <CheckCircle2 className="w-4 h-4 text-liberian-blue" /> {item}
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
