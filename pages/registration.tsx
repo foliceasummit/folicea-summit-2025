@@ -23,6 +23,7 @@ interface RegistrationForm {
   contributions: string;
   
   // Travel and Accommodation
+  arrivalDate: string; // new
   modeOfTravel: string;
   flightBusNumber: string;
   roomPreference: string;
@@ -184,46 +185,82 @@ const RegistrationPage = () => {
               {/* Header */}
               <div className="bg-gradient-to-r from-liberian-blue via-liberian-blue/90 to-liberian-red text-white p-4 md:p-6">
                 <h2 className="text-xl md:text-2xl font-extrabold tracking-tight">Summit Registration Fees</h2>
-                <p className="text-white/90 mt-0.5">Delegates are kindly asked to pay the following participation fees based on their country of residence:</p>
+                <p className="text-white/90 mt-0.5">Delegates are kindly asked to pay the participation fee based on their country of residence and select their preferred summit package:</p>
               </div>
               {/* Fees Grid */}
               <div className="bg-white p-4 md:p-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                  <div className="rounded-xl border border-gray-200 p-3 text-center bg-gray-50">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Uganda */}
+                  <div className="rounded-xl border border-gray-200 p-4 bg-gray-50">
                     <p className="text-sm text-gray-500">Uganda (Host Country)</p>
-                    <p className="text-2xl font-bold text-gray-900">$65</p>
+                    <div className="mt-2 grid grid-cols-1 gap-2">
+                      <div className="flex items-center justify-between rounded-lg bg-white border border-gray-200 px-3 py-2">
+                        <span className="text-gray-700">Full Package</span>
+                        <span className="font-semibold text-gray-900">$35</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="rounded-xl border border-gray-200 p-3 text-center bg-gray-50">
+                  {/* Kenya */}
+                  <div className="rounded-xl border border-gray-200 p-4 bg-gray-50">
                     <p className="text-sm text-gray-500">Kenya</p>
-                    <p className="text-2xl font-bold text-gray-900">$100</p>
+                    <div className="mt-2 grid grid-cols-1 gap-2">
+                      <div className="flex items-center justify-between rounded-lg bg-white border border-gray-200 px-3 py-2">
+                        <span className="text-gray-700">Package Only</span>
+                        <span className="font-semibold text-gray-900">$75</span>
+                      </div>
+                      <div className="flex items-center justify-between rounded-lg bg-white border border-gray-200 px-3 py-2">
+                        <span className="text-gray-700">Package + Transportation</span>
+                        <span className="font-semibold text-gray-900">$145</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="rounded-xl border border-gray-200 p-3 text-center bg-gray-50">
+                  {/* Tanzania */}
+                  <div className="rounded-xl border border-gray-200 p-4 bg-gray-50">
                     <p className="text-sm text-gray-500">Tanzania</p>
-                    <p className="text-2xl font-bold text-gray-900">$150</p>
+                    <div className="mt-2 grid grid-cols-1 gap-2">
+                      <div className="flex items-center justify-between rounded-lg bg-white border border-gray-200 px-3 py-2">
+                        <span className="text-gray-700">Package Only</span>
+                        <span className="font-semibold text-gray-900">$75</span>
+                      </div>
+                      <div className="flex items-center justify-between rounded-lg bg-white border border-gray-200 px-3 py-2">
+                        <span className="text-gray-700">Package + Transportation</span>
+                        <span className="font-semibold text-gray-900">$151</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="rounded-xl border border-gray-200 p-3 text-center bg-gray-50">
+                  {/* Rwanda */}
+                  <div className="rounded-xl border border-gray-200 p-4 bg-gray-50">
                     <p className="text-sm text-gray-500">Rwanda</p>
-                    <p className="text-2xl font-bold text-gray-900">$100</p>
+                    <div className="mt-2 grid grid-cols-1 gap-2">
+                      <div className="flex items-center justify-between rounded-lg bg-white border border-gray-200 px-3 py-2">
+                        <span className="text-gray-700">Package Only</span>
+                        <span className="font-semibold text-gray-900">$75</span>
+                      </div>
+                      <div className="flex items-center justify-between rounded-lg bg-white border border-gray-200 px-3 py-2">
+                        <span className="text-gray-700">Package + Transportation</span>
+                        <span className="font-semibold text-gray-900">$130</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                {/* Payment Methods + What's Included (Modern layout) */}
+                {/* Payment Methods + Packages */}
                 <div className="mt-8 space-y-8">
                   {/* Payment Methods */}
                   <div className="rounded-2xl border border-gray-200 p-6">
                     <h3 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
                       <Smartphone className="w-5 h-5 text-liberian-red" /> Payment Methods
                     </h3>
-                    <p className="text-sm text-gray-600 mt-1">To confirm your participation, please use any of the following options:</p>
+                    <p className="text-sm text-gray-600 mt-1">To confirm your participation, please use one of the following options:</p>
 
                     <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {/* Mobile Money */}
+                      {/* MoMo Pay */}
                       <div className="flex items-start gap-4 rounded-xl border border-gray-200 p-4 bg-white">
                         <div className="h-10 w-10 rounded-full bg-liberian-red/10 text-liberian-red flex items-center justify-center">
                           <Smartphone className="w-5 h-5" />
                         </div>
                         <div>
-                          <p className="font-semibold text-gray-900">Mobile Money</p>
+                          <p className="font-semibold text-gray-900">Momo Pay</p>
                           <p className="text-sm text-gray-600">+256 784 940 391 | Eunice Logose</p>
                         </div>
                       </div>
@@ -234,39 +271,45 @@ const RegistrationPage = () => {
                           <Banknote className="w-5 h-5" />
                         </div>
                         <div>
-                          <p className="font-semibold text-gray-900">In Cash (Accepted)</p>
-                          <p className="text-sm text-gray-600">For Uganda-based delegates only</p>
+                          <p className="font-semibold text-gray-900">In Cash</p>
+                          <p className="text-sm text-gray-600">Accepted for Uganda-based delegates only</p>
                         </div>
                       </div>
-
-                      {/* Visa / Debit Card - removed per request */}
-
-                      {/* Bank Transfer - removed per request */}
                     </div>
                   </div>
 
-                  {/* What's Included */}
-                  <div className="rounded-2xl border border-gray-200 p-6 bg-white">
-                    <h3 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
-                      <CheckCircle2 className="w-5 h-5 text-liberian-blue" /> What's Included
-                    </h3>
-                    <ul className="mt-4 flex flex-wrap gap-2">
-                      {[
-                        '4 days of Accommodation',
-                        'Transportation',
-                        '4 days of Breakfast & Lunch',
-                        'Summit T-shirt & Cap',
-                        'Summit materials',
-                        'Networking opportunities',
-                        'Tour of Kampala historical sites',
-                        'Official Invitation',
-                        'Access to the pitch competition',
-                      ].map((item, idx) => (
-                        <li key={idx} className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700">
-                          <CheckCircle2 className="w-4 h-4 text-liberian-blue" /> {item}
-                        </li>
-                      ))}
-                    </ul>
+                  {/* Packages */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    {/* Package Includes */}
+                    <div className="rounded-2xl border border-gray-200 p-6 bg-white">
+                      <h3 className="text-xl font-semibold text-gray-900 mb-3">Package Includes</h3>
+                      <ul className="space-y-2 text-gray-700 text-sm">
+                        <li>4 days of accommodation</li>
+                        <li>4 days of breakfast & lunch</li>
+                        <li>Summit T-shirt</li>
+                        <li>Branded summit materials (Notepad & Pen)</li>
+                        <li>Networking opportunities</li>
+                        <li>Tour of Kampala historical sites</li>
+                        <li>Official Invitation</li>
+                        <li>Access to the Pitch Competition</li>
+                      </ul>
+                    </div>
+
+                    {/* Full Package Includes */}
+                    <div className="rounded-2xl border border-gray-200 p-6 bg-white">
+                      <h3 className="text-xl font-semibold text-gray-900 mb-3">Full Package Includes</h3>
+                      <ul className="space-y-2 text-gray-700 text-sm">
+                        <li>Transportation</li>
+                        <li>4 days of accommodation</li>
+                        <li>4 days of breakfast & lunch</li>
+                        <li>Summit T-shirt</li>
+                        <li>Branded summit materials (Notepad & Pen)</li>
+                        <li>Networking opportunities</li>
+                        <li>Tour of Kampala historical sites</li>
+                        <li>Official Invitation</li>
+                        <li>Access to the Pitch Competition</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -334,7 +377,7 @@ const RegistrationPage = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number *
+                    WhatsApp Number *
                   </label>
                   <input
                     type="tel"
@@ -484,8 +527,22 @@ const RegistrationPage = () => {
                 Travel and Accommodation
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Removed Arrival Date */}
-                {/* Removed Arrival Time */}
+                {/* Arrival Date */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Date of Arrival *
+                  </label>
+                  <input
+                    type="date"
+                    min="2025-11-20"
+                    max="2025-12-10"
+                    {...register('arrivalDate', { required: 'Arrival date is required' })}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-liberian-red focus:border-transparent"
+                  />
+                  {errors.arrivalDate && (
+                    <p className="text-red-500 text-sm mt-1">{errors.arrivalDate.message}</p>
+                  )}
+                </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -529,6 +586,7 @@ const RegistrationPage = () => {
                     <option value="">Select room preference</option>
                     <option value="Single">Single Room</option>
                     <option value="Double">Double Room (Shared)</option>
+                    <option value="Airbnb Shared">Airbnb apartment (Shared)</option>
                     <option value="No Accommodation">No Accommodation Needed</option>
                   </select>
                   {errors.roomPreference && (

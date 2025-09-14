@@ -9,7 +9,7 @@ const AgendaPage = () => {
   const agenda = [
     {
       day: "Day 1",
-      date: "December 5, 2025",
+      date: "November 28, 2025",
       title: "Official Launch of the Federation",
       theme: "Unity, Identity, and a Shared Vision",
       events: [
@@ -92,7 +92,7 @@ const AgendaPage = () => {
     },
     {
       day: "Day 2",
-      date: "December 6, 2025",
+      date: "November 29, 2025",
       title: "Business, Investment & Tech Innovation Seminars",
       theme: "Empowering the Diaspora Economy",
       events: [
@@ -154,7 +154,7 @@ const AgendaPage = () => {
     },
     {
       day: "Day 3",
-      date: "December 7, 2025",
+      date: "November 30, 2025",
       title: "General Assembly Elections and Inauguration",
       theme: "Democratic Leadership for Diaspora Development",
       events: [
@@ -456,19 +456,19 @@ const AgendaPage = () => {
                <div className="space-y-4">
                  <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
                    <Utensils className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
-                   <p className="text-gray-700">All meals (breakfast and lunch for 3 days)</p>
+                   <p className="text-gray-700">All meals (breakfast and lunch for 4 days)</p>
                  </div>
                  <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
                    <Users className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
-                   <p className="text-gray-700">3 nights accommodation (shared room)</p>
+                   <p className="text-gray-700">4 nights’ accommodation (shared room)</p>
                  </div>
                  <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
                    <BookOpen className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
-                   <p className="text-gray-700">Summit materials (notebook, pen, tote bag)</p>
+                   <p className="text-gray-700">Branded Summit materials (notebook, pen, tag)</p>
                  </div>
                  <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
                    <Award className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
-                   <p className="text-gray-700">Official summit T-shirt and cap</p>
+                   <p className="text-gray-700">Official summit T-shirt</p>
                  </div>
                  <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
                    <Briefcase className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
@@ -477,6 +477,18 @@ const AgendaPage = () => {
                  <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
                    <Users className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
                    <p className="text-gray-700">Networking opportunities and social events</p>
+                 </div>
+                 <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                   <Award className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
+                   <p className="text-gray-700">Official Invitation</p>
+                 </div>
+                 <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                   <Award className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
+                   <p className="text-gray-700">Access to the pitch competition</p>
+                 </div>
+                 <div className="flex items-start space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                   <MapPin className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
+                   <p className="text-gray-700">Tour of Kampala historical sites</p>
                  </div>
                </div>
              </motion.div>
@@ -560,7 +572,7 @@ const AgendaPage = () => {
                     <Calendar className="w-6 h-6 text-yellow-300 mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold text-lg">Date & Time</h4>
-                      <p className="text-white/90">December 5 - 7, 2025</p>
+                      <p className="text-white/90">November 28 - 30, 2025</p>
                       <p className="text-white/90">8:00 AM - 6:00 PM Daily</p>
                     </div>
                   </div>
