@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
-import { User, Briefcase, Car, Utensils, Camera, Upload, X, Smartphone, CreditCard, Banknote, Building2, CheckCircle2 } from 'lucide-react';
+import { User, Briefcase, Car, Utensils, Camera, Upload, X, Smartphone, Banknote, CheckCircle2, MapPin, Package, Wallet } from 'lucide-react';
 
 interface RegistrationForm {
   // Personal Information
@@ -183,81 +183,98 @@ const RegistrationPage = () => {
             {/* Registration Fee Information */}
             <div className="rounded-2xl overflow-hidden mb-8 shadow-lg">
               {/* Header */}
-              <div className="bg-gradient-to-r from-liberian-blue via-liberian-blue/90 to-liberian-red text-white p-4 md:p-6">
-                <h2 className="text-xl md:text-2xl font-extrabold tracking-tight">Summit Registration Fees</h2>
-                <p className="text-white/90 mt-0.5">Delegates are kindly asked to pay the participation fee based on their country of residence and select their preferred summit package:</p>
+              <div className="bg-white p-0 md:p-0">
+                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-liberian-blue via-liberian-blue/90 to-liberian-red p-6 md:p-8">
+                  <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_20%_20%,white,transparent_25%),radial-gradient(circle_at_80%_30%,white,transparent_25%)]" />
+                  <div className="relative z-10">
+                    <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-white text-sm mb-3">
+                      <Wallet className="w-4 h-4" /> Summit Registration Fees
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white">Choose Your Country & Package</h2>
+                    <p className="text-white/90 mt-2 max-w-3xl">Delegates are kindly asked to pay the participation fee based on their country of residence and select their preferred summit package.</p>
+                  </div>
+                </div>
               </div>
-              {/* Fees Grid */}
+
+              {/* Fees Grid - cards with accent borders */}
               <div className="bg-white p-4 md:p-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   {/* Uganda */}
-                  <div className="rounded-xl border border-gray-200 p-4 bg-gray-50">
-                    <p className="text-sm text-gray-500">Uganda (Host Country)</p>
-                    <div className="mt-2 grid grid-cols-1 gap-2">
-                      <div className="flex items-center justify-between rounded-lg bg-white border border-gray-200 px-3 py-2">
-                        <span className="text-gray-700">Full Package</span>
-                        <span className="font-semibold text-gray-900">$35</span>
+                  <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <MapPin className="w-4 h-4 text-liberian-red" /> Uganda (Host Country)
+                    </div>
+                    <div className="mt-3 grid grid-cols-1 gap-3">
+                      <div className="flex items-center justify-between rounded-xl bg-gray-50 border border-gray-200 px-4 py-3">
+                        <span className="text-gray-800 font-medium">Full Package</span>
+                        <span className="text-lg font-bold text-gray-900">$35</span>
                       </div>
                     </div>
                   </div>
                   {/* Kenya */}
-                  <div className="rounded-xl border border-gray-200 p-4 bg-gray-50">
-                    <p className="text-sm text-gray-500">Kenya</p>
-                    <div className="mt-2 grid grid-cols-1 gap-2">
-                      <div className="flex items-center justify-between rounded-lg bg-white border border-gray-200 px-3 py-2">
-                        <span className="text-gray-700">Package Only</span>
-                        <span className="font-semibold text-gray-900">$75</span>
+                  <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <MapPin className="w-4 h-4 text-liberian-red" /> Kenya
+                    </div>
+                    <div className="mt-3 grid grid-cols-1 gap-3">
+                      <div className="flex items-center justify-between rounded-xl bg-gray-50 border border-gray-200 px-4 py-3">
+                        <span className="text-gray-800 font-medium">Package Only</span>
+                        <span className="text-lg font-bold text-gray-900">$75</span>
                       </div>
-                      <div className="flex items-center justify-between rounded-lg bg-white border border-gray-200 px-3 py-2">
-                        <span className="text-gray-700">Package + Transportation</span>
-                        <span className="font-semibold text-gray-900">$145</span>
+                      <div className="flex items-center justify-between rounded-xl bg-gray-50 border border-gray-200 px-4 py-3">
+                        <span className="text-gray-800 font-medium">Package + Transportation</span>
+                        <span className="text-lg font-bold text-gray-900">$145</span>
                       </div>
                     </div>
                   </div>
                   {/* Tanzania */}
-                  <div className="rounded-xl border border-gray-200 p-4 bg-gray-50">
-                    <p className="text-sm text-gray-500">Tanzania</p>
-                    <div className="mt-2 grid grid-cols-1 gap-2">
-                      <div className="flex items-center justify-between rounded-lg bg-white border border-gray-200 px-3 py-2">
-                        <span className="text-gray-700">Package Only</span>
-                        <span className="font-semibold text-gray-900">$75</span>
+                  <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <MapPin className="w-4 h-4 text-liberian-red" /> Tanzania
+                    </div>
+                    <div className="mt-3 grid grid-cols-1 gap-3">
+                      <div className="flex items-center justify-between rounded-xl bg-gray-50 border border-gray-200 px-4 py-3">
+                        <span className="text-gray-800 font-medium">Package Only</span>
+                        <span className="text-lg font-bold text-gray-900">$75</span>
                       </div>
-                      <div className="flex items-center justify-between rounded-lg bg-white border border-gray-200 px-3 py-2">
-                        <span className="text-gray-700">Package + Transportation</span>
-                        <span className="font-semibold text-gray-900">$151</span>
+                      <div className="flex items-center justify-between rounded-xl bg-gray-50 border border-gray-200 px-4 py-3">
+                        <span className="text-gray-800 font-medium">Package + Transportation</span>
+                        <span className="text-lg font-bold text-gray-900">$151</span>
                       </div>
                     </div>
                   </div>
                   {/* Rwanda */}
-                  <div className="rounded-xl border border-gray-200 p-4 bg-gray-50">
-                    <p className="text-sm text-gray-500">Rwanda</p>
-                    <div className="mt-2 grid grid-cols-1 gap-2">
-                      <div className="flex items-center justify-between rounded-lg bg-white border border-gray-200 px-3 py-2">
-                        <span className="text-gray-700">Package Only</span>
-                        <span className="font-semibold text-gray-900">$75</span>
+                  <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <MapPin className="w-4 h-4 text-liberian-red" /> Rwanda
+                    </div>
+                    <div className="mt-3 grid grid-cols-1 gap-3">
+                      <div className="flex items-center justify-between rounded-xl bg-gray-50 border border-gray-200 px-4 py-3">
+                        <span className="text-gray-800 font-medium">Package Only</span>
+                        <span className="text-lg font-bold text-gray-900">$75</span>
                       </div>
-                      <div className="flex items-center justify-between rounded-lg bg-white border border-gray-200 px-3 py-2">
-                        <span className="text-gray-700">Package + Transportation</span>
-                        <span className="font-semibold text-gray-900">$130</span>
+                      <div className="flex items-center justify-between rounded-xl bg-gray-50 border border-gray-200 px-4 py-3">
+                        <span className="text-gray-800 font-medium">Package + Transportation</span>
+                        <span className="text-lg font-bold text-gray-900">$130</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Payment Methods + Packages */}
-                <div className="mt-8 space-y-8">
-                  {/* Payment Methods */}
-                  <div className="rounded-2xl border border-gray-200 p-6">
+                <div className="mt-10 space-y-10">
+                  {/* Payment Methods - feature cards */}
+                  <div className="rounded-2xl border border-gray-200 p-6 bg-gradient-to-br from-white to-gray-50">
                     <h3 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
-                      <Smartphone className="w-5 h-5 text-liberian-red" /> Payment Methods
+                      <Wallet className="w-5 h-5 text-liberian-red" /> Payment Methods
                     </h3>
                     <p className="text-sm text-gray-600 mt-1">To confirm your participation, please use one of the following options:</p>
 
                     <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {/* MoMo Pay */}
-                      <div className="flex items-start gap-4 rounded-xl border border-gray-200 p-4 bg-white">
-                        <div className="h-10 w-10 rounded-full bg-liberian-red/10 text-liberian-red flex items-center justify-center">
-                          <Smartphone className="w-5 h-5" />
+                      <div className="group relative flex items-start gap-4 rounded-xl border border-gray-200 p-5 bg-white shadow-sm hover:shadow-md transition-shadow">
+                        <div className="h-12 w-12 rounded-xl bg-liberian-red/10 text-liberian-red flex items-center justify-center">
+                          <Smartphone className="w-6 h-6" />
                         </div>
                         <div>
                           <p className="font-semibold text-gray-900">Momo Pay</p>
@@ -266,9 +283,9 @@ const RegistrationPage = () => {
                       </div>
 
                       {/* In Cash */}
-                      <div className="flex items-start gap-4 rounded-xl border border-gray-200 p-4 bg-white">
-                        <div className="h-10 w-10 rounded-full bg-gray-100 text-gray-700 flex items-center justify-center">
-                          <Banknote className="w-5 h-5" />
+                      <div className="group relative flex items-start gap-4 rounded-xl border border-gray-200 p-5 bg-white shadow-sm hover:shadow-md transition-shadow">
+                        <div className="h-12 w-12 rounded-xl bg-gray-100 text-gray-700 flex items-center justify-center">
+                          <Banknote className="w-6 h-6" />
                         </div>
                         <div>
                           <p className="font-semibold text-gray-900">In Cash</p>
@@ -278,36 +295,36 @@ const RegistrationPage = () => {
                     </div>
                   </div>
 
-                  {/* Packages */}
+                  {/* Packages - two columns with icons */}
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {/* Package Includes */}
                     <div className="rounded-2xl border border-gray-200 p-6 bg-white">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-3">Package Includes</h3>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2"><Package className="w-5 h-5 text-liberian-blue"/> Package Includes</h3>
                       <ul className="space-y-2 text-gray-700 text-sm">
-                        <li>4 days of accommodation</li>
-                        <li>4 days of breakfast & lunch</li>
-                        <li>Summit T-shirt</li>
-                        <li>Branded summit materials (Notepad & Pen)</li>
-                        <li>Networking opportunities</li>
-                        <li>Tour of Kampala historical sites</li>
-                        <li>Official Invitation</li>
-                        <li>Access to the Pitch Competition</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> 4 days of accommodation</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> 4 days of breakfast & lunch</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Summit T-shirt</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Branded summit materials (Notepad & Pen)</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Networking opportunities</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Tour of Kampala historical sites</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Official Invitation</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Access to the Pitch Competition</li>
                       </ul>
                     </div>
 
                     {/* Full Package Includes */}
                     <div className="rounded-2xl border border-gray-200 p-6 bg-white">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-3">Full Package Includes</h3>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2"><Package className="w-5 h-5 text-liberian-blue"/> Full Package Includes</h3>
                       <ul className="space-y-2 text-gray-700 text-sm">
-                        <li>Transportation</li>
-                        <li>4 days of accommodation</li>
-                        <li>4 days of breakfast & lunch</li>
-                        <li>Summit T-shirt</li>
-                        <li>Branded summit materials (Notepad & Pen)</li>
-                        <li>Networking opportunities</li>
-                        <li>Tour of Kampala historical sites</li>
-                        <li>Official Invitation</li>
-                        <li>Access to the Pitch Competition</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Transportation</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> 4 days of accommodation</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> 4 days of breakfast & lunch</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Summit T-shirt</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Branded summit materials (Notepad & Pen)</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Networking opportunities</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Tour of Kampala historical sites</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Official Invitation</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Access to the Pitch Competition</li>
                       </ul>
                     </div>
                   </div>
