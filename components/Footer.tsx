@@ -109,23 +109,25 @@ const Footer = () => {
                   foliceasummit@gmail.com
                 </a>
               </div>
-                             <div className="flex items-center space-x-3">
-                 <Phone className="w-5 h-5 text-liberian-red flex-shrink-0" />
-                                   <div>
-                    <p className="text-gray-300">+250 792 109 775 | +250 791 349 853</p>
-                    <div className="flex items-center">
-                      <MessageCircle className="w-4 h-4 text-liberian-red mr-2" />
-                      <a 
-                        href="https://wa.me/231776038583" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-300 text-sm hover:text-white transition-colors"
-                      >
-                        WhatsApp: +231 776 038 583
-                      </a>
-                    </div>
+                             <div className="flex items-start space-x-3">
+                <div className="flex-shrink-0">
+                  <Phone className="w-5 h-5 text-liberian-red" />
+                </div>
+                <div>
+                  <p className="text-gray-300">+250 792 109 775 | +250 791 349 853</p>
+                  <div className="flex items-center mt-1">
+                    <MessageCircle className="w-4 h-4 text-liberian-red mr-2" />
+                    <a 
+                      href="https://wa.me/231776038583" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-300 text-sm hover:text-white transition-colors"
+                    >
+                      WhatsApp: +231 776 038 583
+                    </a>
                   </div>
-               </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

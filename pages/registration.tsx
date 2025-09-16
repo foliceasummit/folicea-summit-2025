@@ -267,7 +267,7 @@ const RegistrationPage = () => {
                           <Smartphone className="w-6 h-6" />
                         </div>
                         <div>
-                          <p className="font-semibold text-gray-900">Mobile Money (MTN / Airtel Uganda)</p>
+                          <p className="font-semibold text-gray-900">Mobile Money (MTN Uganda)</p>
                           <p className="text-sm text-gray-600">+256 784 940 391 - Eunice Logose</p>
                         </div>
                       </div>
@@ -283,16 +283,7 @@ const RegistrationPage = () => {
                         </div>
                       </div>
 
-                      {/* Visa / Debit Card */}
-                      <div className="group relative flex items-start gap-4 rounded-xl border border-gray-200 p-5 bg-white shadow-sm hover:shadow-md transition-shadow">
-                        <div className="h-12 w-12 rounded-xl bg-gray-100 text-gray-700 flex items-center justify-center">
-                          💳
-                        </div>
-                        <div>
-                          <p className="font-semibold text-gray-900">Visa / Debit Card</p>
-                          <p className="text-sm text-gray-600">Available upon request at registration</p>
-                        </div>
-                      </div>
+
                     </div>
 
                     <p className="text-sm text-gray-600 mt-4">Important: Proof of payment must be shared with the Central Summit Committee (CSC) on WhatsApp: <a href="https://wa.me/231776038583" target="_blank" rel="noopener noreferrer" className="text-liberian-red font-semibold">+231 776 038 583</a>.</p>
@@ -300,8 +291,8 @@ const RegistrationPage = () => {
 
                   {/* How to register & pay */}
                   <div className="rounded-2xl border border-gray-200 p-6 bg-white">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">How to register & pay (quick steps)</h3>
-                    <ol className="list-decimal pl-5 space-y-2 text-gray-700 text-sm">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center tracking-tight">How to register & pay (quick steps)</h3>
+                    <ol className="list-decimal pl-6 md:pl-10 space-y-2 text-gray-700 text-sm max-w-3xl mx-auto text-left">
                       <li>Choose the Delegates Package (Package-01 or Package-02).</li>
                       <li>Pay the Delegates Fee for your country (see table above).</li>
                       <li>If selecting Package-02, also pay the transportation fare applicable to your country.</li>
@@ -314,8 +305,8 @@ const RegistrationPage = () => {
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {/* Package-01 */}
                     <div className="rounded-2xl border border-gray-200 p-6 bg-white">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center gap-2"><Package className="w-5 h-5 text-liberian-blue"/> Summit Packages (what’s included)</h3>
-                      <p className="text-sm text-gray-600 mb-4">Package-01 (Self-transportation) — Delegates are responsible for their own transportation.</p>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center gap-2"><Package className="w-5 h-5 text-liberian-blue"/> Package 01</h3>
+                      <p className="text-sm text-gray-600 mb-4">Delegates are responsible for their own transportation.</p>
                       <ul className="space-y-2 text-gray-700 text-sm">
                         <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> 4 days shared accommodation</li>
                         <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> 4 days breakfast & lunch</li>
@@ -336,7 +327,7 @@ const RegistrationPage = () => {
                         <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Transportation fares (To & Fro)</li>
                         <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Rwanda → Kampala: USD 40 (round-trip)</li>
                         <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Kenya → Kampala: USD 70 (round-trip)</li>
-                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Tanzania → Kampala: USD 75 (round-trip)</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Tanzania → Kampala: USD 70 (round-trip)</li>
                       </ul>
                     </div>
                   </div>

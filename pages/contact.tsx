@@ -261,25 +261,27 @@ const ContactPage = () => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <Phone className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
+                    <div className="flex-shrink-0">
+                      <Phone className="w-6 h-6 text-liberian-red mt-1" />
+                    </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">Phone</h3>
                       <div className="space-y-1">
-                                                 <a 
-                           href="tel:+250792109775" 
-                           className="text-liberian-red hover:text-red-700 transition-colors block"
-                         >
-                           +250 792 109 775 | +250 791 349 853
-                         </a>
-                                                  <a 
-                            href="https://wa.me/231776038583" 
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-liberian-red hover:text-red-700 transition-colors block flex items-center"
-                          >
-                            <MessageCircle className="w-4 h-4 mr-2" />
-                            WhatsApp: +231 776 038 583
-                          </a>
+                        <a 
+                          href="tel:+250792109775" 
+                          className="text-liberian-red hover:text-red-700 transition-colors block"
+                        >
+                          +250 792 109 775 | +250 791 349 853
+                        </a>
+                        <a 
+                          href="https://wa.me/231776038583" 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-liberian-red hover:text-red-700 transition-colors block flex items-center"
+                        >
+                          <MessageCircle className="w-4 h-4 mr-2" />
+                          WhatsApp: +231 776 038 583
+                        </a>
                       </div>
                     </div>
                   </div>
