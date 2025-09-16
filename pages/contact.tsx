@@ -269,7 +269,7 @@ const ContactPage = () => {
                            href="tel:+250792109775" 
                            className="text-liberian-red hover:text-red-700 transition-colors block"
                          >
-                           +250 792 109 775 | +250 971 349 853
+                           +250 792 109 775 | +250 791 349 853
                          </a>
                                                   <a 
                             href="https://wa.me/231776038583" 

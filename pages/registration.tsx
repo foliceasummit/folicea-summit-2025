@@ -190,7 +190,7 @@ const RegistrationPage = () => {
                     <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-white text-sm mb-3">
                       <Wallet className="w-4 h-4" /> Summit Registration Fees
                     </div>
-                    <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white">Choose Your Country & Package</h2>
+                    <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white">Summit Registration Fees</h2>
                     <p className="text-white/90 mt-2 max-w-3xl">Delegates are kindly asked to pay the participation fee based on their country of residence and select their preferred summit package.</p>
                   </div>
                 </div>
@@ -202,64 +202,54 @@ const RegistrationPage = () => {
                   {/* Uganda */}
                   <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex items-center gap-2 text-sm text-gray-500">
-                      <MapPin className="w-4 h-4 text-liberian-red" /> Uganda (Host Country)
+                      <MapPin className="w-4 h-4 text-liberian-red" /> Uganda Host Delegates
                     </div>
                     <div className="mt-3 grid grid-cols-1 gap-3">
                       <div className="flex items-center justify-between rounded-xl bg-gray-50 border border-gray-200 px-4 py-3">
-                        <span className="text-gray-800 font-medium">Full Package</span>
-                        <span className="text-lg font-bold text-gray-900">$35</span>
+                        <span className="text-gray-800 font-medium">Delegates Fee</span>
+                        <span className="text-lg font-bold text-gray-900">USD 30</span>
                       </div>
                     </div>
                   </div>
                   {/* Kenya */}
                   <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex items-center gap-2 text-sm text-gray-500">
-                      <MapPin className="w-4 h-4 text-liberian-red" /> Kenya
+                      <MapPin className="w-4 h-4 text-liberian-red" /> Kenya Delegates
                     </div>
                     <div className="mt-3 grid grid-cols-1 gap-3">
                       <div className="flex items-center justify-between rounded-xl bg-gray-50 border border-gray-200 px-4 py-3">
-                        <span className="text-gray-800 font-medium">Package Only</span>
-                        <span className="text-lg font-bold text-gray-900">$75</span>
-                      </div>
-                      <div className="flex items-center justify-between rounded-xl bg-gray-50 border border-gray-200 px-4 py-3">
-                        <span className="text-gray-800 font-medium">Package + Transportation</span>
-                        <span className="text-lg font-bold text-gray-900">$145</span>
+                        <span className="text-gray-800 font-medium">Delegates Fee</span>
+                        <span className="text-lg font-bold text-gray-900">USD 60</span>
                       </div>
                     </div>
                   </div>
                   {/* Tanzania */}
                   <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex items-center gap-2 text-sm text-gray-500">
-                      <MapPin className="w-4 h-4 text-liberian-red" /> Tanzania
+                      <MapPin className="w-4 h-4 text-liberian-red" /> Tanzania Delegates
                     </div>
                     <div className="mt-3 grid grid-cols-1 gap-3">
                       <div className="flex items-center justify-between rounded-xl bg-gray-50 border border-gray-200 px-4 py-3">
-                        <span className="text-gray-800 font-medium">Package Only</span>
-                        <span className="text-lg font-bold text-gray-900">$75</span>
-                      </div>
-                      <div className="flex items-center justify-between rounded-xl bg-gray-50 border border-gray-200 px-4 py-3">
-                        <span className="text-gray-800 font-medium">Package + Transportation</span>
-                        <span className="text-lg font-bold text-gray-900">$151</span>
+                        <span className="text-gray-800 font-medium">Delegates Fee</span>
+                        <span className="text-lg font-bold text-gray-900">USD 60</span>
                       </div>
                     </div>
                   </div>
                   {/* Rwanda */}
                   <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex items-center gap-2 text-sm text-gray-500">
-                      <MapPin className="w-4 h-4 text-liberian-red" /> Rwanda
+                      <MapPin className="w-4 h-4 text-liberian-red" /> Rwanda Delegates
                     </div>
                     <div className="mt-3 grid grid-cols-1 gap-3">
                       <div className="flex items-center justify-between rounded-xl bg-gray-50 border border-gray-200 px-4 py-3">
-                        <span className="text-gray-800 font-medium">Package Only</span>
-                        <span className="text-lg font-bold text-gray-900">$75</span>
-                      </div>
-                      <div className="flex items-center justify-between rounded-xl bg-gray-50 border border-gray-200 px-4 py-3">
-                        <span className="text-gray-800 font-medium">Package + Transportation</span>
-                        <span className="text-lg font-bold text-gray-900">$130</span>
+                        <span className="text-gray-800 font-medium">Delegates Fee</span>
+                        <span className="text-lg font-bold text-gray-900">USD 60</span>
                       </div>
                     </div>
                   </div>
                 </div>
+
+                <p className="text-sm text-gray-500 mt-3">Note: See summit packages for details</p>
 
                 {/* Payment Methods + Packages */}
                 <div className="mt-10 space-y-10">
@@ -270,61 +260,83 @@ const RegistrationPage = () => {
                     </h3>
                     <p className="text-sm text-gray-600 mt-1">To confirm your participation, please use one of the following options:</p>
 
-                    <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {/* MoMo Pay */}
+                    <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                      {/* Mobile Money */}
                       <div className="group relative flex items-start gap-4 rounded-xl border border-gray-200 p-5 bg-white shadow-sm hover:shadow-md transition-shadow">
                         <div className="h-12 w-12 rounded-xl bg-liberian-red/10 text-liberian-red flex items-center justify-center">
                           <Smartphone className="w-6 h-6" />
                         </div>
                         <div>
-                          <p className="font-semibold text-gray-900">Momo Pay</p>
-                          <p className="text-sm text-gray-600">+256 784 940 391 | Eunice Logose</p>
+                          <p className="font-semibold text-gray-900">Mobile Money (MTN / Airtel Uganda)</p>
+                          <p className="text-sm text-gray-600">+256 784 940 391 - Eunice Logose</p>
                         </div>
                       </div>
 
-                      {/* In Cash */}
+                      {/* Cash */}
                       <div className="group relative flex items-start gap-4 rounded-xl border border-gray-200 p-5 bg-white shadow-sm hover:shadow-md transition-shadow">
                         <div className="h-12 w-12 rounded-xl bg-gray-100 text-gray-700 flex items-center justify-center">
                           <Banknote className="w-6 h-6" />
                         </div>
                         <div>
-                          <p className="font-semibold text-gray-900">In Cash</p>
-                          <p className="text-sm text-gray-600">Accepted for Uganda-based delegates only</p>
+                          <p className="font-semibold text-gray-900">Cash (Uganda delegates only)</p>
+                          <p className="text-sm text-gray-600">Pay at the registration desk</p>
+                        </div>
+                      </div>
+
+                      {/* Visa / Debit Card */}
+                      <div className="group relative flex items-start gap-4 rounded-xl border border-gray-200 p-5 bg-white shadow-sm hover:shadow-md transition-shadow">
+                        <div className="h-12 w-12 rounded-xl bg-gray-100 text-gray-700 flex items-center justify-center">
+                          💳
+                        </div>
+                        <div>
+                          <p className="font-semibold text-gray-900">Visa / Debit Card</p>
+                          <p className="text-sm text-gray-600">Available upon request at registration</p>
                         </div>
                       </div>
                     </div>
+
+                    <p className="text-sm text-gray-600 mt-4">Important: Proof of payment must be shared with the Central Summit Committee (CSC) on WhatsApp: <a href="https://wa.me/231776038583" target="_blank" rel="noopener noreferrer" className="text-liberian-red font-semibold">+231 776 038 583</a>.</p>
+                  </div>
+
+                  {/* How to register & pay */}
+                  <div className="rounded-2xl border border-gray-200 p-6 bg-white">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">How to register & pay (quick steps)</h3>
+                    <ol className="list-decimal pl-5 space-y-2 text-gray-700 text-sm">
+                      <li>Choose the Delegates Package (Package-01 or Package-02).</li>
+                      <li>Pay the Delegates Fee for your country (see table above).</li>
+                      <li>If selecting Package-02, also pay the transportation fare applicable to your country.</li>
+                      <li>Share proof of payment (screenshot / transaction ID) to WhatsApp <a href="https://wa.me/231776038583" target="_blank" rel="noopener noreferrer" className="text-liberian-red font-semibold">+231 776 038 583</a> and await confirmation.</li>
+                      <li>Collect your badge & summit pack at the Registration Desk on 27 Nov - 11:00 AM - 6:00 PM.</li>
+                    </ol>
                   </div>
 
                   {/* Packages - two columns with icons */}
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    {/* Package Includes */}
+                    {/* Package-01 */}
                     <div className="rounded-2xl border border-gray-200 p-6 bg-white">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2"><Package className="w-5 h-5 text-liberian-blue"/> Package Includes</h3>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center gap-2"><Package className="w-5 h-5 text-liberian-blue"/> Summit Packages (what’s included)</h3>
+                      <p className="text-sm text-gray-600 mb-4">Package-01 (Self-transportation) — Delegates are responsible for their own transportation.</p>
                       <ul className="space-y-2 text-gray-700 text-sm">
-                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> 4 days of accommodation</li>
-                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> 4 days of breakfast & lunch</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> 4 days shared accommodation</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> 4 days breakfast & lunch</li>
                         <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Summit T-shirt</li>
                         <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Branded summit materials (Notepad & Pen)</li>
-                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Networking opportunities</li>
                         <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Tour of Kampala historical sites</li>
                         <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Official Invitation</li>
                         <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Access to the Pitch Competition</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Networking opportunities</li>
                       </ul>
                     </div>
 
-                    {/* Full Package Includes */}
+                    {/* Package-02 */}
                     <div className="rounded-2xl border border-gray-200 p-6 bg-white">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2"><Package className="w-5 h-5 text-liberian-blue"/> Full Package Includes</h3>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center gap-2"><Package className="w-5 h-5 text-liberian-blue"/> Package-02 (Full package)</h3>
+                      <p className="text-sm text-gray-600 mb-4">Includes transportation + everything in Package-01</p>
                       <ul className="space-y-2 text-gray-700 text-sm">
-                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Transportation</li>
-                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> 4 days of accommodation</li>
-                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> 4 days of breakfast & lunch</li>
-                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Summit T-shirt</li>
-                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Branded summit materials (Notepad & Pen)</li>
-                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Networking opportunities</li>
-                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Tour of Kampala historical sites</li>
-                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Official Invitation</li>
-                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Access to the Pitch Competition</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Transportation fares (To & Fro)</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Rwanda → Kampala: USD 40 (round-trip)</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Kenya → Kampala: USD 70 (round-trip)</li>
+                        <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Tanzania → Kampala: USD 75 (round-trip)</li>
                       </ul>
                     </div>
                   </div>
@@ -601,7 +613,7 @@ const RegistrationPage = () => {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-liberian-red focus:border-transparent"
                   >
                     <option value="">Select room preference</option>
-                    <option value="Single">Single Room</option>
+                    <option value="Single">Single Room (Extra Cost)</option>
                     <option value="Double">Double Room (Shared)</option>
                     <option value="Airbnb Shared">Airbnb apartment (Shared)</option>
                     <option value="No Accommodation">No Accommodation Needed</option>

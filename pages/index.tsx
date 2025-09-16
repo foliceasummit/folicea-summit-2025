@@ -143,8 +143,8 @@ const HomePage = () => {
               className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center"
             >
               <Calendar className="w-6 h-6 mx-auto mb-2 text-white/90" />
-              <h3 className="text-base sm:text-lg font-semibold mb-1">Date & Time</h3>
-                              <p className="text-xs sm:text-sm text-white/90">November 28 - 30, 2025</p>
+              <h3 className="text-base sm:text-lg font-semibold mb-1">Date</h3>
+              <p className="text-xs sm:text-sm text-white/90">November 28 - 30, 2025</p>
             </motion.div>
 
             <motion.div
@@ -200,10 +200,10 @@ const HomePage = () => {
             className="bg-gradient-to-r from-liberian-blue/10 to-liberian-red/10 rounded-2xl p-6 md:p-8 mb-10"
           >
             <h3 className="text-3xl font-bold text-gray-900 mb-4 text-center">
-              Summit Themes
+              Summit Theme
             </h3>
-            <p className="text-base md:text-lg text-gray-700 text-center max-w-4xl mx-auto mb-6">
-              FOLICEA Summit 2025 will explore key issues shaping the future of Liberians in East Africa and beyond, featuring keynote speeches, panels, workshops, cultural events, and leadership elections.
+            <p className="text-xl md:text-2xl text-gray-800 text-center max-w-4xl mx-auto mb-6 font-semibold">
+              “From Diaspora to Homeland:  Strengthening Community Ties for National Development”
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex items-start gap-3">
@@ -244,10 +244,13 @@ const HomePage = () => {
             </div>
           </motion.div>
 
-          <div className="text-center">
+          <div className="text-center space-x-3">
             <a href="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Sponsorship%20Proposal.pdf?updatedAt=1757776444961" className="btn-primary text-lg px-8 py-4" target="_blank" rel="noopener noreferrer">
-              Download Logistics Note (PDF)
+              Sponsorship Opportunities (PDF)
             </a>
+            <Link href="/contact" className="inline-flex items-center px-6 py-4 rounded-lg border border-white/60 text-white hover:bg-white hover:text-liberian-red transition-colors">
+              Contact Us
+            </Link>
           </div>
         </div>
       </section>
@@ -291,6 +294,69 @@ const HomePage = () => {
                 </p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured News (Home) */}
+      <section className="py-12 bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Latest News</h2>
+            <p className="text-gray-600">Stay updated with highlights and announcements</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Featured item */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="md:col-span-2 bg-gradient-to-br from-white to-gray-50 rounded-2xl overflow-hidden shadow-lg border border-gray-100"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-2">
+                <div className="relative h-56 lg:h-full">
+                  <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Praise.jpg?updatedAt=1757333456399" alt="Featured News" className="w-full h-full object-cover" />
+                </div>
+                <div className="p-6 flex flex-col justify-center">
+                  <div className="text-sm text-gray-500 mb-2 flex items-center"><Calendar className="w-4 h-4 mr-2" /> September 6, 2025</div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Mr. W. Praise Bloyuefloh to Lead Central Summit Committee</h3>
+                  <p className="text-gray-600 mb-4">FOLICEA appoints Mr. W. Praise Bloyuefloh as Chairperson of the Central Summit Committee for the inaugural FOLICEA Summit 2025 in Kampala.</p>
+                  <Link href="/news/2" className="inline-flex items-center text-liberian-red font-semibold hover:text-liberian-blue">Read More <ArrowRight className="w-4 h-4 ml-2" /></Link>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Secondary items */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100"
+            >
+              <div className="relative h-40">
+                <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1000&q=80" alt="Registration Open" className="w-full h-full object-cover" />
+              </div>
+              <div className="p-5">
+                <div className="text-sm text-gray-500 mb-2 flex items-center"><Calendar className="w-4 h-4 mr-2" /> September 8, 2025</div>
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">Registration Now Open</h4>
+                <Link href="/news/1" className="inline-flex items-center text-liberian-red font-semibold hover:text-liberian-blue">Read More <ArrowRight className="w-4 h-4 ml-2" /></Link>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="text-center mt-8">
+            <Link href="/news" className="inline-flex items-center px-5 py-3 rounded-full border border-gray-300 text-gray-800 hover:border-liberian-red hover:text-liberian-red transition-colors shadow-sm">
+              View All News <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
           </div>
         </div>
       </section>
@@ -345,7 +411,7 @@ const HomePage = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/speakers" className="btn-outline">
+            <Link href="/speakers" className="inline-flex items-center px-5 py-3 rounded-full border border-gray-300 text-gray-800 hover:border-liberian-red hover:text-liberian-red transition-colors shadow-sm">
               View All Speakers
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
@@ -364,10 +430,10 @@ const HomePage = () => {
             className="text-center mb-6"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Become a Sponsor
+              Sponsorship Opportunities
             </h2>
             <p className="text-lg max-w-3xl mx-auto">
-              Join us in supporting the Liberian diaspora community and gain valuable exposure to our network of professionals, leaders, and entrepreneurs.
+              Explore sponsor packages and partner with us to make FOLICEA Summit 2025 a success.
             </p>
           </motion.div>
 
