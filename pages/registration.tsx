@@ -260,7 +260,7 @@ const RegistrationPage = () => {
                     </h3>
                     <p className="text-sm text-gray-600 mt-1">To confirm your participation, please use one of the following options:</p>
 
-                    <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {/* Mobile Money */}
                       <div className="group relative flex items-start gap-4 rounded-xl border border-gray-200 p-5 bg-white shadow-sm hover:shadow-md transition-shadow">
                         <div className="h-12 w-12 rounded-xl bg-liberian-red/10 text-liberian-red flex items-center justify-center">
@@ -305,8 +305,10 @@ const RegistrationPage = () => {
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {/* Package-01 */}
                     <div className="rounded-2xl border border-gray-200 p-6 bg-white">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2 flex items-center gap-2"><Package className="w-5 h-5 text-liberian-blue"/> Package 01</h3>
-                      <p className="text-sm text-gray-600 mb-4">Delegates are responsible for their own transportation.</p>
+                      <div className="flex flex-wrap items-center gap-2 mb-2">
+                        <h3 className="text-xl font-semibold text-gray-900 flex items-center gap-2"><Package className="w-5 h-5 text-liberian-blue"/> Package 01</h3>
+                        <span className="text-sm text-gray-600">| Delegates are responsible for their own transportation.</span>
+                      </div>
                       <ul className="space-y-2 text-gray-700 text-sm">
                         <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> 4 days shared accommodation</li>
                         <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> 4 days breakfast & lunch</li>
