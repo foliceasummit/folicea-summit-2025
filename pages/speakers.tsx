@@ -5,15 +5,20 @@ import { Users } from 'lucide-react';
 const SpeakersPage = () => {
   const featuredSpeakers = [
     {
-      name: "Emmanuel Patrick",
-      title: "Acting Chairperson, FOLICEA & Former Chairperson, LIBCOR",
-      image: "",
+      name: "H.E. Dr. Jeremiah Kpan Koung",
+      title: "Vice President of Liberia",
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403",
       bio: "",
       topics: [],
-      social: {
-        linkedin: "#",
-        twitter: "#"
-      }
+      social: { linkedin: "#", twitter: "#" }
+    },
+    {
+      name: "Hon. Richard Nagbe Koon",
+      title: "Speaker of the House of Representatives, 55th Legislature, Republic of Liberia",
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403",
+      bio: "",
+      topics: [],
+      social: { linkedin: "#", twitter: "#" }
     }
   ];
 
@@ -69,11 +74,10 @@ const SpeakersPage = () => {
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl shadow-xl overflow-hidden card-hover"
               >
-                <div className="p-8 text-center">
-                  {/* Icon placeholder instead of photo and name */}
-                  <div className="w-20 h-20 rounded-full bg-liberian-red/10 text-liberian-red flex items-center justify-center mx-auto mb-4">
-                    <Users className="w-10 h-10" />
-                  </div>
+                <div className="relative h-56 bg-white">
+                  <Image src={speaker.image} alt={speaker.name} fill className="object-contain p-6" />
+                </div>
+                <div className="p-4 text-center">
                   <p className="text-liberian-red font-semibold">{speaker.title}</p>
                 </div>
               </motion.div>

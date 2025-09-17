@@ -43,6 +43,16 @@ const HomePage = () => {
 
   const speakers = [
     {
+      name: "H.E. Dr. Jeremiah Kpan Koung",
+      title: "Vice President of Liberia",
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403"
+    },
+    {
+      name: "Hon. Richard Nagbe Koon",
+      title: "Speaker of the House of Representatives, 55th Legislature, Republic of Liberia",
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403"
+    },
+    {
       name: "Emmanuel Patrick",
       title: "Acting Chairperson, FOLICEA & Former Chairperson, LIBCOR",
       image: ""
@@ -306,27 +316,24 @@ const HomePage = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
-            {speakers
-              .filter((s) => s.name === 'Emmanuel Patrick')
-              .map((speaker, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white rounded-xl overflow-hidden shadow-lg card-hover p-8 text-center"
-                >
-                  {/* Icon placeholder instead of photo and name */}
-                  <div className="w-20 h-20 rounded-full bg-liberian-red/10 text-liberian-red flex items-center justify-center mx-auto mb-4">
-                    <Users className="w-10 h-10" />
-                  </div>
-                  <p className="text-liberian-red font-semibold">
-                    {speaker.title}
-                  </p>
-                </motion.div>
-              ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {speakers.map((speaker, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl overflow-hidden shadow-lg card-hover"
+              >
+                <div className="relative h-56 bg-white">
+                  <Image src={speaker.image} alt={speaker.name} fill className="object-contain p-6" />
+                </div>
+                <div className="p-4 text-center">
+                  <p className="text-liberian-red font-semibold">{speaker.title}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
 
           <div className="text-center mt-12">
@@ -480,10 +487,11 @@ const HomePage = () => {
                   className="bg-white rounded-xl p-6 shadow-lg text-center card-hover"
                 >
                   <div className="h-16 mb-4 flex items-center justify-center">
-                    {/* Icon placeholder instead of logos */}
-                    <div className="w-12 h-12 rounded-full bg-gray-100 text-liberian-red flex items-center justify-center">
-                      <Users2 className="w-6 h-6" />
-                    </div>
+                    <img
+                      src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403"
+                      alt={sponsor.name}
+                      className="max-h-full max-w-full object-contain"
+                    />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900">
                     {sponsor.name}
