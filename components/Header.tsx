@@ -37,7 +37,7 @@ const Header = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
             <Image
-              src="https://ik.imagekit.io/folicea/Logo.png.jpg?updatedAt=1755871491816"
+              src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403"
               alt="FOLICEA Logo"
               width={50}
               height={50}

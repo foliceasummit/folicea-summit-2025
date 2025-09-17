@@ -17,13 +17,13 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:title" content="FOLICEA Summit 2025" />
         <meta property="og:description" content="Federation of Liberian Communities in East Africa Summit 2025" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://ik.imagekit.io/folicea/Logo.png.jpg?updatedAt=1755871491816" />
+        <meta property="og:image" content="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403" />
         
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="FOLICEA Summit 2025" />
         <meta name="twitter:description" content="Federation of Liberian Communities in East Africa Summit 2025" />
-        <meta name="twitter:image" content="https://ik.imagekit.io/folicea/Logo.png.jpg?updatedAt=1755871491816" />
+        <meta name="twitter:image" content="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403" />
       </Head>
       
       <Favicon />
