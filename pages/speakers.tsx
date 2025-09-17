@@ -1,36 +1,15 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { Users } from 'lucide-react';
 
 const SpeakersPage = () => {
   const featuredSpeakers = [
     {
-      name: "H.E. Dr. Jeremiah Kpan Koung",
-      title: "Vice President of Liberia",
-              image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/VP%20Koon.jpg?updatedAt=1756252471149",
-      bio: "His Excellency Dr. Jeremiah Kpan Koung serves as the Vice President of Liberia, bringing extensive experience in governance and public service to the FOLICEA Summit.",
-      topics: ["Liberian Diaspora Engagement", "Government Relations", "Development Strategies"],
-      social: {
-        linkedin: "#",
-        twitter: "#"
-      }
-    },
-    {
-      name: "Hon. Richard Nagbe Koon",
-      title: "Speaker of the House of Representatives, 55th Legislature, Republic of Liberia",
-      image: "https://ik.imagekit.io/folicea/Richard%20Nagbe%20Koon.webp?updatedAt=1755893148873",
-      bio: "Hon. Richard Nagbe Koon is the Speaker of Liberia's House of Representatives and a seasoned academic and financial expert. With dual MBAs in Accounting and ongoing PhD studies in Public Finance, he brings extensive experience from academia, international organizations, and corporate finance. As Speaker, he champions economic stability, youth empowerment, and sustainable development in Liberia.",
-      topics: ["Economic Stability", "Youth Empowerment", "Sustainable Development"],
-      social: {
-        linkedin: "#",
-        twitter: "#"
-      }
-    },
-    {
       name: "Emmanuel Patrick",
       title: "Acting Chairperson, FOLICEA & Former Chairperson, LIBCOR",
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/emmanuel%20P.jpg?updatedAt=1756227156834",
-      bio: "Emmanuel Patrick is the former chairperson of Liberians in Rwanda (LIBCOR) and the current acting chairperson of FOLICEA. At the summit, Chairman Patrick will lead the federation to election, marking a historic moment in the organization's development.",
-      topics: ["FOLICEA Leadership", "Federation Elections", "Community Governance"],
+      image: "",
+      bio: "",
+      topics: [],
       social: {
         linkedin: "#",
         twitter: "#"
@@ -38,50 +17,7 @@ const SpeakersPage = () => {
     }
   ];
 
-  const additionalSpeakers = [
-    {
-      name: "Prof. Sarah Johnson",
-      title: "Academic & Researcher",
-      image: "https://ik.imagekit.io/folicea/Logo.png.jpg?updatedAt=1755871491816",
-      bio: "Professor Johnson specializes in diaspora studies and African development, bringing academic insights to community development.",
-      topics: ["Diaspora Studies", "Academic Research", "Development Theory"]
-    },
-    {
-      name: "Mr. Emmanuel Doe",
-      title: "Entrepreneur & Business Leader",
-      image: "https://ik.imagekit.io/folicea/Logo.png.jpg?updatedAt=1755871491816",
-      bio: "Mr. Doe is a successful entrepreneur who has built businesses across East Africa, sharing insights on economic empowerment.",
-      topics: ["Entrepreneurship", "Business Development", "Economic Empowerment"]
-    },
-    {
-      name: "Ms. Grace Williams",
-      title: "Cultural Ambassador",
-      image: "https://ik.imagekit.io/folicea/Logo.png.jpg?updatedAt=1755871491816",
-      bio: "Ms. Williams works to preserve and promote Liberian cultural heritage through various initiatives and programs.",
-      topics: ["Cultural Heritage", "Arts & Culture", "Community Engagement"]
-    },
-    {
-      name: "Dr. Michael Brown",
-      title: "Development Expert",
-      image: "https://ik.imagekit.io/folicea/Logo.png.jpg?updatedAt=1755871491816",
-      bio: "Dr. Brown has extensive experience in international development, focusing on sustainable community development projects.",
-      topics: ["Sustainable Development", "Project Management", "Capacity Building"]
-    },
-    {
-      name: "Ms. Patricia Taylor",
-      title: "Youth Advocate",
-      image: "https://ik.imagekit.io/folicea/Logo.png.jpg?updatedAt=1755871491816",
-      bio: "Ms. Taylor is passionate about youth empowerment and creating opportunities for young Liberians in the diaspora.",
-      topics: ["Youth Development", "Education", "Leadership Training"]
-    },
-    {
-      name: "Mr. David Wilson",
-      title: "Technology & Innovation",
-      image: "https://ik.imagekit.io/folicea/Logo.png.jpg?updatedAt=1755871491816",
-      bio: "Mr. Wilson is a technology entrepreneur who focuses on digital solutions for community development and connectivity.",
-      topics: ["Technology", "Digital Innovation", "Community Tech"]
-    }
-  ];
+  const additionalSpeakers = [] as const;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -133,53 +69,12 @@ const SpeakersPage = () => {
                 viewport={{ once: true }}
                 className="bg-white rounded-2xl shadow-xl overflow-hidden card-hover"
               >
-                <div className="relative h-80">
-                  <Image
-                    src={speaker.image}
-                    alt={speaker.name}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-2 left-3 right-3 text-white">
-                    <h3 className="text-lg font-bold mb-1 leading-tight">{speaker.name}</h3>
-                    <p className="text-sm opacity-90 leading-tight">{speaker.title}</p>
+                <div className="p-8 text-center">
+                  {/* Icon placeholder instead of photo and name */}
+                  <div className="w-20 h-20 rounded-full bg-liberian-red/10 text-liberian-red flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-10 h-10" />
                   </div>
-                </div>
-                
-                <div className="p-4">
-                  <p className="text-gray-600 mb-3 text-sm leading-relaxed">
-                    {speaker.bio}
-                  </p>
-                  
-                  <div className="mb-3">
-                    <h4 className="font-semibold text-gray-900 mb-2 text-sm">Speaking Topics:</h4>
-                    <div className="flex flex-wrap gap-1">
-                      {speaker.topics.map((topic, topicIndex) => (
-                        <span
-                          key={topicIndex}
-                          className="px-2 py-1 bg-liberian-red/10 text-liberian-red rounded-full text-xs font-medium"
-                        >
-                          {topic}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="flex space-x-4">
-                    <a
-                      href={speaker.social.linkedin}
-                      className="text-liberian-blue hover:text-blue-700 transition-colors text-sm"
-                    >
-                      LinkedIn
-                    </a>
-                    <a
-                      href={speaker.social.twitter}
-                      className="text-liberian-blue hover:text-blue-700 transition-colors text-sm"
-                    >
-                      Twitter
-                    </a>
-                  </div>
+                  <p className="text-liberian-red font-semibold">{speaker.title}</p>
                 </div>
               </motion.div>
             ))}

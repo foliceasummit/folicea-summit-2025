@@ -67,12 +67,12 @@ const HomePage = () => {
   ];
 
   const sponsors = [
-    { name: 'Sponsor 1', logo: 'https://logo.clearbit.com/google.com', url: 'https://www.google.com' },
-    { name: 'Sponsor 2', logo: 'https://logo.clearbit.com/microsoft.com', url: 'https://www.microsoft.com' },
-    { name: 'Sponsor 3', logo: 'https://logo.clearbit.com/cocacola.com', url: 'https://www.coca-cola.com' },
-    { name: 'Sponsor 4', logo: 'https://logo.clearbit.com/visa.com', url: 'https://www.visa.com' },
-    { name: 'Sponsor 5', logo: 'https://logo.clearbit.com/safaricom.co.ke', url: 'https://www.safaricom.co.ke' },
-    { name: 'Sponsor 6', logo: 'https://logo.clearbit.com/mtn.com', url: 'https://www.mtn.com' },
+    { name: 'Sponsor 1', url: '#' },
+    { name: 'Sponsor 2', url: '#' },
+    { name: 'Sponsor 3', url: '#' },
+    { name: 'Sponsor 4', url: '#' },
+    { name: 'Sponsor 5', url: '#' },
+    { name: 'Sponsor 6', url: '#' },
   ];
 
   return (
@@ -316,35 +316,27 @@ const HomePage = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {speakers.map((speaker, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-xl overflow-hidden shadow-lg card-hover"
-              >
-                <div className="relative h-80 bg-gray-100">
-                  <Image
-                    src={speaker.image}
-                    alt={speaker.name}
-                    fill
-                    className="object-contain"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    {speaker.name}
-                  </h3>
-                  <p className="text-liberian-red font-medium">
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
+            {speakers
+              .filter((s) => s.name === 'Emmanuel Patrick')
+              .map((speaker, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-xl overflow-hidden shadow-lg card-hover p-8 text-center"
+                >
+                  {/* Icon placeholder instead of photo and name */}
+                  <div className="w-20 h-20 rounded-full bg-liberian-red/10 text-liberian-red flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-10 h-10" />
+                  </div>
+                  <p className="text-liberian-red font-semibold">
                     {speaker.title}
                   </p>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
           </div>
 
           <div className="text-center mt-12">
@@ -498,28 +490,16 @@ const HomePage = () => {
                   className="bg-white rounded-xl p-6 shadow-lg text-center card-hover"
                 >
                   <div className="h-16 mb-4 flex items-center justify-center">
-                    <img
-                      src={sponsor.logo}
-                      alt={sponsor.name}
-                      className="max-h-full max-w-full object-contain"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                        const nextSibling = target.nextSibling as HTMLElement;
-                        if (nextSibling) {
-                          nextSibling.style.display = 'block';
-                        }
-                      }}
-                    />
-                    <div className="hidden text-liberian-red font-semibold text-lg">
-                      {sponsor.name}
+                    {/* Icon placeholder instead of logos */}
+                    <div className="w-12 h-12 rounded-full bg-gray-100 text-liberian-red flex items-center justify-center">
+                      <Users2 className="w-6 h-6" />
                     </div>
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900">
                     {sponsor.name}
                   </h3>
                   <Link href={sponsor.url} target="_blank" rel="noopener noreferrer" className="text-liberian-red hover:text-liberian-blue font-medium text-sm mt-1 inline-block">
-                    Visit Website
+                    Sponsor Link
                   </Link>
                 </motion.div>
               ))}
