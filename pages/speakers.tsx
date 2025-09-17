@@ -1,9 +1,18 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Users } from 'lucide-react';
+
+// Define a proper type for speakers to avoid 'never' in empty arrays
+type Speaker = {
+  name: string;
+  title: string;
+  image: string;
+  bio?: string;
+  topics: string[];
+  social?: { linkedin?: string; twitter?: string };
+};
 
 const SpeakersPage = () => {
-  const featuredSpeakers = [
+  const featuredSpeakers: Speaker[] = [
     {
       name: "H.E. Dr. Jeremiah Kpan Koung",
       title: "Vice President of Liberia",
@@ -22,7 +31,7 @@ const SpeakersPage = () => {
     }
   ];
 
-  const additionalSpeakers = [] as const;
+  const additionalSpeakers: Speaker[] = [];
 
   return (
     <div className="min-h-screen bg-gray-50">
