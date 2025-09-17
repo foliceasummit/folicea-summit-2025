@@ -341,17 +341,19 @@ const PitchingCompetitionPage = () => {
         <div className="container-custom">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Judges</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Judge 1 icon placeholder */}
             <div className="bg-gray-50 rounded-xl p-6 shadow-lg text-center">
-              <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Hon.%20John%20Siaffa%20City%20Mayor%20of%20Monrovia%20City.jpg?updatedAt=1757359737423" alt="Hon. John Siaffa" className="w-full h-80 object-cover object-top rounded-lg" />
-              <h3 className="text-xl font-semibold mt-4">Hon. John Siaffa</h3>
-              <p className="text-gray-600">City Mayor of Monrovia City</p>
-              <p className="text-gray-600 text-sm mt-2">Public sector leader focused on urban development, public services, and sustainable city management in Monrovia.</p>
+              <div className="w-24 h-24 rounded-full bg-liberian-red/10 text-liberian-red flex items-center justify-center mx-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5z"/><path d="M4 22c0-4.418 3.582-8 8-8s8 3.582 8 8"/></svg>
+              </div>
+              <p className="text-gray-600 text-sm mt-4">Judge</p>
             </div>
+            {/* Judge 2 icon placeholder */}
             <div className="bg-gray-50 rounded-xl p-6 shadow-lg text-center">
-              <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Hon.%20Cassell%20Kou%20%20CEO%20NEEV.jpg?updatedAt=1757359737901" alt="Hon. Cassell Kou" className="w-full h-80 object-cover object-top rounded-lg" />
-              <h3 className="text-xl font-semibold mt-4">Hon. Cassell Kou</h3>
-              <p className="text-gray-600">CEO, NEEV</p>
-              <p className="text-gray-600 text-sm mt-2">Entrepreneur and innovation advocate with experience building sustainable ventures and ecosystem partnerships.</p>
+              <div className="w-24 h-24 rounded-full bg-liberian-red/10 text-liberian-red flex items-center justify-center mx-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5z"/><path d="M4 22c0-4.418 3.582-8 8-8s8 3.582 8 8"/></svg>
+              </div>
+              <p className="text-gray-600 text-sm mt-4">Judge</p>
             </div>
           </div>
         </div>

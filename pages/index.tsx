@@ -43,19 +43,9 @@ const HomePage = () => {
 
   const speakers = [
     {
-      name: "H.E. Dr. Jeremiah Kpan Koung",
-      title: "Vice President of Liberia",
-              image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/VP%20Koon.jpg?updatedAt=1756252471149"
-    },
-    {
-      name: "Hon. Richard Nagbe Koon",
-      title: "Speaker of the House of Representatives, 55th Legislature, Republic of Liberia",
-      image: "https://ik.imagekit.io/folicea/Richard%20Nagbe%20Koon.webp?updatedAt=1755893148873"
-    },
-    {
       name: "Emmanuel Patrick",
       title: "Acting Chairperson, FOLICEA & Former Chairperson, LIBCOR",
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/emmanuel%20P.jpg?updatedAt=1756227156834"
+      image: ""
     }
   ];
 
