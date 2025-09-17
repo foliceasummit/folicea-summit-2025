@@ -198,7 +198,7 @@ const RegistrationPage = () => {
 
               {/* Fees Grid - cards with accent borders */}
               <div className="bg-white p-4 md:p-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {/* Uganda */}
                   <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
                     <div className="flex items-center gap-2 text-sm text-gray-500">
@@ -249,20 +249,20 @@ const RegistrationPage = () => {
                   </div>
                 </div>
 
-                <p className="text-sm text-gray-500 mt-3">Note: See summit packages for details</p>
+                <p className="text-sm text-liberian-blue font-semibold mt-3">Note: See summit packages for details</p>
 
                 {/* Payment Methods + Packages */}
                 <div className="mt-10 space-y-10">
                   {/* Payment Methods - feature cards */}
-                  <div className="rounded-2xl border border-gray-200 p-6 bg-gradient-to-br from-white to-gray-50">
+                  <div className="rounded-2xl border border-gray-200 p-6 bg-gradient-to-r from-liberian-blue/5 via-white to-liberian-blue/5">
                     <h3 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
                       <Wallet className="w-5 h-5 text-liberian-red" /> Payment Methods
                     </h3>
-                    <p className="text-sm text-gray-600 mt-1">To confirm your participation, please use one of the following options:</p>
+                    <p className="text-sm text-gray-700 mt-1">To confirm your participation, please use one of the following options:</p>
 
                     <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {/* Mobile Money */}
-                      <div className="group relative flex items-start gap-4 rounded-xl border border-gray-200 p-5 bg-white shadow-sm hover:shadow-md transition-shadow">
+                      <div className="group relative flex items-start gap-4 rounded-xl p-5 bg-white/70 backdrop-blur border border-liberian-blue/20 shadow-sm hover:shadow-md transition-shadow">
                         <div className="h-12 w-12 rounded-xl bg-liberian-red/10 text-liberian-red flex items-center justify-center">
                           <Smartphone className="w-6 h-6" />
                         </div>
@@ -273,7 +273,7 @@ const RegistrationPage = () => {
                       </div>
 
                       {/* Cash */}
-                      <div className="group relative flex items-start gap-4 rounded-xl border border-gray-200 p-5 bg-white shadow-sm hover:shadow-md transition-shadow">
+                      <div className="group relative flex items-start gap-4 rounded-xl p-5 bg-white/70 backdrop-blur border border-liberian-blue/20 shadow-sm hover:shadow-md transition-shadow">
                         <div className="h-12 w-12 rounded-xl bg-gray-100 text-gray-700 flex items-center justify-center">
                           <Banknote className="w-6 h-6" />
                         </div>
@@ -282,11 +282,12 @@ const RegistrationPage = () => {
                           <p className="text-sm text-gray-600">Pay at the registration desk</p>
                         </div>
                       </div>
-
-
                     </div>
 
-                    <p className="text-sm text-gray-600 mt-4">Important: Proof of payment must be shared with the Central Summit Committee (CSC) on WhatsApp: <a href="https://wa.me/231776038583" target="_blank" rel="noopener noreferrer" className="text-liberian-red font-semibold">+231 776 038 583</a>.</p>
+                    <div className="mt-4 text-sm">
+                      <p className="font-semibold text-gray-900">Important:</p>
+                      <p className="text-gray-700">Proof of payment must be shared with the Central Summit Committee (CSC) on WhatsApp: <a href="https://wa.me/231776038583" target="_blank" rel="noopener noreferrer" className="text-liberian-red font-semibold">+231 776 038 583</a>.</p>
+                    </div>
                   </div>
 
                   {/* How to register & pay */}
@@ -297,7 +298,7 @@ const RegistrationPage = () => {
                       <li>Pay the Delegates Fee for your country (see table above).</li>
                       <li>If selecting Package-02, also pay the transportation fare applicable to your country.</li>
                       <li>Share proof of payment (screenshot / transaction ID) to WhatsApp <a href="https://wa.me/231776038583" target="_blank" rel="noopener noreferrer" className="text-liberian-red font-semibold">+231 776 038 583</a> and await confirmation.</li>
-                      <li>Collect your badge & summit pack at the Registration Desk on 27 Nov - 11:00 AM - 6:00 PM.</li>
+                      <li>Collect your badge & summit pack at the Registration Desk on 27 Nov — 11:00 AM – 6:00 PM.</li>
                     </ol>
                   </div>
 
