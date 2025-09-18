@@ -4,9 +4,25 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, Users, MapPin, BookOpen, Briefcase, Award, Coffee, Utensils, Globe } from 'lucide-react';
 
+// Types for agenda structure
+interface EventItem {
+  time: string;
+  title: string;
+  description: string;
+  type: string;
+  speakers?: string[];
+}
+interface DayAgenda {
+  day: string;
+  date: string;
+  title: string;
+  theme: string;
+  events: EventItem[];
+}
+
 const AgendaPage = () => {
   const [activeDay, setActiveDay] = useState(0);
-  const agenda = [
+  const agenda: DayAgenda[] = [
     {
       day: "Day 1",
       date: "November 28, 2025",
