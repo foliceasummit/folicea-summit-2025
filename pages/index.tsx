@@ -245,7 +245,7 @@ const HomePage = () => {
           </motion.div>
 
           <div className="text-center space-x-3">
-            <a href="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Sponsorship%20Proposal.pdf?updatedAt=1757776444961" className="btn-primary text-lg px-8 py-4" target="_blank" rel="noopener noreferrer">
+            <a href="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logistc%20Note%20CSC.pdf?updatedAt=1758223304152" className="btn-primary text-lg px-8 py-4" target="_blank" rel="noopener noreferrer">
               Download Logistics Note (PDF)
             </a>
             <Link href="/contact" className="inline-flex items-center px-6 py-4 rounded-lg border border-white/60 text-white hover:bg-white hover:text-liberian-red transition-colors">
@@ -404,9 +404,12 @@ const HomePage = () => {
             </motion.div>
           </div>
 
-          <div className="text-center">
-            <Link href="/contact" className="bg-white text-liberian-red hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg text-base transition-all duration-300 transform hover:scale-105">
-              Sponsorship Opportunities
+          <div className="text-center space-x-3">
+            <a href="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Sponsorship%20Proposal.pdf?updatedAt=1757776444961" target="_blank" rel="noopener noreferrer" className="bg-white text-liberian-red hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg text-base transition-all duration-300 transform hover:scale-105">
+              Sponsorship Opportunities (PDF)
+            </a>
+            <Link href="/contact" className="inline-flex items-center px-6 py-3 rounded-lg border border-white/60 text-white hover:bg-white hover:text-liberian-red transition-colors">
+              Contact Us
             </Link>
           </div>
         </div>
