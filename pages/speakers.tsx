@@ -132,13 +132,16 @@ const SpeakersPage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl shadow-xl overflow-hidden card-hover"
+                className="group rounded-2xl p-[1px] bg-gradient-to-r from-liberian-blue/50 via-liberian-red/50 to-liberian-blue/50 shadow-xl hover:shadow-2xl transition-shadow"
               >
-                <div className="relative h-56 bg-white">
-                  <Image src={speaker.image} alt={speaker.name} fill className="object-contain p-6" />
-                </div>
-                <div className="p-4 text-center">
-                  <p className="text-liberian-red font-semibold">{speaker.title}</p>
+                <div className="relative bg-white rounded-2xl overflow-hidden">
+                  <div className="relative h-64">
+                    <Image src={speaker.image} alt={speaker.name} fill className="object-cover" />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-4">
+                      <h3 className="text-white text-lg font-bold">{speaker.name}</h3>
+                      <p className="text-white/90 text-sm">{speaker.title}</p>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
