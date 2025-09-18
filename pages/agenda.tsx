@@ -13,81 +13,24 @@ const AgendaPage = () => {
       title: "Official Launch of the Federation",
       theme: "Unity, Identity, and a Shared Vision",
       events: [
-        {
-          time: "08:00 - 09:00",
-          title: "Registration & Networking",
-          description: "Check-in and networking with fellow delegates",
-          type: "Registration"
-        },
-        {
-          time: "09:00 - 09:30",
-          title: "Opening Prayer and National Anthems",
-          description: "Liberia & Host Country national anthems and prayers",
-          type: "Ceremony"
-        },
-        {
-          time: "09:30 - 10:15",
-          title: "Welcome Address and Recognition of Guests",
-          description: "By Committee Chair John Meyer",
-          type: "Welcome",
-          speakers: ["Committee Chair John Meyer"]
-        },
-        {
-          time: "10:15 - 10:45",
-          title: "Special Statement from the Acting Chairman",
-          description: "Mr. Emmanuel Patrick",
-          type: "Statement",
-          speakers: ["Mr. Emmanuel Patrick"]
-        },
-        {
-          time: "10:45 - 11:15",
-          title: "Keynote Address: The Power of Diaspora Unity",
-          description: "Mr. James Sawa",
-          type: "Keynote",
-          speakers: ["Mr. James Sawa"]
-        },
-        {
-          time: "11:15 - 12:00",
-          title: "Official Launch of FOLICEA",
-          description: "Official launch ceremony of the Federation",
-          type: "Launch"
-        },
-        {
-          time: "12:00 - 12:15",
-          title: "Cultural Performance",
-          description: "Traditional cultural entertainment",
-          type: "Performance"
-        },
-        {
-          time: "12:15 - 13:15",
-          title: "Panel Discussion: Strengthening Community Ties Across Borders",
-          description: "Interactive discussion on community building",
-          type: "Panel"
-        },
-        {
-          time: "13:15 - 14:00",
-          title: "Lunch & Cultural Showcase",
-          description: "Traditional Liberian cuisine and cultural entertainment",
-          type: "Lunch"
-        },
-        {
-          time: "14:00 - 15:30",
-          title: "Presentation of FOLICEA Constitution & Structure",
-          description: "Detailed presentation of federation constitution and organizational structure",
-          type: "Presentation"
-        },
-        {
-          time: "15:30 - 16:30",
-          title: "Breakout Discussions by Country Clusters",
-          description: "Group discussions organized by country representation",
-          type: "Workshop"
-        },
-        {
-          time: "16:30 - 17:00",
-          title: "Closing Remarks",
-          description: "Day 1 closing and preview of Day 2",
-          type: "Closing"
-        }
+        { time: "08:00 - 09:00", title: "Registration, Networking & Breakfast", description: "Check-in and networking with fellow delegates", type: "Registration" },
+        { time: "09:00 - 09:15", title: "Opening Prayer & National Anthems", description: "Liberia & Host Country anthems and prayers", type: "Ceremony" },
+        { time: "09:15 - 09:30", title: "Welcome Address", description: "By Central Organizing Committee Chairperson", type: "Opening" },
+        { time: "09:30 - 09:45", title: "Recognition of Guests", description: "By Central Organizing Committee Member", type: "Ceremony" },
+        { time: "09:45 - 09:55", title: "Spoken Words", description: "By …………….", type: "Performance" },
+        { time: "09:55 - 10:15", title: "Special Statement from the Acting Chairman", description: "Mr. Emmanuel Patrick", type: "Statement" },
+        { time: "10:15 - 10:50", title: "Keynote Address: The Power of Diaspora Unity", description: "By …………….", type: "Keynote" },
+        { time: "10:50 - 11:00", title: "Poem", description: "By …………….", type: "Performance" },
+        { time: "11:00 - 11:30", title: "Official Launch of FOLICEA", description: "Launch ceremony of the Federation", type: "Launch" },
+        { time: "11:30 - 12:00", title: "Cultural Performance", description: "Traditional cultural entertainment", type: "Performance" },
+        { time: "12:00 - 12:30", title: "Presentation of FOLICEA Constitution & Structure", description: "Federation constitution and organizational structure", type: "Presentation" },
+        { time: "12:30 - 13:30", title: "Lunch & Cultural Showcase", description: "Liberian cuisine and entertainment", type: "Lunch" },
+        { time: "13:30 - 15:30", title: "Pitch Competition", description: "Business Pitch: Clean Monrovia, Green Future – Resolving the Waste Management Crisis", type: "Panel" },
+        { time: "15:30 - 15:45", title: "Cultural Performance", description: "Traditional cultural entertainment", type: "Performance" },
+        { time: "15:45 - 16:40", title: "Breakout Discussions by Country Clusters", description: "Group discussions organized by country representation", type: "Workshop" },
+        { time: "16:40 - 17:15", title: "Remarks", description: "By …………….", type: "Closing" },
+        { time: "17:15 - 17:30", title: "Closing Remarks", description: "By …………….", type: "Closing" },
+        { time: "17:30 - 18:00", title: "Group Photos", description: "", type: "Closing" }
       ]
     },
     {
@@ -96,134 +39,37 @@ const AgendaPage = () => {
       title: "Business, Investment & Tech Innovation Seminars",
       theme: "Empowering the Diaspora Economy",
       events: [
-        {
-          time: "08:30 - 09:00",
-          title: "Arrival and Registration",
-          description: "Check-in for Day 2 participants",
-          type: "Registration"
-        },
-        {
-          time: "09:00 - 09:15",
-          title: "Opening Remarks",
-          description: "Day 2 opening and agenda overview",
-          type: "Opening"
-        },
-        {
-          time: "09:15 - 10:30",
-          title: "Business & Investment Forum",
-          description: "Diaspora Investment Opportunities, Navigating Regional Trade Platforms, Partnership with Local Enterprises",
-          type: "Forum"
-        },
-        {
-          time: "10:30 - 11:00",
-          title: "Coffee Break & Networking",
-          description: "Refreshments and informal networking",
-          type: "Break"
-        },
-        {
-          time: "11:00 - 12:30",
-          title: "Panel Discussion: Diaspora Investment & Regional Trade",
-          description: "Diaspora investment, regional trade, SMEs support, Liberia–East Africa business relations",
-          type: "Panel"
-        },
-        {
-          time: "12:30 - 13:30",
-          title: "Lunch",
-          description: "Networking lunch session",
-          type: "Lunch"
-        },
-        {
-          time: "13:30 - 15:00",
-          title: "Entrepreneurship & Innovation Seminar",
-          description: "Access to Startup Capital, Leveraging Digital Platforms, Youth Innovation & Fintech",
-          type: "Seminar"
-        },
-                 {
-           time: "16:00 - 17:00",
-           title: "Exhibition & Product Demo",
-           description: "Open session showcasing diaspora products and innovations",
-           type: "Exhibition"
-         },
-         {
-           time: "17:00 - 19:00",
-           title: "Sightseeing Tour: Uganda's Top Tourist Attractions",
-           description: "Enjoy a guided tour of Uganda's top tourist attractions",
-           type: "Tour"
-         }
+        { time: "08:00 - 08:55", title: "Registration, Networking & Breakfast", description: "Check-in and networking with fellow delegates", type: "Registration" },
+        { time: "08:55 - 09:10", title: "Opening Remarks", description: "Day 2 opening and agenda overview", type: "Opening" },
+        { time: "09:10 - 09:25", title: "Review of Day 1", description: "By …………….", type: "Opening" },
+        { time: "09:25 - 11:00", title: "Business & Investment Forum", description: "Diaspora Investment Opportunities, Navigating Regional Trade Platforms, Partnership with Local Enterprises", type: "Forum" },
+        { time: "11:00 - 12:00", title: "Lunch & Networking", description: "Informal networking session", type: "Lunch" },
+        { time: "12:00 - 13:30", title: "Panel Discussion: Entrepreneurship & Innovation", description: "Access to Startup Capital, Leveraging Digital Platforms, Youth Innovation & Fintech", type: "Panel" },
+        { time: "13:30 - 14:00", title: "Cultural Performance", description: "Traditional cultural entertainment", type: "Performance" },
+        { time: "14:00 - 15:00", title: "Exhibition & Product Demo", description: "Showcasing diaspora products and innovations", type: "Exhibition" },
+        { time: "15:00 - 15:30", title: "Closing Remarks", description: "By …………….", type: "Closing" },
+        { time: "15:30 - 19:00", title: "Sightseeing", description: "Enjoy a guided tour of Uganda’s top attractions", type: "Tour" }
       ]
     },
     {
       day: "Day 3",
       date: "November 30, 2025",
-      title: "General Assembly Elections and Inauguration",
+      title: "General Assembly Elections & Inauguration",
       theme: "Democratic Leadership for Diaspora Development",
       events: [
-        {
-          time: "08:00 - 09:00",
-          title: "Assembly Accreditation & Voter Validation",
-          description: "Registration and validation of voting delegates",
-          type: "Registration"
-        },
-        {
-          time: "09:00 - 09:30",
-          title: "Opening Remarks & Electoral Guidelines",
-          description: "Election procedures and guidelines presentation",
-          type: "Opening"
-        },
-        {
-          time: "09:30 - 11:00",
-          title: "Candidate Presentations and Debates",
-          description: "Candidates present their vision and engage in debates",
-          type: "Election"
-        },
-        {
-          time: "11:00 - 13:00",
-          title: "Voting & Tallying of Results",
-          description: "Democratic voting process and result compilation",
-          type: "Election"
-        },
-        {
-          time: "13:00 - 14:00",
-          title: "Lunch Break",
-          description: "Lunch while results are being tallied",
-          type: "Lunch"
-        },
-        {
-          time: "14:00 - 14:30",
-          title: "Announcement of Election Results",
-          description: "Official announcement of elected leadership",
-          type: "Election"
-        },
-        {
-          time: "14:30 - 15:30",
-          title: "Inauguration Ceremony of Elected Leaders",
-          description: "Official swearing-in of new FOLICEA leadership",
-          type: "Inauguration"
-        },
-        {
-          time: "15:30 - 16:00",
-          title: "Presentation of Strategic Plan (2025–2027)",
-          description: "Presentation of FOLICEA's strategic roadmap",
-          type: "Presentation"
-        },
-        {
-          time: "16:00 - 16:30",
-          title: "Official Closing & Vote of Thanks",
-          description: "Summit closing ceremony and acknowledgments",
-          type: "Closing"
-        },
-                 {
-           time: "16:30 - 17:00",
-           title: "Group Photos & Departure",
-           description: "Group photographs and farewell",
-           type: "Closing"
-         },
-         {
-           time: "21:00 - Late",
-           title: "Inaugural Ball",
-           description: "Venue to be announced later",
-           type: "Social"
-         }
+        { time: "08:00 - 09:00", title: "Registration, Accreditation & Breakfast", description: "Assembly accreditation & voter validation", type: "Registration" },
+        { time: "09:00 - 09:15", title: "Opening Remarks & Electoral Guidelines", description: "Election procedures and guidelines", type: "Opening" },
+        { time: "09:15 - 11:00", title: "Candidate Presentations & Debates", description: "", type: "Election" },
+        { time: "11:00 - 13:00", title: "Voting & Tallying of Results", description: "", type: "Election" },
+        { time: "13:00 - 14:00", title: "Lunch Break", description: "While results are being tallied", type: "Lunch" },
+        { time: "14:00 - 14:30", title: "Announcement of Election Results", description: "", type: "Election" },
+        { time: "14:30 - 15:30", title: "Inauguration Ceremony of Elected Leaders", description: "", type: "Inauguration" },
+        { time: "15:30 - 16:00", title: "Remarks from Chairperson of FOLICEA", description: "", type: "Statement" },
+        { time: "16:00 - 16:55", title: "Presentation of Strategic Plan (2025–2027)", description: "", type: "Presentation" },
+        { time: "16:55 - 17:30", title: "Remarks", description: "By …………….", type: "Closing" },
+        { time: "17:30 - 18:00", title: "Official Closing & Vote of Thanks", description: "", type: "Closing" },
+        { time: "18:00", title: "Group Photos & Departure", description: "", type: "Closing" },
+        { time: "21:00 - Late", title: "Liberian Vibes Night – Gala & Inaugural Ball (Social Night)", description: "", type: "Social" }
       ]
     }
   ];

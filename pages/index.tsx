@@ -55,7 +55,7 @@ const HomePage = () => {
     {
       name: "Emmanuel Patrick",
       title: "Acting Chairperson, FOLICEA & Former Chairperson, LIBCOR",
-      image: ""
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/emmanuel%20P.jpg?updatedAt=1756227156834"
     }
   ];
 

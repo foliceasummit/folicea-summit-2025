@@ -28,10 +28,61 @@ const SpeakersPage = () => {
       bio: "",
       topics: [],
       social: { linkedin: "#", twitter: "#" }
+    },
+    {
+      name: "Emmanuel Patrick",
+      title: "Acting Chairperson, FOLICEA & Former Chairperson, LIBCOR",
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/emmanuel%20P.jpg?updatedAt=1756227156834",
+      bio: "",
+      topics: [],
+      social: { linkedin: "#", twitter: "#" }
     }
   ];
 
-  const additionalSpeakers: Speaker[] = [];
+  const additionalSpeakers: Speaker[] = [
+    {
+      name: "Prof. Sarah Johnson",
+      title: "Academic & Researcher",
+      image: "https://ik.imagekit.io/folicea/Logo.png.jpg?updatedAt=1755871491816",
+      bio: "Professor Johnson specializes in diaspora studies and African development, bringing academic insights to community development.",
+      topics: ["Diaspora Studies", "Academic Research", "Development Theory"]
+    },
+    {
+      name: "Mr. Emmanuel Doe",
+      title: "Entrepreneur & Business Leader",
+      image: "https://ik.imagekit.io/folicea/Logo.png.jpg?updatedAt=1755871491816",
+      bio: "Mr. Doe is a successful entrepreneur who has built businesses across East Africa, sharing insights on economic empowerment.",
+      topics: ["Entrepreneurship", "Business Development", "Economic Empowerment"]
+    },
+    {
+      name: "Ms. Grace Williams",
+      title: "Cultural Ambassador",
+      image: "https://ik.imagekit.io/folicea/Logo.png.jpg?updatedAt=1755871491816",
+      bio: "Ms. Williams works to preserve and promote Liberian cultural heritage through various initiatives and programs.",
+      topics: ["Cultural Heritage", "Arts & Culture", "Community Engagement"]
+    },
+    {
+      name: "Dr. Michael Brown",
+      title: "Development Expert",
+      image: "https://ik.imagekit.io/folicea/Logo.png.jpg?updatedAt=1755871491816",
+      bio: "Dr. Brown has extensive experience in international development, focusing on sustainable community development projects.",
+      topics: ["Sustainable Development", "Project Management", "Capacity Building"]
+    },
+    {
+      name: "Ms. Patricia Taylor",
+      title: "Youth Advocate",
+      image: "https://ik.imagekit.io/folicea/Logo.png.jpg?updatedAt=1755871491816",
+      bio: "Ms. Taylor is passionate about youth empowerment and creating opportunities for young Liberians in the diaspora.",
+      topics: ["Youth Development", "Education", "Leadership Training"]
+    },
+    {
+      name: "Mr. David Wilson",
+      title: "Technology & Innovation",
+      image: "https://ik.imagekit.io/folicea/Logo.png.jpg?updatedAt=1755871491816",
+      bio: "Mr. Wilson is a technology entrepreneur who focuses on digital solutions for community development and connectivity.",
+      topics: ["Technology", "Digital Innovation", "Community Tech"]
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
