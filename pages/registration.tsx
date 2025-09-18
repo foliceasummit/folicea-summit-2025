@@ -323,16 +323,6 @@ const RegistrationPage = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="mt-4 text-sm text-gray-700">
-                      <p className="font-semibold text-gray-900">Mobile Money (MTN Uganda)</p>
-                      <p>+256 784 940 391 — Eunice Logose</p>
-                      <p className="mt-3 font-semibold text-gray-900">Cash (Uganda delegates only)</p>
-                      <p>Pay at the registration desk</p>
-                    </div>
-                    <div className="mt-4 text-sm">
-                      <p className="font-semibold text-gray-900">Important:</p>
-                      <p className="text-gray-700">Proof of payment must be shared with the Central Summit Committee (CSC) on WhatsApp: <a href="https://wa.me/231776038583" target="_blank" rel="noopener noreferrer" className="text-liberian-red font-semibold">+231 776 038 583</a>.</p>
-                    </div>
                   </div>
 
                   {/* How to register & pay */}
