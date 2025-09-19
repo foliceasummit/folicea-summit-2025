@@ -45,7 +45,7 @@ const HomePage = () => {
     {
       name: "H.E.",
       title: "hhh",
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403"
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403",
       bio: "",
       topics: [],
       social: { linkedin: "#", twitter: "#" }
@@ -53,16 +53,16 @@ const HomePage = () => {
     {
       name: "Hon.jjjj",
       title: "Sj",
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403"
-       bio: "",
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403",
+      bio: "",
       topics: [],
       social: { linkedin: "#", twitter: "#" }
     },
     {
       name: "Emmanuel Patrick",
       title: "Acting Chairperson, FOLICEA & Former Chairperson, LIBCOR",
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/emmanuel%20P.jpg?updatedAt=1756227156834"
-       bio: "",
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/emmanuel%20P.jpg?updatedAt=1756227156834",
+      bio: "",
       topics: [],
       social: { linkedin: "#", twitter: "#" }
     }
@@ -547,3 +547,7 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+
+
+
