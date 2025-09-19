@@ -28,7 +28,7 @@ const ContactPage = () => {
     },
     {
       question: "What is included in the registration fee?",
-      answer: "Registration includes accommodation, meals, summit materials, transportation, and tour."
+      answer: "Visit the Registration Page to see the packages."
     },
     {
       question: "How can I register for the summit?",
@@ -87,7 +87,7 @@ const ContactPage = () => {
           <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Message Sent!</h2>
           <p className="text-gray-600 mb-6">
-            Thank you for your message. We'll get back to you as soon as possible. FOLICEA
+            Thank you for your message. We'll get back to you as soon as possible. FOLICEA CSC
           </p>
           <button
             onClick={() => setSubmitSuccess(false)}
@@ -304,10 +304,10 @@ const ContactPage = () => {
                   <div className="flex items-start space-x-4">
                     <MapPin className="w-6 h-6 text-liberian-red mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold text-gray-900">Kampala Serena Hotel</h3>
+                      <h3 className="font-semibold text-gray-900">International University of East Africa (IUEA)</h3>
                       <p className="text-gray-600">Kampala, Uganda</p>
                       <p className="text-sm text-gray-500 mt-1">
-                        A luxury 5-star hotel in the heart of Kampala
+                        IUEA in the heart of Kampala
                       </p>
                     </div>
                   </div>
@@ -332,7 +332,7 @@ const ContactPage = () => {
                   latitude={0.3476} 
                   longitude={32.5825} 
                   zoom={15}
-                  title="Kampala Serena Hotel"
+                  title="International University of East Africa (IUEA)"
                 />
                 <div className="mt-4 text-center">
                   <a 

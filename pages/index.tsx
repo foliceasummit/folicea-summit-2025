@@ -43,19 +43,28 @@ const HomePage = () => {
 
   const speakers = [
     {
-      name: "H.E. Dr. Jeremiah Kpan Koung",
-      title: "Vice President of Liberia",
+      name: "H.E.",
+      title: "hhh",
       image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403"
+      bio: "",
+      topics: [],
+      social: { linkedin: "#", twitter: "#" }
     },
     {
-      name: "Hon. Richard Nagbe Koon",
-      title: "Speaker of the House of Representatives, 55th Legislature, Republic of Liberia",
+      name: "Hon.jjjj",
+      title: "Sj",
       image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403"
+       bio: "",
+      topics: [],
+      social: { linkedin: "#", twitter: "#" }
     },
     {
       name: "Emmanuel Patrick",
       title: "Acting Chairperson, FOLICEA & Former Chairperson, LIBCOR",
       image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/emmanuel%20P.jpg?updatedAt=1756227156834"
+       bio: "",
+      topics: [],
+      social: { linkedin: "#", twitter: "#" }
     }
   ];
 
@@ -156,7 +165,7 @@ const HomePage = () => {
             >
               <MapPin className="w-6 h-6 mx-auto mb-2 text-white/90" />
               <h3 className="text-base sm:text-lg font-semibold mb-1">Venue</h3>
-              <p className="text-xs sm:text-sm text-white/90">Kampala Serena Hotel, Uganda</p>
+              <p className="text-xs sm:text-sm text-white/90">Kampala, Uganda</p>
             </motion.div>
 
             <motion.div

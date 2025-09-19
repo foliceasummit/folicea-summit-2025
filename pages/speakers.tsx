@@ -14,7 +14,7 @@ type Speaker = {
 const SpeakersPage = () => {
   const featuredSpeakers: Speaker[] = [
     {
-      name: "H.E. Dr. Jeremiah Kpan Koung",
+      name: "H.E.",
       title: "Vice President of Liberia",
       image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403",
       bio: "",
