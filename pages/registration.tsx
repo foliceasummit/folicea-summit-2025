@@ -139,15 +139,15 @@ const RegistrationPage = () => {
             Thank you for registering for the FOLICEA Summit 2025!
           </p>
                      <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-             <h3 className="font-semibold text-green-800 mb-2">✅ Registration is pending until payment is received</h3>
+             <h3 className="font-semibold text-green-800 mb-2">✅ Registration pending – complete payment to confirm.</h3>
              <p className="text-sm text-green-700">
-               Your registration and photo have been successfully submitted. You will receive a confirmation email shortly.
+               Registration and photo submitted successfully. You’ll get a confirmation email soon. Your spot is confirmed after payment.
              </p>
            </div>
           <p className="text-sm text-gray-500 mb-6">
-            Complete registration by sending your payment via MoMo to 0792109775 (Code: XYZ123). 
-            After payment, Share your payment screenshot on WhatsApp: +231 776 038 583 
-            For any inquiries, call: +250 792 100 775 | +250 791 349 853.
+            Send your MoMo payment to +256 784 940 391 (Eunice Logose). 
+            Share the screenshot on WhatsApp: +231 776 038 583. 
+            Inquiries: +250 792 100 775 / +250 791 349 853.
           </p>
           <button
             onClick={() => {
@@ -378,9 +378,9 @@ const RegistrationPage = () => {
                         <p className="text-sm text-gray-600 mb-4">Includes transportation + everything in Package-01</p>
                         <ul className="space-y-2 text-gray-700 text-sm">
                           <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Transportation fares (To & Fro)</li>
-                          <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Rwanda → Kampala: USD 40 (round-trip)</li>
-                          <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Kenya → Kampala: USD 70 (round-trip)</li>
-                          <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Tanzania → Kampala: USD 70 (round-trip)</li>
+                          <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Rwanda → Kampala: USD 43 (round-trip)</li>
+                          <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Kenya → Kampala: USD 73 (round-trip)</li>
+                          <li className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-liberian-blue"/> Tanzania → Kampala: USD 73 (round-trip)</li>
                         </ul>
                       </div>
                     </div>

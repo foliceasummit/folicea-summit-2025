@@ -22,8 +22,8 @@ const SpeakersPage = () => {
       social: { linkedin: "#", twitter: "#" }
     },
     {
-      name: "Hon. Richard Nagbe Koon",
-      title: "Speaker of the House of Representatives, 55th Legislature, Republic of Liberia",
+      name: "Hon. John",
+      title: "Speaker",
       image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403",
       bio: "",
       topics: [],
