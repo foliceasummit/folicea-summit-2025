@@ -13,44 +13,21 @@ const NewsStoryPage = () => {
   // News data with full content
   const newsData = {
     1: {
-      title: "FOLICEA Summit 2025 Registration Now Open",
+      title: "Registration Open for FOLICEA Summit 2025 in Kampala",
       date: "September 8, 2025",
       category: "Announcement",
-      image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Register.png?updatedAt=1758364222052",
       content: `
-        <p>We are excited to announce that registration for the FOLICEA Summit 2025 is now officially open! This historic gathering will bring together Liberian communities from across East Africa for three days of meaningful dialogue, networking, and collaboration.</p>
-        
-        <h2>Early Bird Registration</h2>
-        <p>Early bird registration is available until October 15, 2025, at a special rate of $100 USD. This includes:</p>
+        <p>The Federation of Liberian Communities in East Africa (FOLICEA) is pleased to announce that registration is officially open for the Liberians in East Africa Summit 2025, scheduled for <strong>November 28 - 30, 2025</strong> in <strong>Kampala, Uganda</strong>.</p>
+        <p>This landmark gathering will bring together change-makers, entrepreneurs, students, professionals, and expatriates for three days of networking, dialogue, and action.</p>
+        <p>“This is more than just a meeting; it’s a historic opportunity for Liberians in East Africa to unite and shape our collective future,” said the FOLICEA Central Summit Committee.</p>
         <ul>
-          <li>4 nights accommodation</li>
-          <li>Breakfast and lunch for 4 days</li>
-          <li>Official FOLICEA Summit T-shirt and cap</li>
-          <li>Transportation</li>
-          <li>Summit materials and badge</li>
-          <li>Tour of Uganda tourism sites</li>
-          <li>Networking opportunities</li>
+          <li><strong>Dates:</strong> November 28 - 30, 2025</li>
+          <li><strong>Location:</strong> Kampala, Uganda</li>
+          <li><strong>Register Now:</strong> <a href="/registration" class="text-liberian-red hover:underline">https://folicea.org/registration</a></li>
         </ul>
-        
-        <h2>Registration Process</h2>
-        <p>To register for the summit:</p>
-        <ol>
-          <li>Visit our registration page at <a href="/registration" className="text-liberian-red hover:underline">folicea.vercel.app/registration</a></li>
-          <li>Fill out the comprehensive registration form</li>
-          <li>Upload your profile photo</li>
-          <li>Complete payment via MoMo or other available methods</li>
-          <li>Receive confirmation email with event details</li>
-        </ol>
-        
-        <h2>Important Dates</h2>
-        <ul>
-          <li><strong>Early Bird Registration:</strong> Until October 15, 2025</li>
-          <li><strong>Regular Registration:</strong> November 1 - November 15, 2025</li>
-          <li><strong>Late Registration:</strong> November 20 - November 25, 2025 (subject to availability)</li>
-          <li><strong>Summit Dates:</strong> November 28 - 30, 2025</li>
-        </ul>
-        
-        <p>Don't miss this opportunity to be part of history! Register today and join us in Kampala for the most significant gathering of Liberian communities in East Africa.</p>
+        <p>Don’t miss this chance to connect, collaborate, and lead change across East Africa.</p>
+        <p>#FOLICEASummit2025 #FutureLeaders #LiberiansinEastAfrica #EastAfrica #Kampala</p>
       `
     },
     2: {
@@ -335,81 +312,31 @@ const NewsStoryPage = () => {
       `
     },
     6: {
-      title: "Venue Confirmed: Kampala Serena Hotel",
-      date: "September 8, 2025",
-      category: "Venue",
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      title: "FOLICEA Establishes National Liaison Committee in Liberia",
+      date: "September 20, 2025",
+      category: "Press Release",
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/AiRo.jpg?updatedAt=1758375163854",
       content: `
-        <p>We are pleased to confirm that the FOLICEA Summit 2025 will be held at the prestigious Kampala Serena Hotel in Uganda's capital city. This world-class venue will provide the perfect setting for our historic gathering.</p>
-        
-        <h2>About Kampala Serena Hotel</h2>
-        <p>Kampala Serena Hotel is a 5-star luxury hotel located in the heart of Kampala, offering:</p>
+        <p><strong>Office of the Acting Secretary</strong><br/>
+        <strong>Ref:</strong> NLC/PR/02/folicea/25<br/>
+        <strong>For Immediate Release</strong></p>
+
+        <h2>FOLICEA Establishes National Liaison Committee in Liberia</h2>
+        <p><em>Kigali, Rwanda – September 20, 2025</em></p>
+        <p>The Federation of Liberia Communities in East Africa (FOLICEA) is pleased to announce the formal establishment of its National Liaison Committee in Liberia. This initiative represents a key step in strengthening collaboration between Liberian communities in East Africa and national stakeholders at home.</p>
+        <p>The National Liaison Committee will serve as the official coordinating body in Liberia, facilitating communication, partnership, and program implementation on behalf of FOLICEA.</p>
+
+        <h3>Committee Leadership</h3>
         <ul>
-          <li>State-of-the-art conference facilities</li>
-          <li>Multiple meeting rooms and breakout spaces</li>
-          <li>Professional audio-visual equipment</li>
-          <li>High-speed internet connectivity</li>
-          <li>Luxurious accommodation for delegates</li>
-          <li>World-class dining options</li>
-          <li>24/7 security and concierge services</li>
+          <li><strong>Ms. Alronica Minor</strong> – Lead Focal Person</li>
+          <li><strong>Ms. Majah K. Barweh</strong> – Assistant Focal Person</li>
         </ul>
-        
-        <h2>Conference Facilities</h2>
-        <p>Our summit will utilize the hotel's premier conference facilities:</p>
-        <ul>
-          <li><strong>Main Ballroom:</strong> Capacity for 500+ attendees for opening and closing ceremonies</li>
-          <li><strong>Conference Rooms:</strong> Multiple breakout rooms for workshops and sessions</li>
-          <li><strong>Exhibition Hall:</strong> Space for business expo and networking</li>
-          <li><strong>Outdoor Areas:</strong> Beautiful gardens for networking and cultural events</li>
-        </ul>
-        
-        <h2>Accommodation</h2>
-        <p>Special room rates have been negotiated for summit attendees:</p>
-        <ul>
-          <li><strong>Single Room:</strong> $150 USD per night</li>
-          <li><strong>Double Room:</strong> $180 USD per night</li>
-          <li><strong>Suite:</strong> $300 USD per night</li>
-        </ul>
-        <p><em>Note: Shared rooms are included in the registration fee. Single and double rooms are additional.</em></p>
-        
-        <h2>Location and Accessibility</h2>
-        <p>Kampala Serena Hotel is conveniently located:</p>
-        <ul>
-          <li><strong>Airport:</strong> 45 minutes from Entebbe International Airport</li>
-          <li><strong>City Center:</strong> Walking distance to major attractions</li>
-          <li><strong>Transportation:</strong> Easy access to public transport and taxi services</li>
-          <li><strong>Security:</strong> Located in a safe, well-lit area with 24/7 security</li>
-        </ul>
-        
-        <h2>Nearby Attractions</h2>
-        <p>During your stay, explore Kampala's rich culture and history:</p>
-        <ul>
-          <li>Uganda National Museum</li>
-          <li>Kasubi Tombs (UNESCO World Heritage Site)</li>
-          <li>Owino Market for local crafts and souvenirs</li>
-          <li>Lake Victoria waterfront</li>
-          <li>Various restaurants and cultural venues</li>
-        </ul>
-        
-        <h2>Transportation Services</h2>
-        <p>The hotel provides:</p>
-        <ul>
-          <li>Airport shuttle services (additional cost)</li>
-          <li>Local transportation arrangements</li>
-          <li>Tour guide services for sightseeing</li>
-          <li>Car rental services</li>
-        </ul>
-        
-        <h2>Special Arrangements</h2>
-        <p>We have arranged special services for summit attendees:</p>
-        <ul>
-          <li>Dedicated check-in desk for FOLICEA participants</li>
-          <li>Special dietary accommodations</li>
-          <li>Accessibility services for participants with disabilities</li>
-          <li>24/7 support desk during the summit</li>
-        </ul>
-        
-        <p>We look forward to welcoming you to Kampala Serena Hotel for the FOLICEA Summit 2025!</p>
+
+        <p>Additional committee members will be announced in due course, and will include representatives from various sectors to ensure inclusive and effective coordination.</p>
+        <p>The establishment of this Committee reflects FOLICEA’s ongoing commitment to fostering unity, development, and meaningful engagement between the Liberian diaspora in East Africa and the homeland.</p>
+
+        <p><strong>Mr. Isaac M. Supu</strong><br/>
+        Acting Secretary General</p>
       `
     }
   };

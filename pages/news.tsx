@@ -8,11 +8,11 @@ const NewsPage = () => {
   const newsItems = [
     {
       id: 1,
-      title: "FOLICEA Summit 2025 Registration Now Open",
-      excerpt: "We are excited to announce that registration for the FOLICEA Summit 2025 is now officially open. Early bird registration is available until October 31, 2025.",
+      title: "Registration Open for FOLICEA Summit 2025 in Kampala",
+      excerpt: "Registration is officially open for the Liberians in East Africa Summit 2025, happening Nov 28–30 in Kampala, Uganda. Connect, collaborate, and help shape the future of the Liberian diaspora.",
       date: "September 8, 2025",
       category: "Announcement",
-      image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Register.png?updatedAt=1758364222052",
       featured: false
     },
     {
@@ -50,22 +50,22 @@ const NewsPage = () => {
     },
     {
       id: 6,
-      title: "Venue Confirmed: Kampala Serena Hotel",
-      excerpt: "We are pleased to confirm that the FOLICEA Summit 2025 will be held at the prestigious Kampala Serena Hotel in Uganda's capital city.",
-      date: "September 8, 2025",
-      category: "Venue",
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/images.jpg?updatedAt=1757370642158"
+      title: "FOLICEA Establishes National Liaison Committee in Liberia",
+      excerpt: "FOLICEA formally establishes its National Liaison Committee in Liberia to strengthen coordination with national stakeholders at home.",
+      date: "September 20, 2025",
+      category: "Press Release",
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/AiRo.jpg?updatedAt=1758375163854",
+      featured: true
     }
   ];
 
   const categories = [
     { name: "All", count: newsItems.length },
     { name: "Announcement", count: 1 },
-    { name: "Speakers", count: 1 },
+    { name: "Press Release", count: 2 },
     { name: "Partnerships", count: 1 },
     { name: "Agenda", count: 1 },
-    { name: "Sponsorship", count: 1 },
-    { name: "Venue", count: 1 }
+    { name: "Sponsorship", count: 1 }
   ];
 
   return (
