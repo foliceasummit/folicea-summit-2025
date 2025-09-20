@@ -4,14 +4,19 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        {/* Favicon */}
-        <link rel="icon" type="image/jpeg" href="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403" />
-        <link rel="icon" type="image/jpeg" sizes="32x32" href="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403" />
-        <link rel="icon" type="image/jpeg" sizes="16x16" href="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403" />
-        <link rel="apple-touch-icon" href="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403" />
-        
         {/* Meta tags */}
+        {/* Browser UI colors with fallbacks */}
+        {/* Base color for browsers that don't support media-based theme-color */}
         <meta name="theme-color" content="#BF0A30" />
+        {/* Override for dark mode in supporting browsers (Chromium, Safari) */}
+        <meta name="theme-color" content="#8A0722" media="(prefers-color-scheme: dark)" />
+        {/* Page supports both color schemes (improves controls on Firefox/Safari) */}
+        <meta name="color-scheme" content="light dark" />
+        {/* iOS Safari */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        {/* Windows tiles (legacy but harmless) */}
+        <meta name="msapplication-TileColor" content="#BF0A30" />
         <meta name="description" content="FOLICEA Summit 2025 - Federation of Liberian Communities in East Africa" />
         <meta name="keywords" content="FOLICEA, Liberian, Summit, East Africa, Uganda, Kampala" />
         <meta name="author" content="FOLICEA Summit 2025" />

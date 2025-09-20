@@ -3,17 +3,18 @@ import Head from 'next/head'
 const Favicon = () => {
   return (
     <Head>
-      {/* Primary favicon - use provided logo */}
-      <link rel="icon" type="image/jpeg" href="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403" />
+      {/* Primary SVG favicon */}
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       
-      {/* Fallback favicon */}
+      {/* Fallback ICO favicon */}
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       
-      {/* Apple touch icon */}
-      <link rel="apple-touch-icon" href="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403" />
+      {/* Explicit sizes for broader compatibility (using ICO until specific PNGs are added) */}
+      <link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon.ico" />
+      <link rel="icon" type="image/x-icon" sizes="16x16" href="/favicon.ico" />
       
-      {/* Theme color */}
-      <meta name="theme-color" content="#BF0A30" />
+      {/* Apple touch icon (consider adding /apple-touch-icon.png later) */}
+      <link rel="apple-touch-icon" href="/favicon.ico" />
     </Head>
   )
 }

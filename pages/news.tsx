@@ -3,70 +3,35 @@
 import { motion } from 'framer-motion';
 import { Calendar, Clock, ArrowRight, Newspaper, Users, Trophy, Globe } from 'lucide-react';
 import Link from 'next/link';
+import { useState } from 'react';
+import { newsItems as dataNewsItems } from '../data/newsData';
 
 const NewsPage = () => {
-  const newsItems = [
-    {
-      id: 1,
-      title: "Registration Open for FOLICEA Summit 2025 in Kampala",
-      excerpt: "Registration is officially open for the Liberians in East Africa Summit 2025, happening Nov 28–30 in Kampala, Uganda. Connect, collaborate, and help shape the future of the Liberian diaspora.",
-      date: "September 8, 2025",
-      category: "Announcement",
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Register.png?updatedAt=1758364222052",
-      featured: false
-    },
-    {
-      id: 2,
-      title: "Mr. W. Praise Bloyuefloh to Lead Central Summit Committee",
-      excerpt: "FOLICEA appoints Mr. W. Praise Bloyuefloh as Chairperson of the Central Summit Committee for the inaugural FOLICEA Summit 2025 in Kampala.",
-      date: "September 6, 2025",
-      category: "Press Release",
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Praise.jpg?updatedAt=1757333456399",
-      featured: true
-    },
-    {
-      id: 3,
-      title: "Partnership of Four Liberian Communities for FOLICEA Summit 2025",
-      excerpt: "A united partnership of Liberian communities in Rwanda, Kenya, Uganda, and Tanzania to advance the FOLICEA Summit 2025.",
-      date: "May 24, 2025",
-      category: "Partnerships",
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Partners_dFW5jFZd2?updatedAt=1757367038266"
-    },
-    {
-      id: 4,
-      title: "Summit Agenda Released",
-      excerpt: "The complete agenda for the FOLICEA Summit 2025 has been released. The four-day event will feature keynote speeches, workshops, and networking sessions.",
-      date: "September 10, 2025",
-      category: "Agenda",
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/hand-writing-word-agenda-white-600nw-1282734538.webp?updatedAt=1757370476786"
-    },
-    {
-      id: 5,
-      title: "Sponsorship Opportunities Available",
-      excerpt: "We are offering various sponsorship packages for organizations interested in supporting the FOLICEA Summit 2025 and connecting with our community.",
-      date: "September 2, 2025",
-      category: "Sponsorship",
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/sponsorship-concept.jpg?updatedAt=1757364693139"
-    },
-    {
-      id: 6,
-      title: "FOLICEA Establishes National Liaison Committee in Liberia",
-      excerpt: "FOLICEA formally establishes its National Liaison Committee in Liberia to strengthen coordination with national stakeholders at home.",
-      date: "September 20, 2025",
-      category: "Press Release",
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/AiRo.jpg?updatedAt=1758375163854",
-      featured: true
-    }
+  // Use shared data source
+  const newsItems = dataNewsItems;
+
+  // Compute category counts dynamically
+  const categoryMap = newsItems.reduce<Record<string, number>>((acc, item) => {
+    acc[item.category] = (acc[item.category] || 0) + 1;
+    return acc;
+  }, {});
+  const categories = [
+    { name: 'All', count: newsItems.length },
+    ...Object.entries(categoryMap).map(([name, count]) => ({ name, count }))
   ];
 
-  const categories = [
-    { name: "All", count: newsItems.length },
-    { name: "Announcement", count: 1 },
-    { name: "Press Release", count: 2 },
-    { name: "Partnerships", count: 1 },
-    { name: "Agenda", count: 1 },
-    { name: "Sponsorship", count: 1 }
-  ];
+  // Sort by date (newest first)
+  const parseDate = (d: string) => new Date(d).getTime();
+  const featuredSortedAll = [...newsItems]
+    .filter(n => n.featured)
+    .sort((a, b) => parseDate(b.date) - parseDate(a.date));
+  const sortedFeatured = featuredSortedAll.slice(0, 3);
+  const sortedOthers = [...newsItems]
+    .filter(n => !n.featured)
+    .sort((a, b) => parseDate(b.date) - parseDate(a.date));
+
+  const [showAllFeatured, setShowAllFeatured] = useState(false);
+  const featuredToShow = showAllFeatured ? featuredSortedAll : sortedFeatured;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -96,14 +61,24 @@ const NewsPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-12"
+            className="mb-12 space-y-8"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Featured News</h2>
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-3xl font-bold text-gray-900">Featured News</h2>
+              {featuredSortedAll.length > 3 && (
+                <button
+                  onClick={() => setShowAllFeatured(v => !v)}
+                  className="text-liberian-red hover:text-liberian-blue font-semibold"
+                >
+                  {showAllFeatured ? 'View less' : 'View all featured'}
+                </button>
+              )}
+            </div>
             
-            {newsItems.filter(item => item.featured).map((item) => (
+            {featuredToShow.map((item) => (
               <div key={item.id} className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                <div className="grid grid-cols-1 lg:grid-cols-2">
-                  <div className="relative h-64 lg:h-full">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <div className="relative h-72 lg:h-full">
                     <img
                       src={item.image}
                       alt={item.title}
@@ -120,15 +95,15 @@ const NewsPage = () => {
                       <Calendar className="w-4 h-4 mr-2" />
                       {item.date}
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    <h3 className="text-3xl font-bold text-gray-900 mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed">
+                    <p className="text-gray-600 mb-6 leading-relaxed text-lg">
                       {item.excerpt}
                     </p>
                     <Link
                       href={`/news/${item.id}`}
-                      className="inline-flex items-center text-liberian-red hover:text-liberian-blue font-semibold transition-colors"
+                      className="inline-flex items-center text-white bg-liberian-red hover:bg-liberian-blue px-5 py-3 rounded-lg font-semibold transition-colors shadow"
                     >
                       Read More
                       <ArrowRight className="w-4 h-4 ml-2" />
@@ -176,7 +151,7 @@ const NewsPage = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-8">All News</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {newsItems.filter(item => !item.featured).map((item, index) => (
+              {sortedOthers.map((item, index) => (
                 <motion.div
                   key={item.id}
                   initial={{ opacity: 0, y: 20 }}

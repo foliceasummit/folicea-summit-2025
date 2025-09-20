@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Calendar, MapPin, Users, ArrowRight, Star, Users2, Trophy, Globe } from 'lucide-react';
 import Countdown from '../components/Countdown';
 import HeroSlider from '../components/HeroSlider';
+import { newsItems as dataNewsItems } from '../data/newsData';
 
 const HomePage = () => {
   // Trigger redeploy with environment variables
@@ -83,6 +84,12 @@ const HomePage = () => {
     { name: 'Sponsor 5', url: '#' },
     { name: 'Sponsor 6', url: '#' },
   ];
+
+  // Latest 3 news items by date
+  const parseDate = (d: string) => new Date(d).getTime();
+  const latestNews = [...dataNewsItems]
+    .sort((a, b) => parseDate(b.date) - parseDate(a.date))
+    .slice(0, 3);
 
   return (
     <div>
@@ -260,6 +267,59 @@ const HomePage = () => {
             <Link href="/contact" className="inline-flex items-center px-6 py-4 rounded-lg border border-white/60 text-white hover:bg-white hover:text-liberian-red transition-colors">
               Contact Us
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest News Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-8 sm:mb-12 flex items-center justify-between"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Latest News</h2>
+            <Link href="/news" className="inline-flex items-center text-liberian-red hover:text-liberian-blue font-semibold">
+              View all
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {latestNews.map((item, index) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl shadow-lg overflow-hidden card-hover"
+              >
+                <div className="relative h-48">
+                  <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-liberian-red text-white px-3 py-1 rounded-full text-sm font-medium">
+                      {item.category}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center text-gray-500 text-sm mb-3">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    {item.date}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">{item.title}</h3>
+                  <p className="text-gray-600 mb-4 line-clamp-3">{item.excerpt}</p>
+                  <Link href={`/news/${item.id}`} className="inline-flex items-center text-liberian-red hover:text-liberian-blue font-semibold">
+                    Read More
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
