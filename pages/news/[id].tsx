@@ -73,16 +73,29 @@ export default function NewsDetailPage({ item }: Props) {
   );
 }
 
+// Map numeric IDs from the restored listing to current string IDs
+const numericToStringId: Record<string, string> = {
+  "1": "registration-open-kampala-2025",
+  "2": "csc-leadership-w-praise-bloyuefloh",
+  "3": "partnership-four-liberian-communities",
+  "4": "summit-agenda-released",
+  "5": "sponsorship-opportunities",
+  // "6": "venue-confirmed" // No matching item in data; leaving unmapped
+};
+
 export const getStaticPaths: GetStaticPaths = async () => {
+  const stringPaths = newsItems.map((n) => ({ params: { id: n.id } }));
+  const numericPaths = Object.keys(numericToStringId).map((id) => ({ params: { id } }));
   return {
-    paths: newsItems.map((n) => ({ params: { id: n.id } })),
+    paths: [...stringPaths, ...numericPaths],
     fallback: false,
   };
 };
 
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
-  const id = context.params?.id as string;
-  const item = newsItems.find((n) => n.id === id) || null;
+  const rawId = context.params?.id as string;
+  const resolvedId = /^\d+$/.test(rawId) ? numericToStringId[rawId] : rawId;
+  const item = resolvedId ? newsItems.find((n) => n.id === resolvedId) || null : null;
 
   if (!item) {
     return { notFound: true };

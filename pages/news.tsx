@@ -1,20 +1,72 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, ArrowRight, Newspaper, Users, Trophy, Globe } from 'lucide-react';
 import Link from 'next/link';
 
-import { newsItems as dataNewsItems } from '../data/newsData';
-
 const NewsPage = () => {
-  // Use shared data source
-  const newsItems = dataNewsItems;
+  const newsItems = [
+    {
+      id: 1,
+      title: "FOLICEA Summit 2025 Registration Now Open",
+      excerpt: "We are excited to announce that registration for the FOLICEA Summit 2025 is now officially open. Early bird registration is available until October 31, 2025.",
+      date: "September 8, 2025",
+      category: "Announcement",
+      image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      featured: false
+    },
+    {
+      id: 2,
+      title: "Mr. W. Praise Bloyuefloh to Lead Central Summit Committee",
+      excerpt: "FOLICEA appoints Mr. W. Praise Bloyuefloh as Chairperson of the Central Summit Committee for the inaugural FOLICEA Summit 2025 in Kampala.",
+      date: "September 6, 2025",
+      category: "Press Release",
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Praise.jpg?updatedAt=1757333456399",
+      featured: true
+    },
+    {
+      id: 3,
+      title: "Partnership of Four Liberian Communities for FOLICEA Summit 2025",
+      excerpt: "A united partnership of Liberian communities in Rwanda, Kenya, Uganda, and Tanzania to advance the FOLICEA Summit 2025.",
+      date: "May 24, 2025",
+      category: "Partnerships",
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Partners_dFW5jFZd2?updatedAt=1757367038266"
+    },
+    {
+      id: 4,
+      title: "Summit Agenda Released",
+      excerpt: "The complete agenda for the FOLICEA Summit 2025 has been released. The four-day event will feature keynote speeches, workshops, and networking sessions.",
+      date: "September 10, 2025",
+      category: "Agenda",
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/hand-writing-word-agenda-white-600nw-1282734538.webp?updatedAt=1757370476786"
+    },
+    {
+      id: 5,
+      title: "Sponsorship Opportunities Available",
+      excerpt: "We are offering various sponsorship packages for organizations interested in supporting the FOLICEA Summit 2025 and connecting with our community.",
+      date: "September 2, 2025",
+      category: "Sponsorship",
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/sponsorship-concept.jpg?updatedAt=1757364693139"
+    },
+    {
+      id: 6,
+      title: "Venue Confirmed: Kampala Serena Hotel",
+      excerpt: "We are pleased to confirm that the FOLICEA Summit 2025 will be held at the prestigious Kampala Serena Hotel in Uganda's capital city.",
+      date: "September 8, 2025",
+      category: "Venue",
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/images.jpg?updatedAt=1757370642158"
+    }
+  ];
 
-
-
-  // Sort all by date (newest first)
-  const parseDate = (d: string) => new Date(d).getTime();
-  const sortedAll = [...newsItems].sort((a, b) => parseDate(b.date) - parseDate(a.date));
+  const categories = [
+    { name: "All", count: newsItems.length },
+    { name: "Announcement", count: 1 },
+    { name: "Speakers", count: 1 },
+    { name: "Partnerships", count: 1 },
+    { name: "Agenda", count: 1 },
+    { name: "Sponsorship", count: 1 },
+    { name: "Venue", count: 1 }
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -37,9 +89,81 @@ const NewsPage = () => {
         </div>
       </section>
 
+      {/* Featured News */}
+      <section className="section-padding">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-12"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">Featured News</h2>
+            
+            {newsItems.filter(item => item.featured).map((item) => (
+              <div key={item.id} className="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div className="grid grid-cols-1 lg:grid-cols-2">
+                  <div className="relative h-64 lg:h-full">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-liberian-red text-white px-3 py-1 rounded-full text-sm font-medium">
+                        {item.category}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-8 flex flex-col justify-center">
+                    <div className="flex items-center text-gray-500 text-sm mb-4">
+                      <Calendar className="w-4 h-4 mr-2" />
+                      {item.date}
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                      {item.excerpt}
+                    </p>
+                    <Link
+                      href={`/news/${item.id}`}
+                      className="inline-flex items-center text-liberian-red hover:text-liberian-blue font-semibold transition-colors"
+                    >
+                      Read More
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
 
-
-
+      {/* Categories */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mb-12"
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">News Categories</h2>
+            <div className="flex flex-wrap justify-center gap-4">
+              {categories.map((category, index) => (
+                <button
+                  key={category.name}
+                  className="px-6 py-3 bg-gray-100 hover:bg-liberian-red hover:text-white rounded-full font-medium transition-all duration-300"
+                >
+                  {category.name} ({category.count})
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* All News */}
       <section className="section-padding">
@@ -52,7 +176,7 @@ const NewsPage = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-8">All News</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {sortedAll.map((item, index) => (
+              {newsItems.filter(item => !item.featured).map((item, index) => (
                 <motion.div
                   key={item.id}
                   initial={{ opacity: 0, y: 20 }}
