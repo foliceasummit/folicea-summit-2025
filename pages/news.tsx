@@ -47,6 +47,7 @@ const NewsPage = () => {
       date: "September 2, 2025",
       category: "Sponsorship",
       image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/sponsorship-concept.jpg?updatedAt=1757364693139"
+    }
 
   ];
 
