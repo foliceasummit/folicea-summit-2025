@@ -2,20 +2,21 @@ export const newsItems = [
   {
     id: 'registration-open-kampala-2025',
     title: 'Registration Open for FOLICEA Summit 2025 in Kampala',
-    excerpt: 'Registration is officially open for the Liberians in East Africa Summit 2025, happening Nov 28–30 in Kampala, Uganda. Connect, collaborate, and help shape the future of the Liberian diaspora.',
+    excerpt: 'Registration is officially open for the Liberians in East Africa Summit 2025 (Nov 28–30, Kampala). Connect, collaborate, and shape the future of the Liberian diaspora.',
     image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Register.png?updatedAt=1758364222052',
     date: 'September 8, 2025',
     category: 'Announcement',
     featured: false,
     content: `
-      <p>Registration is officially open for the Liberians in East Africa Summit 2025, happening Nov 28–30 in Kampala, Uganda. This gathering will bring together leaders, professionals, students, and families across East Africa and the diaspora.</p>
-      <p>Early-bird registration is available until <strong>October 31, 2025</strong>. Secure your spot and be part of meaningful conversations, connections, and collaborations.</p>
+      <p>The Federation of Liberian Communities in East Africa (FOLICEA) is pleased to announce that registration is officially open for the Liberians in East Africa Summit 2025, scheduled to take place from <strong>November 28 – 30, 2025</strong>, in <strong>Kampala, Uganda</strong>.</p>
+      <p>This landmark gathering will bring together change-makers, entrepreneurs, students, professionals, and expatriates for three days of networking, dialogue, and action. Delegates will engage in interactive sessions, exchange ideas, and build stronger community ties that transcend borders.</p>
       <ul>
-        <li><strong>Dates:</strong> Nov 28–30, 2025</li>
+        <li><strong>Dates:</strong> November 28 – 30, 2025</li>
         <li><strong>Location:</strong> Kampala, Uganda</li>
-        <li><strong>Tracks:</strong> Faith & Leadership, Entrepreneurship, Community Impact</li>
+        <li><strong>Register Now:</strong> <a href="https://folicea.org/registration" target="_blank" rel="noreferrer">https://folicea.org/registration</a></li>
       </ul>
-      <p>Visit the Registration page to learn more about tickets, group discounts, and volunteering opportunities. We look forward to welcoming you to Kampala!</p>
+      <p>Don’t miss this chance to connect, collaborate, and lead change across East Africa.</p>
+      <p>#FOLICEASummit2025 #FutureLeaders #LiberiansinEastAfrica #EastAfrica #Kampala</p>
     `
   },
   {

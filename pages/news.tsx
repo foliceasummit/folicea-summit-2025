@@ -1,65 +1,27 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, Clock, ArrowRight, Newspaper, Users, Trophy, Globe } from 'lucide-react';
+import { Calendar, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { newsItems as allNews } from '../data/newsData';
+
+// Build dynamic category list with counts
+const buildCategories = (items: typeof allNews) => {
+  const counts = items.reduce<Record<string, number>>((acc, item) => {
+    const cat = item.category || 'General';
+    acc[cat] = (acc[cat] || 0) + 1;
+    return acc;
+  }, {});
+  const categories = Object.entries(counts)
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+  return [{ name: 'All', count: items.length }, ...categories];
+};
 
 const NewsPage = () => {
-  const newsItems = [
-    {
-      id: 1,
-      title: "FOLICEA Summit 2025 Registration Now Open",
-      excerpt: "We are excited to announce that registration for the FOLICEA Summit 2025 is now officially open. Early bird registration is available until October 31, 2025.",
-      date: "September 8, 2025",
-      category: "Announcement",
-      image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      featured: false
-    },
-    {
-      id: 2,
-      title: "Mr. W. Praise Bloyuefloh to Lead Central Summit Committee",
-      excerpt: "FOLICEA appoints Mr. W. Praise Bloyuefloh as Chairperson of the Central Summit Committee for the inaugural FOLICEA Summit 2025 in Kampala.",
-      date: "September 6, 2025",
-      category: "Press Release",
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Praise.jpg?updatedAt=1757333456399",
-      featured: true
-    },
-    {
-      id: 3,
-      title: "Partnership of Four Liberian Communities for FOLICEA Summit 2025",
-      excerpt: "A united partnership of Liberian communities in Rwanda, Kenya, Uganda, and Tanzania to advance the FOLICEA Summit 2025.",
-      date: "May 24, 2025",
-      category: "Partnerships",
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Partners_dFW5jFZd2?updatedAt=1757367038266"
-    },
-    {
-      id: 4,
-      title: "Summit Agenda Released",
-      excerpt: "The complete agenda for the FOLICEA Summit 2025 has been released. The four-day event will feature keynote speeches, workshops, and networking sessions.",
-      date: "September 10, 2025",
-      category: "Agenda",
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/hand-writing-word-agenda-white-600nw-1282734538.webp?updatedAt=1757370476786"
-    },
-    {
-      id: 5,
-      title: "Sponsorship Opportunities Available",
-      excerpt: "We are offering various sponsorship packages for organizations interested in supporting the FOLICEA Summit 2025 and connecting with our community.",
-      date: "September 2, 2025",
-      category: "Sponsorship",
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/sponsorship-concept.jpg?updatedAt=1757364693139"
-    }
-
-  ];
-
-  const categories = [
-    { name: "All", count: newsItems.length },
-    { name: "Announcement", count: 1 },
-    { name: "Speakers", count: 1 },
-    { name: "Partnerships", count: 1 },
-    { name: "Agenda", count: 1 },
-    { name: "Sponsorship", count: 1 },
-    { name: "Venue", count: 1 }
-  ];
+  const categories = buildCategories(allNews);
+  const featured = allNews.filter((i) => i.featured);
+  const regular = allNews.filter((i) => !i.featured);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -72,9 +34,7 @@ const NewsPage = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Latest News & Updates
-            </h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Latest News & Updates</h1>
             <p className="text-xl max-w-3xl mx-auto">
               Stay informed about the latest developments, announcements, and updates regarding the FOLICEA Summit 2025.
             </p>
@@ -83,56 +43,44 @@ const NewsPage = () => {
       </section>
 
       {/* Featured News */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-12"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Featured News</h2>
-            
-            {newsItems.filter(item => item.featured).map((item) => (
-              <div key={item.id} className="bg-white rounded-2xl shadow-xl overflow-hidden">
-                <div className="grid grid-cols-1 lg:grid-cols-2">
-                  <div className="relative h-64 lg:h-full">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-liberian-red text-white px-3 py-1 rounded-full text-sm font-medium">
-                        {item.category}
-                      </span>
+      {featured.length > 0 && (
+        <section className="section-padding">
+          <div className="container-custom">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="mb-12"
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">Featured News</h2>
+
+              {featured.map((item) => (
+                <div key={item.id} className="relative overflow-hidden rounded-3xl bg-white border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-2xl mb-8">
+                  <div className="grid grid-cols-1 lg:grid-cols-2">
+                    <div className="relative h-64 lg:h-full">
+                      <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/0 to-black/0" />
+                      <div className="absolute top-4 left-4 flex gap-2">
+                        <span className="bg-liberian-red text-white px-3 py-1 rounded-full text-sm font-medium">{item.category}</span>
+                        <span className="bg-white/90 text-gray-900 px-3 py-1 rounded-full text-sm font-medium flex items-center">
+                          <Calendar className="w-4 h-4 mr-2" /> {item.date}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                  <div className="p-8 flex flex-col justify-center">
-                    <div className="flex items-center text-gray-500 text-sm mb-4">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      {item.date}
+                    <div className="p-8 flex flex-col justify-center">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                      <p className="text-gray-600 mb-6 leading-relaxed">{item.excerpt}</p>
+                      <Link href={`/news/${item.id}`} className="inline-flex items-center w-fit rounded-full bg-liberian-red text-white px-5 py-2.5 font-semibold shadow hover:bg-liberian-blue transition-colors">
+                        Read More <ArrowRight className="w-4 h-4 ml-2" />
+                      </Link>
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed">
-                      {item.excerpt}
-                    </p>
-                    <Link
-                      href={`/news/${item.id}`}
-                      className="inline-flex items-center text-liberian-red hover:text-liberian-blue font-semibold transition-colors"
-                    >
-                      Read More
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Link>
                   </div>
                 </div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* Categories */}
       <section className="section-padding bg-white">
@@ -144,11 +92,11 @@ const NewsPage = () => {
             className="mb-12"
           >
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">News Categories</h2>
-            <div className="flex flex-wrap justify-center gap-4">
-              {categories.map((category, index) => (
+            <div className="flex flex-wrap justify-center gap-3">
+              {categories.map((category) => (
                 <button
                   key={category.name}
-                  className="px-6 py-3 bg-gray-100 hover:bg-liberian-red hover:text-white rounded-full font-medium transition-all duration-300"
+                  className="px-5 py-2.5 rounded-full border border-gray-200 bg-gray-50 text-gray-700 hover:bg-liberian-red hover:text-white hover:border-liberian-red transition-all duration-300"
                 >
                   {category.name} ({category.count})
                 </button>
@@ -161,51 +109,33 @@ const NewsPage = () => {
       {/* All News */}
       <section className="section-padding">
         <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }}>
             <h2 className="text-3xl font-bold text-gray-900 mb-8">All News</h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {newsItems.filter(item => !item.featured).map((item, index) => (
+              {regular.map((item, index) => (
                 <motion.div
                   key={item.id}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 * index }}
-                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                  transition={{ duration: 0.6, delay: 0.08 * index }}
+                  className="group relative overflow-hidden rounded-2xl bg-white/70 supports-[backdrop-filter]:bg-white/60 backdrop-blur border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="relative h-48">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-liberian-red text-white px-3 py-1 rounded-full text-sm font-medium">
-                        {item.category}
-                      </span>
+                  <div className="relative aspect-[16/9]">
+                    <img src={item.image} alt={item.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
+                    <div className="absolute top-3 left-3">
+                      <span className="bg-liberian-red text-white px-3 py-1 rounded-full text-xs font-medium">{item.category}</span>
                     </div>
                   </div>
-                  <div className="p-6">
-                    <div className="flex items-center text-gray-500 text-sm mb-3">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      {item.date}
+                  <div className="p-5">
+                    <div className="flex items-center text-gray-500 text-sm mb-2">
+                      <Calendar className="w-4 h-4 mr-2" /> {item.date}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4 line-clamp-3">
-                      {item.excerpt}
-                    </p>
-                    <Link
-                      href={`/news/${item.id}`}
-                      className="inline-flex items-center text-liberian-red hover:text-liberian-blue font-semibold transition-colors"
-                    >
-                      Read More
-                      <ArrowRight className="w-4 h-4 ml-2" />
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 line-clamp-2">{item.title}</h3>
+                    <p className="text-gray-600 mb-4 line-clamp-3">{item.excerpt}</p>
+                    <Link href={`/news/${item.id}`} className="inline-flex items-center text-liberian-red hover:text-liberian-blue font-semibold">
+                      Read More <ArrowRight className="w-4 h-4 ml-2" />
                     </Link>
                   </div>
                 </motion.div>
@@ -230,11 +160,7 @@ const NewsPage = () => {
             </p>
             <div className="max-w-md mx-auto">
               <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 rounded-l-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
-                />
+                <input type="email" placeholder="Enter your email" className="flex-1 px-4 py-3 rounded-l-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white" />
                 <button className="bg-white text-liberian-red px-6 py-3 rounded-r-lg font-semibold hover:bg-gray-100 transition-colors">
                   Subscribe
                 </button>
