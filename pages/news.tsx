@@ -47,15 +47,7 @@ const NewsPage = () => {
       date: "September 2, 2025",
       category: "Sponsorship",
       image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/sponsorship-concept.jpg?updatedAt=1757364693139"
-    },
-    {
-      id: 6,
-      title: "Venue Confirmed: Kampala Serena Hotel",
-      excerpt: "We are pleased to confirm that the FOLICEA Summit 2025 will be held at the prestigious Kampala Serena Hotel in Uganda's capital city.",
-      date: "September 8, 2025",
-      category: "Venue",
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/images.jpg?updatedAt=1757370642158"
-    }
+
   ];
 
   const categories = [
