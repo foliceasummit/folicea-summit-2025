@@ -19,9 +19,12 @@ const buildCategories = (items: typeof allNews) => {
 };
 
 const NewsPage = () => {
-  const categories = buildCategories(allNews);
-  const featured = allNews.filter((i) => i.featured);
-  const regular = allNews.filter((i) => !i.featured);
+  // Sort all news by date (newest first)
+  const sortedAll = [...allNews].sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
+
+  const categories = buildCategories(sortedAll);
+  const featured = sortedAll.filter((i) => i.featured);
+  const regular = sortedAll.filter((i) => !i.featured);
 
   return (
     <div className="min-h-screen bg-gray-50">
