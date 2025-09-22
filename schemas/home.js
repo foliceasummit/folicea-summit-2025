@@ -112,9 +112,20 @@ export default {
             },
             {
               name: 'icon',
-              title: 'Icon Name',
+              title: 'Icon',
               type: 'string',
-              description: 'Name of the Lucide icon (e.g., "Users", "Star", "Calendar")'
+              options: {
+                list: [
+                  { title: 'Users', value: 'Users' },
+                  { title: 'Star', value: 'Star' },
+                  { title: 'Calendar', value: 'Calendar' },
+                  { title: 'Map Pin', value: 'MapPin' },
+                  { title: 'Trophy', value: 'Trophy' },
+                  { title: 'Globe', value: 'Globe' }
+                ],
+                layout: 'radio'
+              },
+              validation: Rule => Rule.required()
             }
           ]
         }

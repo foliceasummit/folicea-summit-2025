@@ -62,7 +62,7 @@ interface HomeProps {
 const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
   // Map icon strings to actual components
   const getIconComponent = (iconName: string) => {
-    const icons = {
+    const icons: Record<string, JSX.Element> = {
       Users: <Users className="w-8 h-8" />,
       Star: <Star className="w-8 h-8" />,
       Calendar: <Calendar className="w-8 h-8" />,
@@ -70,7 +70,7 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
       Trophy: <Trophy className="w-8 h-8" />,
       Globe: <Globe className="w-8 h-8" />
     };
-    return icons[iconName] || <Star className="w-8 h-8" />;
+    return icons[iconName] ?? <Star className="w-8 h-8" />;
   };
 
   // Default features if none are provided from Sanity
