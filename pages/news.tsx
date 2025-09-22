@@ -1,12 +1,38 @@
-'use client';
-
 import { motion } from 'framer-motion';
 import { Calendar, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import { newsItems as allNews } from '../data/newsData';
+import Image from 'next/image';
+import type { GetStaticProps } from 'next';
+import { getDocuments, urlFor } from '../lib/sanity.client';
+
+// News type aligned with Sanity schema
+export type NewsItem = {
+  _id: string;
+  title: string;
+  excerpt: string;
+  image?: any; // Sanity image object or string URL
+  date?: string; // YYYY-MM-DD
+  category?: string;
+  featured?: boolean;
+  slug?: { current: string };
+};
+
+interface Props {
+  news: NewsItem[];
+}
+
+function getImageSrc(image: any, w = 1600, h = 900): string {
+  if (!image) return '/favicon.svg';
+  if (typeof image === 'string') return image;
+  try {
+    return urlFor(image).width(w).height(h).url();
+  } catch {
+    return '/favicon.svg';
+  }
+}
 
 // Build dynamic category list with counts
-const buildCategories = (items: typeof allNews) => {
+const buildCategories = (items: NewsItem[]) => {
   const counts = items.reduce<Record<string, number>>((acc, item) => {
     const cat = item.category || 'General';
     acc[cat] = (acc[cat] || 0) + 1;
@@ -18,9 +44,12 @@ const buildCategories = (items: typeof allNews) => {
   return [{ name: 'All', count: items.length }, ...categories];
 };
 
-const NewsPage = () => {
-  // Sort all news by date (newest first)
-  const sortedAll = [...allNews].sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
+const NewsPage = ({ news }: Props) => {
+  const sortedAll = [...(news || [])].sort((a, b) => {
+    const da = a.date ? Date.parse(a.date) : 0;
+    const db = b.date ? Date.parse(b.date) : 0;
+    return db - da; // newest first
+  });
 
   const categories = buildCategories(sortedAll);
   const featured = sortedAll.filter((i) => i.featured);
@@ -58,22 +87,26 @@ const NewsPage = () => {
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Featured News</h2>
 
               {featured.map((item) => (
-                <div key={item.id} className="relative overflow-hidden rounded-3xl bg-white border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-2xl mb-8">
+                <div key={item._id} className="relative overflow-hidden rounded-3xl bg-white border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-2xl mb-8">
                   <div className="grid grid-cols-1 lg:grid-cols-2">
                     <div className="relative h-64 lg:h-full">
-                      <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                      <Image src={getImageSrc(item.image)} alt={item.title} fill className="object-cover" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/0 to-black/0" />
                       <div className="absolute top-4 left-4 flex gap-2">
-                        <span className="bg-liberian-red text-white px-3 py-1 rounded-full text-sm font-medium">{item.category}</span>
-                        <span className="bg-white/90 text-gray-900 px-3 py-1 rounded-full text-sm font-medium flex items-center">
-                          <Calendar className="w-4 h-4 mr-2" /> {item.date}
-                        </span>
+                        {item.category && (
+                          <span className="bg-liberian-red text-white px-3 py-1 rounded-full text-sm font-medium">{item.category}</span>
+                        )}
+                        {item.date && (
+                          <span className="bg-white/90 text-gray-900 px-3 py-1 rounded-full text-sm font-medium flex items-center">
+                            <Calendar className="w-4 h-4 mr-2" /> {item.date}
+                          </span>
+                        )}
                       </div>
                     </div>
                     <div className="p-8 flex flex-col justify-center">
                       <h3 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
                       <p className="text-gray-600 mb-6 leading-relaxed">{item.excerpt}</p>
-                      <Link href={`/news/${item.id}`} className="inline-flex items-center w-fit rounded-full bg-liberian-red text-white px-5 py-2.5 font-semibold shadow hover:bg-liberian-blue transition-colors">
+                      <Link href={`/news/${item.slug?.current || ''}`} className="inline-flex items-center w-fit rounded-full bg-liberian-red text-white px-5 py-2.5 font-semibold shadow hover:bg-liberian-blue transition-colors">
                         Read More <ArrowRight className="w-4 h-4 ml-2" />
                       </Link>
                     </div>
@@ -97,12 +130,12 @@ const NewsPage = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">News Categories</h2>
             <div className="flex flex-wrap justify-center gap-3">
               {categories.map((category) => (
-                <button
+                <span
                   key={category.name}
-                  className="px-5 py-2.5 rounded-full border border-gray-200 bg-gray-50 text-gray-700 hover:bg-liberian-red hover:text-white hover:border-liberian-red transition-all duration-300"
+                  className="px-5 py-2.5 rounded-full border border-gray-200 bg-gray-50 text-gray-700"
                 >
                   {category.name} ({category.count})
-                </button>
+                </span>
               ))}
             </div>
           </motion.div>
@@ -118,17 +151,19 @@ const NewsPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {regular.map((item, index) => (
                 <motion.div
-                  key={item.id}
+                  key={item._id}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.08 * index }}
                   className="group relative overflow-hidden rounded-2xl bg-white/70 supports-[backdrop-filter]:bg-white/60 backdrop-blur border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
                   <div className="relative aspect-[16/9]">
-                    <img src={item.image} alt={item.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <Image src={getImageSrc(item.image, 1200, 675)} alt={item.title} fill className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
                     <div className="absolute top-3 left-3">
-                      <span className="bg-liberian-red text-white px-3 py-1 rounded-full text-xs font-medium">{item.category}</span>
+                      {item.category && (
+                        <span className="bg-liberian-red text-white px-3 py-1 rounded-full text-xs font-medium">{item.category}</span>
+                      )}
                     </div>
                   </div>
                   <div className="p-5">
@@ -137,7 +172,7 @@ const NewsPage = () => {
                     </div>
                     <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2 line-clamp-2">{item.title}</h3>
                     <p className="text-gray-600 mb-4 line-clamp-3">{item.excerpt}</p>
-                    <Link href={`/news/${item.id}`} className="inline-flex items-center text-liberian-red hover:text-liberian-blue font-semibold">
+                    <Link href={`/news/${item.slug?.current || ''}`} className="inline-flex items-center text-liberian-red hover:text-liberian-blue font-semibold">
                       Read More <ArrowRight className="w-4 h-4 ml-2" />
                     </Link>
                   </div>
@@ -174,6 +209,16 @@ const NewsPage = () => {
       </section>
     </div>
   );
+};
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const news = await getDocuments('news');
+  return {
+    props: {
+      news: Array.isArray(news) ? news : [],
+    },
+    revalidate: 60,
+  };
 };
 
 export default NewsPage;

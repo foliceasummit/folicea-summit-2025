@@ -26,6 +26,13 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      // Allow Sanity hosted images
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        port: '',
+        pathname: '/images/**',
+      },
     ],
   },
 }

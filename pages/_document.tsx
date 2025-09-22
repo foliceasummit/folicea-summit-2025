@@ -33,6 +33,10 @@ export default function Document() {
         <meta name="twitter:title" content="FOLICEA Summit 2025" />
         <meta name="twitter:description" content="Federation of Liberian Communities in East Africa Summit" />
         <meta name="twitter:image" content="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <body>
         <Main />

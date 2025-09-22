@@ -1,9 +1,0 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background circle with white -->
-  <circle cx="16" cy="16" r="16" fill="white"/>
-  
-  <!-- FOLICEA Logo -->
-  <image href="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403" 
-         x="2" y="2" width="28" height="28" 
-         preserveAspectRatio="xMidYMid meet"/>
-</svg>

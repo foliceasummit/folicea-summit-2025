@@ -2,7 +2,6 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Favicon from '../components/Favicon';
 import '../styles/globals.css';
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -25,8 +24,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:description" content="Federation of Liberian Communities in East Africa Summit 2025" />
         <meta name="twitter:image" content="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403" />
       </Head>
-      
-      <Favicon />
       
       <div className="min-h-screen flex flex-col">
         <Header />

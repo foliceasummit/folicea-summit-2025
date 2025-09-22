@@ -1,22 +1,34 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Calendar, ArrowRight } from 'lucide-react';
-import { newsItems } from '../../data/newsData';
+import { getDocuments, getDocumentBySlug, urlFor } from '../../lib/sanity.client';
 
 type NewsItem = {
-  id: string;
+  _id: string;
   title: string;
   excerpt: string;
-  image: string;
-  date: string;
-  category: string;
+  image?: any;
+  date?: string;
+  category?: string;
   featured?: boolean;
-  content?: string;
+  slug?: { current: string };
+  content?: any; // Portable Text blocks
 };
 
 type Props = {
-  item: NewsItem;
+  item: NewsItem | null;
 };
+
+function getImageSrc(image: any, w = 1600, h = 900): string {
+  if (!image) return '/favicon.svg';
+  if (typeof image === 'string') return image;
+  try {
+    return urlFor(image).width(w).height(h).url();
+  } catch {
+    return '/favicon.svg';
+  }
+}
 
 export default function NewsDetailPage({ item }: Props) {
   if (!item) return null;
@@ -29,9 +41,13 @@ export default function NewsDetailPage({ item }: Props) {
           <h1 className="text-3xl md:text-4xl font-bold">{item.title}</h1>
           <div className="mt-3 flex items-center text-white/90">
             <Calendar className="w-4 h-4 mr-2" />
-            <span>{item.date}</span>
-            <span className="mx-2">•</span>
-            <span className="font-medium">{item.category}</span>
+            {item.date && <span>{item.date}</span>}
+            {item.category && (
+              <>
+                <span className="mx-2">•</span>
+                <span className="font-medium">{item.category}</span>
+              </>
+            )}
           </div>
         </div>
       </section>
@@ -41,19 +57,14 @@ export default function NewsDetailPage({ item }: Props) {
         <div className="container-custom">
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div className="relative w-full h-72 md:h-[28rem]">
-              <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+              <Image src={getImageSrc(item.image)} alt={item.title} fill className="object-cover" />
             </div>
             <div className="p-6 md:p-10 prose max-w-none">
               {item.excerpt && (
                 <p className="text-lg text-gray-700 mb-6">{item.excerpt}</p>
               )}
-              {item.content ? (
-                <div
-                  className="prose prose-lg"
-                  // Content comes from trusted source file
-                  dangerouslySetInnerHTML={{ __html: item.content }}
-                />
-              ) : (
+              {/* If you later add @portabletext/react, render item.content here */}
+              {!item.content && (
                 <p className="text-gray-600">Full story coming soon.</p>
               )}
             </div>
@@ -73,35 +84,27 @@ export default function NewsDetailPage({ item }: Props) {
   );
 }
 
-// Map numeric IDs from the restored listing to current string IDs
-const numericToStringId: Record<string, string> = {
-  "1": "registration-open-kampala-2025",
-  "2": "csc-leadership-w-praise-bloyuefloh",
-  "3": "partnership-four-liberian-communities",
-  "4": "summit-agenda-released",
-  "5": "sponsorship-opportunities",
-  // "6": "venue-confirmed" // No matching item in data; leaving unmapped
-};
-
 export const getStaticPaths: GetStaticPaths = async () => {
-  const stringPaths = newsItems.map((n) => ({ params: { id: n.id } }));
-  const numericPaths = Object.keys(numericToStringId).map((id) => ({ params: { id } }));
+  // Fetch all news to get slugs
+  const allNews = await getDocuments('news');
+  const paths = (Array.isArray(allNews) ? allNews : [])
+    .filter((n: any) => n?.slug?.current)
+    .map((n: any) => ({ params: { id: n.slug.current } }));
+
   return {
-    paths: [...stringPaths, ...numericPaths],
-    fallback: false,
+    paths,
+    fallback: 'blocking',
   };
 };
 
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
-  const rawId = context.params?.id as string;
-  const resolvedId = /^\d+$/.test(rawId) ? numericToStringId[rawId] : rawId;
-  const item = resolvedId ? newsItems.find((n) => n.id === resolvedId) || null : null;
+  const slug = context.params?.id as string;
+  const item = slug ? await getDocumentBySlug('news', slug) : null;
 
-  if (!item) {
-    return { notFound: true };
-  }
+  if (!item) return { notFound: true, revalidate: 60 };
 
   return {
     props: { item },
+    revalidate: 60,
   };
 };
