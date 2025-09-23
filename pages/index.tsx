@@ -5,7 +5,9 @@ import { Calendar, MapPin, Users, ArrowRight, Star, Trophy, Globe } from 'lucide
 import Countdown from '../components/Countdown';
 import HeroSlider from '../components/HeroSlider';
 import type { GetStaticProps } from 'next';
-import { urlFor, getSingleDocument, getDocuments } from '../lib/sanity.client';
+import localSponsors from '../data/sponsors';
+import partnersLocal from '../data/partners';
+import speakersLocal from '../data/speakers';
 
 // Define types for our data
 interface HomeData {
@@ -53,13 +55,22 @@ interface Partner {
   url: string;
 }
 
+interface Sponsor {
+  name: string;
+  url?: string;
+  logo?: any;
+  tier?: 'platinum' | 'gold' | 'silver' | 'bronze';
+  order?: number;
+}
+
 interface HomeProps {
   homeData: Partial<HomeData> | null;
   speakers: Speaker[];
   partners: Partner[];
+  sponsors: Sponsor[];
 }
 
-const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
+const HomePage = ({ homeData, speakers, partners, sponsors }: HomeProps) => {
   // Map icon strings to actual components
   const getIconComponent = (iconName: string) => {
     const icons: Record<string, JSX.Element> = {
@@ -143,15 +154,11 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
     { name: 'Liberian Community in Tanzania', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/tan%20logo.jpg?updatedAt=1757333452646', url: '#' },
   ];
 
-  // Sponsors (hardcoded for now)
-  const sponsors = [
-    { name: 'Sponsor 1', url: '#' },
-    { name: 'Sponsor 2', url: '#' },
-    { name: 'Sponsor 3', url: '#' },
-    { name: 'Sponsor 4', url: '#' },
-    { name: 'Sponsor 5', url: '#' },
-    { name: 'Sponsor 6', url: '#' },
-  ];
+  // Default sponsors if none are provided from Sanity
+  // Sponsors from local file (no Sanity needed)
+  const defaultSponsors: Sponsor[] = localSponsors as Sponsor[];
+
+  const sponsorsData = sponsors && sponsors.length > 0 ? sponsors : defaultSponsors;
 
   // Use data from Sanity or fallback to defaults
   const featuresData = (homeData?.features?.length ?? 0) > 0
@@ -169,7 +176,7 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
     <div>
       {/* Hero Section with Slider */}
       <section className="relative min-h-screen">
-        <HeroSlider slides={homeData?.heroSlides as any} />
+        <HeroSlider slides={[]} />
 
         {/* Hero Content Overlay */}
         <div className="absolute inset-0 z-10 flex flex-col justify-center pt-32 pb-8">
@@ -390,7 +397,7 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
               >
                 <div className="aspect-[4/3] relative overflow-hidden">
                   <Image
-                    src={typeof speaker.image === 'string' ? speaker.image : urlFor(speaker.image).url()}
+                    src={typeof speaker.image === 'string' ? speaker.image : '/favicon.svg'}
                     alt={speaker.name}
                     fill
                     className="object-cover transition-transform hover:scale-105"
@@ -449,12 +456,36 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
                 {/* If partner.logo is an asset from Sanity, urlFor; else assume URL */}
                 <div className="relative w-40 h-16">
                   <Image
-                    src={typeof partner.logo === 'string' ? partner.logo : urlFor(partner.logo).url()}
+                    src={typeof partner.logo === 'string' ? partner.logo : '/favicon.svg'}
                     alt={partner.name}
                     fill
                     className="object-contain"
                   />
                 </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Sponsors */}
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-8 sm:mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">Sponsors</h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">We thank our sponsors for their generous support</p>
+          </motion.div>
+
+          <div className="flex flex-wrap gap-3 justify-center">
+            {sponsorsData.map((s, i) => (
+              <a key={i} href={s.url ?? '#'} className="px-4 py-2 rounded-full border border-gray-200 bg-gray-50 text-gray-700 hover:bg-white">
+                {s.name}
               </a>
             ))}
           </div>
@@ -485,17 +516,19 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
 };
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-  const homeData = await getSingleDocument('home');
-  const speakers = await getDocuments('speaker');
-  const partners = await getDocuments('partner');
+  // Use local data only (no CMS)
+  const homeData = null;
+  const speakers = Array.isArray(speakersLocal) ? (speakersLocal as Speaker[]) : [];
+  const partners = Array.isArray(partnersLocal) ? (partnersLocal as Partner[]) : [];
+  const sponsors = Array.isArray(localSponsors) ? (localSponsors as Sponsor[]) : [];
 
   return {
     props: {
-      homeData: homeData || null,
-      speakers: Array.isArray(speakers) ? (speakers as Speaker[]) : [],
-      partners: Array.isArray(partners) ? (partners as Partner[]) : [],
+      homeData,
+      speakers,
+      partners,
+      sponsors,
     },
-    revalidate: 3600,
   };
 };
 

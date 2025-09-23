@@ -3,9 +3,10 @@ import { Calendar, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { GetStaticProps } from 'next';
-import { getDocuments, urlFor } from '../lib/sanity.client';
 
-// News type aligned with Sanity schema
+import { newsItems } from '../data/newsData';
+
+// News type for local data
 export type NewsItem = {
   _id: string;
   title: string;
@@ -21,14 +22,10 @@ interface Props {
   news: NewsItem[];
 }
 
-function getImageSrc(image: any, w = 1600, h = 900): string {
+function getImageSrc(image: any): string {
   if (!image) return '/favicon.svg';
   if (typeof image === 'string') return image;
-  try {
-    return urlFor(image).width(w).height(h).url();
-  } catch {
-    return '/favicon.svg';
-  }
+  return '/favicon.svg';
 }
 
 // Build dynamic category list with counts
@@ -158,7 +155,7 @@ const NewsPage = ({ news }: Props) => {
                   className="group relative overflow-hidden rounded-2xl bg-white/70 supports-[backdrop-filter]:bg-white/60 backdrop-blur border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
                   <div className="relative aspect-[16/9]">
-                    <Image src={getImageSrc(item.image, 1200, 675)} alt={item.title} fill className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <Image src={getImageSrc(item.image)} alt={item.title} fill className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
                     <div className="absolute top-3 left-3">
                       {item.category && (
@@ -212,12 +209,19 @@ const NewsPage = ({ news }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const news = await getDocuments('news');
+  const news = newsItems.map((n) => ({
+    _id: n.id,
+    title: n.title,
+    excerpt: n.excerpt,
+    image: n.image,
+    date: n.date,
+    category: n.category,
+    featured: n.featured || false,
+    slug: { current: n.id },
+  }));
+
   return {
-    props: {
-      news: Array.isArray(news) ? news : [],
-    },
-    revalidate: 60,
+    props: { news },
   };
 };
 

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import type { GetStaticProps } from 'next';
-import { getDocuments, urlFor } from '../lib/sanity.client';
+import partnersData from '../data/partners';
 
 export type Partner = {
   _id: string;
@@ -15,14 +15,10 @@ interface Props {
   partners: Partner[];
 }
 
-function getImageSrc(image: any, w = 400, h = 200): string {
+function getImageSrc(image: any): string {
   if (!image) return '/favicon.svg';
   if (typeof image === 'string') return image;
-  try {
-    return urlFor(image).width(w).height(h).url();
-  } catch {
-    return '/favicon.svg';
-  }
+  return '/favicon.svg';
 }
 
 const PartnersPage = ({ partners }: Props) => {
@@ -69,7 +65,7 @@ const PartnersPage = ({ partners }: Props) => {
                 className="flex items-center justify-center p-4 bg-gray-50 rounded-xl border border-gray-200 hover:shadow-md transition-shadow"
               >
                 <div className="relative w-32 h-16">
-                  <Image src={getImageSrc(p.logo, 400, 200)} alt={p.name} fill className="object-contain" />
+                  <Image src={getImageSrc(p.logo)} alt={p.name} fill className="object-contain" />
                 </div>
               </motion.a>
             ))}
@@ -94,12 +90,17 @@ const PartnersPage = ({ partners }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const partners = await getDocuments('partner');
+  const partners = (partnersData || []).map((p, idx) => ({
+    _id: `partner-${idx}`,
+    name: p.name,
+    logo: p.logo,
+    url: p.url,
+    ...(typeof p.order === 'number' ? { order: p.order } : {}),
+  }));
   return {
     props: {
-      partners: Array.isArray(partners) ? partners : [],
+      partners,
     },
-    revalidate: 60,
   };
 };
 

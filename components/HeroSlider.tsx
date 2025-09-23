@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { urlFor } from '../lib/sanity.client';
+// No CMS dependency
 
 interface Slide {
   image: any; // Sanity image or string URL
@@ -60,13 +60,13 @@ const HeroSlider = ({ slides = [] }: HeroSliderProps) => {
     img.onerror = () => setImageLoaded(false);
 
     const s = slidesToUse[currentSlide];
-    const imageUrl = typeof s.image === 'string' ? s.image : urlFor(s.image).url();
+    const imageUrl = typeof s.image === 'string' ? s.image : '';
     img.src = imageUrl;
   }, [currentSlide, slidesToUse]);
 
   const bgImageUrl = () => {
     const s = slidesToUse[currentSlide];
-    return typeof s.image === 'string' ? s.image : urlFor(s.image).url();
+    return typeof s.image === 'string' ? s.image : '';
   };
 
   return (

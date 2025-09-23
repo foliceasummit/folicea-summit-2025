@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import type { GetStaticProps } from 'next';
-import { getDocuments, urlFor } from '../lib/sanity.client';
+import speakersLocal from '../data/speakers';
 
-// Speaker type aligned with Sanity schema
+// Speaker type for local data
 export type Speaker = {
   name: string;
   title?: string;
@@ -22,11 +22,8 @@ interface SpeakersPageProps {
 function getImageSrc(image: any, w = 1200, h = 800): string {
   if (!image) return '/favicon.svg';
   if (typeof image === 'string') return image;
-  try {
-    return urlFor(image).width(w).height(h).url();
-  } catch {
-    return '/favicon.svg';
-  }
+  // For local data we expect string URLs; keep fallback icon if missing
+  return '/favicon.svg';
 }
 
 const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
@@ -49,46 +46,44 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-liberian-blue to-liberian-red">
         <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center text-white"
-          >
+          <div className="text-center text-white">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Featured Speakers</h1>
             <p className="text-xl md:text-2xl max-w-4xl mx-auto">
               Hear from distinguished leaders, experts, and community advocates who will share their insights and experiences at FOLICEA Summit 2025.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Featured Speakers */}
       <section className="section-padding">
         <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Special Guests of Honor</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">Distinguished leaders who will grace our inaugural summit with their presence</p>
-          </motion.div>
+          </div>
 
           {featuredSpeakers.length === 0 ? (
-            <p className="text-center text-gray-500">No featured speakers yet. Add some in Sanity Studio.</p>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Minimal placeholder cards to avoid empty state */}
+              {[0,1,2].map((i) => (
+                <div key={i} className="rounded-2xl p-[1px] bg-gradient-to-r from-liberian-blue/20 via-liberian-red/20 to-liberian-blue/20 shadow">
+                  <div className="relative bg-white rounded-2xl overflow-hidden">
+                    <div className="relative h-64 bg-gray-100" />
+                    <div className="p-4">
+                      <div className="h-4 w-40 bg-gray-200 rounded mb-2" />
+                      <div className="h-3 w-24 bg-gray-200 rounded" />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           ) : (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {featuredSpeakers.map((speaker, index) => (
-                <motion.div
+                <div
                   key={`${speaker.name}-${index}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group rounded-2xl p-[1px] bg-gradient-to-r from-liberian-blue/50 via-liberian-red/50 to-liberian-blue/50 shadow-xl hover:shadow-2xl transition-shadow"
+                  className="group rounded-2xl p-[1px] bg-gradient-to-r from-liberian-blue/50 via-liberian-red/50 to-liberian-blue/50 shadow-xl"
                 >
                   <div className="relative bg-white rounded-2xl overflow-hidden">
                     <div className="relative h-64">
@@ -99,7 +94,7 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           )}
@@ -109,29 +104,33 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
       {/* Additional Speakers */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Summit Speakers</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">Experts and leaders from various fields who will share their knowledge and insights</p>
-          </motion.div>
+          </div>
 
           {additionalSpeakers.length === 0 ? (
-            <p className="text-center text-gray-500">No additional speakers yet. Add some in Sanity Studio.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[0,1,2].map((i) => (
+                <div key={i} className="bg-gray-50 rounded-xl p-6">
+                  <div className="flex items-center space-x-4 mb-4">
+                    <div className="w-16 h-16 rounded-full bg-gray-200" />
+                    <div>
+                      <div className="h-4 w-32 bg-gray-200 rounded mb-2" />
+                      <div className="h-3 w-24 bg-gray-200 rounded" />
+                    </div>
+                  </div>
+                  <div className="h-3 w-full bg-gray-200 rounded mb-2" />
+                  <div className="h-3 w-2/3 bg-gray-200 rounded" />
+                </div>
+              ))}
+            </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {additionalSpeakers.map((speaker, index) => (
-                <motion.div
+                <div
                   key={`${speaker.name}-more-${index}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-gray-50 rounded-xl p-6 card-hover"
+                  className="bg-gray-50 rounded-xl p-6"
                 >
                   <div className="flex items-center space-x-4 mb-4">
                     <div className="relative w-16 h-16 rounded-full overflow-hidden">
@@ -159,7 +158,7 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
                       </div>
                     </div>
                   )}
-                </motion.div>
+                </div>
               ))}
             </div>
           )}
@@ -169,67 +168,37 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
       {/* Speaker Categories */}
       <section className="section-padding">
         <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Speaker Categories</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our speakers represent diverse expertise areas to provide comprehensive insights
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="text-center p-6 bg-white rounded-xl shadow-lg card-hover"
-            >
+            <div className="text-center p-6 bg-white rounded-xl shadow-lg">
               <div className="w-12 h-12 bg-liberian-red rounded-full mx-auto mb-4 flex items-center justify-center text-white font-bold text-lg">G</div>
               <h3 className="text-xl font-semibold mb-3">Government Leaders</h3>
               <p className="text-gray-600">High-ranking officials and policymakers sharing insights on governance and international relations.</p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-center p-6 bg-white rounded-xl shadow-lg card-hover"
-            >
+            <div className="text-center p-6 bg-white rounded-xl shadow-lg">
               <div className="w-12 h-12 bg-liberian-blue rounded-full mx-auto mb-4 flex items-center justify-center text-white font-bold text-lg">B</div>
               <h3 className="text-xl font-semibold mb-3">Business Leaders</h3>
               <p className="text-gray-600">Entrepreneurs and business executives sharing strategies for economic empowerment and growth.</p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="text-center p-6 bg-white rounded-xl shadow-lg card-hover"
-            >
+            <div className="text-center p-6 bg-white rounded-xl shadow-lg">
               <div className="w-12 h-12 bg-liberian-red rounded-full mx-auto mb-4 flex items-center justify-center text-white font-bold text-lg">C</div>
               <h3 className="text-xl font-semibold mb-3">Community Advocates</h3>
               <p className="text-gray-600">Community leaders and activists working to strengthen diaspora bonds and cultural preservation.</p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="text-center p-6 bg-white rounded-xl shadow-lg card-hover"
-            >
+            <div className="text-center p-6 bg-white rounded-xl shadow-lg">
               <div className="w-12 h-12 bg-liberian-blue rounded-full mx-auto mb-4 flex items-center justify-center text-white font-bold text-lg">A</div>
               <h3 className="text-xl font-semibold mb-3">Academic Experts</h3>
               <p className="text-gray-600">Researchers and scholars providing academic insights on diaspora studies and development.</p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -237,21 +206,14 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
       {/* CTA Section */}
       <section className="section-padding gradient-bg">
         <div className="container-custom text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Don't Miss These Inspiring Speakers</h2>
-            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-              Register now to hear from these distinguished speakers and be part of the conversation that will shape our community's future
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/registration" className="bg-white text-liberian-red hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105">Register Now</a>
-              <a href="/agenda" className="border-2 border-white text-white hover:bg-white hover:text-liberian-red font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300">View Agenda</a>
-            </div>
-          </motion.div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Don't Miss These Inspiring Speakers</h2>
+          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+            Register now to hear from these distinguished speakers and be part of the conversation that will shape our community's future
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/registration" className="bg-white text-liberian-red hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105">Register Now</a>
+            <a href="/agenda" className="border-2 border-white text-white hover:bg-white hover:text-liberian-red font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300">View Agenda</a>
+          </div>
         </div>
       </section>
     </div>
@@ -259,14 +221,13 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  // Fetch all speakers from Sanity
-  const speakers = await getDocuments('speaker');
+  // Use local speakers only (no CMS)
+  const speakers = Array.isArray(speakersLocal) ? speakersLocal : [];
 
   return {
     props: {
-      speakers: Array.isArray(speakers) ? speakers : [],
+      speakers,
     },
-    revalidate: 60, // ISR for freshness
   };
 };
 

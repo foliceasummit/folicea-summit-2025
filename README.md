@@ -97,6 +97,26 @@ The website uses Web3Forms for form handling:
 - **FAQs** (`/faqs`) - Frequently asked questions
 - **About** (`/about`) - About FOLICEA
 
+## 🗂️ Local Content Management (No CMS)
+All editable content is stored in code under the `data/` folder. Update these files to change site content:
+
+- `data/newsData.ts`: News items displayed on `/news` and `/news/[id]`.
+- `data/speakers.ts`: Speakers list for `/speakers` and homepage sections.
+- `data/partners.ts`: Partners list for `/partners` and homepage sections.
+- `data/sponsors.ts`: Sponsors list used across the site.
+
+### Image URLs
+- Use full URLs (e.g., CDN/ImageKit) or local files in `/public` (referenced as `/file.jpg`).
+- Components include fallbacks if an image is missing.
+
+### Adding New Content Types
+- Create a new file in `data/` (e.g., `data/faqs.ts`).
+- Import and use it in the page’s `getStaticProps`.
+
+### Build & Deploy
+- Content changes require a code commit and redeploy.
+- Static pages are generated at build time; no runtime CMS calls.
+
 ## 🚀 Deployment
 
 The website is deployed on Vercel:

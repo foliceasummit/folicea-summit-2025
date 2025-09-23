@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, ArrowRight } from 'lucide-react';
-import { getDocuments, getDocumentBySlug, urlFor } from '../../lib/sanity.client';
+import { newsItems } from '../../data/newsData';
 
 type NewsItem = {
   _id: string;
@@ -20,14 +20,10 @@ type Props = {
   item: NewsItem | null;
 };
 
-function getImageSrc(image: any, w = 1600, h = 900): string {
+function getImageSrc(image: any): string {
   if (!image) return '/favicon.svg';
   if (typeof image === 'string') return image;
-  try {
-    return urlFor(image).width(w).height(h).url();
-  } catch {
-    return '/favicon.svg';
-  }
+  return '/favicon.svg';
 }
 
 export default function NewsDetailPage({ item }: Props) {
@@ -85,26 +81,27 @@ export default function NewsDetailPage({ item }: Props) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // Fetch all news to get slugs
-  const allNews = await getDocuments('news');
-  const paths = (Array.isArray(allNews) ? allNews : [])
-    .filter((n: any) => n?.slug?.current)
-    .map((n: any) => ({ params: { id: n.slug.current } }));
-
-  return {
-    paths,
-    fallback: 'blocking',
-  };
+  const paths = newsItems.map((n) => ({ params: { id: n.id } }));
+  return { paths, fallback: 'blocking' };
 };
 
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
   const slug = context.params?.id as string;
-  const item = slug ? await getDocumentBySlug('news', slug) : null;
+  const src = newsItems.find((n) => n.id === slug);
 
-  if (!item) return { notFound: true, revalidate: 60 };
+  if (!src) return { notFound: true };
 
-  return {
-    props: { item },
-    revalidate: 60,
+  const item = {
+    _id: src.id,
+    title: src.title,
+    excerpt: src.excerpt,
+    image: src.image,
+    date: src.date,
+    category: src.category,
+    featured: src.featured || false,
+    slug: { current: src.id },
+    content: src.content,
   };
+
+  return { props: { item } };
 };
