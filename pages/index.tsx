@@ -487,8 +487,11 @@ const HomePage = ({ homeData, speakers, partners, sponsors }: HomeProps) => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {sponsorsData.map((s, i) => (
-              <div key={i} className="bg-white rounded-lg p-4 shadow-sm border border-gray-100 flex items-center gap-4">
-                <div className="relative w-16 h-16 flex-shrink-0">
+              <div
+                key={i}
+                className="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 transition-transform hover:shadow-xl hover:-translate-y-1"
+              >
+                <div className="relative h-24 w-full mb-4">
                   <Image
                     src={s.logo || 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403'}
                     alt={`${s.name} logo`}
@@ -496,10 +499,10 @@ const HomePage = ({ homeData, speakers, partners, sponsors }: HomeProps) => {
                     className="object-contain"
                   />
                 </div>
-                <div className="flex-1">
-                  <p className="font-semibold text-gray-900">{s.name}</p>
+                <div className="text-center">
+                  <p className="font-semibold text-gray-900 text-lg">{s.name}</p>
                   {s.url && (
-                    <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-sm text-liberian-red hover:underline">
+                    <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-sm text-liberian-red hover:underline break-words">
                       {s.url}
                     </a>
                   )}
