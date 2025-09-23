@@ -478,6 +478,15 @@ const HomePage = ({ homeData, speakers, partners, sponsors }: HomeProps) => {
             viewport={{ once: true }}
             className="text-center mb-8 sm:mb-12"
           >
+            <div className="mb-4 flex justify-center">
+              <Image
+                src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403"
+                alt="Sponsors Logo"
+                width={240}
+                height={80}
+                className="object-contain h-16 w-auto"
+              />
+            </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">Sponsors</h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">We thank our sponsors for their generous support</p>
           </motion.div>

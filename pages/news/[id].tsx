@@ -59,8 +59,10 @@ export default function NewsDetailPage({ item }: Props) {
               {item.excerpt && (
                 <p className="text-lg text-gray-700 mb-6">{item.excerpt}</p>
               )}
-              {/* If you later add @portabletext/react, render item.content here */}
-              {!item.content && (
+              {/* Render full story HTML content from local data */}
+              {item.content ? (
+                <div className="prose" dangerouslySetInnerHTML={{ __html: item.content }} />
+              ) : (
                 <p className="text-gray-600">Full story coming soon.</p>
               )}
             </div>

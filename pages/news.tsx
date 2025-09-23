@@ -86,7 +86,7 @@ const NewsPage = ({ news }: Props) => {
               {featured.map((item) => (
                 <div key={item._id} className="relative overflow-hidden rounded-3xl bg-white border border-gray-200 shadow-sm transition-all duration-300 hover:shadow-2xl mb-8">
                   <div className="grid grid-cols-1 lg:grid-cols-2">
-                    <div className="relative h-64 lg:h-full">
+                    <div className="relative h-80 lg:h-[28rem]">
                       <Image src={getImageSrc(item.image)} alt={item.title} fill className="object-cover" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/0 to-black/0" />
                       <div className="absolute top-4 left-4 flex gap-2">
