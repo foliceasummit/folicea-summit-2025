@@ -427,11 +427,13 @@ const HomePage = ({ homeData, speakers, partners, sponsors }: HomeProps) => {
             ))}
           </div>
 
-          <div className="text-center mt-8">
-            <Link href="/speakers" className="btn-primary">
-              View All Speakers
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Link>
+          <div className="mt-8">
+            <div className="flex justify-center">
+              <Link href="/speakers" className="btn-primary inline-flex items-center">
+                View All Speakers
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -454,7 +456,7 @@ const HomePage = ({ homeData, speakers, partners, sponsors }: HomeProps) => {
             {partnersData.map((partner, idx) => (
               <a key={idx} href={partner.url} target="_blank" rel="noopener noreferrer" className="bg-white rounded-lg p-4 shadow-sm border border-gray-100 flex items-center justify-center">
                 {/* If partner.logo is an asset from Sanity, urlFor; else assume URL */}
-                <div className="relative w-40 h-16">
+                <div className="relative w-40 h-24">
                   <Image
                     src={typeof partner.logo === 'string' ? partner.logo : '/favicon.svg'}
                     alt={partner.name}
@@ -478,24 +480,31 @@ const HomePage = ({ homeData, speakers, partners, sponsors }: HomeProps) => {
             viewport={{ once: true }}
             className="text-center mb-8 sm:mb-12"
           >
-            <div className="mb-4 flex justify-center">
-              <Image
-                src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403"
-                alt="Sponsors Logo"
-                width={240}
-                height={80}
-                className="object-contain h-16 w-auto"
-              />
-            </div>
+
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">Sponsors</h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">We thank our sponsors for their generous support</p>
           </motion.div>
 
-          <div className="flex flex-wrap gap-3 justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {sponsorsData.map((s, i) => (
-              <a key={i} href={s.url ?? '#'} className="px-4 py-2 rounded-full border border-gray-200 bg-gray-50 text-gray-700 hover:bg-white">
-                {s.name}
-              </a>
+              <div key={i} className="bg-white rounded-lg p-4 shadow-sm border border-gray-100 flex items-center gap-4">
+                <div className="relative w-16 h-16 flex-shrink-0">
+                  <Image
+                    src={s.logo || 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403'}
+                    alt={`${s.name} logo`}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="flex-1">
+                  <p className="font-semibold text-gray-900">{s.name}</p>
+                  {s.url && (
+                    <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-sm text-liberian-red hover:underline">
+                      {s.url}
+                    </a>
+                  )}
+                </div>
+              </div>
             ))}
           </div>
         </div>
