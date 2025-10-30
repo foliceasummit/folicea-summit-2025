@@ -11,27 +11,41 @@ export interface Speaker {
 }
 
 const speakers: Speaker[] = [
+  {
+    name: 'Hon. MacMillan Vaye',
+    title: 'National Chairman Emeritus, Liberian Community in Rwanda (LIBCOR)',
+    image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Hon.%20MacMillan%20Vaye.jpg?updatedAt=1761596038108',
+    featured: false,
+    order: 1,
+  },
+  {
+    name: 'Madam Grace Biah-Patrick',
+    title: 'Gender & Climate Change Focal Point, UNFCCC – Environment Protection Agency',
+    image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Madam%20Grace%20Biah-Patrick.jpg?updatedAt=1761596038136',
+    featured: false,
+    order: 2,
+  },
   // Special Guests of Honor (Featured)
   {
     name: 'Emmanuel Patrick',
     title: 'Acting Chairperson, FOLICEA & Former Chairperson, LIBCOR',
     image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/emmanuel%20P.jpg?updatedAt=1756227156834',
     featured: true,
-    order: 1,
+    order: 3,
   },
   {
     name: 'H.E. Distinguished Guest',
     title: 'Special Guest of Honor',
     image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
     featured: true,
-    order: 2,
+    order: 4,
   },
   {
     name: 'Hon. Distinguished Guest',
     title: 'Special Guest of Honor',
     image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
     featured: true,
-    order: 3,
+    order: 5,
   },
 
   // Summit Speakers (non-featured)
@@ -41,7 +55,7 @@ const speakers: Speaker[] = [
     image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
     topics: ['Panelist'],
     featured: false,
-    order: 4,
+    order: 6,
   },
   {
     name: 'Speaker B',
@@ -49,7 +63,7 @@ const speakers: Speaker[] = [
     image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
     topics: ['Panelist'],
     featured: false,
-    order: 5,
+    order: 7,
   },
   {
     name: 'Speaker C',
@@ -57,7 +71,7 @@ const speakers: Speaker[] = [
     image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
     topics: ['Panelist'],
     featured: false,
-    order: 6,
+    order: 8,
   },
   {
     name: 'Speaker D',
@@ -65,7 +79,7 @@ const speakers: Speaker[] = [
     image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
     topics: ['Panelist'],
     featured: false,
-    order: 7,
+    order: 9,
   },
   {
     name: 'Speaker E',
@@ -73,7 +87,7 @@ const speakers: Speaker[] = [
     image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
     topics: ['Panelist'],
     featured: false,
-    order: 8,
+    order: 10,
   },
   {
     name: 'Speaker F',
@@ -81,7 +95,7 @@ const speakers: Speaker[] = [
     image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
     topics: ['Panelist'],
     featured: false,
-    order: 9,
+    order: 11,
   },
 ]
 

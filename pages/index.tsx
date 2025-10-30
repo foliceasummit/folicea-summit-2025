@@ -5,7 +5,6 @@ import { Calendar, MapPin, Users, ArrowRight, Star, Trophy, Globe } from 'lucide
 import Countdown from '../components/Countdown';
 import HeroSlider from '../components/HeroSlider';
 import type { GetStaticProps } from 'next';
-import localSponsors from '../data/sponsors';
 import partnersLocal from '../data/partners';
 import speakersLocal from '../data/speakers';
 
@@ -55,22 +54,13 @@ interface Partner {
   url: string;
 }
 
-interface Sponsor {
-  name: string;
-  url?: string;
-  logo?: any;
-  tier?: 'platinum' | 'gold' | 'silver' | 'bronze';
-  order?: number;
-}
-
 interface HomeProps {
   homeData: Partial<HomeData> | null;
   speakers: Speaker[];
   partners: Partner[];
-  sponsors: Sponsor[];
 }
 
-const HomePage = ({ homeData, speakers, partners, sponsors }: HomeProps) => {
+const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
   // Map icon strings to actual components
   const getIconComponent = (iconName: string) => {
     const icons: Record<string, JSX.Element> = {
@@ -121,17 +111,17 @@ const HomePage = ({ homeData, speakers, partners, sponsors }: HomeProps) => {
   // Default speakers if none are provided from Sanity
   const defaultSpeakers: Speaker[] = [
     {
-      name: 'H.E.',
-      title: 'hhh',
-      image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
+      name: 'Hon. MacMillan Vaye',
+      title: 'National Chairman Emeritus, Liberian Community in Rwanda (LIBCOR)',
+      image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Hon.%20MacMillan%20Vaye.jpg?updatedAt=1761596038108',
       bio: '',
       topics: [],
       social: { linkedin: '#', twitter: '#' },
     },
     {
-      name: 'Hon.jjjj',
-      title: 'Sj',
-      image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
+      name: 'Madam Grace Biah-Patrick',
+      title: 'Gender & Climate Change Focal Point, UNFCCC – Environment Protection Agency',
+      image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Madam%20Grace%20Biah-Patrick.jpg?updatedAt=1761596038136',
       bio: '',
       topics: [],
       social: { linkedin: '#', twitter: '#' },
@@ -152,13 +142,8 @@ const HomePage = ({ homeData, speakers, partners, sponsors }: HomeProps) => {
     { name: 'Association of Liberians in Uganda', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/uganda%20logo.jpg?updatedAt=1757333453230', url: '#' },
     { name: 'Liberian Community in Kenya', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/kenya%20logo.jpg?updatedAt=1757333451766', url: '#' },
     { name: 'Liberian Community in Tanzania', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/tan%20logo.jpg?updatedAt=1757333452646', url: '#' },
+    { name: 'Empire TV', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/empire%20tv.png.jpg?updatedAt=1761596488173', url: '#' },
   ];
-
-  // Default sponsors if none are provided from Sanity
-  // Sponsors from local file (no Sanity needed)
-  const defaultSponsors: Sponsor[] = localSponsors as Sponsor[];
-
-  const sponsorsData = sponsors && sponsors.length > 0 ? sponsors : defaultSponsors;
 
   // Use data from Sanity or fallback to defaults
   const featuresData = (homeData?.features?.length ?? 0) > 0
@@ -438,7 +423,7 @@ const HomePage = ({ homeData, speakers, partners, sponsors }: HomeProps) => {
         </div>
       </section>
 
-      {/* Partner Organizations */}
+      {/* Partners */}
       <section className="py-12 sm:py-16 bg-gray-50">
         <div className="container-custom">
           <motion.div
@@ -448,67 +433,31 @@ const HomePage = ({ homeData, speakers, partners, sponsors }: HomeProps) => {
             viewport={{ once: true }}
             className="text-center mb-8 sm:mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">Partner Organizations</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">Partners</h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">Our valued partners supporting the Summit</p>
           </motion.div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center justify-center">
-            {partnersData.map((partner, idx) => (
-              <a key={idx} href={partner.url} target="_blank" rel="noopener noreferrer" className="bg-white rounded-lg p-4 shadow-sm border border-gray-100 flex items-center justify-center">
-                {/* If partner.logo is an asset from Sanity, urlFor; else assume URL */}
-                <div className="relative w-40 h-24">
-                  <Image
-                    src={typeof partner.logo === 'string' ? partner.logo : '/favicon.svg'}
-                    alt={partner.name}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Sponsors */}
-      <section className="py-12 sm:py-16 bg-white">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-8 sm:mb-12"
-          >
-
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">Sponsors</h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">We thank our sponsors for their generous support</p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sponsorsData.map((s, i) => (
-              <div
-                key={i}
-                className="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 transition-transform hover:shadow-xl hover:-translate-y-1"
-              >
-                <div className="relative h-24 w-full mb-4">
-                  <Image
-                    src={s.logo || 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403'}
-                    alt={`${s.name} logo`}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <div className="text-center">
-                  <p className="font-semibold text-gray-900 text-lg">{s.name}</p>
-                  {s.url && (
-                    <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-sm text-liberian-red hover:underline break-words">
-                      {s.url}
-                    </a>
-                  )}
-                </div>
-              </div>
-            ))}
+          <div className="overflow-hidden">
+            <div className="flex items-center gap-6 min-w-max animate-marquee">
+              {[...partnersData, ...partnersData].map((partner, idx) => (
+                <a
+                  key={`${partner.name}-${idx}`}
+                  href={partner.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white rounded-lg p-4 shadow-sm border border-gray-100 flex items-center justify-center flex-shrink-0"
+                >
+                  <div className="relative w-40 h-24">
+                    <Image
+                      src={typeof partner.logo === 'string' ? partner.logo : '/favicon.svg'}
+                      alt={partner.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -541,14 +490,12 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const homeData = null;
   const speakers = Array.isArray(speakersLocal) ? (speakersLocal as Speaker[]) : [];
   const partners = Array.isArray(partnersLocal) ? (partnersLocal as Partner[]) : [];
-  const sponsors = Array.isArray(localSponsors) ? (localSponsors as Sponsor[]) : [];
 
   return {
     props: {
       homeData,
       speakers,
       partners,
-      sponsors,
     },
   };
 };
