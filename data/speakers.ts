@@ -81,22 +81,6 @@ const speakers: Speaker[] = [
     featured: false,
     order: 9,
   },
-  {
-    name: 'Speaker E',
-    title: 'Panelist',
-    image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
-    topics: ['Panelist'],
-    featured: false,
-    order: 10,
-  },
-  {
-    name: 'Speaker F',
-    title: 'Panelist',
-    image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
-    topics: ['Panelist'],
-    featured: false,
-    order: 11,
-  },
 ]
 
 export default speakers

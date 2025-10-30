@@ -40,6 +40,7 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
 
   const featuredSpeakers = speakersSorted.filter(s => s.featured);
   const additionalSpeakers = speakersSorted.filter(s => !s.featured);
+  const summitSpeakers = additionalSpeakers.slice(0, 6);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -110,67 +111,90 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
             <p className="text-xs md:text-sm text-gray-500 uppercase tracking-[0.2em] mt-4">Topics and Panelist</p>
           </div>
 
-          {additionalSpeakers.length === 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[0,1,2].map((i) => (
-                <div key={i} className="bg-gray-50 rounded-xl p-6">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="w-16 h-16 rounded-full bg-gray-200" />
-                    <div>
-                      <div className="h-4 w-32 bg-gray-200 rounded mb-2" />
-                      <div className="h-3 w-24 bg-gray-200 rounded" />
-                    </div>
+          {summitSpeakers.length === 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+              {[0,1,2,3,4,5].map(i => (
+                <div key={i} className="relative bg-white rounded-3xl border border-gray-100 shadow-lg overflow-hidden animate-pulse">
+                  <div className="relative h-60 bg-gray-200" />
+                  <div className="p-6 space-y-4">
+                    <div className="h-4 w-2/3 bg-gray-200 rounded" />
+                    <div className="h-3 w-1/3 bg-gray-200 rounded" />
+                    <div className="h-3 w-full bg-gray-200 rounded" />
+                    <div className="h-3 w-1/2 bg-gray-200 rounded" />
+                    <div className="h-3 w-1/4 bg-gray-200 rounded" />
                   </div>
-                  <div className="h-3 w-full bg-gray-200 rounded mb-2" />
-                  <div className="h-3 w-2/3 bg-gray-200 rounded" />
                 </div>
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {additionalSpeakers.map((speaker, index) => (
-                <div
-                  key={`${speaker.name}-more-${index}`}
-                  className="bg-gray-50 rounded-xl p-6"
-                >
-                  <div className="flex items-center gap-6 mb-6">
-                    <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden shadow-lg">
-                      <Image src={getImageSrc(speaker.image, 256, 256)} alt={speaker.name || 'Speaker'} fill className="object-cover" />
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+              {summitSpeakers.map((speaker, index) => {
+                const socialEntries = Object.entries(speaker.social || {}).filter(([, value]) => typeof value === 'string' && value);
+                return (
+                  <div
+                    key={`${speaker.name}-summit-${index}`}
+                    className="relative group bg-white rounded-3xl border border-gray-100 shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                  >
+                    <div className="relative h-64 bg-gray-100">
+                      <Image src={getImageSrc(speaker.image, 512, 512)} alt={speaker.name || 'Speaker'} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900">{speaker.name}</h3>
-                    </div>
-                  </div>
-
-                  {speaker.bio && (
-                    <p className="text-gray-600 mb-6 text-sm">{speaker.bio}</p>
-                  )}
-
-                  <div className="space-y-4">
-                    {!!(speaker.topics && speaker.topics.length) && (
+                    <div className="p-6 sm:p-8 space-y-6">
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2 text-xs uppercase tracking-[0.2em]">Topics</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {speaker.topics!.map((topic, topicIndex) => (
-                            <span key={topicIndex} className="px-3 py-1 bg-liberian-blue/10 text-liberian-blue rounded-full text-xs md:text-sm">
-                              {topic}
-                            </span>
-                          ))}
+                        <p className="text-xs font-semibold text-gray-500 uppercase tracking-[0.3em] mb-2">Name</p>
+                        <p className="text-2xl font-semibold text-gray-900">{speaker.name}</p>
+                      </div>
+                      {speaker.title && (
+                        <div>
+                          <p className="text-xs font-semibold text-gray-500 uppercase tracking-[0.3em] mb-2">Title</p>
+                          <p className="text-lg text-liberian-red font-medium">{speaker.title}</p>
                         </div>
-                      </div>
-                    )}
-
-                    {speaker.title && (
+                      )}
                       <div>
-                        <h4 className="font-semibold text-gray-900 mb-2 text-xs uppercase tracking-[0.2em]">
-                          {speaker.title?.toLowerCase().includes('panelist') ? 'Panelist' : 'Title'}
-                        </h4>
-                        <p className="text-gray-600 text-sm">{speaker.title}</p>
+                        <p className="text-xs font-semibold text-gray-500 uppercase tracking-[0.3em] mb-2">Bio</p>
+                        <p className="text-sm text-gray-600 leading-relaxed">{speaker.bio || 'Bio coming soon.'}</p>
                       </div>
-                    )}
+                      <div>
+                        <p className="text-xs font-semibold text-gray-500 uppercase tracking-[0.3em] mb-2">Topics</p>
+                        {speaker.topics && speaker.topics.length ? (
+                          <div className="flex flex-wrap gap-2">
+                            {speaker.topics.map((topic, topicIndex) => (
+                              <span key={topicIndex} className="px-3 py-1 rounded-full bg-liberian-blue/10 text-liberian-blue text-xs md:text-sm">
+                                {topic}
+                              </span>
+                            ))}
+                          </div>
+                        ) : (
+                          <p className="text-sm text-gray-600">To be announced.</p>
+                        )}
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold text-gray-500 uppercase tracking-[0.3em] mb-2">Social</p>
+                        {socialEntries.length ? (
+                          <div className="flex flex-wrap gap-3">
+                            {socialEntries.map(([platform, url]) => {
+                              const formattedPlatform = platform.split(/[-_\s]/).map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(' ');
+                              return (
+                                <a
+                                  key={platform}
+                                  href={url as string}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-sm font-semibold text-liberian-blue hover:text-liberian-red transition-colors"
+                                >
+                                  {formattedPlatform}
+                                </a>
+                              );
+                            })}
+                          </div>
+                        ) : (
+                          <p className="text-sm text-gray-600">Not available.</p>
+                        )}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>
