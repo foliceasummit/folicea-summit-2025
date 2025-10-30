@@ -47,9 +47,9 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
       <section className="relative py-20 bg-gradient-to-r from-liberian-blue to-liberian-red">
         <div className="container-custom">
           <div className="text-center text-white">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Featured Speakers</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">Summit Speakers</h1>
             <p className="text-xl md:text-2xl max-w-4xl mx-auto">
-              Hear from distinguished leaders, experts, and community advocates who will share their insights and experiences at FOLICEA Summit 2025.
+              Experts and leaders from various fields who will share their knowledge and insights.
             </p>
           </div>
         </div>
@@ -106,7 +106,8 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Summit Speakers</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Experts and leaders from various fields who will share their knowledge and insights</p>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Experts and leaders from various fields who will share their knowledge and insights.</p>
+            <p className="text-xs md:text-sm text-gray-500 uppercase tracking-[0.2em] mt-4">Topics and Panelist</p>
           </div>
 
           {additionalSpeakers.length === 0 ? (
@@ -132,32 +133,42 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
                   key={`${speaker.name}-more-${index}`}
                   className="bg-gray-50 rounded-xl p-6"
                 >
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="relative w-16 h-16 rounded-full overflow-hidden">
-                      <Image src={getImageSrc(speaker.image, 128, 128)} alt={speaker.name || 'Speaker'} fill className="object-cover" />
+                  <div className="flex items-center gap-6 mb-6">
+                    <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden shadow-lg">
+                      <Image src={getImageSrc(speaker.image, 256, 256)} alt={speaker.name || 'Speaker'} fill className="object-cover" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900">{speaker.name}</h3>
-                      <p className="text-liberian-red font-medium">{speaker.title}</p>
+                      <h3 className="text-xl font-semibold text-gray-900">{speaker.name}</h3>
                     </div>
                   </div>
 
                   {speaker.bio && (
-                    <p className="text-gray-600 mb-4 text-sm">{speaker.bio}</p>
+                    <p className="text-gray-600 mb-6 text-sm">{speaker.bio}</p>
                   )}
 
-                  {!!(speaker.topics && speaker.topics.length) && (
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2 text-sm">Topics:</h4>
-                      <div className="flex flex-wrap gap-1">
-                        {speaker.topics!.map((topic, topicIndex) => (
-                          <span key={topicIndex} className="px-2 py-1 bg-liberian-blue/10 text-liberian-blue rounded-full text-xs">
-                            {topic}
-                          </span>
-                        ))}
+                  <div className="space-y-4">
+                    {!!(speaker.topics && speaker.topics.length) && (
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2 text-xs uppercase tracking-[0.2em]">Topics</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {speaker.topics!.map((topic, topicIndex) => (
+                            <span key={topicIndex} className="px-3 py-1 bg-liberian-blue/10 text-liberian-blue rounded-full text-xs md:text-sm">
+                              {topic}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  )}
+                    )}
+
+                    {speaker.title && (
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2 text-xs uppercase tracking-[0.2em]">
+                          {speaker.title?.toLowerCase().includes('panelist') ? 'Panelist' : 'Title'}
+                        </h4>
+                        <p className="text-gray-600 text-sm">{speaker.title}</p>
+                      </div>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>

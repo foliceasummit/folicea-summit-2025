@@ -113,7 +113,7 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
     {
       name: 'Hon. MacMillan Vaye',
       title: 'National Chairman Emeritus, Liberian Community in Rwanda (LIBCOR)',
-      image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Hon.%20MacMillan%20Vaye.jpg?updatedAt=1761596038108',
+      image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Hon.%20MacMillan%20Vaye.jpg?updatedAt=1761820319690',
       bio: '',
       topics: [],
       social: { linkedin: '#', twitter: '#' },
@@ -121,7 +121,7 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
     {
       name: 'Madam Grace Biah-Patrick',
       title: 'Gender & Climate Change Focal Point, UNFCCC – Environment Protection Agency',
-      image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Madam%20Grace%20Biah-Patrick.jpg?updatedAt=1761596038136',
+      image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Madam%20Grace%20Biah-Patrick.jpg?updatedAt=1761820263082',
       bio: '',
       topics: [],
       social: { linkedin: '#', twitter: '#' },

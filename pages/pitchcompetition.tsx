@@ -340,12 +340,16 @@ const PitchingCompetitionPage = () => {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Judges</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="bg-gray-50 rounded-xl p-6 shadow-lg text-center">
               <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403" alt="Judge" className="w-36 h-36 object-contain mx-auto" />
             </div>
             <div className="bg-gray-50 rounded-xl p-6 shadow-lg text-center">
               <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403" alt="Judge" className="w-36 h-36 object-contain mx-auto" />
+            </div>
+            <div className="bg-gray-50 rounded-xl p-6 shadow-lg text-center">
+              <img src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Madam%20Grace%20Biah-Patrick.jpg?updatedAt=1761596038136" alt="Madam Grace Biah-Patrick" className="w-36 h-36 object-cover rounded-full mx-auto" />
+              <p className="mt-4 text-lg font-semibold text-gray-900">Madam Grace Biah-Patrick</p>
             </div>
           </div>
         </div>
