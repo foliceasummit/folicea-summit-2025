@@ -134,11 +134,16 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
                     key={`${speaker.name}-summit-${index}`}
                     className="relative group bg-white rounded-3xl border border-gray-100 shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
                   >
-                    <div className="relative h-64 bg-gray-100">
-                      <Image src={getImageSrc(speaker.image, 512, 512)} alt={speaker.name || 'Speaker'} fill className="object-cover object-top transition-transform duration-500 group-hover:scale-105" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-                    <div className="p-6 sm:p-8 space-y-6">
+                    <div className="p-6 sm:p-8 text-center space-y-4">
+                      <div className="flex justify-center">
+                        <div className="relative w-32 h-32 rounded-full overflow-hidden bg-gray-100 shadow-md">
+                          <Image src={getImageSrc(speaker.image, 512, 512)} alt={speaker.name || 'Speaker'} fill className="object-cover" />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900">{speaker.name}</h3>
+                        {speaker.title && <p className="text-sm text-liberian-red font-medium">{speaker.title}</p>}
+                      </div>
                       <div>
                         <p className="text-xs font-semibold text-gray-500 uppercase tracking-[0.3em] mb-2">Bio</p>
                         <p className="text-sm text-gray-600 leading-relaxed">{speaker.bio || 'Bio coming soon.'}</p>
