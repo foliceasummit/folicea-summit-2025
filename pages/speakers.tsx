@@ -136,7 +136,7 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
                   >
                     <div className="p-6 sm:p-8 text-center space-y-4">
                       <div className="flex justify-center">
-                        <div className="relative w-32 h-32 rounded-full overflow-hidden bg-gray-100 shadow-md">
+                        <div className="relative w-40 h-40 rounded-full overflow-hidden bg-gray-100 shadow-md">
                           <Image src={getImageSrc(speaker.image, 512, 512)} alt={speaker.name || 'Speaker'} fill className="object-cover" />
                         </div>
                       </div>
