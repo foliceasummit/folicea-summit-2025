@@ -106,9 +106,8 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
       <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Summit Speakers</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Summit Speakers & Panelists</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">Experts and leaders from various fields who will share their knowledge and insights.</p>
-            <p className="text-xs md:text-sm text-gray-500 uppercase tracking-[0.2em] mt-4">Topics and Panelist</p>
           </div>
 
           {summitSpeakers.length === 0 ? (
@@ -136,60 +135,13 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
                     className="relative group bg-white rounded-3xl border border-gray-100 shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
                   >
                     <div className="relative h-64 bg-gray-100">
-                      <Image src={getImageSrc(speaker.image, 512, 512)} alt={speaker.name || 'Speaker'} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                      <Image src={getImageSrc(speaker.image, 512, 512)} alt={speaker.name || 'Speaker'} fill className="object-cover object-top transition-transform duration-500 group-hover:scale-105" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
                     <div className="p-6 sm:p-8 space-y-6">
                       <div>
-                        <p className="text-xs font-semibold text-gray-500 uppercase tracking-[0.3em] mb-2">Name</p>
-                        <p className="text-2xl font-semibold text-gray-900">{speaker.name}</p>
-                      </div>
-                      {speaker.title && (
-                        <div>
-                          <p className="text-xs font-semibold text-gray-500 uppercase tracking-[0.3em] mb-2">Title</p>
-                          <p className="text-lg text-liberian-red font-medium">{speaker.title}</p>
-                        </div>
-                      )}
-                      <div>
                         <p className="text-xs font-semibold text-gray-500 uppercase tracking-[0.3em] mb-2">Bio</p>
                         <p className="text-sm text-gray-600 leading-relaxed">{speaker.bio || 'Bio coming soon.'}</p>
-                      </div>
-                      <div>
-                        <p className="text-xs font-semibold text-gray-500 uppercase tracking-[0.3em] mb-2">Topics</p>
-                        {speaker.topics && speaker.topics.length ? (
-                          <div className="flex flex-wrap gap-2">
-                            {speaker.topics.map((topic, topicIndex) => (
-                              <span key={topicIndex} className="px-3 py-1 rounded-full bg-liberian-blue/10 text-liberian-blue text-xs md:text-sm">
-                                {topic}
-                              </span>
-                            ))}
-                          </div>
-                        ) : (
-                          <p className="text-sm text-gray-600">To be announced.</p>
-                        )}
-                      </div>
-                      <div>
-                        <p className="text-xs font-semibold text-gray-500 uppercase tracking-[0.3em] mb-2">Social</p>
-                        {socialEntries.length ? (
-                          <div className="flex flex-wrap gap-3">
-                            {socialEntries.map(([platform, url]) => {
-                              const formattedPlatform = platform.split(/[-_\s]/).map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(' ');
-                              return (
-                                <a
-                                  key={platform}
-                                  href={url as string}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="text-sm font-semibold text-liberian-blue hover:text-liberian-red transition-colors"
-                                >
-                                  {formattedPlatform}
-                                </a>
-                              );
-                            })}
-                          </div>
-                        ) : (
-                          <p className="text-sm text-gray-600">Not available.</p>
-                        )}
                       </div>
                     </div>
                   </div>
