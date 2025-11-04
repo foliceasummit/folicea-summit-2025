@@ -452,24 +452,31 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 rounded-xl p-6 shadow-sm border border-gray-100 text-center"
+                className="group relative bg-gradient-to-br from-white via-gray-50 to-white rounded-2xl p-8 shadow-lg border border-gray-200 text-center overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
               >
-                <a
-                  href={sponsor.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <div className="relative w-full h-32 mb-4">
+                <div className="absolute inset-0 bg-gradient-to-br from-liberian-blue/5 via-transparent to-liberian-red/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative z-10">
+                  <div className="relative w-full h-40 mb-6">
                     <Image
                       src={typeof sponsor.logo === 'string' ? sponsor.logo : '/favicon.svg'}
                       alt={sponsor.name}
                       fill
-                      className="object-contain"
+                      className="object-contain transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
-                  <p className="text-sm text-gray-600 hover:text-liberian-red transition-colors">{sponsor.name}</p>
-                </a>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">{sponsor.name}</h3>
+                  <a
+                    href={sponsor.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-liberian-blue to-liberian-red text-white text-sm font-medium rounded-lg hover:from-liberian-red hover:to-liberian-blue transition-all duration-300 transform hover:scale-105 shadow-md"
+                  >
+                    Visit Website
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
               </motion.div>
             ))}
           </div>
