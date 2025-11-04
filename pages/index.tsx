@@ -145,6 +145,13 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
     { name: 'Empire TV', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/empire%20tv.png.jpg?updatedAt=1761596488173', url: '#' },
   ];
 
+  // Default sponsors
+  const defaultSponsors: Partner[] = [
+    { name: 'Brownerica', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Brownerica.png?updatedAt=1762242409473', url: '#' },
+    { name: "Bel's Beauty", logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/bel\'s%20beauty.jpg?updatedAt=1762242408469', url: '#' },
+    { name: "Charlotte's Kitchen", logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/charlottes%20kitchen.jpg?updatedAt=1762242408305', url: '#' },
+  ];
+
   // Use data from Sanity or fallback to defaults
   const featuresData = (homeData?.features?.length ?? 0) > 0
     ? (homeData!.features as NonNullable<HomeData['features']>).map((feature) => ({
@@ -419,6 +426,52 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sponsors */}
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-8 sm:mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">Sponsors</h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">Our generous sponsors making this Summit possible</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {defaultSponsors.map((sponsor, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gray-50 rounded-xl p-6 shadow-sm border border-gray-100 text-center"
+              >
+                <a
+                  href={sponsor.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <div className="relative w-full h-32 mb-4">
+                    <Image
+                      src={typeof sponsor.logo === 'string' ? sponsor.logo : '/favicon.svg'}
+                      alt={sponsor.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <p className="text-sm text-gray-600 hover:text-liberian-red transition-colors">{sponsor.name}</p>
+                </a>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
