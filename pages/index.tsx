@@ -319,11 +319,11 @@ const HomePage = ({ speakers, partners }: HomeProps) => {
               className="flex"
               animate={{
                 x: ['0%', '-100%'],
+                rotate: [0, 5, -5, 0],
               }}
               transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: 'linear',
+                x: { duration: 20, repeat: Infinity, ease: 'linear' },
+                rotate: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
               }}
             >
               {[
@@ -437,7 +437,7 @@ const HomePage = ({ speakers, partners }: HomeProps) => {
                     src={typeof speaker.image === 'string' ? speaker.image : '/favicon.svg'}
                     alt={speaker.name}
                     fill
-                    className="object-top transition-transform hover:scale-105"
+                    className="object-cover transition-transform hover:scale-105"
                   />
                 </div>
                 <div className="p-6">

@@ -28,7 +28,7 @@ const speakers: Speaker[] = [
   // Special Guests of Honor (Featured)
   {
     name: 'Hon. Ernest Duku Jallah',
-    title: 'Special Guest and Panelist',
+    title: 'President Federation of Liberian Youth (FLY)',
     image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Hon.%20Ernest%20Duku%20Jallah%20Special%20Guest%20and%20Panelist.jpg?updatedAt=1762524072169',
     featured: true,
     order: 3,
