@@ -27,9 +27,9 @@ const speakers: Speaker[] = [
   },
   // Special Guests of Honor (Featured)
   {
-    name: 'Emmanuel Patrick',
-    title: 'Acting Chairperson, FOLICEA & Former Chairperson, LIBCOR',
-    image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/emmanuel%20P.jpg?updatedAt=1756227156834',
+    name: 'Hon. Ernest Duku Jallah',
+    title: 'Special Guest and Panelist',
+    image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Hon.%20Ernest%20Duku%20Jallah%20Special%20Guest%20and%20Panelist.jpg?updatedAt=1762524072169',
     featured: true,
     order: 3,
   },
@@ -80,6 +80,22 @@ const speakers: Speaker[] = [
     topics: ['Panelist'],
     featured: false,
     order: 9,
+  },
+  {
+    name: 'Bryant Lessor Rogers',
+    title: 'Founder and CEO of Rozeland Bar & Restaurant (Uganda) and the Founder and CEO of ROG Group of Companies Inc (Liberia)',
+    image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Bryant%20Lessor%20RogersFounder%20and%20CEO%20of%20Rozeland%20Bar%20&%20Restaurant%20(Uganda)%20and%20the%20Founder%20and%20CEO%20of%20ROG%20Group%20of%20Companies%20Inc%20(Liberia)..jpg?updatedAt=1762524072136',
+    topics: ['Entrepreneurship'],
+    featured: false,
+    order: 10,
+  },
+  {
+    name: 'Patrick F. Wee',
+    title: 'Montserrado County Coordinator Federation of Liberian Youth (FLY)',
+    image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/WhatsApp%20Image%202025-11-05%20at%2016.48.41_43ef9185.jpg?updatedAt=1762446345947',
+    topics: ['Youth Leadership'],
+    featured: false,
+    order: 11,
   },
 ]
 

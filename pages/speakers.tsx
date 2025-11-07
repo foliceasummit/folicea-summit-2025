@@ -144,10 +144,12 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
                         <h3 className="text-xl font-bold text-gray-900">{speaker.name}</h3>
                         {speaker.title && <p className="text-sm text-liberian-red font-medium">{speaker.title}</p>}
                       </div>
+                      {speaker.bio && (
                       <div>
                         <p className="text-xs font-semibold text-gray-500 uppercase tracking-[0.3em] mb-2">Bio</p>
-                        <p className="text-sm text-gray-600 leading-relaxed">{speaker.bio || 'Bio coming soon.'}</p>
+                        <p className="text-sm text-gray-600 leading-relaxed">{speaker.bio}</p>
                       </div>
+                      )}
                     </div>
                   </div>
                 );

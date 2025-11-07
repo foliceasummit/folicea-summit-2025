@@ -127,9 +127,9 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
       social: { linkedin: '#', twitter: '#' },
     },
     {
-      name: 'Emmanuel Patrick',
-      title: 'Acting Chairperson, FOLICEA & Former Chairperson, LIBCOR',
-      image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/emmanuel%20P.jpg?updatedAt=1756227156834',
+      name: 'Hon. Ernest Duku Jallah',
+      title: 'President Federation of Liberian Youth (FLY)',
+      image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Hon.%20Ernest%20Duku%20Jallah%20Special%20Guest%20and%20Panelist.jpg?updatedAt=1762524072169',
       bio: '',
       topics: [],
       social: { linkedin: '#', twitter: '#' },
@@ -150,6 +150,7 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
     { name: 'Brownerica', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Brownerica.png?updatedAt=1762242409473', url: '#' },
     { name: "Bel's Beauty", logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/bel\'s%20beauty.jpg?updatedAt=1762242408469', url: '#' },
     { name: "Charlotte's Kitchen", logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/charlottes%20kitchen.jpg?updatedAt=1762242408305', url: '#' },
+    { name: 'Rozeland Bar & Restaurant (Uganda)', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Rozeland%20Bar%20&%20Restaurant%20(Uganda).jpg?updatedAt=1762524071879', url: '#' },
   ];
 
   // Use data from Sanity or fallback to defaults
@@ -322,6 +323,59 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
             >
               Contact Us
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Summit Promotion Materials Section */}
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-8 sm:mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Summit Promotion Materials
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover the exclusive giveaways and materials prepared for FOLICEA Summit 2025 attendees.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            {[
+              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/eric.png?updatedAt=1762525115294',
+              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/C.kitchen.png?updatedAt=1762525115934',
+              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/bel\'s.png?updatedAt=1762525114947',
+              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/gift%20bag%20w.png?updatedAt=1762446349951',
+              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/T-shirt3.png?updatedAt=1762446350686',
+              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/books.png?updatedAt=1762446347607',
+              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Gift%20bag.jpg?updatedAt=1762446346275',
+              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/EDJ.png?updatedAt=1762525120001',
+              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/BR.png?updatedAt=1762525119883',
+              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/FDB.png?updatedAt=1762525119487',
+              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/PFW.png?updatedAt=1762525119587',
+              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/NTw.png?updatedAt=1762525310119',
+            ].map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="relative aspect-square overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <Image
+                  src={image}
+                  alt={`Promotion material ${index + 1}`}
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
