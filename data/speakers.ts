@@ -34,18 +34,25 @@ const speakers: Speaker[] = [
     order: 3,
   },
   {
+    name: 'Chairman Emmanuel Patrick',
+    title: 'Chairman FOLICEA',
+    image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Chairman%20Emmanuel%20Patrick.jpg?updatedAt=1757347430203',
+    featured: true,
+    order: 4,
+  },
+  {
     name: 'H.E. Distinguished Guest',
     title: 'Special Guest of Honor',
     image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
     featured: true,
-    order: 4,
+    order: 5,
   },
   {
     name: 'Hon. Distinguished Guest',
     title: 'Special Guest of Honor',
     image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
     featured: true,
-    order: 5,
+    order: 6,
   },
 
   // Summit Speakers (non-featured)

@@ -88,7 +88,7 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
                 >
                   <div className="relative bg-white rounded-2xl overflow-hidden">
                     <div className="relative h-64">
-                      <Image src={getImageSrc(speaker.image, 1200, 800)} alt={speaker.name || 'Speaker'} fill className="object-cover" />
+                      <Image src={getImageSrc(speaker.image, 1200, 800)} alt={speaker.name || 'Speaker'} fill className="object-top" />
                       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-4">
                         <h3 className="text-white text-lg font-bold">{speaker.name}</h3>
                         <p className="text-white/90 text-sm">{speaker.title}</p>

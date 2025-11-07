@@ -4,34 +4,10 @@ import { motion } from 'framer-motion';
 import { Calendar, MapPin, Users, ArrowRight, Star, Trophy, Globe } from 'lucide-react';
 import Countdown from '../components/Countdown';
 import HeroSlider from '../components/HeroSlider';
-import type { GetStaticProps } from 'next';
 import partnersLocal from '../data/partners';
 import speakersLocal from '../data/speakers';
 
 // Define types for our data
-interface HomeData {
-  title: string;
-  subtitle: string;
-  heroSlides: Array<{
-    image: any;
-    alt: string;
-  }>;
-  eventDate: string;
-  eventVenue: string;
-  eventAttendees: string;
-  welcomeTitle: string;
-  welcomeText: string;
-  summitTheme: string;
-  themePoints: Array<{
-    title: string;
-    description: string;
-  }>;
-  features: Array<{
-    title: string;
-    description: string;
-    icon: string;
-  }>;
-}
 
 interface Speaker {
   _id?: string;
@@ -55,12 +31,11 @@ interface Partner {
 }
 
 interface HomeProps {
-  homeData: Partial<HomeData> | null;
   speakers: Speaker[];
   partners: Partner[];
 }
 
-const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
+const HomePage = ({ speakers, partners }: HomeProps) => {
   // Map icon strings to actual components
   const getIconComponent = (iconName: string) => {
     const icons: Record<string, JSX.Element> = {
@@ -153,14 +128,8 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
     { name: 'Rozeland Bar & Restaurant (Uganda)', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Rozeland%20Bar%20&%20Restaurant%20(Uganda).jpg?updatedAt=1762524071879', url: '#' },
   ];
 
-  // Use data from Sanity or fallback to defaults
-  const featuresData = (homeData?.features?.length ?? 0) > 0
-    ? (homeData!.features as NonNullable<HomeData['features']>).map((feature) => ({
-        icon: getIconComponent(feature.icon),
-        title: feature.title,
-        description: feature.description,
-      }))
-    : defaultFeatures;
+  // Use default features
+  const featuresData = defaultFeatures;
 
   const speakersData = speakers?.length > 0 ? speakers : defaultSpeakers;
   const partnersData = partners?.length > 0 ? partners : defaultPartners;
@@ -183,11 +152,11 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
               {/* Main Title */}
               <div className="mb-8">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6">
-                  {homeData?.title || 'FOLICEA Summit 2025'}
+                  FOLICEA Summit 2025
                 </h1>
 
                 <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed">
-                  {homeData?.subtitle || 'Federation of Liberian Communities in East Africa'}
+                  Federation of Liberian Communities in East Africa
                 </p>
               </div>
 
@@ -230,7 +199,7 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
             >
               <Calendar className="w-6 h-6 mx-auto mb-2 text-white/90" />
               <h3 className="text-base sm:text-lg font-semibold mb-1">Date</h3>
-              <p className="text-xs sm:text-sm text-white/90">{homeData?.eventDate || 'November 28 - 30, 2025'}</p>
+              <p className="text-xs sm:text-sm text-white/90">November 28 - 30, 2025</p>
             </motion.div>
 
             <motion.div
@@ -242,7 +211,7 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
             >
               <MapPin className="w-6 h-6 mx-auto mb-2 text-white/90" />
               <h3 className="text-base sm:text-lg font-semibold mb-1">Venue</h3>
-              <p className="text-xs sm:text-sm text-white/90">{homeData?.eventVenue || 'Kampala, Uganda'}</p>
+              <p className="text-xs sm:text-sm text-white/90">Kampala, Uganda</p>
             </motion.div>
 
             <motion.div
@@ -254,7 +223,7 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
             >
               <Users className="w-6 h-6 mx-auto mb-2 text-white/90" />
               <h3 className="text-base sm:text-lg font-semibold mb-1">Attendees</h3>
-              <p className="text-xs sm:text-sm text-white/90">{homeData?.eventAttendees || 'Liberians across East Africa & Friends'}</p>
+              <p className="text-xs sm:text-sm text-white/90">Liberians across East Africa & Friends</p>
             </motion.div>
           </div>
         </div>
@@ -271,10 +240,10 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              {homeData?.welcomeTitle || 'Welcome to the FOLICEA Summit'}
+              Welcome to the FOLICEA Summit
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              {homeData?.welcomeText || 'The leading gathering for Liberians in East Africa, fostering unity, networking, and community development.'}
+              The leading gathering for Liberians in East Africa, fostering unity, networking, and community development.
             </p>
           </motion.div>
 
@@ -287,16 +256,16 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
           >
             <h3 className="text-3xl font-bold text-gray-900 mb-4 text-center">Summit Theme</h3>
             <p className="text-xl md:text-2xl text-gray-800 text-center max-w-4xl mx-auto mb-6 font-semibold">
-              {homeData?.summitTheme || '“From Diaspora to Homeland: Strengthening Community Ties for National Development”'}
+              "From Diaspora to Homeland: Strengthening Community Ties for National Development"
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {(homeData?.themePoints || [
+              {[
                 { title: 'Unity and Representation', description: 'Of the Liberian diaspora' },
                 { title: 'Diaspora Investment', description: 'And economic empowerment' },
                 { title: 'Entrepreneurship & Innovation', description: 'Tech-driven solutions' },
                 { title: 'Democratic Governance', description: 'And strategic planning' },
                 { title: 'Leadership Elections', description: 'Institutional strengthening' },
-              ]).map((point, index) => (
+              ].map((point, index) => (
                 <div key={index} className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex items-start gap-3">
                   <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-liberian-red/10 text-liberian-red font-semibold">{index + 1}</span>
                   <div>
@@ -345,37 +314,59 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-            {[
-              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/eric.png?updatedAt=1762525115294',
-              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/C.kitchen.png?updatedAt=1762525115934',
-              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/bel\'s.png?updatedAt=1762525114947',
-              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/gift%20bag%20w.png?updatedAt=1762446349951',
-              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/T-shirt3.png?updatedAt=1762446350686',
-              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/books.png?updatedAt=1762446347607',
-              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Gift%20bag.jpg?updatedAt=1762446346275',
-              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/EDJ.png?updatedAt=1762525120001',
-              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/BR.png?updatedAt=1762525119883',
-              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/FDB.png?updatedAt=1762525119487',
-              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/PFW.png?updatedAt=1762525119587',
-              'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/NTw.png?updatedAt=1762525310119',
-            ].map((image, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="relative aspect-square overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <Image
-                  src={image}
-                  alt={`Promotion material ${index + 1}`}
-                  fill
-                  className="object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </motion.div>
-            ))}
+          <div className="relative overflow-hidden">
+            <motion.div
+              className="flex"
+              animate={{
+                x: ['0%', '-100%'],
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: 'linear',
+              }}
+            >
+              {[
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/eric.png?updatedAt=1762525115294',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/C.kitchen.png?updatedAt=1762525115934',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/bel\'s.png?updatedAt=1762525114947',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/gift%20bag%20w.png?updatedAt=1762446349951',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/T-shirt3.png?updatedAt=1762446350686',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/books.png?updatedAt=1762446347607',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Gift%20bag.jpg?updatedAt=1762446346275',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/EDJ.png?updatedAt=1762525120001',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/BR.png?updatedAt=1762525119883',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/FDB.png?updatedAt=1762525119487',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/PFW.png?updatedAt=1762525119587',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/NTw.png?updatedAt=1762525310119',
+              ].concat([
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/eric.png?updatedAt=1762525115294',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/C.kitchen.png?updatedAt=1762525115934',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/bel\'s.png?updatedAt=1762525114947',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/gift%20bag%20w.png?updatedAt=1762446349951',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/T-shirt3.png?updatedAt=1762446350686',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/books.png?updatedAt=1762446347607',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Gift%20bag.jpg?updatedAt=1762446346275',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/EDJ.png?updatedAt=1762525120001',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/BR.png?updatedAt=1762525119883',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/FDB.png?updatedAt=1762525119487',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/PFW.png?updatedAt=1762525119587',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/NTw.png?updatedAt=1762525310119',
+              ]).map((image, index) => (
+                <motion.div
+                  key={index}
+                  className="flex-shrink-0 w-64 h-64 mx-4 relative overflow-hidden rounded-lg shadow-lg"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <Image
+                    src={image}
+                    alt={`Promotion material ${(index % 12) + 1}`}
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
@@ -446,7 +437,7 @@ const HomePage = ({ homeData, speakers, partners }: HomeProps) => {
                     src={typeof speaker.image === 'string' ? speaker.image : '/favicon.svg'}
                     alt={speaker.name}
                     fill
-                    className="object-cover transition-transform hover:scale-105"
+                    className="object-top transition-transform hover:scale-105"
                   />
                 </div>
                 <div className="p-6">
