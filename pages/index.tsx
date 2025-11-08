@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { GetStaticProps } from 'next';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Users, ArrowRight, Star, Trophy, Globe } from 'lucide-react';
 import Countdown from '../components/Countdown';
