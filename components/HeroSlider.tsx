@@ -20,6 +20,18 @@ const HeroSlider = ({ slides = [] }: HeroSliderProps) => {
   // Default slides if none are provided from Sanity
   const defaultSlides: Slide[] = [
     {
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/banner.png?updatedAt=1762531866935",
+      alt: "FOLICEA Summit Banner"
+    },
+    {
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/banner1.png?updatedAt=1762531866111",
+      alt: "FOLICEA Summit Banner 1"
+    },
+    {
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/rope.jpg?updatedAt=1762531855744",
+      alt: "FOLICEA Summit Rope"
+    },
+    {
       image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/IMG-20250826-WA0038.jpg?updatedAt=1756227156116",
       alt: "FOLICEA Summit Image 1"
     },

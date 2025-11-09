@@ -340,6 +340,7 @@ const HomePage = ({ speakers, partners }: HomeProps) => {
                 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/FDB.png?updatedAt=1762525119487',
                 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/PFW.png?updatedAt=1762525119587',
                 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/NTw.png?updatedAt=1762525310119',
+                'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/band.jpg?updatedAt=1762531856026',
               ].concat([
                 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/eric.png?updatedAt=1762525115294',
                 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/C.kitchen.png?updatedAt=1762525115934',

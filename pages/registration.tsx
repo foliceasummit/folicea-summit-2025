@@ -260,26 +260,48 @@ const RegistrationPage = () => {
                     </h3>
                     <p className="text-sm text-gray-700 mt-1">To confirm your participation, please use one of the following options:</p>
 
-                    <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {/* Mobile Money */}
+                    <div className="mt-5 space-y-4">
+                      {/* Uganda */}
                       <div className="group relative flex items-start gap-4 rounded-xl p-5 bg-white/70 backdrop-blur border border-liberian-blue/20 shadow-sm hover:shadow-md transition-shadow">
                         <div className="h-12 w-12 rounded-xl bg-liberian-red/10 text-liberian-red flex items-center justify-center">
                           <Smartphone className="w-6 h-6" />
                         </div>
                         <div>
-                          <p className="font-semibold text-gray-900">Mobile Money (MTN Uganda)</p>
+                          <p className="font-semibold text-gray-900">Uganda</p>
                           <p className="text-sm text-gray-600">+256 784 940 391 - Eunice Logose</p>
                         </div>
                       </div>
 
-                      {/* Cash */}
+                      {/* Rwanda */}
                       <div className="group relative flex items-start gap-4 rounded-xl p-5 bg-white/70 backdrop-blur border border-liberian-blue/20 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="h-12 w-12 rounded-xl bg-gray-100 text-gray-700 flex items-center justify-center">
-                          <Banknote className="w-6 h-6" />
+                        <div className="h-12 w-12 rounded-xl bg-liberian-blue/10 text-liberian-blue flex items-center justify-center">
+                          <Smartphone className="w-6 h-6" />
                         </div>
                         <div>
-                          <p className="font-semibold text-gray-900">Cash (Uganda delegates only)</p>
-                          <p className="text-sm text-gray-600">Pay at the registration desk</p>
+                          <p className="font-semibold text-gray-900">Rwanda</p>
+                          <p className="text-sm text-gray-600">Tennie Wonder Torbor – Momo Code: 922816 (Exchange rate: $1 = 1452frw)</p>
+                        </div>
+                      </div>
+
+                      {/* Kenya */}
+                      <div className="group relative flex items-start gap-4 rounded-xl p-5 bg-white/70 backdrop-blur border border-liberian-blue/20 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="h-12 w-12 rounded-xl bg-liberian-red/10 text-liberian-red flex items-center justify-center">
+                          <Smartphone className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-gray-900">Kenya</p>
+                          <p className="text-sm text-gray-600">Contact FOLICEA Finance officer (Exchange rate: $1 = 129.20 Kenyan Shilling)</p>
+                        </div>
+                      </div>
+
+                      {/* Other Countries */}
+                      <div className="group relative flex items-start gap-4 rounded-xl p-5 bg-white/70 backdrop-blur border border-liberian-blue/20 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="h-12 w-12 rounded-xl bg-gray-100 text-gray-700 flex items-center justify-center">
+                          <Globe className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-gray-900">Other Countries</p>
+                          <p className="text-sm text-gray-600">Reach out to FOLICEA Finance officer Curly on WhatsApp +231 77 691 6091 or the CSC chairperson W. Praise Bloyuefloh on WhatsApp: +231 776 038 583</p>
                         </div>
                       </div>
                     </div>
@@ -290,40 +312,7 @@ const RegistrationPage = () => {
                     </div>
                   </div>
 
-                  {/* Ways to Pay (via MTN Mobile Money no service charge) */}
-                  <div className="rounded-2xl border border-gray-200 p-6 bg-white">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center tracking-tight">Ways to Pay (via MTN Mobile Money — no service charge)</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="rounded-xl border border-gray-200 p-4 flex items-start gap-3 bg-gray-50">
-                        <Smartphone className="w-5 h-5 text-liberian-red mt-1" />
-                        <div>
-                          <p className="font-semibold text-gray-900">Rwanda</p>
-                          <p className="text-sm text-gray-700">Dial <span className="font-mono">*182*1#</span> and follow the instructions.</p>
-                        </div>
-                      </div>
-                      <div className="rounded-xl border border-gray-200 p-4 flex items-start gap-3 bg-gray-50">
-                        <Smartphone className="w-5 h-5 text-liberian-red mt-1" />
-                        <div>
-                          <p className="font-semibold text-gray-900">Liberia</p>
-                          <p className="text-sm text-gray-700">Dial <span className="font-mono">*156*1#</span> and follow the instructions.</p>
-                        </div>
-                      </div>
-                      <div className="rounded-xl border border-gray-200 p-4 flex items-start gap-3 bg-gray-50">
-                        <Smartphone className="w-5 h-5 text-liberian-red mt-1" />
-                        <div>
-                          <p className="font-semibold text-gray-900">Tanzania</p>
-                          <p className="text-sm text-gray-700">Dial <span className="font-mono">*1</span> and follow the instructions.</p>
-                        </div>
-                      </div>
-                      <div className="rounded-xl border border-gray-200 p-4 flex items-start gap-3 bg-gray-50">
-                        <Smartphone className="w-5 h-5 text-liberian-red mt-1" />
-                        <div>
-                          <p className="font-semibold text-gray-900">Kenya</p>
-                          <p className="text-sm text-gray-700">Dial <span className="font-mono">*1</span> and follow the instructions.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+
 
                   {/* How to register & pay */}
                   <div className="rounded-2xl border border-gray-200 p-6 bg-white">

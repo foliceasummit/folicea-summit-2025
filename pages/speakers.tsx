@@ -65,38 +65,56 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
           </div>
 
           {featuredSpeakers.length === 0 ? (
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Minimal placeholder cards to avoid empty state */}
-              {[0,1,2].map((i) => (
-                <div key={i} className="rounded-2xl p-[1px] bg-gradient-to-r from-liberian-blue/20 via-liberian-red/20 to-liberian-blue/20 shadow">
-                  <div className="relative bg-white rounded-2xl overflow-hidden">
-                    <div className="relative h-64 bg-gray-100" />
-                    <div className="p-4">
-                      <div className="h-4 w-40 bg-gray-200 rounded mb-2" />
-                      <div className="h-3 w-24 bg-gray-200 rounded" />
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {featuredSpeakers.map((speaker, index) => (
-                <div
-                  key={`${speaker.name}-${index}`}
-                  className="group rounded-2xl p-[1px] bg-gradient-to-r from-liberian-blue/50 via-liberian-red/50 to-liberian-blue/50 shadow-xl"
-                >
-                  <div className="relative bg-white rounded-2xl overflow-hidden">
-                    <div className="relative h-64">
-                      <Image src={getImageSrc(speaker.image, 1200, 800)} alt={speaker.name || 'Speaker'} fill className="object-top" />
-                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-4">
-                        <h3 className="text-white text-lg font-bold">{speaker.name}</h3>
-                        <p className="text-white/90 text-sm">{speaker.title}</p>
+            <div className="relative overflow-hidden">
+              <div className="flex gap-6 animate-marquee">
+                {[0,1,2,3,4,5].map((i) => (
+                  <div key={i} className="flex-shrink-0 w-80 rounded-2xl p-[1px] bg-gradient-to-r from-liberian-blue/20 via-liberian-red/20 to-liberian-blue/20 shadow">
+                    <div className="relative bg-white rounded-2xl overflow-hidden">
+                      <div className="relative h-64 bg-gray-100" />
+                      <div className="p-4">
+                        <div className="h-4 w-40 bg-gray-200 rounded mb-2" />
+                        <div className="h-3 w-24 bg-gray-200 rounded" />
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="relative overflow-hidden">
+              <motion.div
+                className="flex gap-8"
+                animate={{
+                  x: ['0%', '-100%'],
+                }}
+                transition={{
+                  duration: 30,
+                  repeat: Infinity,
+                  ease: 'linear',
+                }}
+              >
+                {[...featuredSpeakers, ...featuredSpeakers].map((speaker, index) => (
+                  <motion.div
+                    key={`${speaker.name}-${index}`}
+                    className="flex-shrink-0 w-96 group rounded-3xl bg-white shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300"
+                    whileHover={{ scale: 1.05, y: -5 }}
+                  >
+                    <div className="relative h-80">
+                      <Image src={getImageSrc(speaker.image, 1200, 800)} alt={speaker.name || 'Speaker'} fill className="object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                        <h3 className="text-xl font-bold mb-2">{speaker.name}</h3>
+                        <p className="text-white/90 text-sm font-medium">{speaker.title}</p>
+                      </div>
+                      <div className="absolute top-4 right-4">
+                        <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                          <span className="text-white font-bold text-lg">★</span>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
             </div>
           )}
         </div>
@@ -126,32 +144,48 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
               {summitSpeakers.map((speaker, index) => {
                 const socialEntries = Object.entries(speaker.social || {}).filter(([, value]) => typeof value === 'string' && value);
                 return (
-                  <div
+                  <motion.div
                     key={`${speaker.name}-summit-${index}`}
-                    className="relative group bg-white rounded-3xl border border-gray-100 shadow-lg overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="group relative bg-white rounded-3xl border border-gray-100 shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
                   >
-                    <div className="p-6 sm:p-8 text-center space-y-4">
+                    <div className="absolute inset-0 bg-gradient-to-br from-liberian-blue/5 via-transparent to-liberian-red/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="relative p-8 text-center space-y-6">
                       <div className="flex justify-center">
-                        <div className="relative w-40 h-40 rounded-full overflow-hidden bg-gray-100 shadow-md">
+                        <div className="relative w-40 h-40 rounded-full overflow-hidden bg-gradient-to-br from-liberian-blue/10 to-liberian-red/10 shadow-xl ring-4 ring-white">
                           <Image src={getImageSrc(speaker.image, 512, 512)} alt={speaker.name || 'Speaker'} fill className="object-cover" />
                         </div>
                       </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-gray-900">{speaker.name}</h3>
-                        {speaker.title && <p className="text-sm text-liberian-red font-medium">{speaker.title}</p>}
+                      <div className="space-y-2">
+                        <h3 className="text-xl font-bold text-gray-900 group-hover:text-liberian-blue transition-colors">{speaker.name}</h3>
+                        {speaker.title && <p className="text-sm text-liberian-red font-semibold leading-relaxed">{speaker.title}</p>}
                       </div>
                       {speaker.bio && (
-                      <div>
-                        <p className="text-xs font-semibold text-gray-500 uppercase tracking-[0.3em] mb-2">Bio</p>
+                      <div className="pt-2">
+                        <p className="text-xs font-semibold text-gray-500 uppercase tracking-[0.3em] mb-3">Bio</p>
                         <p className="text-sm text-gray-600 leading-relaxed">{speaker.bio}</p>
                       </div>
                       )}
+                      {speaker.topics && speaker.topics.length > 0 && (
+                        <div className="pt-2">
+                          <div className="flex flex-wrap gap-2 justify-center">
+                            {speaker.topics.map((topic, topicIndex) => (
+                              <span key={topicIndex} className="px-3 py-1 bg-liberian-blue/10 text-liberian-blue text-xs font-medium rounded-full">
+                                {topic}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
