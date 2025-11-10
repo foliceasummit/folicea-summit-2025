@@ -41,18 +41,32 @@ const speakers: Speaker[] = [
     order: 4,
   },
   {
+    name: 'Hon. Emmanuel J. Brown',
+    title: 'Chairman Association of Liberians in Uganda',
+    image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Hon%20Emmanuel%20J%20Brown.jpg?updatedAt=1762694251207',
+    featured: true,
+    order: 5,
+  },
+  {
+    name: 'Hon. Marcus Julay Weah',
+    title: 'Chairman Liberian Community in Kenya',
+    image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Chairman%20Marcus%20Julay%20Weah.jpg?updatedAt=1757347428765',
+    featured: true,
+    order: 6,
+  },
+  {
     name: 'H.E. Distinguished Guest',
     title: 'Special Guest of Honor',
     image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
     featured: true,
-    order: 5,
+    order: 7,
   },
   {
     name: 'Hon. Distinguished Guest',
     title: 'Special Guest of Honor',
     image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
     featured: true,
-    order: 6,
+    order: 8,
   },
 
   // Summit Speakers (non-featured)

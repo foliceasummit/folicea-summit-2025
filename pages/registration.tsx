@@ -253,62 +253,28 @@ const RegistrationPage = () => {
 
                 {/* Payment Methods + Packages */}
                 <div className="mt-10 space-y-10">
-                  {/* Payment Methods - feature cards */}
+                  {/* Payment Methods */}
                   <div className="rounded-2xl border border-gray-200 p-6 bg-gradient-to-r from-liberian-blue/5 via-white to-liberian-blue/5">
-                    <h3 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
-                      <Wallet className="w-5 h-5 text-liberian-red" /> Payment Methods
-                    </h3>
-                    <p className="text-sm text-gray-700 mt-1">To confirm your participation, please use one of the following options:</p>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">HOW TO PAY</h3>
+                    <p className="text-sm text-gray-700 mb-4">Pay in USD or Local Currency (Kenya, Uganda & Rwanda)</p>
 
-                    <div className="mt-5 space-y-4">
-                      {/* Uganda */}
-                      <div className="group relative flex items-start gap-4 rounded-xl p-5 bg-white/70 backdrop-blur border border-liberian-blue/20 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="h-12 w-12 rounded-xl bg-liberian-red/10 text-liberian-red flex items-center justify-center">
-                          <Smartphone className="w-6 h-6" />
-                        </div>
-                        <div>
-                          <p className="font-semibold text-gray-900">Uganda</p>
-                          <p className="text-sm text-gray-600">+256 784 940 391 - Eunice Logose</p>
-                        </div>
-                      </div>
-
-                      {/* Rwanda */}
-                      <div className="group relative flex items-start gap-4 rounded-xl p-5 bg-white/70 backdrop-blur border border-liberian-blue/20 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="h-12 w-12 rounded-xl bg-liberian-blue/10 text-liberian-blue flex items-center justify-center">
-                          <Smartphone className="w-6 h-6" />
-                        </div>
-                        <div>
-                          <p className="font-semibold text-gray-900">Rwanda</p>
-                          <p className="text-sm text-gray-600">Tennie Wonder Torbor – Momo Code: 922816 (Exchange rate: $1 = 1452frw)</p>
-                        </div>
-                      </div>
-
-                      {/* Kenya */}
-                      <div className="group relative flex items-start gap-4 rounded-xl p-5 bg-white/70 backdrop-blur border border-liberian-blue/20 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="h-12 w-12 rounded-xl bg-liberian-red/10 text-liberian-red flex items-center justify-center">
-                          <Smartphone className="w-6 h-6" />
-                        </div>
-                        <div>
-                          <p className="font-semibold text-gray-900">Kenya</p>
-                          <p className="text-sm text-gray-600">Contact FOLICEA Finance officer (Exchange rate: $1 = 129.20 Kenyan Shilling)</p>
-                        </div>
-                      </div>
-
-                      {/* Other Countries */}
-                      <div className="group relative flex items-start gap-4 rounded-xl p-5 bg-white/70 backdrop-blur border border-liberian-blue/20 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="h-12 w-12 rounded-xl bg-gray-100 text-gray-700 flex items-center justify-center">
-                          <Globe className="w-6 h-6" />
-                        </div>
-                        <div>
-                          <p className="font-semibold text-gray-900">Other Countries</p>
-                          <p className="text-sm text-gray-600">Reach out to FOLICEA Finance officer Curly on WhatsApp +231 77 691 6091 or the CSC chairperson W. Praise Bloyuefloh on WhatsApp: +231 776 038 583</p>
-                        </div>
-                      </div>
+                    <div className="mb-6 space-y-2">
+                      <p className="text-sm text-gray-700">1 USD = 129.27 KES (Kenya)</p>
+                      <p className="text-sm text-gray-700">1 USD = 1452 FRW (Rwanda)</p>
+                      <p className="text-sm text-gray-700">1 USD = 3,498.41 UGX (Uganda)</p>
                     </div>
 
-                    <div className="mt-4 text-sm">
-                      <p className="font-semibold text-gray-900">Important:</p>
-                      <p className="text-gray-700">Proof of payment must be shared with the Central Summit Committee (CSC) on WhatsApp: <a href="https://wa.me/231776038583" target="_blank" rel="noopener noreferrer" className="text-liberian-red font-semibold">+231 776 038 583</a>.</p>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-4">Payment Methods</h4>
+                    <div className="space-y-3">
+                      <p className="text-sm text-gray-700">1. <strong>Rwanda:</strong> Tennie Wonder Torbor – 922816</p>
+                      <p className="text-sm text-gray-700">2. <strong>Kenya:</strong> OliveTunde Mends‐Cole – +254 717 355 687 or M-Pesa App</p>
+                      <p className="text-sm text-gray-700">3. <strong>Uganda:</strong> Eunice Logose – +256 784 940 391</p>
+                      <p className="text-sm text-gray-700">4. <strong>Other Countries:</strong> Contact Finance Officer Curly on WhatsApp: +231 77 691 6091</p>
+                    </div>
+
+                    <div className="mt-6 p-4 bg-liberian-blue/10 rounded-lg">
+                      <p className="text-sm font-semibold text-gray-900 mb-2">NOTE:</p>
+                      <p className="text-sm text-gray-700">Send proof of payment (screenshot/transaction ID) to CSC WhatsApp: <a href="https://wa.me/231776038583" target="_blank" rel="noopener noreferrer" className="text-liberian-red font-semibold">+231 776 038 583</a></p>
                     </div>
                   </div>
 
