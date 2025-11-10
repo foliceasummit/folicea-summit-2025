@@ -71,44 +71,12 @@ const speakers: Speaker[] = [
 
   // Summit Speakers (non-featured)
   {
-    name: 'Speaker A',
-    title: 'Panelist',
-    image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
-    topics: ['Panelist'],
-    featured: false,
-    order: 6,
-  },
-  {
-    name: 'Speaker B',
-    title: 'Panelist',
-    image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
-    topics: ['Panelist'],
-    featured: false,
-    order: 7,
-  },
-  {
-    name: 'Speaker C',
-    title: 'Panelist',
-    image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
-    topics: ['Panelist'],
-    featured: false,
-    order: 8,
-  },
-  {
-    name: 'Speaker D',
-    title: 'Panelist',
-    image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
-    topics: ['Panelist'],
-    featured: false,
-    order: 9,
-  },
-  {
     name: 'Bryant Lessor Rogers',
     title: 'Founder and CEO of Rozeland Bar & Restaurant (Uganda) and the Founder and CEO of ROG Group of Companies Inc (Liberia)',
     image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Bryant%20Lessor%20RogersFounder%20and%20CEO%20of%20Rozeland%20Bar%20&%20Restaurant%20(Uganda)%20and%20the%20Founder%20and%20CEO%20of%20ROG%20Group%20of%20Companies%20Inc%20(Liberia)..jpg?updatedAt=1762524072136',
     topics: ['Entrepreneurship'],
     featured: false,
-    order: 10,
+    order: 6,
   },
   {
     name: 'Patrick F. Wee',
@@ -116,7 +84,7 @@ const speakers: Speaker[] = [
     image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/WhatsApp%20Image%202025-11-05%20at%2016.48.41_43ef9185.jpg?updatedAt=1762446345947',
     topics: ['Youth Leadership'],
     featured: false,
-    order: 11,
+    order: 7,
   },
 ]
 
