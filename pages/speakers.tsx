@@ -40,7 +40,7 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
 
   const featuredSpeakers = speakersSorted.filter(s => s.featured);
   const additionalSpeakers = speakersSorted.filter(s => !s.featured);
-  const summitSpeakers = additionalSpeakers.slice(0, 6);
+  const summitSpeakers = additionalSpeakers.slice(0, 8);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -130,7 +130,7 @@ const SpeakersPage = ({ speakers }: SpeakersPageProps) => {
 
           {summitSpeakers.length === 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
-              {[0,1,2,3,4,5].map(i => (
+              {[0,1,2,3,4,5,6,7].map(i => (
                 <div key={i} className="relative bg-white rounded-3xl border border-gray-100 shadow-lg overflow-hidden animate-pulse">
                   <div className="relative h-60 bg-gray-200" />
                   <div className="p-6 space-y-4">
