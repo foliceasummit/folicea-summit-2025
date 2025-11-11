@@ -54,20 +54,7 @@ const speakers: Speaker[] = [
     featured: true,
     order: 6,
   },
-  {
-    name: 'H.E. Distinguished Guest',
-    title: 'Special Guest of Honor',
-    image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
-    featured: true,
-    order: 7,
-  },
-  {
-    name: 'Hon. Distinguished Guest',
-    title: 'Special Guest of Honor',
-    image: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Logo.png.jpg?updatedAt=1756227162403',
-    featured: true,
-    order: 8,
-  },
+
 
   // Summit Speakers (non-featured)
   {
