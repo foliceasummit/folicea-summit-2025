@@ -20,36 +20,52 @@ const HeroSlider = ({ slides = [] }: HeroSliderProps) => {
   // Default slides if none are provided from Sanity
   const defaultSlides: Slide[] = [
     {
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/banner.png?updatedAt=1762531866935",
-      alt: "FOLICEA Summit Banner"
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Summit%20Photos/WhatsApp%20Image%202025-11-30%20at%2015.51.31_edba8383.jpg?updatedAt=1764956619037",
+      alt: "Summit Photo 1"
     },
     {
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/banner1.png?updatedAt=1762531866111",
-      alt: "FOLICEA Summit Banner 1"
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Summit%20Photos/WhatsApp%20Image%202025-11-29%20at%2021.20.37_43c5d75b.jpg?updatedAt=1764956616492",
+      alt: "Summit Photo 2"
     },
     {
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/rope.jpg?updatedAt=1762531855744",
-      alt: "FOLICEA Summit Rope"
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Summit%20Photos/WhatsApp%20Image%202025-11-28%20at%2023.50.05_e8cce84f.jpg?updatedAt=1764956616255",
+      alt: "Summit Photo 3"
     },
     {
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/IMG-20250826-WA0038.jpg?updatedAt=1756227156116",
-      alt: "FOLICEA Summit Image 1"
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Summit%20Photos/WhatsApp%20Image%202025-11-28%20at%2023.39.06_bfe002a3.jpg?updatedAt=1764956616201",
+      alt: "Summit Photo 4"
     },
     {
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/IMG-20250826-WA0044.jpg?updatedAt=1756227161744",
-      alt: "FOLICEA Summit Image 2"
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Summit%20Photos/WhatsApp%20Image%202025-11-28%20at%2023.50.06_796f35a6.jpg?updatedAt=1764956616054",
+      alt: "Summit Photo 5"
     },
     {
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/uganda.avif?updatedAt=1756227168644",
-      alt: "Uganda"
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Summit%20Photos/WhatsApp%20Image%202025-11-30%20at%2013.54.28_10c04f76.jpg?updatedAt=1764956615558",
+      alt: "Summit Photo 6"
     },
     {
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/slide.webp?updatedAt=1756227164525",
-      alt: "FOLICEA Summit Slide"
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Summit%20Photos/WhatsApp%20Image%202025-11-30%20at%2015.51.09_399dfb0b.jpg?updatedAt=1764956615458",
+      alt: "Summit Photo 7"
     },
     {
-      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/WhatsApp%20Image%202025-09-08%20at%2017.23.03_c0cd9a72.jpg?updatedAt=1757346349261",
-      alt: "FOLICEA Summit Slide"
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Summit%20Photos/WhatsApp%20Image%202025-11-28%20at%2019.51.29_a5d3f75b.jpg?updatedAt=1764956614999",
+      alt: "Summit Photo 8"
+    },
+    {
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Summit%20Photos/WhatsApp%20Image%202025-11-28%20at%2019.51.22_8798db90.jpg?updatedAt=1764956614788",
+      alt: "Summit Photo 9"
+    },
+    {
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Summit%20Photos/WhatsApp%20Image%202025-11-28%20at%2019.51.29_34034c80.jpg?updatedAt=1764956614762",
+      alt: "Summit Photo 10"
+    },
+    {
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Summit%20Photos/WhatsApp%20Image%202025-11-28%20at%2019.51.34_5be3f351.jpg?updatedAt=1764956614700",
+      alt: "Summit Photo 11"
+    },
+    {
+      image: "https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Summit%20Photos/WhatsApp%20Image%202025-11-28%20at%2019.51.24_6751bf2c.jpg?updatedAt=1764956614104",
+      alt: "Summit Photo 12"
     }
   ];
 

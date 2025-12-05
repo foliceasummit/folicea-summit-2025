@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, MessageCircle } from 'lucide-react';
+import { Mail, Phone, Facebook, Twitter, Instagram, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -76,28 +76,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Event Info */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Event Details</h4>
-            <div className="space-y-3">
-              <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-liberian-red mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-medium">Kampala Serena Hotel</p>
-                  <p className="text-gray-300 text-sm">Kampala, Uganda</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <div className="w-5 h-5 text-liberian-red mt-1 flex-shrink-0">
-                  📅
-                </div>
-                <div>
-                  <p className="font-medium">November 28 - 30, 2025</p>
-                  <p className="text-gray-300 text-sm">3 Days of Impact</p>
-                </div>
-              </div>
-            </div>
-          </div>
+
 
           {/* Contact Info */}
           <div>
