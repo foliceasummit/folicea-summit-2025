@@ -313,7 +313,7 @@ const HomePage = ({ partners }: HomeProps) => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Summit Update Section */}
       <section className="py-12 sm:py-16 gradient-bg">
         <div className="container-custom text-center">
           <motion.div
@@ -322,13 +322,24 @@ const HomePage = ({ partners }: HomeProps) => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">Ready to Join Us?</h2>
-            <p className="text-lg sm:text-xl text-white/90 mb-6 max-w-2xl mx-auto">
-              Secure your spot at the most anticipated Liberian diaspora gathering in East Africa
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+              SUMMIT UPDATE
+            </h2>
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">
+              The FOLICEA Summit 2025 Has Concluded
+            </h3>
+            <p className="text-lg sm:text-xl text-white/90 mb-6 max-w-3xl mx-auto leading-relaxed">
+              Thank you to everyone who joined us in Kampala, Uganda, for three inspiring days of unity, dialogue, leadership elections, and strategic planning. Together, we took meaningful steps toward strengthening the Liberian diaspora in East Africa and advancing our shared vision for national development.
             </p>
-            <Link href="/registration" className="bg-white text-liberian-red hover:bg-gray-100 font-semibold py-3 px-6 sm:py-4 sm:px-8 rounded-lg text-base sm:text-lg transition-all duration-300 transform hover:scale-105">
-              Register Now
-            </Link>
+            <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+              Summit highlights, photos, and key outcomes will be shared soon.
+            </p>
+            <div className="bg-white/10 rounded-xl p-8 backdrop-blur-sm mb-8 max-w-3xl mx-auto">
+              <p className="text-lg text-white font-semibold mb-4">Stay connected! Sign up here to receive updates on future FOLICEA initiatives, regional chapter activities, and the 2026 Summit.</p>
+              <Link href="/contact" className="inline-block bg-white text-liberian-red hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
+                Join Our Mailing List
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

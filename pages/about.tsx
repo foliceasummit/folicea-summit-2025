@@ -197,62 +197,98 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Summit 2025 */}
+      {/* Summit 2025 Summary */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              FOLICEA Summit 2025 - A Historic Gathering
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-br from-liberian-blue/5 to-liberian-red/5 rounded-2xl p-8 md:p-12 border border-liberian-blue/20 mb-12"
+          >
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              The FOLICEA Summit 2025 was a historic gathering of Liberians from across East Africa, united in purpose to strengthen community ties and contribute meaningfully to national development. Held in Kampala, Uganda from <strong>November 28 - 30, 2025</strong>, under the theme <strong>"From Diaspora to Homeland: Strengthening Community Ties for National Development,"</strong> the summit brought together innovators, business owners, community leaders, entrepreneurs, journalists, youth representatives, and friends of Liberia to engage in dialogue, democratic leadership elections, and strategic planning for collective progress.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              Through panels on diaspora investment, democratic governance, entrepreneurship, and cultural identity, participants forged new partnerships, shared innovative ideas, and reaffirmed their commitment to Liberia's future. The energy, collaboration, and sense of unity displayed throughout the three-day event marked a turning point for Liberian communities in East Africa.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              The connections made and commitments shared in Kampala continue to inspire action. This summit was not an end but a beginning. Together, we are building a stronger, more engaged diaspora: <strong>one voice, one purpose, one people.</strong>
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="relative"
+              className="bg-white p-8 rounded-xl shadow-lg text-center border-t-4 border-liberian-red"
             >
               <Image
-                src="https://ik.imagekit.io/folicea/kampala-road.webp?updatedAt=1755892414846"
-                alt="Kampala City"
-                width={600}
-                height={400}
-                className="rounded-2xl shadow-xl"
+                src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Summit%20Photos/Picture2.jpg"
+                alt="W. Praise Bloyuefloh"
+                width={300}
+                height={300}
+                className="rounded-lg mx-auto mb-4 object-cover"
               />
+              <h3 className="text-xl font-semibold text-gray-900">W. Praise Bloyuefloh</h3>
+              <p className="text-gray-600">Chairperson, Central Summit Committee</p>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
               viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl shadow-lg text-center border-t-4 border-liberian-blue"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                FOLICEA Summit 2025
-              </h2>
-              <p className="text-lg text-gray-600 mb-6">
-                The inaugural FOLICEA Summit 2025 represents a historic milestone in 
-                our community's journey. This three-day gathering in Kampala, Uganda, 
-                will bring together Liberians from across East Africa and beyond.
-              </p>
-              <p className="text-lg text-gray-600 mb-8">
-                Through keynote speeches, panel discussions, Workshop, networking sessions, and 
-                cultural celebrations, we will strengthen our bonds, share knowledge, 
-                and chart a course for our community's future.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-liberian-red text-white p-6 rounded-xl">
-                  <h3 className="text-xl font-semibold mb-2">When</h3>
-                  <p>November 28 - 30, 2025</p>
-                </div>
-                <div className="bg-liberian-blue text-white p-6 rounded-xl">
-                  <h3 className="text-xl font-semibold mb-2">Where</h3>
-                  <p>Kampala Serena Hotel, Uganda</p>
-                </div>
-              </div>
+              <Image
+                src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Hon%20Emmanuel%20J%20Brown.jpg?updatedAt=1762694251207"
+                alt="Emmanuel Brown"
+                width={300}
+                height={300}
+                className="rounded-lg mx-auto mb-4 object-cover"
+              />
+              <h3 className="text-xl font-semibold text-gray-900">Hon. Emmanuel Brown</h3>
+              <p className="text-gray-600">Key Summit Leader</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl shadow-lg text-center border-t-4 border-liberian-red"
+            >
+              <Image
+                src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Chairman%20Emmanuel%20Patrick.jpg?updatedAt=1757347430203"
+                alt="Emmanuel Patrick"
+                width={300}
+                height={300}
+                className="rounded-lg mx-auto mb-4 object-cover"
+              />
+              <h3 className="text-xl font-semibold text-gray-900">Chairman Emmanuel Patrick</h3>
+              <p className="text-gray-600">Acting FOLICEA Chairman</p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Objectives */}
+      {/* Summit Highlights */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <motion.div
@@ -263,10 +299,10 @@ const AboutPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Summit Objectives
+              Summit Highlights & Outcomes
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              What we aim to achieve through this historic gathering
+              What we achieved through this historic gathering
             </p>
           </motion.div>
 
@@ -371,15 +407,14 @@ const AboutPage = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Join Us in This Historic Gathering
+              Stay Connected With FOLICEA
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-              Be part of the first-ever FOLICEA Summit and help shape the future 
-              of the Liberian diaspora in East Africa
+              The summit has concluded, but our work continues. Sign up to receive updates on future FOLICEA initiatives, regional chapter activities, and the 2026 Summit.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/registration" className="bg-white text-liberian-red hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105">
-                Register Now
+              <a href="mailto:foliceasummit@gmail.com" className="bg-white text-liberian-red hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105">
+                Get Updates
               </a>
               <a href="/contact" className="border-2 border-white text-white hover:bg-white hover:text-liberian-red font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300">
                 Contact Us
