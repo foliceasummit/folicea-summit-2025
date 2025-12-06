@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Users } from 'lucide-react';
-import Countdown from '../components/Countdown';
 import HeroSlider from '../components/HeroSlider';
 import partnersLocal from '../data/partners';
 import speakersLocal from '../data/speakers';
@@ -84,23 +83,45 @@ const HomePage = ({ partners }: HomeProps) => {
                 </p>
               </div>
 
-              {/* Countdown */}
+              {/* Summit Celebration */}
               <div className="mb-8 sm:mb-10">
-                <Countdown />
-              </div>
-
-              {/* Call to Action */}
-              <div className="mb-8 sm:mb-10">
-                <p className="text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
-                  Don't miss this historic gathering of the Liberian diaspora in East Africa
-                </p>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-3xl mx-auto">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                    FOLICEA Summit 2025 — A Historic Success!
+                  </h2>
+                  <p className="text-lg sm:text-xl text-white/90 mb-8">
+                    Thank you for making Kampala the heart of Liberian unity in East Africa. Together, we built bridges, elected leaders, and charted a path for our collective future.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
+                    <Link
+                      href="https://www.facebook.com/profile.php?id=100063613104073"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white text-liberian-red hover:bg-gray-100 font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
+                    >
+                      View Summit Photos
+                    </Link>
+                    <Link
+                      href="/contact"
+                      className="bg-liberian-red/80 hover:bg-liberian-red text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 border border-white"
+                    >
+                      Download Report (Coming Soon)
+                    </Link>
+                    <Link
+                      href="/contact"
+                      className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-liberian-red font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
+                    >
+                      Join Mailing List
+                    </Link>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Event Details Section */}
+      {/* Event Summary Section */}
       <section className="py-8 sm:py-12 bg-gradient-to-r from-liberian-blue to-liberian-red text-white">
         <div className="container-custom">
           <motion.div
@@ -110,7 +131,7 @@ const HomePage = ({ partners }: HomeProps) => {
             viewport={{ once: true }}
             className="text-center mb-6"
           >
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">Event Details</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">Summit Summary</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
@@ -123,7 +144,8 @@ const HomePage = ({ partners }: HomeProps) => {
             >
               <Calendar className="w-6 h-6 mx-auto mb-2 text-white/90" />
               <h3 className="text-base sm:text-lg font-semibold mb-1">Date</h3>
-              <p className="text-xs sm:text-sm text-white/90">November 28 - 30, 2025</p>
+              <p className="text-xs sm:text-sm text-white/90">November 28 – 30, 2025</p>
+              <p className="text-xs text-white/70 mt-2">The historic 3-day gathering that united Liberians</p>
             </motion.div>
 
             <motion.div
@@ -136,6 +158,7 @@ const HomePage = ({ partners }: HomeProps) => {
               <MapPin className="w-6 h-6 mx-auto mb-2 text-white/90" />
               <h3 className="text-base sm:text-lg font-semibold mb-1">Venue</h3>
               <p className="text-xs sm:text-sm text-white/90">Kampala, Uganda</p>
+              <p className="text-xs text-white/70 mt-2">Where community and commitment came together</p>
             </motion.div>
 
             <motion.div
@@ -147,13 +170,14 @@ const HomePage = ({ partners }: HomeProps) => {
             >
               <Users className="w-6 h-6 mx-auto mb-2 text-white/90" />
               <h3 className="text-base sm:text-lg font-semibold mb-1">Attendees</h3>
-              <p className="text-xs sm:text-sm text-white/90">Liberians across East Africa & Friends</p>
+              <p className="text-xs sm:text-sm text-white/90">200+ Liberians & Friends from East Africa</p>
+              <p className="text-xs text-white/70 mt-2">Leaders, youth, entrepreneurs, and diaspora champions</p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* About FOLICEA Section */}
+      {/* Summit Impact Section */}
       <section className="section-padding bg-white pt-16 sm:pt-20">
         <div className="container-custom">
           <motion.div
@@ -164,19 +188,19 @@ const HomePage = ({ partners }: HomeProps) => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Welcome to the FOLICEA Summit
+              The Summit Made a Difference
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              The leading gathering for Liberians in East Africa, fostering unity, networking, and community development.
+              FOLICEA Summit 2025 brought together leaders, innovators, and community members to strengthen ties, elect leadership, and build a stronger Liberian diaspora across East Africa. What we started in Kampala continues to inspire action and unity.
             </p>
           </motion.div>
 
           <div className="text-center">
             <Link
-              href="/contact"
-              className="inline-flex items-center px-6 py-4 rounded-lg border border-white/60 text-white hover:bg-white hover:text-liberian-red transition-colors"
+              href="/about"
+              className="inline-flex items-center px-6 py-4 rounded-lg bg-liberian-red text-white hover:bg-liberian-blue transition-colors font-semibold"
             >
-              Contact Us
+              Learn More About Our Impact
             </Link>
           </div>
         </div>
