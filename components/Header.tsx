@@ -69,10 +69,10 @@ const Header = () => {
               </Link>
             ))}
             <Link
-              href="/registration"
+              href="/contact"
               className="btn-primary drop-shadow-lg"
             >
-              Register Now
+              Stay Connected
             </Link>
           </nav>
 
@@ -104,11 +104,11 @@ const Header = () => {
                 </Link>
               ))}
               <Link
-                href="/registration"
+                href="/contact"
                 className="btn-primary text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Register Now
+                Stay Connected
               </Link>
             </nav>
           </div>
