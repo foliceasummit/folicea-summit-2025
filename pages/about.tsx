@@ -47,7 +47,7 @@ const AboutPage = () => {
             className="text-center text-white"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              About FOLICEA
+              About Us
             </h1>
             <p className="text-xl md:text-2xl max-w-4xl mx-auto">
               Federation of Liberian Communities in East Africa - Uniting our diaspora, 
@@ -57,7 +57,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Acting Leadership */}
+      {/* Leadership and Remarks */}
       <section className="section-padding bg-white">
         <div className="container-custom">
           <motion.div
@@ -67,46 +67,85 @@ const AboutPage = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Acting Leadership</h2>
-            <p className="text-xl text-gray-600">Current acting team guiding FOLICEA ahead of the Summit</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Leadership</h2>
+            <p className="text-xl text-gray-600">Guiding FOLICEA with vision and commitment</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Emmanuel Patrick */}
+            <div className="relative overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-sm">
+              <div className="p-6 sm:p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-16 h-16 rounded-full overflow-hidden">
+                    <Image src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Chairman%20Emmanuel%20Patrick.jpg?updatedAt=1757347430203" alt="Chairman Emmanuel Patrick" width={64} height={64} className="object-cover w-full h-full" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold">Chairman Emmanuel Patrick</h3>
+                    <p className="text-gray-600 text-sm">Chairperson</p>
+                  </div>
+                </div>
+                <div className="prose max-w-none text-gray-700 text-justify space-y-4">
+                  <p>Distinguished Platform Guests, Partners and Sponsors, Fellow Liberians, Ladies and Gentlemen, I stand before you deeply honored, humbled, and inspired by this historic moment, the Inaugural Summit of Liberians in East Africa.</p>
+                  <p>Today, we gather not merely as individuals who happen to live abroad, but as one people, bound by a shared history, a shared destiny, and a shared pride. I am a Liberian unapologetically and unequivocally.</p>
+                  <p>I was born and raised in the land of the free—a land that, despite its challenges, still stands tall as a symbol of African resilience and hope. Liberia is a nation with an amazing culture, a beautiful landscape, and a richness of spirit that cannot be measured by global rankings.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Praise Bloyuefloh */}
+            <div className="relative overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-sm">
+              <div className="p-6 sm:p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-16 h-16 rounded-full overflow-hidden">
+                    <Image src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Summit%20Photos/Picture2.jpg?updatedAt=1765096104785" alt="W. Praise Bloyuefloh" width={64} height={64} className="object-cover w-full h-full" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold">W. Praise Bloyuefloh</h3>
+                    <p className="text-gray-600 text-sm">Chairperson, Central Summit Committee</p>
+                  </div>
+                </div>
+                <div className="prose max-w-none text-gray-700 text-justify space-y-4">
+                  <p>This summit is more than a meeting. It is a vision coming to life. A platform created to deepen regional cooperation, amplify our collective voice, and inspire meaningful action in areas such as youth development, entrepreneurship, leadership, innovation, investment, and community engagement.</p>
+                  <p>Over the next three days, we will engage in powerful conversations, panel discussions, networking sessions, a business pitch competition, and a thanksgiving service to close. Each activity has been intentionally designed to strengthen our ties and create pathways for growth both individually and collectively.</p>
+                  <p>As chairperson of the Central Summit Committee, I want to express my deepest appreciation to every delegate who traveled from near and far, and to the hardworking committee members who made this summit possible. Your presence here is a testament to your dedication to progress and unity.</p>
+                  <p>Let us begin these three days with open hearts, open minds, and a shared determination to build something lasting.</p>
+                  <p>On behalf of the Central Summit Committee, I officially declare the FOLICEA Inaugural Summit open.</p>
+                  <p>Welcome to Day One and let the journey begin.</p>
+                  <p>Thank you.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sponsors (moved below leadership cards) */}
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-8 sm:mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">Sponsors</h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">Our generous sponsors making this Summit possible</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-6 rounded-xl text-center shadow-sm">
-              <Image src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Chairman%20Emmanuel%20Patrick.jpg?updatedAt=1757347430203" alt="Chairman Emmanuel Patrick" width={260} height={220} className="rounded-lg mx-auto object-cover" />
-              <h3 className="text-lg font-semibold mt-4">Chairman Emmanuel Patrick</h3>
-              <p className="text-gray-600">Chairperson</p>
-            </div>
-
-            <div className="bg-gray-50 p-6 rounded-xl text-center shadow-sm">
-              <Image src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Chairman%20Marcus%20Julay%20Weah.jpg?updatedAt=1757347428765" alt="Chairman Marcus Julay Weah" width={260} height={220} className="rounded-lg mx-auto object-cover" />
-              <h3 className="text-lg font-semibold mt-4">Chairman Marcus Julay Weah</h3>
-              <p className="text-gray-600">1st Vice Chairperson for Administration</p>
-            </div>
-
-            <div className="bg-gray-50 p-6 rounded-xl text-center shadow-sm">
-              <Image src="https://via.placeholder.com/260x220?text=Cream+Milton+Ellis" alt="Chairman Cream Milton Ellis" width={260} height={220} className="rounded-lg mx-auto object-cover" />
-              <h3 className="text-lg font-semibold mt-4">Chairman Cream Milton Ellis</h3>
-              <p className="text-gray-600">2nd Vice Chairperson for International Affairs</p>
-            </div>
-
-            <div className="bg-gray-50 p-6 rounded-xl text-center shadow-sm">
-              <Image src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Mr.%20Isaac%20M.%20Supu.jpg?updatedAt=1757347429245" alt="Mr. Isaac M. Supu" width={260} height={220} className="rounded-lg mx-auto object-cover" />
-              <h3 className="text-lg font-semibold mt-4">Mr. Isaac M. Supu</h3>
-              <p className="text-gray-600">Secretary General</p>
-            </div>
-
-            <div className="bg-gray-50 p-6 rounded-xl text-center shadow-sm">
-              <Image src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Ms.%20Curlyn%20Darbieh.jpg?updatedAt=1757347430212" alt="Ms. Curlyn Darbieh" width={260} height={220} className="rounded-lg mx-auto object-cover" />
-              <h3 className="text-lg font-semibold mt-4">Ms. Curlyn Darbieh</h3>
-              <p className="text-gray-600">Chief Financial Officer</p>
-            </div>
-
-            <div className="bg-gray-50 p-6 rounded-xl text-center shadow-sm">
-              <Image src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/W.%20Praise%20Bloyuefloh.jpg?updatedAt=1757346347925" alt="W. Praise Bloyuefloh" width={260} height={220} className="rounded-lg mx-auto object-cover" />
-              <h3 className="text-lg font-semibold mt-4">W. Praise Bloyuefloh</h3>
-              <p className="text-gray-600">Chairperson, Central Summit Committee</p>
-            </div>
+            {[ 
+              { name: 'Brownerica', logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Brownerica.png?updatedAt=1762242409473' },
+              { name: "Bel's Beauty", logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/bel\'s%20beauty.jpg?updatedAt=1762242408469' },
+              { name: "Charlotte's Kitchen", logo: 'https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/charlottes%20kitchen.jpg?updatedAt=1762242408305' }
+            ].map((s, i) => (
+              <div key={i} className="group relative bg-gradient-to-br from-white via-gray-50 to-white rounded-2xl p-8 shadow-lg border border-gray-200 text-center overflow-hidden">
+                <div className="relative w-full h-40 mb-6">
+                  <Image src={s.logo} alt={s.name} fill className="object-contain" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">{s.name}</h3>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -199,7 +238,7 @@ const AboutPage = () => {
 
       
       {/* Summit Highlights */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white hidden">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -235,7 +274,7 @@ const AboutPage = () => {
       </section>
 
       {/* Why Uganda */}
-      <section className="section-padding">
+      <section className="section-padding hidden">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -308,7 +347,7 @@ const AboutPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding gradient-bg">
+      <section className="section-padding gradient-bg hidden">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

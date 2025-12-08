@@ -59,7 +59,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                              </li>
+chna                              </li>
               <li>
                 <Link href="/registration" className="text-gray-300 hover:text-white transition-colors">
                   Registration
