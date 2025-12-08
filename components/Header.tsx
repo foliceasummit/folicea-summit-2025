@@ -21,13 +21,14 @@ const Header = () => {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
+    { name: 'Events', href: '/events' },
     // Media will be rendered with a dropdown
     { name: 'Media', href: '#', children: [
       { name: 'Gallery', href: '/gallery' },
       { name: 'News', href: '/news' },
       { name: 'Video', href: '/video' },
     ] },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Get Involved', href: '/get-involved' },
   ];
 
   const [isMediaOpen, setIsMediaOpen] = useState(false);
@@ -105,10 +106,10 @@ const Header = () => {
               )
             ))}
             <Link
-              href="/contact"
+              href="/get-involved"
               className="btn-primary drop-shadow-lg"
             >
-              Stay Connected
+              Get Involved
             </Link>
           </nav>
 
@@ -158,11 +159,11 @@ const Header = () => {
                 )
               ))}
               <Link
-                href="/contact"
+                href="/get-involved"
                 className="btn-primary text-center mt-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Stay Connected
+                Get Involved
               </Link>
             </nav>
           </div>
