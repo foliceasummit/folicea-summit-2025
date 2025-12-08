@@ -85,7 +85,7 @@ const HomePage = ({ partners }: HomeProps) => {
 
               {/* Summit Celebration */}
               <div className="mb-8 sm:mb-10">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 max-w-3xl mx-auto">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 max-w-xl sm:max-w-2xl mx-auto">
                   <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
                     FOLICEA Summit 2025 — A Historic Success!
                   </h2>
@@ -177,6 +177,40 @@ const HomePage = ({ partners }: HomeProps) => {
         </div>
       </section>
 
+      {/* Historic Gathering Summary (moved from About) */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              FOLICEA Summit 2025 - A Historic Gathering
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-br from-liberian-blue/5 to-liberian-red/5 rounded-2xl p-8 md:p-10 border border-liberian-blue/20"
+          >
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              The FOLICEA Summit 2025 was a historic gathering of Liberians from across East Africa, united in purpose to strengthen community ties and contribute meaningfully to national development. Held in Kampala, Uganda from <strong>November 28 - 30, 2025</strong>, under the theme <strong>"From Diaspora to Homeland: Strengthening Community Ties for National Development,"</strong> the summit brought together innovators, business owners, community leaders, entrepreneurs, journalists, youth representatives, and friends of Liberia to engage in dialogue, democratic leadership elections, and strategic planning for collective progress.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              Through panels on diaspora investment, democratic governance, entrepreneurship, and cultural identity, participants forged new partnerships, shared innovative ideas, and reaffirmed their commitment to Liberia's future. The energy, collaboration, and sense of unity displayed throughout the three-day event marked a turning point for Liberian communities in East Africa.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              The connections made and commitments shared in Kampala continue to inspire action. This summit was not an end but a beginning. Together, we are building a stronger, more engaged diaspora: <strong>one voice, one purpose, one people.</strong>
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Summit Impact Section */}
       <section className="section-padding bg-white pt-16 sm:pt-20">
         <div className="container-custom">
@@ -208,40 +242,64 @@ const HomePage = ({ partners }: HomeProps) => {
 
 
 
-      {/* Messages Section */}
-      <section className="py-12 sm:py-16 bg-white">
+      {/* Chairman Praise Opening Statement */}
+      <section className="py-12 sm:py-16 bg-gray-50">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-liberian-blue/5 to-liberian-red/5 rounded-2xl p-8 border border-liberian-blue/20"
-            >
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                MESSAGE FROM THE Central Summit Committee CHAIRMAN
-              </h3>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Welcome to the FOLICEA Summit 2025. This historic gathering represents the collective vision of Liberians across East Africa to strengthen our bonds and drive meaningful development for our homeland and diaspora communities.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-liberian-red/5 to-liberian-blue/5 rounded-2xl p-8 border border-liberian-red/20"
-            >
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                MESSAGE FROM THE Acting CHAIRMAN folicea
-              </h3>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                We are excited to welcome you to this transformative summit. Together, we will celebrate our heritage, network with fellow Liberians, and create opportunities for economic empowerment and democratic participation that will benefit our community for years to come.
-              </p>
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="relative overflow-hidden rounded-2xl bg-white shadow-xl border border-gray-100">
+              <div className="md:flex">
+                <div className="md:w-1/3 relative h-56 md:h-auto">
+                  <Image
+                    src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Summit%20Photos/Picture2.jpg"
+                    alt="W. Praise Bloyuefloh"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="md:w-2/3 p-6 sm:p-8">
+                  <div className="mb-4">
+                    <span className="text-xs uppercase tracking-wider text-liberian-red font-semibold">Day One Opening Statement</span>
+                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mt-1">
+                      Opening Remarks by W. Praise Bloyuefloh
+                    </h3>
+                    <p className="text-sm text-gray-500 mt-1">Chairperson, Central Summit Committee – FOLICEA Inaugural Summit</p>
+                  </div>
+                  <div className="prose max-w-none text-gray-700">
+                    <p>
+                      Distinguished delegates, invited guests, partners, community leaders, and my fellow Liberians from across East Africa and beyond—welcome to Day One of the FOLICEA Inaugural Summit.
+                    </p>
+                    <p>
+                      Today marks a historic moment. For the first time, Liberians across East Africa have gathered under one umbrella—Uganda, Rwanda, Kenya, Tanzania, and Liberia—coming together with one purpose: to unite, to collaborate, and to shape a stronger future for our communities and our homeland.
+                    </p>
+                    <p>
+                      This summit is more than a meeting. It is a vision coming to life. A platform created to deepen regional cooperation, amplify our collective voice, and inspire meaningful action in areas such as youth development, entrepreneurship, leadership, innovation, investment, and community engagement.
+                    </p>
+                    <p>
+                      Over the next three days, we will engage in powerful conversations, panel discussions, networking sessions, a business pitch competition, and a thanksgiving service to close. Each activity has been intentionally designed to strengthen our ties and create pathways for growth—both individually and collectively.
+                    </p>
+                    <p>
+                      As chairperson of the Central Summit Committee, I want to express my deepest appreciation to every delegate who traveled from near and far, and to the hardworking committee members who made this summit possible. Your presence here is a testament to your dedication to progress and unity.
+                    </p>
+                    <p>
+                      Let us begin these three days with open hearts, open minds, and a shared determination to build something lasting.
+                    </p>
+                    <p>
+                      On behalf of the Central Summit Committee, I officially declare the FOLICEA Inaugural Summit open. Welcome to Day One—and let the journey begin.
+                    </p>
+                    <p>
+                      Thank you.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

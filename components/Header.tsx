@@ -21,12 +21,16 @@ const Header = () => {
   const navItems = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
-    { name: 'Agenda', href: '/agenda' },
-    { name: 'Speakers', href: '/speakers' },
-    { name: 'News', href: '/news' },
-    { name: 'Pitch Competition', href: '/pitchcompetition' },
+    // Media will be rendered with a dropdown
+    { name: 'Media', href: '#', children: [
+      { name: 'Gallery', href: '/gallery' },
+      { name: 'News', href: '/news' },
+      { name: 'Video', href: '/video' },
+    ] },
     { name: 'Contact', href: '/contact' },
   ];
+
+  const [isMediaOpen, setIsMediaOpen] = useState(false);
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -56,17 +60,49 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`font-medium transition-colors duration-200 ${
-                  isScrolled 
-                    ? 'text-gray-800 hover:text-liberian-red' 
-                    : 'text-white hover:text-liberian-red drop-shadow-lg'
-                }`}
-              >
-                {item.name}
-              </Link>
+              item.children ? (
+                <div
+                  key={item.name}
+                  className="relative"
+                  onMouseEnter={() => setIsMediaOpen(true)}
+                  onMouseLeave={() => setIsMediaOpen(false)}
+                >
+                  <button
+                    className={`font-medium transition-colors duration-200 ${
+                      isScrolled 
+                        ? 'text-gray-800 hover:text-liberian-red' 
+                        : 'text-white hover:text-liberian-red drop-shadow-lg'
+                    }`}
+                  >
+                    {item.name}
+                  </button>
+                  {isMediaOpen && (
+                    <div className="absolute left-0 mt-2 w-44 bg-white shadow-lg rounded-md py-2 z-50">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.name}
+                          href={child.href}
+                          className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                        >
+                          {child.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`font-medium transition-colors duration-200 ${
+                    isScrolled 
+                      ? 'text-gray-800 hover:text-liberian-red' 
+                      : 'text-white hover:text-liberian-red drop-shadow-lg'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              )
             ))}
             <Link
               href="/contact"
@@ -92,20 +128,38 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden bg-white shadow-lg rounded-lg mt-2 py-4">
-            <nav className="flex flex-col space-y-4 px-6">
+            <nav className="flex flex-col space-y-2 px-6">
               {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="font-medium text-gray-800 hover:text-liberian-red transition-colors duration-200"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
+                item.children ? (
+                  <div key={item.name} className="">
+                    <span className="font-semibold text-gray-900">{item.name}</span>
+                    <div className="ml-4 mt-2 flex flex-col space-y-1">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.name}
+                          href={child.href}
+                          className="text-gray-800 hover:text-liberian-red transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {child.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="font-medium text-gray-800 hover:text-liberian-red transition-colors duration-200"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
               <Link
                 href="/contact"
-                className="btn-primary text-center"
+                className="btn-primary text-center mt-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Stay Connected

@@ -108,7 +108,7 @@ const HeroSlider = ({ slides = [] }: HeroSliderProps) => {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-liberian-blue/30 to-liberian-red/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-liberian-blue/20 to-liberian-red/20" />
       </div>
 
       <button
