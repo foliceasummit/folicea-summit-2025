@@ -225,68 +225,91 @@ const HomePage = ({ partners }: HomeProps) => {
 
 
 
-      {/* Chairman Praise Opening Statement */}
-      <section className="py-12 sm:py-16 bg-gray-50">
+      {/* Opening Remarks Section */}
+      <section className="py-12 sm:py-16 bg-white">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="max-w-6xl mx-auto"
+            className="text-center mb-12"
           >
-            <div className="relative overflow-hidden rounded-3xl bg-white supports-[backdrop-filter]:bg-white/90 backdrop-blur border border-gray-200 shadow-xl md:border-l-4 border-liberian-red/60">
-              <div className="absolute -top-10 -right-10 w-48 h-48 bg-gradient-to-br from-liberian-blue/10 to-liberian-red/10 rounded-full blur-2xl" />
-              <div className="grid md:grid-cols-3">
-                <div className="md:col-span-1 relative h-72 md:h-[22rem]">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Opening Remarks</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Inspiring messages from our summit leaders</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* W. Praise Bloyuefloh Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-liberian-red/5 to-liberian-red/10 rounded-2xl p-6 sm:p-8 border border-liberian-red/20"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="relative w-16 h-16 flex-shrink-0">
                   <Image
                     src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Summit%20Photos/Picture2.jpg?updatedAt=1765096104785"
                     alt="W. Praise Bloyuefloh"
                     fill
-                    className="object-cover"
+                    className="rounded-full object-cover"
                   />
                 </div>
-                <div className="md:col-span-2 p-6 sm:p-8">
-                  <div className="mb-5">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-liberian-red/10 text-liberian-red text-xs font-semibold uppercase tracking-wider">Day One Opening Statement</span>
-                    <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 mt-3 leading-tight">
-                      Opening Remarks by W. Praise Bloyuefloh
-                    </h3>
-                    <p className="text-sm text-gray-500 mt-1">Chairperson, Central Summit Committee – FOLICEA Inaugural Summit</p>
-                  </div>
-                  <div className="prose max-w-none text-gray-700 space-y-4">
-                    <p>
-                      Distinguished delegates, invited guests, partners, community leaders, and my fellow Liberians from across East Africa and beyond welcome to Day One of the FOLICEA Inaugural Summit.
-                    </p>
-                    <p>
-                      Today marks a historic moment. For the first time, Liberians across East Africa have gathered under one umbrella Uganda, Rwanda, Kenya, Tanzania, and Liberia coming together with one purpose: to unite, to collaborate, and to shape a stronger future for our communities and our homeland.
-                    </p>
-                    <p>
-                      This summit is more than a meeting. It is a vision coming to life. A platform created to deepen regional cooperation, amplify our collective voice, and inspire meaningful action in areas such as youth development, entrepreneurship, leadership, innovation, investment, and community engagement.
-                    </p>
-                    <p>
-                      Over the next three days, we will engage in powerful conversations, panel discussions, networking sessions, a business pitch competition, and a thanksgiving service to close. Each activity has been intentionally designed to strengthen our ties and create pathways for growth both individually and collectively.
-                    </p>
-                    <p>
-                      As chairperson of the Central Summit Committee, I want to express my deepest appreciation to every delegate who traveled from near and far, and to the hardworking committee members who made this summit possible. Your presence here is a testament to your dedication to progress and unity.
-                    </p>
-                    <p>
-                      Let us begin these three days with open hearts, open minds, and a shared determination to build something lasting.
-                    </p>
-                    <p>
-                      On behalf of the Central Summit Committee, I officially declare the FOLICEA Inaugural Summit open.
-                    </p>
-                    <p>
-                      Welcome to Day One and let the journey begin.
-                    </p>
-                    <p>
-                      Thank you.
-                    </p>
-                  </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">W. Praise Bloyuefloh</h3>
+                  <p className="text-sm text-gray-600">Chairperson, Central Summit Committee</p>
                 </div>
               </div>
-            </div>
-          </motion.div>
+              <div className="prose prose-sm max-w-none text-gray-700 space-y-3 max-h-72 overflow-y-auto">
+                <p className="text-sm">
+                  Distinguished delegates, invited guests, partners, and fellow Liberians from across East Africa—welcome to the FOLICEA Inaugural Summit. Today marks a historic moment where Liberians across East Africa gather under one umbrella with one purpose: to unite and shape a stronger future for our communities and homeland.
+                </p>
+                <p className="text-sm">
+                  This summit is more than a meeting. It is a vision coming to life—a platform created to deepen regional cooperation, amplify our collective voice, and inspire meaningful action in youth development, entrepreneurship, leadership, and community engagement.
+                </p>
+                <p className="text-sm">
+                  On behalf of the Central Summit Committee, I officially declare the FOLICEA Inaugural Summit open.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Emmanuel Patrick Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-liberian-blue/5 to-liberian-blue/10 rounded-2xl p-6 sm:p-8 border border-liberian-blue/20"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="relative w-16 h-16 flex-shrink-0">
+                  <Image
+                    src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Hon%20Emmanuel%20J%20Brown.jpg?updatedAt=1762694251207"
+                    alt="Chairman Emmanuel Patrick"
+                    fill
+                    className="rounded-full object-cover"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Chairman Emmanuel Patrick</h3>
+                  <p className="text-sm text-gray-600">Chairperson, FOLICEA</p>
+                </div>
+              </div>
+              <div className="prose prose-sm max-w-none text-gray-700 space-y-3 max-h-72 overflow-y-auto">
+                <p className="text-sm">
+                  I stand before you deeply honored by this historic moment—the Inaugural Summit of Liberians in East Africa. Today, we gather not merely as individuals living abroad, but as one people bound by a shared history, destiny, and pride.
+                </p>
+                <p className="text-sm">
+                  Liberia is a nation with amazing culture, beautiful landscape, and richness of spirit. Our greatest resource has always been our people: hardworking, brilliant, courageous, and determined. We are part of a legacy that cannot be erased.
+                </p>
+                <p className="text-sm">
+                  Let this summit ignite a movement of purpose, pride, and partnership. Together, we can build the Liberia we dream of. Because we are Liberians—unapologetically, unequivocally, and eternally.
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -382,65 +405,10 @@ const HomePage = ({ partners }: HomeProps) => {
         </div>
       </section>
 
-      {/* Acting Chairman Statement - Emmanuel Patrick */}
-      <section className="py-12 sm:py-16 bg-gray-50">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="max-w-6xl mx-auto"
-          >
-            <div className="relative overflow-hidden rounded-3xl bg-white supports-[backdrop-filter]:bg-white/90 backdrop-blur border border-gray-200 shadow-xl">
-              <div className="absolute -top-10 -left-10 w-48 h-48 bg-gradient-to-br from-liberian-blue/10 to-liberian-red/10 rounded-full blur-2xl" />
-              <div className="grid md:grid-cols-3">
-                <div className="md:col-span-1 relative h-64 md:h-full">
-                  <Image
-                    src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Chairman%20Emmanuel%20Patrick.jpg?updatedAt=1757347430203"
-                    alt="Chairman Emmanuel Patrick"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="md:col-span-2 p-6 sm:p-8">
-                  <div className="mb-5">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full bg-liberian-blue/10 text-liberian-blue text-xs font-semibold uppercase tracking-wider">Official Remark</span>
-                    <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 mt-3 leading-tight">
-                      Official Remark of Chairman Emmanuel Patrick
-                    </h3>
-                    <p className="text-sm text-gray-500 mt-1">On the Occasion of the Inaugural Liberians in East Africa Summit held in Kampala, Uganda — Date: March 22, 2025</p>
-                  </div>
-                  <div className="prose max-w-none text-gray-700 space-y-4">
-                    <p>Distinguished Platform Guests, Partners and Sponsors, Fellow Liberians, Ladies and Gentlemen,</p>
-                    <p>I stand before you deeply honored, humbled, and inspired by this historic moment, the Inaugural Summit of Liberians in East Africa.</p>
-                    <p>Today, we gather not merely as individuals who happen to live abroad, but as one people, bound by a shared history, a shared destiny, and a shared pride.</p>
-                    <p>I am a Liberian unapologetically and unequivocally.</p>
-                    <p>I was born and raised in the land of the free a land that, despite its challenges, still stands tall as a symbol of African resilience, and hope.</p>
-                    <p>Liberia is a nation with an amazing culture, a beautiful landscape, and a richness of spirit that cannot be measured by global rankings.</p>
-                    <p>Ours is a land blessed with vast natural resources, yes iron, gold, rubber, timber, and fertile soil but our greatest resource has always been our people: hardworking, brilliant, courageous, and determined.</p>
-                    <p>I walk with my head held high because I know that my motherland our Liberia is indeed the Mother of this Native Land, Africa.</p>
-                    <p>From the soil of Monrovia and the spirit of our forebears emerged the idea of Pan-African freedom the notion that Africa could stand on its own, independent and dignified. Liberia was the first black republic on African soil, a beacon that inspired a continent. And today, as we stand here in East Africa a region that has welcomed us with open arms we carry that torch of freedom still burning bright.</p>
-                    <p>My brothers and sisters, we are part of a legacy that cannot be erased. Our ancestors sowed the seeds of liberty in a world that once told them they were not free. They built, they dreamed, they fought and they triumphed. And even when tragedy struck, when civil unrest tore at the fabric of our nation, when families were scattered across continents, when it seemed that the world had forgotten us we did not give up.</p>
-                    <p>We overcame. We overcame because the Liberian spirit does not surrender. We overcame because deep within us lies a song of faith a faith that no hardship can silence. We overcame because our hearts are united in the belief that better days will come.</p>
-                    <p>And now, here we are gathered as sons and daughters of Liberia across East Africa: from Kenya, Uganda, Tanzania, Rwanda, and beyond. We are teachers, entrepreneurs, professionals, students, artists, and innovators, each of us carry the story of Liberia wherever we go.</p>
-                    <p>This summit is not just a meeting; it is a homecoming. It is a reminder that no matter where we live, the red, white, and blue of our flag still beats in our hearts. It is a call to reconnect, to rebuild, and to reimagine what it means to be Liberian in the 21st century.</p>
-                    <p>As the Chairperson of the Liberian Diaspora in East Africa, I see this gathering as the beginning of a new chapter. A chapter where we, the Diaspora, become not only ambassadors of our culture but also partners in Liberia’s transformation. Our nation needs us—our ideas, our skills, our investments, our voices. We can help strengthen education through scholarship programs; support small businesses through Diaspora investment; and advocate for governance that reflects transparency, unity, and progress.</p>
-                    <p>We are not outsiders; we are Liberians abroad, and our role is vital. We must build bridges between our host nations and our homeland. We must mentor young Liberians—both here and at home—and remind them that their dreams are valid, their talents are needed, and their identity is powerful.</p>
-                    <p>Let this summit ignite a movement—a movement of purpose, pride, and partnership. Let us establish a strong network of Liberians in East Africa that supports one another socially, economically, and emotionally. Let us tell our stories, celebrate our achievements, and lift each other up. For even as it sometimes seems that Liberia has been left behind by the rest of the world, we know in our hearts: we shall overcome again. Our best days are not behind us; they are ahead of us. And they begin with gatherings like this one, where hope is reborn, unity is restored, and faith is renewed.</p>
-                    <p>So today, I invite every Liberian here to rise—not just physically, but spiritually—to rise with confidence, with love for country, and with the conviction that together, we can build the Liberia we dream of.</p>
-                    <p>May this summit mark the dawn of a stronger Diaspora and a stronger Liberia. May we always walk with our heads held high, knowing who we are, where we come from, and what we stand for. Because we are Liberians—unapologetically, unequivocally, and eternally.</p>
-                    <p>Thank you. May God bless Liberia, and may God bless all of you.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+
 
       {/* Summit Update Section */}
-      <section className="py-8 sm:py-10 gradient-bg">
+      <section className="py-6 sm:py-8 gradient-bg">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -448,24 +416,15 @@ const HomePage = ({ partners }: HomeProps) => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
-              SUMMIT UPDATE
-            </h2>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">
               The FOLICEA Summit 2025 Has Concluded
-            </h3>
-            <p className="text-lg sm:text-xl text-white/90 mb-6 max-w-3xl mx-auto leading-relaxed">
-              Thank you to everyone who joined us in Kampala, Uganda, for three inspiring days of unity, dialogue, leadership elections, and strategic planning. Together, we took meaningful steps toward strengthening the Liberian diaspora in East Africa and advancing our shared vision for national development.
+            </h2>
+            <p className="text-base sm:text-lg text-white/90 mb-4 max-w-3xl mx-auto">
+              Thank you for three inspiring days. Summit highlights and photos coming soon.
             </p>
-            <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Summit highlights, photos, and key outcomes will be shared soon.
-            </p>
-            <div className="bg-white/10 rounded-xl p-5 sm:p-6 backdrop-blur-sm mb-6 max-w-4xl mx-auto">
-              <p className="text-base sm:text-lg text-white font-semibold mb-4">Stay connected! Sign up here to receive updates on future FOLICEA initiatives, regional chapter activities, and the 2026 Summit. Highlights, photos, key outcomes and post-summit initiatives will be posted shortly. Keep an eye on this space.</p>
-              <Link href="/contact" className="inline-block bg-white text-liberian-red hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
-                Join Our Mailing List
-              </Link>
-            </div>
+            <Link href="/contact" className="inline-block bg-white text-liberian-red hover:bg-gray-100 font-semibold py-2 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm sm:text-base">
+              Join Our Mailing List
+            </Link>
           </motion.div>
         </div>
       </section>
