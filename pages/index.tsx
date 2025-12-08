@@ -228,17 +228,6 @@ const HomePage = ({ partners }: HomeProps) => {
       {/* Opening Remarks Section */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Opening Remarks</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Inspiring messages from our summit leaders</p>
-          </motion.div>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* W. Praise Bloyuefloh Card */}
             <motion.div
