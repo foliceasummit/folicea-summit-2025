@@ -5,24 +5,8 @@ import { motion } from 'framer-motion';
 import { Calendar, MapPin, Users } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
 import partnersLocal from '../data/partners';
-import speakersLocal from '../data/speakers';
 
 // Define types for our data
-
-interface Speaker {
-  _id?: string;
-  name: string;
-  title: string;
-  image: any;
-  bio?: string;
-  topics?: string[];
-  social?: {
-    linkedin?: string;
-    twitter?: string;
-  };
-  featured?: boolean;
-  order?: number;
-}
 
 interface Partner {
   name: string;
@@ -31,7 +15,6 @@ interface Partner {
 }
 
 interface HomeProps {
-  speakers: Speaker[];
   partners: Partner[];
 }
 
@@ -492,14 +475,10 @@ const HomePage = ({ partners }: HomeProps) => {
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   // Use local data only (no CMS)
-  const homeData = null;
-  const speakers = Array.isArray(speakersLocal) ? (speakersLocal as Speaker[]) : [];
   const partners = Array.isArray(partnersLocal) ? (partnersLocal as Partner[]) : [];
 
   return {
     props: {
-      homeData,
-      speakers,
       partners,
     },
   };
