@@ -29,7 +29,6 @@ const Header = () => {
       { name: 'Video', href: '/video' },
     ] },
     { name: 'Contact', href: '/contact' },
-    { name: 'Get Involved', href: '/get-involved' },
   ];
 
   const [isMediaOpen, setIsMediaOpen] = useState(false);

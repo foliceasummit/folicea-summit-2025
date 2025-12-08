@@ -252,10 +252,10 @@ const HomePage = ({ partners }: HomeProps) => {
             viewport={{ once: true }}
             className="max-w-6xl mx-auto"
           >
-            <div className="relative overflow-hidden rounded-3xl bg-white supports-[backdrop-filter]:bg-white/90 backdrop-blur border border-gray-200 shadow-xl">
+            <div className="relative overflow-hidden rounded-3xl bg-white supports-[backdrop-filter]:bg-white/90 backdrop-blur border border-gray-200 shadow-xl md:border-l-4 border-liberian-red/60">
               <div className="absolute -top-10 -right-10 w-48 h-48 bg-gradient-to-br from-liberian-blue/10 to-liberian-red/10 rounded-full blur-2xl" />
               <div className="grid md:grid-cols-3">
-                <div className="md:col-span-1 relative h-64 md:h-full">
+                <div className="md:col-span-1 relative h-72 md:h-[22rem]">
                   <Image
                     src="https://ik.imagekit.io/foliceasummit/FOLICEA%20SUMMIT/Summit%20Photos/Picture2.jpg?updatedAt=1765096104785"
                     alt="W. Praise Bloyuefloh"
