@@ -85,7 +85,7 @@ const HomePage = ({ partners }: HomeProps) => {
 
               {/* Summit Celebration */}
               <div className="mb-8 sm:mb-10">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 max-w-lg sm:max-w-xl mx-auto">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6 max-w-3xl mx-auto">
                   <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
                     FOLICEA Summit 2025 — A Historic Success!
                   </h2>
@@ -250,9 +250,9 @@ const HomePage = ({ partners }: HomeProps) => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="max-w-5xl mx-auto"
+            className="max-w-6xl mx-auto"
           >
-            <div className="relative overflow-hidden rounded-3xl bg-white/90 backdrop-blur border border-gray-200 shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
+            <div className="relative overflow-hidden rounded-3xl bg-white supports-[backdrop-filter]:bg-white/90 backdrop-blur border border-gray-200 shadow-xl">
               <div className="absolute -top-10 -right-10 w-48 h-48 bg-gradient-to-br from-liberian-blue/10 to-liberian-red/10 rounded-full blur-2xl" />
               <div className="grid md:grid-cols-3">
                 <div className="md:col-span-1 relative h-64 md:h-full">
@@ -407,9 +407,9 @@ const HomePage = ({ partners }: HomeProps) => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="max-w-5xl mx-auto"
+            className="max-w-6xl mx-auto"
           >
-            <div className="relative overflow-hidden rounded-3xl bg-white/90 backdrop-blur border border-gray-200 shadow-[0_10px_30px_rgba(0,0,0,0.12)]">
+            <div className="relative overflow-hidden rounded-3xl bg-white supports-[backdrop-filter]:bg-white/90 backdrop-blur border border-gray-200 shadow-xl">
               <div className="absolute -top-10 -left-10 w-48 h-48 bg-gradient-to-br from-liberian-blue/10 to-liberian-red/10 rounded-full blur-2xl" />
               <div className="grid md:grid-cols-3">
                 <div className="md:col-span-1 relative h-64 md:h-full">
@@ -457,7 +457,7 @@ const HomePage = ({ partners }: HomeProps) => {
       </section>
 
       {/* Summit Update Section */}
-      <section className="py-12 sm:py-16 gradient-bg">
+      <section className="py-8 sm:py-10 gradient-bg">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -477,8 +477,8 @@ const HomePage = ({ partners }: HomeProps) => {
             <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
               Summit highlights, photos, and key outcomes will be shared soon.
             </p>
-            <div className="bg-white/10 rounded-xl p-8 backdrop-blur-sm mb-8 max-w-3xl mx-auto">
-              <p className="text-lg text-white font-semibold mb-4">Stay connected! Sign up here to receive updates on future FOLICEA initiatives, regional chapter activities, and the 2026 Summit.</p>
+            <div className="bg-white/10 rounded-xl p-5 sm:p-6 backdrop-blur-sm mb-6 max-w-4xl mx-auto">
+              <p className="text-base sm:text-lg text-white font-semibold mb-4">Stay connected! Sign up here to receive updates on future FOLICEA initiatives, regional chapter activities, and the 2026 Summit. Highlights, photos, key outcomes and post-summit initiatives will be posted shortly. Keep an eye on this space.</p>
               <Link href="/contact" className="inline-block bg-white text-liberian-red hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
                 Join Our Mailing List
               </Link>

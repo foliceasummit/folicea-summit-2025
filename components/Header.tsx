@@ -28,6 +28,7 @@ const Header = () => {
       { name: 'News', href: '/news' },
       { name: 'Video', href: '/video' },
     ] },
+    { name: 'Contact', href: '/contact' },
     { name: 'Get Involved', href: '/get-involved' },
   ];
 
@@ -69,6 +70,7 @@ const Header = () => {
                   onMouseLeave={() => setIsMediaOpen(false)}
                 >
                   <button
+                    onClick={() => setIsMediaOpen((v) => !v)}
                     className={`font-medium transition-colors duration-200 ${
                       isScrolled 
                         ? 'text-gray-800 hover:text-liberian-red' 
@@ -78,7 +80,7 @@ const Header = () => {
                     {item.name}
                   </button>
                   {isMediaOpen && (
-                    <div className="absolute left-0 mt-2 w-44 bg-white shadow-lg rounded-md py-2 z-50">
+                    <div className="absolute left-0 mt-2 w-52 bg-white shadow-lg rounded-md py-2 z-50 border border-gray-100">
                       {item.children.map((child) => (
                         <Link
                           key={child.name}
